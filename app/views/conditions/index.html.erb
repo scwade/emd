@@ -1,0 +1,28 @@
+<h1>Listing conditions</h1>
+
+<table>
+  <tr>
+    <th>Pmd patient no</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Treated by</th>
+    <th>Treat notes</th>
+  </tr>
+
+<% @conditions.each do |condition| %>
+  <tr>
+    <td><%=h condition.pmd_patient_no %></td>
+    <td><%=h condition.start_date %></td>
+    <td><%=h condition.end_date %></td>
+    <td><%=h condition.treated_by %></td>
+    <td><%=h condition.treat_notes %></td>
+    <td><%= link_to 'Show', condition %></td>
+    <td><%= link_to 'Edit', edit_condition_path(condition) %></td>
+    <td><%= link_to 'Destroy', condition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New condition', new_condition_path %>

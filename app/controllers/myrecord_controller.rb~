@@ -1,0 +1,5 @@
+class MyrecordController < ApplicationController
+  def index
+  end
+
+end

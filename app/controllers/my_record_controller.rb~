@@ -1,0 +1,6 @@
+class MyRecordController < ApplicationController
+  def index
+    @condition = Condition.find_my_conditions
+  end
+
+end

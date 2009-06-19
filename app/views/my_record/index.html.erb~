@@ -1,0 +1,67 @@
+<h1>Your Pragmatic Catalog</h1>
+
+<% for product in @products -%>
+
+  <div class="entry">
+
+    <%= image_tag(product.image_url) %>
+
+    <h3><%=h product.title %></h3>
+
+    <%= product.description %>
+
+
+    
+
+    <div class="price-line">
+
+
+    
+
+    <span class="price"><%= product.price %></span>
+
+
+    
+
+    </div>
+
+
+    
+
+  </div>
+
+
+    
+
+<% end %>
+
+
+<h1>List My Records</h1>
+
+<table>
+  <tr>
+    <th>Condition Name</th>
+    <th>Treatment Started</th>
+    <th>Treatment Ended</th>
+    <th>Treated by</th>
+    <th>Treatment Notes</th>
+  </tr>
+
+<% @conditions.each do |condition| %>
+  <tr>
+    <td><%=h condition.name %></td>
+    <td><%=h condition.start_date %></td>
+    <td><%=h condition.end_date %></td>
+    <td><%=h condition.treated_by %></td>
+    <td><%=h condition.treat_noes %></td>
+    <td><%= link_to 'Show', condition %></td>
+    <td><%= link_to 'Edit', edit_condition_path(condition) %></td>
+    <td><%= link_to 'Destroy', condition, :confirm => 'Are you sure?', 
+    																	:method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Condition', new_condition_path %>

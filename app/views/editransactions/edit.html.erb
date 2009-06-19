@@ -1,0 +1,24 @@
+<h1>Editing editransaction</h1>
+
+<% form_for(@editransaction) do |f| %>
+  <%= f.error_messages %>
+
+  <div>
+    <%= f.label :"Aetna ISA01 " %>:
+    <%= f.text_field :isa01, :size => 40 %>
+  </div>
+  <div>
+    <%= f.label :"Aetna ISA02 " %>:
+    <%= f.text_field :isa02, :size => 40 %>
+  </div>
+  <div>
+    <%= f.label :"Aetna ISA03 " %>:
+    <%= f.text_field :isa03, :size => 40 %>
+  </div>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @editransaction %> |
+<%= link_to 'Back', editransactions_path %>

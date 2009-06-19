@@ -1,0 +1,156 @@
+Script started on Wed 10 Jun 2009 05:57:15 PM PDT
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ cd app
+]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ ls
+[00m[01;34mcontrollers[00m  [01;34mhelpers[00m  [01;34mmodels[00m  [01;34mviews[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ cd views
+]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ ls
+[00m[01;34madmin[00m  [01;34meditransactions[00m  [01;34mlayouts[00m  [01;34musers[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ ls ed*
+[00m[00medit.html.erb[00m  [00mindex.html.erb[00m  [00mnew.html.erb[00m  [00mshow.html.erb[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ ls 0-[K[K- la ed*
+[00mls: cannot access -: No such file or directory
+ls: cannot access la: No such file or directory
+editransactions:
+[00medit.html.erb[00m  [00mindex.html.erb[00m  [00mnew.html.erb[00m  [00mshow.html.erb[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ ls -la ed*
+[00mtotal 24
+drwxr-xr-x 2 scott scott 4096 2009-06-10 17:51 [01;34m.[00m
+drwxr-xr-x 6 scott scott 4096 2009-05-14 15:40 [01;34m..[00m
+-rw-r--r-- 1 scott scott  236 2009-05-14 15:04 [00medit.html.erb[00m
+-rw-r--r-- 1 scott scott  440 2009-05-14 15:04 [00mindex.html.erb[00m
+-rw-r--r-- 1 scott scott  720 2009-06-10 17:51 [00mnew.html.erb[00m
+-rw-r--r-- 1 scott scott  111 2009-05-14 15:04 [00mshow.html.erb[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ ls
+[00m[01;34madmin[00m  [01;34meditransactions[00m  [01;34mlayouts[00m  [01;34musers[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ cat new[K[K[K[K[K[K[Ked*/ed[K[Knew.html.erb
+bash: editransactions/new.html.erb: Permission denied
+]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ ccd ..
+bash: ccd: command not found
+]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ 
+]0;scott@ubuntuServer: /var/rails/emd/app/viewsscott@ubuntuServer:/var/rails/emd/app/views$ cd ..
+]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ ruby script/generate scaffold pr[K[Keditransaction admin
+ruby: No such file or directory -- script/generate (LoadError)
+]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ cd ..
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ cd ..ruby script/generate scaffold editransaction admin
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/editransactions
+      exists  app/views/layouts/
+      exists  test/functional/
+      exists  test/unit/
+      exists  test/unit/helpers/
+      exists  public/stylesheets/
+wrong number of arguments (1 for 2)
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ ruby script/generate scaffold editransaction admin[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kruy [Kb [K[Kb[K[Kby script/generate controller admin
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/admin
+      exists  test/functional/
+      exists  test/unit/helpers/
+overwrite app/controllers/admin_controller.rb? (enter "h" for help) [Ynaqdh] Y
+       force  app/controllers/admin_controller.rb
+   identical  test/functional/admin_controller_test.rb
+   identical  app/helpers/admin_helper.rb
+   identical  test/unit/helpers/admin_helper_test.rb
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ ruby script/generate controller admin[13@scaffold editransaction[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ..[Kruby script/generate scaffold editransaction admin
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/editransactions
+      exists  app/views/layouts/
+      exists  test/functional/
+      exists  test/unit/
+      exists  test/unit/helpers/
+      exists  public/stylesheets/
+wrong number of arguments (1 for 2)
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ cd app
+]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ ls
+[00m[01;34mcontrollers[00m  [01;34mhelpers[00m  [01;34mmodels[00m  [01;34mviews[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ mkdir jun9
+]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ cp -r [K[K[K[K[K[Kcp -r[K[K[K[K[Kcp -r * jun9
+cp: cannot copy a directory, `jun9', into itself, `jun9/jun9'
+cp: cannot copy a directory, `jun9', into itself, `jun9/jun9'
+cp: cannot copy a directory, `jun9', into itself, `jun9/jun9'
+]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ ls jun9
+[00m[01;34mcontrollers[00m  [01;34mhelpers[00m  [01;34mjun9[00m  [01;34mmodels[00m  [01;34mviews[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ ls jiun[K[K[Kun9/views
+[00m[01;34madmin[00m  [01;34meditransactions[00m  [01;34mlayouts[00m  [01;34musers[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ ls jun9/views/edi*[C[C[C jun9/views/edi*- jun9/views/edi*l jun9/views/edi*a jun9/views/edi*t jun9/views/edi*[1P jun9/views/edi*r jun9/views/edi*t jun9/views/edi*
+[00mtotal 32
+-rw-r--r-- 1 scott scott  695 2009-06-10 19:15 [00mshow.html.erb[00m
+-rw-r--r-- 1 scott scott  639 2009-06-10 19:15 [00mnew.html.erb~[00m
+-rw-r--r-- 1 scott scott  742 2009-06-10 19:15 [00mnew.html.erb[00m
+-rw-r--r-- 1 scott scott  567 2009-06-10 19:15 [00mindex.html.erb~[00m
+-rw-r--r-- 1 scott scott  684 2009-06-10 19:15 [00mindex.html.erb[00m
+-rw-r--r-- 1 scott scott  236 2009-06-10 19:15 [00medit.html.erb[00m
+drwxr-xr-x 6 scott scott 4096 2009-06-10 19:15 [01;34m..[00m
+drwxr-xr-x 2 scott scott 4096 2009-06-10 19:15 [01;34m.[00m
+[m]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ cd [K[K[Kcd ..
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ cd ..ls -lart jun9/views/edi*[11Pjun9/views[K[5@cp -r *[C[C[C[C[C[2Pmkdir[C[C[C[C[Cls[Kcd appruby script/generate scaffold editransaction admin[C[1@d[1@e[1@s[1@t[1@r[1@oygenerate scaffold editransaction admin [A]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C generate scaffold editransaction adminn[A]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cenerate scaffold editransaction admin [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P adminc admino adminn admint adminr admino adminl adminl admine adminr admin
+          rm  test/unit/helpers/admin_helper_test.rb
+          rm  app/helpers/admin_helper.rb
+          rm  test/functional/admin_controller_test.rb
+          rm  app/controllers/admin_controller.rb
+    notempty  test/unit/helpers
+    notempty  test/unit
+    notempty  test
+    notempty  test/functional
+    notempty  test
+    notempty  app/views/admin
+    notempty  app/views
+    notempty  app
+    notempty  app/helpers
+    notempty  app
+    notempty  app/controllers
+    notempty  app
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ ruby script/destroy controller admincd ..[Kls -lart jun9/views/edi*cd ..[Kruby script/destroy controller admin[1P[1P[1P[1P[1P[1P[1P[1@g[1@e[1@n[1@e[1@r[1@a[1@t[1@e
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/admin
+      exists  test/functional/
+      exists  test/unit/helpers/
+      create  app/controllers/admin_controller.rb
+      create  test/functional/admin_controller_test.rb
+      create  app/helpers/admin_helper.rb
+      create  test/unit/helpers/admin_helper_test.rb
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ ruby script/generate controller admin[1Pdestroy[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ..[Kls -lart jun9/views/edi*[11Pjun9/views[K[5@cp -r *[C[C[C[C[C[2Pmkdir[C[C[C[C[Cls[Kcd appruby script/generate scaffold editransaction admin
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      exists  app/views/editransactions
+      exists  app/views/layouts/
+      exists  test/functional/
+      exists  test/unit/
+      exists  test/unit/helpers/
+      exists  public/stylesheets/
+wrong number of arguments (1 for 2)
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ ruby script/generate scaffold editransaction admin[13Pcontroller[C[C[C[C[C[C[1Pdestroy[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@generate[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pdestroy[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+          rm  test/unit/helpers/admin_helper_test.rb
+          rm  app/helpers/admin_helper.rb
+          rm  test/functional/admin_controller_test.rb
+          rm  app/controllers/admin_controller.rb
+    notempty  test/unit/helpers
+    notempty  test/unit
+    notempty  test
+    notempty  test/functional
+    notempty  test
+    notempty  app/views/admin
+    notempty  app/views
+    notempty  app
+    notempty  app/helpers
+    notempty  app
+    notempty  app/controllers
+    notempty  app
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ ls
+[00m[01;34mapp[00m     [01;34mdb[00m   [00mgenerate[00m  [01;34mlog[00m     [00mRakefile[00m  [01;34mscript[00m  [01;34mtmp[00m
+[01;34mconfig[00m  [01;34mdoc[00m  [01;34mlib[00m       [01;34mpublic[00m  [00mREADME[00m    [01;34mtest[00m    [01;34mvendor[00m
+[m]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ ls
+[00m[01;34mapp[00m     [01;34mdb[00m   [00mgenerate[00m  [01;34mlog[00m     [00mRakefile[00m  [01;34mscript[00m  [01;34mtmp[00m
+[01;34mconfig[00m  [01;34mdoc[00m  [01;34mlib[00m       [01;34mpublic[00m  [00mREADME[00m    [01;34mtest[00m    [01;34mvendor[00m
+[m]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ cd jun9
+bash: cd: jun9: No such file or directory
+]0;scott@ubuntuServer: /var/rails/emdscott@ubuntuServer:/var/rails/emd$ cd app
+]0;scott@ubuntuServer: /var/rails/emd/appscott@ubuntuServer:/var/rails/emd/app$ cd jun9
+]0;s
