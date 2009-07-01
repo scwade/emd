@@ -8,7 +8,7 @@
         <th>Google Info</th>
         <th>Wiki Info</th>
       </tr>
-<--    <tbody>  -->
+<!--    <tbody>  -->
     <% for patient_condition in @patient_conditions %>
     <tr>
       <td> <%= h patient_condition.id %> </td>

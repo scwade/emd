@@ -4,11 +4,11 @@
       <div id="record">
       </div>
 <!-- LOCAL -->
-      <a href="/patient_conditions">My Conditions</a><br />
-      <a href="/users">Users</a><br />
-      <a href="/my_record" > WIP </a><br />
+      <a href="/patient_conditions">Patient Conditions</a><br />
+      <a href="/users">List Users</a><br />
+      <a href="/my_record" > Work Orders </a><br />
       <a href="/editransactions">EDI trans</a><br />
-      <a href="/conditions">Conditions_REF</a><br />
+      <a href="/conditions">Conditions(ref)</a><br />
       <p></p>
 <!-- CHANGE ENVIRONMENT -->
     <p> Change ENV </p>
