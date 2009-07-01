@@ -1,0 +1,51 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pmd_patient_no: 111
+  condition_name: 'Abdominal Cramps'
+  start_date: 2009-06-18
+  end_date: 2009-06-18
+  treated_by: "Dr. Wong"
+  treat_notes: "Treated with vitamin E"
+
+two:
+  pmd_patient_no: 222
+  condition_name: 'Abdominal Pain'
+  start_date: 2009-06-18
+  end_date: 2009-06-18
+  treated_by: "Dr. Wang"
+  treat_notes: "Treated with vitamin B"
+  
+Three:
+  pmd_patient_no: 333
+  condition_name: 'Abdominal Hernia'
+  start_date: 2009-01-01
+  end_date: 2009-02-02
+  treated_by: "Dr. Wade"
+  treat_notes: "<p> Treated with vitamin C </p>"
+  
+4:
+  condition_name: 'Aase Syndrome'
+5:
+  condition_name: 'Abdominal Aortic Aneurysm (AAA)'
+6:
+  condition_name: 'Abdominal Bloating'
+7:
+  pmd_patient_no: 555
+  start_date: 2009-01-01
+  end_date: 2009-02-02
+  treated_by: "Dr. Wade"
+  treat_notes: "<p> Treated with vitamin C </p>" 
+  condition_name: 'Abdominal Cramps'
+
+8:
+  condition_name: 'Abdominal Hernia'			
+9:
+  condition_name: 'Abdominal Mass'
+10:
+  pmd_patient_no: 555
+  start_date: 2009-01-01
+  end_date: 2009-02-02
+  treated_by: "Dr. Wade"
+  treat_notes: "<p> Treated with vitamin C </p>" 
+  condition_name: 'Abdominal Pain'

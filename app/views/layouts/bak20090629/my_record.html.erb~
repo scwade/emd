@@ -1,0 +1,36 @@
+<%= render :partial => "shared/main" %> 
+
+  <div id="columns">
+    <div id="side">
+      <div id="record">
+        <% render :partial => "record", :object => @records %>
+      </div>
+<!-- LOCAL -->
+      <a href="http://192.168.0.195:3000/my_record">Home</a><br />
+      <a href="http://192.168.0.195:3000/users">Users</a><br />
+      <a href="http://192.168.0.195:3000/editransactions">EDI trans</a><br />
+      <a href="http://192.168.0.195:3000/conditions">Conditions</a><br />
+      <p></p>
+<!-- vmware  -->
+      <a href="http://scwade.blogdns.com:3000/my_record">Home vmare)</a><br />
+      <a href="http://scwade.blogdns.com:3000/users">Users(vmare)</a><br />
+      <a href="http://scwade.blogdns.com:3000/editransactions">EDI(vmare)</a><br />
+      <a href="http://scwade.blogdns.com:3000/conditions">Conditions (vmare)</a><br />
+      <p></p>
+<!-- HIAKU -->
+      <a href="http://emd.hiaku.com:3000/my_record">Home(hiaku)</a><br />
+      <a href="http://emd.hiaku.com:3000/users">Users(hiaku)</a><br />
+      <a href="http://emd.hiaku.com:3000/editransactions">EDI(hiaku)</a><br />
+      <a href="http://emd.hiaku.com:3000/conditions">Conditions(hiaku)</a><br />
+
+    </div>
+    <div id="main">
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+
+      <%= yield :layout %>
+    </div>
+  </div>
+</body>
+</html>

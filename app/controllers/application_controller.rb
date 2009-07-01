@@ -2,13 +2,22 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+
+# SCW - Adding method for user linking to subset of conditions (my records, my conditions) 
+#  def find_record
+#    unless session[:record]         # if there is no record in session
+#      session[:record] = Record.new # then add a new one
+#    end
+#    session[:record]
+#  end
+
 # section 11.4 - layout - not sure its working
-  layout "editransactoin"
-##### Uncomment to enable secure login
+  layout "editransaction"
+  ##### Uncomment to enable secure login
 #  before_filter :authorize, :except => :login
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   protected

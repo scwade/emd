@@ -1,0 +1,37 @@
+<h1>List Available Conditions</h1>
+<div class="record-title"> List Available Conditions </div>
+  <table class="X3"rules="none" border="1" cellspacing="5">
+    <thead>
+      <tr>
+        <th height="12px">Condition Name</th>
+        <th height="12px">Record ID</th>
+        <th height="12px">Treatment Notes</th>
+        <th height="12px">Google Info</th>
+        <th height="12px">Wiki Info</th>
+        <th height="12px">Action (temp)</th>
+      </tr>
+    </thead>
+    <tbody>  
+    <% for condition in @conditions -%>
+    <tr>
+      <td> <%= h condition.name %> </td>
+      <td> <%= h condition.id %> </td>
+      <td> <%= h condition.treat_notes %> </td>
+      <td> <%= link_to_unless condition.google_url.nil?, "Visit Google", condition.google_url, :popup => true %></td>
+      <td> <%= link_to_unless condition.google_url.nil?, "Visit Wiki", condition.wiki_url, :popup => true %></td>
+      <td> <%= button_to "Add to My Profile (~record)", :action => 'add_to_record', :id => condition %></td> 
+    
+<!--    
+    <div class="entry">
+      <td><h3><%= h(condition.name) %></h3></td>
+      <div class="price-line">
+        <td> <%= condition.treat_notes %> </td>
+        <td> <h4><%= condition.id %></h4> </td>
+      </div>
+      <td><%= button_to "Add to My Profile (~record)", :action => 'add_to_record', :id => condition %></td>    
+    </div>
+-->
+    </tr>
+    <% end %>
+    </tbody>
+  </table>

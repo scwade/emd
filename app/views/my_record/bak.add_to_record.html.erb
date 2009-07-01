@@ -1,0 +1,30 @@
+<!-- VERSSION 1
+  <h2>My Personal Records</h2>
+  <ul>
+    <% for item in @record.items %>
+      <li><%=h (item.name) %></li>
+      <li><%= item.quantity %> &times; <%=h (item.name) %></li> 
+    <% end %>
+          </ul>
+  <% button_to 'Clear Records', :action => 'clear_record' %>
+END of VERSION 1 -->
+
+<!-- VERSION 2 
+<div class="record-title">My Personal Records - Pending</div>
+  <table>
+    <% for item in @record.items %>
+      <tr>
+        <td><%= item.quantity %> &times; <%=h (item.name) %></td>         
+        <td><%=h (item.name) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= button_to "Clear Records", :action => :clear_record %>
+END VERSION 2 -->
+
+<!-- VERSION 3 -- Preparing for AJAX and Partial templates -->
+<div class="record-title">My Personal Records - Pending</div>
+  <table>
+    <% render(:partial => "record_item", :collection => @record.items) %>
+  </table>
+  <%= button_to "Clear Records", :action => :clear_record %>

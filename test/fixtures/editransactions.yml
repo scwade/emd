@@ -23,3 +23,23 @@ aetnacase4:
   isa01: 21
   isa02: 22203
   isa03: 23
+
+# Load Some Sample Data
+5:
+  isa01: 33
+  isa02: 54366
+  isa03: 94
+  
+5:
+  isa01: 45
+  isa02: 87643
+  isa03: 49
+6:
+  isa01: 77
+  isa02: 88366
+  isa03: 76
+  
+7:
+  isa01: 86
+  isa02: 98543
+  isa03: 98

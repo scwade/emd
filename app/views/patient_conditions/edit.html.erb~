@@ -1,0 +1,37 @@
+<h1>Editing patient_condition</h1>
+
+<% form_for(@patient_condition) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :pmd_patient_no %><br />
+    <%= f.text_field :pmd_patient_no %>
+  </p>
+  <p>
+    <%= f.label :condition_name %><br />
+    <%= f.text_field :condition_name %>
+  </p>
+
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </p>
+  <p>
+    <%= f.label :treated_by %><br />
+    <%= f.text_field :treated_by %>
+  </p>
+  <p>
+    <%= f.label :treat_notes %><br />
+    <%= f.text_area :treat_notes %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @patient_condition %> |
+<%= link_to 'Back', patient_conditions_path %>

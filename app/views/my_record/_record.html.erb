@@ -1,0 +1,11 @@
+  <div class="record-title">My Personal Records - Pending</div>
+  <table>
+    <% render(:partial => "record_item", :collection => record.items) %>
+     
+    <tr class="total-line">
+      <td colspan="2">Total_recordhtmlerb</td>
+      <td class="total-cell"><%= record.total_quantity %></td>
+    </tr>
+    
+  </table>
+  <%= button_to "Clear Records", :action => :clear_record %>

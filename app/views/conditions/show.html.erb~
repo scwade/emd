@@ -1,0 +1,28 @@
+<p>
+  <b>Pmd patient no:</b>
+  <%=h @condition.pmd_patient_no %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @condition.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @condition.end_date %>
+</p>
+
+<p>
+  <b>Treated by:</b>
+  <%=h @condition.treated_by %>
+</p>
+
+<p>
+  <b>Treat notes:</b>
+  <%=h @condition.treat_notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_condition_path(@condition) %> |
+<%= link_to 'Back', conditions_path %>

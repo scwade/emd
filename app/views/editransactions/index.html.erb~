@@ -2,6 +2,10 @@
 
 <table>
   <tr>
+#Need to make this data driven table headers in the future.
+    <th>ISA01</th>
+    <th>ISA02</th>
+    <th>ISA03</th>
   </tr>
 
 <% @editransactions.each do |editransaction| %>

@@ -9,17 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090618230640) do
+ActiveRecord::Schema.define(:version => 20090630232131) do
 
   create_table "conditions", :force => true do |t|
-    t.integer  "pmd_patient_no"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "treated_by"
-    t.text     "treat_notes"
+    t.string   "name"
+    t.text     "google_url"
+    t.text     "wiki_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
   end
 
   create_table "editransactions", :force => true do |t|
@@ -39,6 +36,17 @@ ActiveRecord::Schema.define(:version => 20090618230640) do
     t.string   "isa14",      :limit => 1
     t.string   "isa15",      :limit => 1
     t.string   "isa16",      :limit => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "patient_conditions", :force => true do |t|
+    t.integer  "pmd_patient_no"
+    t.string   "condition_name"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "treated_by"
+    t.text     "treat_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

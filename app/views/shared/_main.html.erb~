@@ -1,0 +1,33 @@
+<%= render :partial => "shared/header" %> 
+  <div id="columns">
+    <div id="side">
+      <div id="record">
+      </div>
+<!-- LOCAL -->
+      <a href="/patient_conditions">My Conditions</a><br />
+      <a href="/users">Users</a><br />
+      <a href="/my_record" > WIP </a><br />
+      <a href="/editransactions">EDI trans</a><br />
+      <a href="/conditions">Conditions_REF</a><br />
+      <p></p>
+<!-- CHANGE ENVIRONMENT -->
+    <p> Change ENV </p>
+    <ul>
+    <a href="http://scwade.blogdns.com:3000/my_record">Scott (pub)</a><br />
+    <a href="http://192.168.0.195:3000/my_record">Scott (pvt)</a><br />
+    <a href="http://emd.hiaku.com/my_record">HIAKU</a><br />
+    <a href="http://localhost:3000/my_record">LOCAL</a><br />
+    </ul>
+
+    </div>
+    <div id="main">
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+
+      <%= yield :layout %>
+    </div>
+  </div>
+</body>
+</html>
+

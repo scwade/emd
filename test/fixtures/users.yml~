@@ -13,8 +13,8 @@ two:
   
 three:
   name: maria
-  hashed_password: maria
-  salt:  	-6114114380.824929958769304
+  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
+  salt: -6114114380.824929958769304
   
 #TEST DATA
 nonunique:

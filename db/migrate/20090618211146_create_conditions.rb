@@ -1,15 +1,16 @@
 class CreateConditions < ActiveRecord::Migration
   def self.up
     create_table :conditions do |t|
-      t.integer :pmd_patient_no
-      t.date :start_date
-      t.date :end_date
-      t.string :treated_by
-      t.text :treat_notes
-
+      t.string :name
+      t.text :google_url
+      t.text :wiki_url
       t.timestamps
+
     end
   end
+
+#  execute "alter table condition_id add constraint fk_condition_id_condition
+#          foreign key (condition_id) references condition(id)"
 
   def self.down
     drop_table :conditions

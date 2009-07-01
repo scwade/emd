@@ -16,6 +16,26 @@ three:
   hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
   salt: -6114114380.824929958769304
   
+4:
+  name: rolland
+  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
+  salt: -6114114380.824929958769304
+  
+5:
+  name: jacki
+  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
+  salt: -6114114380.824929958769304
+  
+6:
+  name: demo
+  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
+  salt: -6114114380.824929958769304
+  
+7:
+  name: admin
+  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
+  salt: -6114114380.824929958769304
+  
 #TEST DATA
 nonunique:
   name: maria

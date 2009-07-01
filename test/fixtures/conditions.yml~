@@ -1,24 +1,28 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  pmd_patient_no: 1
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: MyString
-  treat_notes: MyText
+  name: 'Abdominal Cramps'
 
 two:
-  pmd_patient_no: 2
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: MyString
-  treat_notes: MyText
+  name: 'Abdominal Pain'
   
-three:
-  pmd_patient_no: 1111
-  name: "Aarskog Syndrome"
-  start_date: 2009-01-01
-  end_date: 2009-02-02
-  treated_by: "Dr. Wade"
-  treat_notes: "Treated with vitamin C "
+Three:
+  name: 'Abdominal Hernia'
 
+4:
+  name: 'Aase Syndrome'
+5:
+  name: 'Abdominal Aortic Aneurysm (AAA)'
+6:
+  name: 'Abdominal Bloating'
+7:
+  name: 'Abdominal Cramps'
+  google_url: "https://www.google.com/health/ref/Abdominal+Cramps"
+  wiki_url: "http://wiki.answers.com/Q/Special:Search&search=have%2Babdominal%2Bcramps&limitn=old"
+8:
+  name: 'Abdominal Hernia'			
+9:
+  name: 'Abdominal Mass'
+10:
+  name: 'Abdominal Pain'
+  wiki_url: 'http://wiki.answers.com/Q/Special:Search&search=have%2Babdominal%2Bpain&limitn=old'

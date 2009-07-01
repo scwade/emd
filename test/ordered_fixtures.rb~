@@ -1,0 +1,5 @@
+ENV["FIXTURE_ORDER"] = 
+  %w( entities interaction_sources interaction_devices payments 
+      interactions accounts employments enrollments payables 
+      receivables tenures wards ).join(' ')
+

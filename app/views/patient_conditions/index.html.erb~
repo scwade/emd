@@ -1,0 +1,29 @@
+<h1>Listing of My Patient Conditions</h1>
+  <table class="X3"rules="none" border="1">
+  <tr>
+    <th>Pmd patient no</th>
+    <th>Condition Name</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Treated by</th>
+    <th>Treat notes</th>
+  </tr>
+
+<% @patient_conditions.each do |patient_condition| %>
+  <tr>
+    <td><%=h patient_condition.pmd_patient_no %></td>
+    <td><%=h patient_condition.condition_name %></td>
+    <td><%=h patient_condition.start_date %></td>
+    <td><%=h patient_condition.end_date %></td>
+    <td><%=h patient_condition.treated_by %></td>
+    <td><%=h patient_condition.treat_notes %></td>
+    <td><%= link_to 'Show', patient_condition %></td>
+    <td><%= link_to 'Edit', edit_patient_condition_path(patient_condition) %></td>
+    <td><%= link_to 'Destroy', patient_condition, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New patient_condition', new_patient_condition_path %>
