@@ -1,26 +1,16 @@
 <p>
-  <b>Pmd patient no:</b>
-  <%=h @condition.pmd_patient_no %>
+  <b>name:</b>
+  <%=h @condition.name %>
 </p>
 
 <p>
-  <b>Start date:</b>
-  <%=h @condition.start_date %>
+  <b>google_url:</b>
+  <%=h @condition.google_url %>
 </p>
 
 <p>
-  <b>End date:</b>
-  <%=h @condition.end_date %>
-</p>
-
-<p>
-  <b>Treated by:</b>
-  <%=h @condition.treated_by %>
-</p>
-
-<p>
-  <b>Treat notes:</b>
-  <%=h @condition.treat_notes %>
+  <b>wiki_url:</b>
+  <%=h @condition.wiki_url %>
 </p>
 
 

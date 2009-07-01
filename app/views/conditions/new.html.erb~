@@ -4,24 +4,20 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :pmd_patient_no %><br />
-    <%= f.text_field :pmd_patient_no %>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
   </p>
   <p>
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
+    <%= f.label :google_url %><br />
+    <%= f.date_select :google_url %>
   </p>
   <p>
-    <%= f.label :treated_by %><br />
-    <%= f.text_field :treated_by %>
-  </p>
-  <p>
-    <%= f.label :treat_notes %><br />
-    <%= f.text_area :treat_notes, :rows => 3 %>
+    <%= f.label :wiki_url %><br />
+    <%= f.date_select :wiki_url %>
   </p>
   <p>
     <%= f.submit 'Create' %>
