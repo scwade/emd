@@ -2,12 +2,10 @@
 
 <% form_for(@condition) do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
+ 
   <p>
     <%= f.label :name %><br />
-    <%= f.text_area :name %>
+    <%= f.text_field :name, :size => 30 %>
   </p>
   <p>
     <%= f.label :google_url %><br />

@@ -14,13 +14,14 @@ class ConditionsController < ApplicationController
   # GET /conditions/1.xml
   def show
     @condition = Condition.find(params[:id])
+    @patient_conditions = @condition.patient_conditions
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @condition }
     end
   end
-
+  
   # GET /conditions/new
   # GET /conditions/new.xml
   def new

@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 # section 11.4 - layout - not sure its working
   layout "editransaction"
   ##### Uncomment to enable secure login
-#  before_filter :authorize, :except => :login
+  before_filter :authorize, :except => :login
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details

@@ -1,0 +1,18 @@
+<p>
+  <b>Patient condition:</b>
+  <%=h @patient.patient_condition_id %>
+</p>
+
+<p>
+  <b>Condition:</b>
+  <%=h @patient.condition_id %>
+</p>
+
+<p>
+  <b>Bload type:</b>
+  <%=h @patient.blood_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>

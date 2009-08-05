@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     #SCWa - begin
     begin
       @user.destroy
-      flash[:notice] = "User #{@User.name} deleted"
+      flash[:notice] = "User #{@user.name} deleted"
     rescue Exception => e
       flash[:notice] = e.message
     end

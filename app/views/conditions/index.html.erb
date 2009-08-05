@@ -4,6 +4,8 @@
   <tr>
     <th>Condition ID</th>
     <th>Condition Name</th>
+    <th>Create Date</th>
+    <th>Update Date</th>
     <th>Google Link</th>
     <th>Wiki Link</th>
 
@@ -13,6 +15,8 @@
   <tr>
     <td><%=h condition.id %></td>
     <td><%=h condition.name %></td>
+    <td><%=h condition.created_at %></td>
+    <td><%=h condition.updated_at %></td>   
     <td><%= link_to_unless condition.google_url.nil?, "Visit Google", condition.google_url, :popup => true %></td>
     <td><%= link_to_unless condition.wiki_url.nil?, "Visit Wiki", condition.wiki_url, :popup => true %></td>
     <td><%= link_to 'Show', condition %></td>

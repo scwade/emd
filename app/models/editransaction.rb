@@ -7,6 +7,8 @@ class Editransaction < ActiveRecord::Base
 
 #  Validation not currently applicable
 #  validate :fieled_must_be_higher_than_zero
+#  validates_associated :user
+
  
     
 

@@ -9,14 +9,15 @@
       <a href="/my_record" > Work Orders </a><br />
       <a href="/editransactions">EDI trans</a><br />
       <a href="/conditions">Conditions(ref)</a><br />
+      <a href="/patients">Patients(ref)</a><br />
       <p></p>
 <!-- CHANGE ENVIRONMENT -->
     <p> Change ENV </p>
     <ul>
-    <a href="http://scwade.blogdns.com:3000/my_record">Scott (pub)</a><br />
-    <a href="http://192.168.0.195:3000/my_record">Scott (pvt)</a><br />
-    <a href="http://emd.hiaku.com/my_record">HIAKU</a><br />
-    <a href="http://localhost:3000/my_record">LOCAL</a><br />
+    <a href="http://192.168.0.195:3000/conditions">Scott (pvt)</a><br />
+    <a href="http://scwade.blogdns.com:3000/conditions">Scott (pub)</a><br />
+    <a href="http://emd.heroku.com/conditions">Heroku</a><br />
+    <a href="http://localhost:3000/conditions">LOCAL</a><br />
     </ul>
 
     </div>

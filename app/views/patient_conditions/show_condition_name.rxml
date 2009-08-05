@@ -1,0 +1,9 @@
+xml.patient_condition_list(:for_condition => @condition.name) do
+  for o in @conditions
+    xml.patient_condition do
+      xml.name(o.name)
+      xml.id(o.id)
+    end
+  end
+end
+

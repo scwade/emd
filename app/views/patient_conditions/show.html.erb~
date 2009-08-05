@@ -5,8 +5,9 @@
 
 <p>
   <b>Condition Name:</b>
-  <%=h patient_condition.condition_name %>
+  <%=h @patient_condition.condition_name %>
 </p>
+
 <p>
   <b>Start date:</b>
   <%=h @patient_condition.start_date %>

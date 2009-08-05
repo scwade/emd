@@ -3,21 +3,17 @@
 <% form_for(@condition) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </p>
-  <p>
+   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
     <%= f.label :google_url %><br />
-    <%= f.date_select :google_url %>
+    <%= f.text_field :google_url %>
   </p>
   <p>
     <%= f.label :wiki_url %><br />
-    <%= f.date_select :wiki_url %>
+    <%= f.text_field :wiki_url %>
   </p>
   <p>
     <%= f.submit 'Create' %>

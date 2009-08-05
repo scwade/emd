@@ -1,12 +1,18 @@
+<div class="depot-form">
 <h1>New patient_condition</h1>
-
 <% form_for(@patient_condition) do |f| %>
-  <%= f.error_messages %>
 
+  <%= f.error_messages %>
   <p>
-    <%= f.label :pmd_patient_no %><br />
-    <%= f.text_field :pmd_patient_no %>
+    <%= f.label :condition_name %><br />
+    <%= f.select :condition_id, @conditions.collect{ |c| [c.name, c.id] } %>
   </p>
+
+   <p>
+    <%= f.label :patient_name %><br />
+    <%= f.select :patient_profile_id, @patient_profiles.collect{ |pp| [p.first_name, p.id] } %>
+  </p>
+
   <p>
     <%= f.label :start_date %><br />
     <%= f.date_select :start_date %>
@@ -21,7 +27,7 @@
   </p>
   <p>
     <%= f.label :treat_notes %><br />
-    <%= f.text_area :treat_notes %>
+    <%= f.text_field :treat_notes %>
   </p>
   <p>
     <%= f.submit 'Create' %>
@@ -29,3 +35,5 @@
 <% end %>
 
 <%= link_to 'Back', patient_conditions_path %>
+</div>
+

@@ -28,6 +28,7 @@ class MyRecordController < ApplicationController
     @record.add_condition(anycondition)            # <label id="code.emd.f.add"/>
 #    redirect_to_index                   #enable when Ajax only is desired
 
+# SCW - Handle record not found and redirect gracefuly
   rescue ActiveRecord::RecordNotFound
     logger.error("Attempt to access invalid records #{params[:id]}" )
     redirect_to_index("Invalid record")

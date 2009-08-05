@@ -1,5 +1,4 @@
 class ConditionsController < ApplicationController
- layout "my_record" 
   # GET /conditions
   # GET /conditions.xml
   def index
@@ -15,6 +14,7 @@ class ConditionsController < ApplicationController
   # GET /conditions/1.xml
   def show
     @condition = Condition.find(params[:id])
+    @patient_conditions = @condition.patient_conditions
 
     respond_to do |format|
       format.html # show.html.erb

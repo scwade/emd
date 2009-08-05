@@ -1,6 +1,21 @@
 <p>
+  <b>id:</b>
+  <%=h @condition.id %>
+</p>
+
+<p>
   <b>name:</b>
   <%=h @condition.name %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%=h @condition.created_at %>
+</p>
+
+<p>
+  <b>name:</b>
+  <%=h @condition.updated_at %>
 </p>
 
 <p>

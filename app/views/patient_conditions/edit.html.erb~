@@ -1,15 +1,17 @@
-<h1>Editing patient_condition</h1>
+<h1>editing patient_condition</h1>
 
 <% form_for(@patient_condition) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :pmd_patient_no %><br />
-    <%= f.text_field :pmd_patient_no %>
-  </p>
-  <p>
-    <%= f.label :condition_name %><br />
-    <%= f.text_field :condition_name %>
+    <%= f.label :patient_profile_name %><br />
+    <%= f.select :patient_condition.patient_profile.name="patient_profile[appears_in]"%>
+      <% @conditions.each do |condition| %>
+        <option value="<%= condition.id %>">
+        <% condition.name%>
+      </option>
+    <% end %>
+  </select>
   </p>
 
   <p>
@@ -26,7 +28,7 @@
   </p>
   <p>
     <%= f.label :treat_notes %><br />
-    <%= f.text_area :treat_notes %>
+    <%= f.text_field :treat_notes %>
   </p>
   <p>
     <%= f.submit 'Update' %>
