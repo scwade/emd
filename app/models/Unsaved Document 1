@@ -5,3 +5,19 @@
     
     WORKS:
     <td><%= h Condition.find(56).name %></td>
+    
+    
+    
+    
+Frome PC EDIT
+-----------------
+      <p>
+    <%= f.label :patient_profile_name %><br />
+    <%= f.select f.patient_profiles="patient_profile[appears_in]"%>
+      <% @conditions.each do |condition| %>
+        <option value="<%= condition.id %>">
+        <% condition.name%>
+      </option>
+    <% end %>
+  </select>
+  </p>

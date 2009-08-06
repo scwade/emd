@@ -61,6 +61,7 @@ class PatientConditionsController < ApplicationController
   def edit
     @patient_condition = PatientCondition.find(params[:id])
     @conditions = PatientCondition.find(:all)
+    @patient_profiles = PatientProfile.find(:all)
   end
 
   # POST /patient_conditions

@@ -1,17 +1,12 @@
 <h1>editing patient_condition</h1>
-
+  <table class="X3"rules="none" border="1">
+  <tr>
 <% form_for(@patient_condition) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :patient_profile_name %><br />
-    <%= f.select :patient_condition.patient_profile.name="patient_profile[appears_in]"%>
-      <% @conditions.each do |condition| %>
-        <option value="<%= condition.id %>">
-        <% condition.name%>
-      </option>
-    <% end %>
-  </select>
+ <p>
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
   </p>
 
   <p>
@@ -37,3 +32,6 @@
 
 <%= link_to 'Show', @patient_condition %> |
 <%= link_to 'Back', patient_conditions_path %>
+
+  </tr>
+</table>

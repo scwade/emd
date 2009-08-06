@@ -64821,3 +64821,133 @@ ActionView::TemplateError (undefined method `patient_profiles=' for #<ActionView
 Rendered rescues/_trace (60.3ms)
 Rendered rescues/_request_and_response (0.4ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (54.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatientConditionsController#edit (for 192.168.1.4 at 2009-08-05 07:52:20) [GET]
+  Parameters: {"id"=>"50"}
+  [4;36;1mPatientCondition Columns (109.5ms)[0m   [0;1mSHOW FIELDS FROM `patient_conditions`[0m
+  [4;35;1mPatientCondition Load (16.0ms)[0m   [0mSELECT * FROM `patient_conditions` WHERE (`patient_conditions`.`id` = 50) [0m
+  [4;36;1mPatientCondition Load (9.9ms)[0m   [0;1mSELECT * FROM `patient_conditions` [0m
+Rendering template within layouts/patient_conditions
+Rendering patient_conditions/edit
+
+ActionView::TemplateError (undefined method `patient_profiles=' for #<ActionView::Helpers::FormBuilder:0xb728127c>) on line #8 of app/views/patient_conditions/edit.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :patient_profile_name %><br />
+8:     <%= f.select f.patient_profiles="patient_profile[appears_in]"%>
+9:       <% @conditions.each do |condition| %>
+10:         <option value="<%= condition.id %>">
+11:         <% condition.name%>
+
+    app/views/patient_conditions/edit.html.erb:8
+    app/views/patient_conditions/edit.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.1ms)
+Rendered rescues/_request_and_response (16.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatientConditionsController#edit (for 192.168.1.4 at 2009-08-05 08:00:03) [GET]
+  Parameters: {"id"=>"50"}
+  [4;35;1mPatientCondition Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `patient_conditions`[0m
+  [4;36;1mPatientCondition Load (0.3ms)[0m   [0;1mSELECT * FROM `patient_conditions` WHERE (`patient_conditions`.`id` = 50) [0m
+  [4;35;1mPatientCondition Load (0.1ms)[0m   [0mSELECT * FROM `patient_conditions` [0m
+  [4;36;1mPatientProfile Load (0.2ms)[0m   [0;1mSELECT * FROM `patient_profiles` [0m
+Rendering template within layouts/patient_conditions
+Rendering patient_conditions/edit
+  [4;35;1mPatientProfile Columns (16.6ms)[0m   [0mSHOW FIELDS FROM `patient_profiles`[0m
+
+ActionView::TemplateError (undefined method `patient_profiles=' for #<ActionView::Helpers::FormBuilder:0xb6fa23a8>) on line #8 of app/views/patient_conditions/edit.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :patient_profile_name %><br />
+8:     <%= f.select f.patient_profiles="patient_profile[appears_in]"%>
+9:       <% @conditions.each do |condition| %>
+10:         <option value="<%= condition.id %>">
+11:         <% condition.name%>
+
+    app/views/patient_conditions/edit.html.erb:8
+    app/views/patient_conditions/edit.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (161.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatientConditionsController#edit (for 192.168.1.4 at 2009-08-05 08:05:25) [GET]
+  Parameters: {"id"=>"50"}
+  [4;36;1mPatientCondition Columns (15.8ms)[0m   [0;1mSHOW FIELDS FROM `patient_conditions`[0m
+  [4;35;1mPatientCondition Load (0.2ms)[0m   [0mSELECT * FROM `patient_conditions` WHERE (`patient_conditions`.`id` = 50) [0m
+  [4;36;1mPatientCondition Load (0.2ms)[0m   [0;1mSELECT * FROM `patient_conditions` [0m
+  [4;35;1mPatientProfile Load (0.2ms)[0m   [0mSELECT * FROM `patient_profiles` [0m
+Rendering template within layouts/patient_conditions
+Rendering patient_conditions/edit
+  [4;36;1mPatientProfile Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `patient_profiles`[0m
+
+ActionView::TemplateError (undefined method `patient_profiles=' for #<ActionView::Helpers::FormBuilder:0xb7108b20>) on line #8 of app/views/patient_conditions/edit.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :patient_profile_name %><br />
+8:     <%= f.select f.patient_profiles="patient_profile[appears_in]"%>
+9:       <% @conditions.each do |condition| %>
+10:         <option value="<%= condition.id %>">
+11:         <% condition.name%>
+
+    app/views/patient_conditions/edit.html.erb:8
+    app/views/patient_conditions/edit.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (56.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PatientConditionsController#edit (for 192.168.1.4 at 2009-08-05 08:16:47) [GET]
+  Parameters: {"id"=>"50"}
+  [4;35;1mPatientCondition Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `patient_conditions`[0m
+  [4;36;1mPatientCondition Load (1.1ms)[0m   [0;1mSELECT * FROM `patient_conditions` WHERE (`patient_conditions`.`id` = 50) [0m
+  [4;35;1mPatientCondition Load (0.1ms)[0m   [0mSELECT * FROM `patient_conditions` [0m
+  [4;36;1mPatientProfile Load (0.2ms)[0m   [0;1mSELECT * FROM `patient_profiles` [0m
+Rendering template within layouts/patient_conditions
+Rendering patient_conditions/edit
+Rendered shared/_header (0.6ms)
+Rendered shared/_main (1.3ms)
+Completed in 113ms (View: 93, DB: 3) | 200 OK [http://192.168.1.6/patient_conditions/50/edit]
