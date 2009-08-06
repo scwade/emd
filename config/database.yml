@@ -18,10 +18,10 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: emd_development
+  database: proficientMD_development
   pool: 5
-  username: emddevroot
-  password: 1emddevroot 
+  username: root
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -31,18 +31,18 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: emd_test
+  database: proficientMD_test
   pool: 5
-  username: emdtestroot
-  password: 1emdtestroot
+  username: root
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: emd_prod
+  database: proficientMD_production
   pool: 5
-  username: emdprodroot
-  password: 1emdprodroot
+  username: root
+  password: 123456 
   socket: /var/run/mysqld/mysqld.sock
