@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
+<?xml version=1.0” encoding=“UTF-8”?>
+<html lang="en">
+<head>
+
+<title> ProficientMD New Patient Form </title>
+
+<style type="text/css">
+
+#main-wrapper, #main-form, #main-footer, #footer-logo, #footer-copyright, #form-buttons {
+background-color: #ECF0F9;
+}hj
+
+#main-header, .main-sectionTitle {
+background-color: #C4D1EB;
+}
+
+#main-wrapper {
+        width: 650px;
+position: relative;
+left: 50%;
+        margin-left: -325px;
+        margin-top: 0px;
+        padding: 0 auto;
+font-family: Verdana;
+color: #262262;
+font-weight: bold;
+font-size: .8em;
+left-border: 2px;
+border: solid 1px black;
+}
+
+#main-header {
+width: 100%;
+height: 1.6em;
+font-size: 1.5em;
+text-align: center;
+}
+
+
+#main-form {
+width: 90%;
+margin: 0 auto;
+}
+
+#main-footer {
+width: 100%;
+clear: both;
+height: 2.7em;
+}
+
+#footer-logo {
+width: 11.8em;
+height: 100%;
+position: relative;
+clear: left;
+float: left;
+margin-left: 10px;
+}
+
+#footer-copyright {
+width: 100%;
+height: 1.5em;
+clear: both;
+margin-top: -1.6em;
+font-size: .8em;
+text-align: center;
+}
+
+#form-buttons {
+width: 100%;
+position: relative;
+clear:both;
+padding-top: .5em;
+padding-bottom: .5em;
+font-size: 34px;
+}
+
+.form-subButton1, .form-subButton2 {
+position:relative;
+float:right;
+}
+
+.form-subButton2 {
+margin-right: 20px;
+}
+
+.form-label, .form-phoneLabel {
+position: relative;
+clear: left;
+float: left;
+display: block;
+margin-right: 5px;
+line-height: normal;
+font-weight: bold;
+text-align: right;
+}
+
+.form-label {
+width: 165px;
+padding-top: 4px;
+}
+
+.form-phoneLabel {
+width: 245px;
+padding-top: 6px;
+font-size: 85%;
+}
+
+#form-addressLabelOffset {
+margin-top: 6px;
+}
+
+#form-addressInputTextOffset {
+margin-top: 10px;
+}
+
+#form-phoneLabelOffset {
+margin-bottom: -20px;
+margin-top: 10px;
+}
+
+.main-sectionTitle {
+width: 32%;
+position: relative;
+clear: both;
+float: left;
+display: block;
+margin-right: 5px;
+margin-top: 10px;
+margin-bottom: 10px;
+line-height: normal;
+font-size: 1.2em;
+font-weight: bold;
+text-align: left;
+}
+
+.form-inputText {
+float: left;
+font-size: .8em;
+margin-right: 5px;
+margin-bottom: 3px;
+margin-top: 3px;
+padding: 2pt;
+border: solid 1px black;
+background-color: white;
+color: black;
+}
+
+</style>
+
+</head>
+
+<body>
+    <div id="main-wrapper">
+<div id="main-header">Patient Profile</div>
+<div id="main-form">
+<br />
+<div class="main-sectionTitle">New Patient Id's</div>
+<br />
+
+<label class="form-label" for ="pmd_patient_id">Patient ID:</label>
+<input class = "form-inputText" type="text" name="pmd_patient_id" id="pmd_patient_id" value="Patient ID:" size="20" maxlength="32" tabindex="1"/>
+
+<label class="form-label" for ="pmd_user_id">User ID:</label>
+<input class = "form-inputText" type="text" name="pmd_user_id" id="pmd_user_id" value="User ID" size="20" maxlength="32" tabindex="2"/>
+<br />
+
+<div class="main-sectionTitle">Contact Information</div>
+<br />
+
+<form action="#" method="get">
+<br />
+<label class="form-label" for ="primary_physician_id">Primary Physician:</label>
+<input class = "form-inputText" type="text" name="primary_physician_id" id="first_name" value="" size="64" maxlength="255" tabindex="3"/>
+<br />
+<label class="form-label" for ="first_name">First Name:</label>
+<input class = "form-inputText" type="text" name="first_name" id="first_name" value="" size="64" maxlength="255" tabindex="4"/>
+<br />
+<label class="form-label" for ="last_name">Last Name:</label>
+<input class = "form-inputText" type="text" name="last_name" id="last_name" value="" size="64" maxlength="255" tabindex="5"/>
+<br />
+<label class="form-label" for ="email">Email:</label>
+<input class = "form-inputText" type="text" name="email" id="email" value="" size="64" maxlength="255" tabindex="6"/>
+<br />
+<label class="form-label" for ="email">Verify Email:</label>
+<input class = "form-inputText" type="text" name="verify_email" id="verify_email" value="" size="64" maxlength="255" tabindex="7"/>
+<br />
+
+<label class="form-label" id="form-phoneLabelOffset" for ="Phone" >Phone #s:</label>
+<label class="form-phoneLabel" for ="Home">Home:</label>
+<input class="form-inputText" type="text" name="phone_home" id="phone_home" value="" size="10" maxlength="16" tabindex="8"/>
+<br />
+<label class="form-phoneLabel" ="Mobile">Mobile:</label>
+<input class = "form-inputText" type="text" name="phone_mobile" id="phone_mobile:" value="" size="10" maxlength="16" tabindex="9"/>
+<br />
+<label class="form-phoneLabel" ="Work">Work:</label>
+<input class = "form-inputText" type="text" name="phone_work" id="phone_work" value="" size="10" maxlength="16" tabindex="10"/>
+<br />
+<label class="form-phoneLabel" ="Fax" >Fax:</label>
+<input class = "form-inputText" type="text" name="phone_fax" id="phone_fax" value="" size="10" maxlength="16" tabindex="11"/>
+<br />
+<label class="form-phoneLabel" ="Emergency">Emergency:</label>
+<input class = "form-inputText" type="text" name="phone_emergency" id="phone_emergency" value="" size="10" maxlength="16" tabindex="12"/>
+<br />
+
+<label class="form-label" id="form-addressLabelOffset" for ="primary_address" >Address:</label>
+<input class = "form-inputText" id="form-addressInputTextOffset" type="text" name="primary_address" id="primary_address" value="" size="64" maxlength="255" tabindex="13"/>
+<br />
+<label class="form-label" for ="primary_address" >Address 2:</label>
+<input class = "form-inputText" type="text" name="primary_address" id="primary_address" value="" size="64" maxlength="255" tabindex="13"/>
+<br />
+<label class="form-label" for ="city">City:</label>
+<input class = "form-inputText" type="text" name="city" id="city" value="" size="24" maxlength="255" tabindex="15"/>
+<br />
+<label class="form-label" for ="state">State:</label>
+<input class = "form-inputText" type="text" name="state" id="state" value="" size="2" maxlength="2" tabindex="16"/>
+<br />
+<label class="form-label" for ="zip_code">Zip Code:</label>
+<input class = "form-inputText" type="text" name="zip_code" id="zip_code" value="" size="10" maxlength="10" tabindex="17"/>
+<br />
+<label class="form-label" for ="country_province">Country/Province:</label>
+<input class = "form-inputText" type="text" name="country_province" id="country_province" value="" size="28" maxlength="28" tabindex="18"/>
+<br />
+<label class="form-label" for ="ethnicity">Ethnicity:</label>
+<input class = "form-inputText" type="text" name="ethincity" id="ethincity" value="" size="28" maxlength="255" tabindex="19"/>
+<br />
+<label class="form-label" for ="gender">Gender:</label>
+<input class = "form-inputText" type="text" name="gender" id="gender" value="" size="2" maxlength="2" tabindex="20"/>
+<br />
+<label class="form-label" for ="date_of_birth">Date of Birth:</label>
+<input class = "form-inputText" type="text" name="date_of_birth" id="date_of_birth" value="" size="12" maxlength="12" tabindex="21"/>
+<br />
+</form>
+<div id="form-buttons">
+<input class="form-subButton1" type="submit" value="Cancel">
+<input class="form-subButton1" type="submit" value="Reset">
+<input class="form-subButton2" type="submit" value="Submit">
+</div>
+</div> <!-- "End of main-form" -->
+
+<div id="main-footer">
+<div id="footer-logo"><img src="img37.png" width="100%" height="100%"></img></div>
+</div>
+<div id="footer-copyright">&#169; 2009. ProficientMD. All rights reserved.</div>
+
+    </div> <!-- "End of main-wrapper" -->
+</body>
+
+</html>
+
