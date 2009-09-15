@@ -41,8 +41,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: emd_prod
+  database: emdalphadb 
   pool: 5
-  username: emdprodroot
-  password: 1emdprodroot
+  username: emdalpha 
+  password: 1Alphaemd
   socket: /var/run/mysqld/mysqld.sock
