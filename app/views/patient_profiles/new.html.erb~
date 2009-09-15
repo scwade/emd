@@ -1,6 +1,5 @@
 <!-- New Patient Profile -->
-<%= stylesheet_link_tag "emd_form_Style", :media => "all" %>
-   
+ 
     <div id="main-wrapper">
       <div id="main-header">'New' Patient Profile</div>
       <div id="main-form">
