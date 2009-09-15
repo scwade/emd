@@ -1,5 +1,6 @@
 <!-- New Patient Profile -->
- 
+<%= stylesheet_link_tag "pmdStyle", :media => "all" %>
+   
     <div id="main-wrapper">
       <div id="main-header">'New' Patient Profile</div>
       <div id="main-form">
