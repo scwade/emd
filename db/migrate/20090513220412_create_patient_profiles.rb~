@@ -1,6 +1,9 @@
 class CreatePatientProfiles < ActiveRecord::Migration
   def self.up
-    create_table :patient_profiles, :primary_key => 'id', :options => "auto_increment = 1000" do |t|
+
+### Following line caused issues with deployment on heroku  ##########
+#    create_table :patient_profiles, :primary_key => 'id', :options => "auto_increment = 1000" do |t|
+    create_table :patient_profiles, :primary_key => 'id' do |t|
       t.integer :pmd_patient_id, :null => false, :unique => true
       t.integer :pmd_user_id, :null => false, :unique => true
       t.integer :physician_id, :null => false
