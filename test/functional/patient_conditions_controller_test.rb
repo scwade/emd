@@ -37,7 +37,7 @@ class PatientConditionsControllerTest < ActionController::TestCase
 
   test "should destroy patient_condition" do
     assert_difference('PatientCondition.count', -1) do
-      delete :destroy, :id => patient_conditions(:one).to_param
+      delete :destroy, :id => patient_conditions(:two).to_param
     end
 
     assert_redirected_to patient_conditions_path

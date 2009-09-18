@@ -19,6 +19,7 @@ a { color: #444; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#888; }
 
+/*
 .fieldWithErrors {
   padding: 2px;
   background-color: red;
@@ -54,6 +55,7 @@ a:hover { color: #fff; background-color:#888; }
   font-size: 12px;
   list-style: square;
 }
+*/
 
 /* Styles for main page */
 #banner {
@@ -73,16 +75,25 @@ a:hover { color: #fff; background-color:#888; }
 }
 #main {
   margin-left: 13em;
+/* 0918 rmh */
+  padding-left: .1em;
+  padding-top:  .1em;
+  background-color: #C4D1EB;
+}
+/*
+#main {
+  margin-left: 13em;
   padding-top: 4ex;
   padding-left: 2em;
   background: white;
 }
+*/
 #side {
   float: left;
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
-  width: 12em;ver
+  width: 12em;
   background: #C4D1EB;
 }
 #side a {

@@ -1,2 +1,5 @@
-./log/*
-
+.DS_store
+log/x.log
+tmp/xx/x
+config/database.yml
+db/*.sqlite3
