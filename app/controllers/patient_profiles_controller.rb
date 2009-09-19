@@ -56,7 +56,7 @@ class PatientProfilesController < ApplicationController
 
     respond_to do |format|
       if @patient_profile.save
-        flash[:notice] = 'PatientProfile was successfully created.'
+        flash[:notice] = 'Patient Profile was successfully created.'
         format.html { redirect_to(@patient_profile) }
         format.xml  { render :xml => @patient_profile, :status => :created, :location => @patient_profile }
       else
@@ -73,7 +73,7 @@ class PatientProfilesController < ApplicationController
 
     respond_to do |format|
       if @patient_profile.update_attributes(params[:patient_profile])
-        flash[:notice] = 'PatientProfile was successfully updated.'
+        flash[:notice] = 'Patient Profile was successfully updated.'
         format.html { redirect_to(@patient_profile) }
         format.xml  { head :ok }
       else

@@ -35,27 +35,27 @@
           <label class="form-phoneLabel">Home:</label>
           <input class="form-inputText" name="phone_home" id="phone_home" type="text"
             value="<%=h number_to_phone(@patient_profile.phone_home, :area_code => true, :delimiter => " ")%>" 
-            size="12" maxlength="12" readonly="readonly" tabindex="7" /><br />
+            size="11" maxlength="11" readonly="readonly" tabindex="7" /><br />
 		
           <label class="form-phoneLabel">Mobile:</label>
           <input class = "form-inputText" name="phone_mobile" id="phone_mobile" type="text"
             value="<%=h number_to_phone(@patient_profile.phone_mobile, :area_code => true, :delimiter => " ")%>"
-           size="12" maxlength="12" readonly="readonly" tabindex="8" /><br />
+           size="11" maxlength="11" readonly="readonly" tabindex="8" /><br />
 		
           <label class="form-phoneLabel">Work:</label>
           <input class = "form-inputText" name="phone_work" id="phone_work" type="text"
            value="<%=h number_to_phone(@patient_profile.phone_work, :area_code => true, :delimiter => " ")%>"
-           size="12" maxlength="12" readonly="readonly" tabindex="9" /><br />
+           size="11" maxlength="11" readonly="readonly" tabindex="9" /><br />
 		
           <label class="form-phoneLabel">Fax:</label>
           <input class = "form-inputText" name="phone_fax" id="phone_fax" type="text"
             value="<%=h number_to_phone(@patient_profile.phone_fax, :area_code => true, :delimiter => " ")%>"
-            size="12" maxlength="12" readonly="readonly" tabindex="10" /><br />
+            size="11" maxlength="11" readonly="readonly" tabindex="10" /><br />
 		
           <label class="form-phoneLabel">Emergency:</label>
           <input class = "form-inputText" name="phone_emergency" id="phone_emergency" type="text"
             value="<%=h number_to_phone(@patient_profile.phone_emergency, :area_code => true, :delimiter => " ")%>"
-            size="12" maxlength="12" readonly="readonly" tabindex="11" /><br />
+            size="11" maxlength="11" readonly="readonly" tabindex="11" /><br />
 
           <label class="form-label">Address:</label>
           <input class = "form-inputText" id="primary_address" name="primary_address"
@@ -75,21 +75,21 @@
 
           <label class="form-label">Zip Code:</label>
           <input class = "form-inputText" name="zip5_code" id="zip5_code"
-            type="text" value="<%=h @patient_profile.zip5_code %>" size="5" maxlength="5" readonly="readonly" tabindex="16" />
+            type="text" value="<%=h @patient_profile.zip5_code %>" size="4" maxlength="4" readonly="readonly" tabindex="16" />
           <input class = "form-inputText" name="zip4_ext" id="zip4_ext"
-            type="text" value="<%=h @patient_profile.zip4_ext %>" size="4" maxlength="4" readonly="readonly" tabindex="17" /><br />
+            type="text" value="<%=h @patient_profile.zip4_ext %>" size="3" maxlength="3" readonly="readonly" tabindex="17" /><br />
 		
           <label class="form-label">Ethnicity:</label>
             <input class = "form-inputText" name="ethnicity" id="ethnicity"
-            type="text" value="<%=h @patient_profile.ethnicity %>" size="28" maxlength="255" readonly="readonly" tabindex="18" /><br />
+            type="text" value="<%=h @patient_profile.ethnicity %>" size="20" maxlength="255" readonly="readonly" tabindex="18" /><br />
 
           <label class="form-label">Gender:</label>
           <input class = "form-inputText" name="gender" id="gender"
-            type="text" value="<%=h @patient_profile.gender %>" size="2" maxlength="2" readonly="readonly" tabindex="19" /><br />
+            type="text" value="<%=h @patient_profile.gender %>" size="1" maxlength="1" readonly="readonly" tabindex="19" /><br />
 		
           <label class="form-label">Date of Birth:</label>
           <input class = "form-inputText" name="date_of_birth" id="date_of_birth"
-            type="text" value="<%=h @patient_profile.date_of_birth %>" size="12" maxlength="12" readonly="readonly" tabindex="20" /><br />
+            type="text" value="<%=h @patient_profile.date_of_birth %>" size="8" maxlength="12" readonly="readonly" tabindex="20" /><br />
 
           <div id="form-buttons">
             <%= button_to 'Edit', edit_patient_profile_path(@patient_profile.id), :method => :get, :class => "form-subButton1" %>
@@ -99,7 +99,7 @@
 	
       <div id="main-footer">
           <div id="footer-logo">
-            <%= image_tag("proficientmd-logo.png", :size=>"155x35") %>
+            <%= image_tag("logo.png", :size=>"155x35") %>
           </div>
       </div>
       <div id="footer-copyright"> &#169; 2009. ProficientMD. All rights reserved. </div>

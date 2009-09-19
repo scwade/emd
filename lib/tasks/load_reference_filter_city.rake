@@ -32,7 +32,7 @@ namespace :db do
         s = line.split(",")
     
         # load data
-        if !ReferenceFilterCity.create( :description => s[0]) 
+        if !ReferenceFilterCity.create( :description => s[0].titlecase) 
           puts "Error trying to load reference_cities table!"
           fin.close
           exit

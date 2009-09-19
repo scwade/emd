@@ -1,9 +1,0 @@
-<%= render :partial => "shared/header" %> 
-<!-- <body> -->
-
-<p style="color: red"><%= flash[:notice] %></p>
-
-<%= yield %>
-
-</body>
-</html>

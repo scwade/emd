@@ -32,7 +32,7 @@ namespace :db do
         s = line.split(",")
     
         # load data
-        if !ReferenceFilterState.create( :state => s[0], :description => s[1]) 
+        if !ReferenceFilterState.create( :state => s[0], :description => s[1].titlecase) 
           puts "Error trying to load reference_filter_states table!"
           fin.close
           exit

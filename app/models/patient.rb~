@@ -1,8 +1,0 @@
-class Patient < ActiveRecord::Base
-### Model/Table relationships
-  belongs_to :patient_condition
-  belongs_to :condition
-
-### Validations
-#  validates_associated :user
-end

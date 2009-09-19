@@ -1,6 +1,0 @@
-<tr>
-  <td><%= record_item.quantity %>&times;</td>
-  <td><%=h record_item.name %></td>
-  <td class="item-price"><% record_item.quantity %></td>
-</tr>
-
