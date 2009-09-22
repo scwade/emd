@@ -1,4 +1,4 @@
-<h1> Raw List of Patient Conditions</h1>
+<h1>Listing of Patient Conditions</h1>
   <table class="X3"rules="none" border="1">
   <tr>
     <th>PC id</th>
@@ -16,10 +16,7 @@
     <td><%=h patient_condition.id %></td>
     <td><%=h patient_condition.patient_profile_id %></td>
     <td><%=h id = patient_condition.condition_id %></td>
-<<<<<<< HEAD:app/views/patient_conditions/index.html.erb
-    <td><%= h Condition.find(id).name %></td>
-=======
->>>>>>> rolland:app/views/patient_conditions/index.html.erb
+    <td><%= h Condition.find(56).name %></td>
     <td><%=h patient_condition.start_date %></td>
     <td><%=h patient_condition.end_date %></td>
     <td><%=h patient_condition.treated_by %></td>

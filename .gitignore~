@@ -3,5 +3,7 @@ log/*.log
 tmp/**/*
 config/database.yml
 db/*.sqlite3
+<<<<<<< HEAD:.gitignore
 *.patch
-
+=======
+>>>>>>> rolland:.gitignore

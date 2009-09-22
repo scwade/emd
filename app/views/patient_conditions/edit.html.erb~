@@ -4,9 +4,15 @@
 <% form_for(@patient_condition) do |f| %>
   <%= f.error_messages %>
 
- <p>
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
+
+  <p>
+    <%= f.label :condition_id %><br />
+    <%= f.text_field :condition_id %>
+  </p>
+
+  <p>
+    <%= f.label :patient_profile_id %><br />
+    <%= f.text_field :patient_profile_id %>
   </p>
 
   <p>
