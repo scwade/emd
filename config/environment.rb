@@ -1,7 +1,11 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
+<<<<<<< HEAD:config/environment.rb
 # RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
+=======
+# RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
+>>>>>>> b99bd75f4c08ac910babb29005833e72ffea3353:config/environment.rb
 # Enable Debbuger - tells debugger to be used in development only
 # SCRIPT_LINES__ = {} if ENV['RAILS_ENV'] == 'development'
 # Debugger.start if ENV['RAILS_ENV'] == 'development'

@@ -20,8 +20,8 @@ development:
   reconnect: false
   database: emd_development
   pool: 5
-  username: emddevroot
-  password: 1emddevroot 
+  username: root
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -33,16 +33,23 @@ test:
   reconnect: false
   database: emd_test
   pool: 5
-  username: emdtestroot
-  password: 1emdtestroot
+  username: root
+  password: 123456
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql
   encoding: utf8
   reconnect: false
+<<<<<<< HEAD:database.yml
   database: emdalphadb 
   pool: 5
   username: emdalpha 
   password: 1Alphaemd
+=======
+  database: emd_production
+  pool: 5
+  username: root
+  password: 123456 
+>>>>>>> b99bd75f4c08ac910babb29005833e72ffea3353:config/database.yml
   socket: /var/run/mysqld/mysqld.sock

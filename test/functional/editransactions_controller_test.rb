@@ -21,23 +21,23 @@ class EditransactionsControllerTest < ActionController::TestCase
   end
 
   test "should show editransaction" do
-    get :show, :id => editransactions(:one).to_param
+    get :show, :id => editransactions(:aetnacase1).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => editransactions(:one).to_param
+    get :edit, :id => editransactions(:aetnacase1).to_param
     assert_response :success
   end
 
   test "should update editransaction" do
-    put :update, :id => editransactions(:one).to_param, :editransaction => { }
+    put :update, :id => editransactions(:aetnacase1).to_param, :editransaction => { }
     assert_redirected_to editransaction_path(assigns(:editransaction))
   end
 
   test "should destroy editransaction" do
     assert_difference('Editransaction.count', -1) do
-      delete :destroy, :id => editransactions(:one).to_param
+      delete :destroy, :id => editransactions(:aetnacase2).to_param
     end
 
     assert_redirected_to editransactions_path

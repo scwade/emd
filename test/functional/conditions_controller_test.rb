@@ -37,7 +37,7 @@ class ConditionsControllerTest < ActionController::TestCase
 
   test "should destroy condition" do
     assert_difference('Condition.count', -1) do
-      delete :destroy, :id => conditions(:one).to_param
+      delete :destroy, :id => conditions(:two).to_param
     end
 
     assert_redirected_to conditions_path

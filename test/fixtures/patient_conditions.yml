@@ -1,12 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-1:
+one:
   start_date: 2009-06-18
   end_date: 2009-06-18
   treated_by: "Dr. Wong"
   treat_notes: "Treated with vitamin E"
 
-2:
+two:
   start_date: 2009-06-18
   end_date: 2009-06-18
   treated_by: "Dr. Wang"
