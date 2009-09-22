@@ -1,7 +1,0 @@
-    <% @conditions.each do |id| %>
-      <td><% h id.Condition.find(patient_condition.condition_id).name %></td>
-    <% end %>
-    
-    
-    WORKS:
-    <td><%= h Condition.find(56).name %></td>

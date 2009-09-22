@@ -11,15 +11,15 @@ class ApplicationController < ActionController::Base
 #    session[:record]
 #  end
 
-# section 11.4 - layout - not sure its working
+# SCW - section 11.4 - layout - not sure its working
   layout "editransaction"
 
-  ##### Uncomment to enable secure login
+  ##### SCW - Uncomment to enable secure login
   before_filter :authorize, :except => :login
 
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  # Scrub sensitive parameters from your log
+  # SCW TODO - Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   protected
   def authorize

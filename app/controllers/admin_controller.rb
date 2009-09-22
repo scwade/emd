@@ -22,6 +22,5 @@ class AdminController < ApplicationController
     end
 
   def index
-#from depot    @total_orders = Order.count
   end
 end
