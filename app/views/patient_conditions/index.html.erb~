@@ -16,7 +16,7 @@
     <td><%=h patient_condition.id %></td>
     <td><%=h patient_condition.patient_profile_id %></td>
     <td><%=h id = patient_condition.condition_id %></td>
-    <td><%= h Condition.find(56, 57).name %></td>
+    <td><%= h Condition.find(56).name %></td>
     <td><%=h patient_condition.start_date %></td>
     <td><%=h patient_condition.end_date %></td>
     <td><%=h patient_condition.treated_by %></td>

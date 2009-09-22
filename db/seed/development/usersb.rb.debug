@@ -1,0 +1,19 @@
+@robby_on_github = Octopi::User.find('robbyrussell')
+
+# add a bunch of semi-real users
+@robby_on_github.followers.each do |follower|
+  github_person = Octopi::User.find(follower)
+  next if github_person.name.nil?
+
+  # split their name in half... good enough (like the goonies)
+  first_name = github_person.name.split(' ')[0]
+  last_name = github_person.name.split(' ')[1]
+  new_person = Person.create(:first_name => first_name, :last_name => last_name, :email => Faker::Internet.email,
+                             :password => 'secret', :password_confirmation => 'secret',
+                             :github_username => follower, :website_url => github_person.blog)
+  # ...
+end
+
+person.links.create(:title => Faker::Lorem.words(rand(7)+1).join(' ').capitalize,
+                    :url => "http://#{Faker::Internet.domain_name}/",
+                    :description => Faker::Lorem.sentences(rand(4)+1).join(' '))
