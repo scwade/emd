@@ -1,9 +1,0 @@
-#Development base data
-                   
-User.create(:name => "training", 
-  :password => 'secret',
-  :password_confirmation => 'secret')
-
-User.create(:name => "all", 
-  :password => 'secret',
-  :password_confirmation => 'secret')
