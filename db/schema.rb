@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
     t.string   "last_name",                       :null => false
     t.string   "primary_address"
     t.string   "alternate_address"
-    t.integer  "zip5_code",         :limit => 8
-    t.integer  "zip4_ext"
+    t.integer  "zip5",              :limit => 8
+    t.integer  "zip4"
     t.string   "city",              :limit => 60
     t.string   "state_province",    :limit => 2,  :null => false
     t.string   "email",                           :null => false
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
   end
 
   create_table "reference_addresses", :force => true do |t|
-    t.integer  "zip5_code",               :null => false
+    t.integer  "zip5",                    :null => false
     t.string   "state",      :limit => 2, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"

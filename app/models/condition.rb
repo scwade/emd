@@ -3,6 +3,7 @@ class Condition < ActiveRecord::Base
 ### Model Table relationships - many to many
   has_many :patient_conditions
   has_many :patient_profiles, :through => :patient_conditions
+
 ### SCW Performance enhancement - Use later
 #  has_many :patient_profiles, :through => :patient_conditions, :select => "distinct patient_profiles.*"
  
