@@ -8,7 +8,7 @@ class PatientProfilesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @patient_profiles }
+      format.xml { render :xml => @patient_profiles }
     end
   end
 
@@ -19,7 +19,7 @@ class PatientProfilesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @patient_profile }
+      format.xml { render :xml => @patient_profile }
     end
   end
 
@@ -40,7 +40,7 @@ class PatientProfilesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @patient_profile }
+      format.xml { render :xml => @patient_profile }
     end
   end
 

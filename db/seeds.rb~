@@ -7,13 +7,13 @@
 #require 'open-uri'
 #require 'active_record/fixtures'
 
-def load_seed_files!
+# def load_seed_files!
   seed_files = Dir["#{RAILS_ROOT}/db/seed/all/*.rb"] + Dir["#{RAILS_ROOT}/db/seed/#{RAILS_ENV}/*.rb"]
   seed_files.each do |file|
   puts "Loading seed file: #{file}"
   load(file)
   end
-end
+# end
 # TEMPLATE ####################
 
 

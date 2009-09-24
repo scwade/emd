@@ -31,7 +31,6 @@ pc[2].treat_notes = "Treated with vitamin D"
 pc[2].save
 
 pp2 = PatientProfile.find(2)
-pp2 = PatientProfile.find(2)
 pp2.conditions << c1
 pc = pp2.patient_conditions
 pc[0].start_date = "2009-06-18"

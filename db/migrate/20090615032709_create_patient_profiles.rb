@@ -1,6 +1,9 @@
 class CreatePatientProfiles < ActiveRecord::Migration
   def self.up
-    create_table  :patient_profiles, :primary_key => 'id', :options => "auto_increment = 1000"  do |t|
+
+### Following line caused issues with deployment on heroku  ##########
+#    create_table :patient_profiles, :primary_key => 'id', :options => "auto_increment = 1000" do |t|
+    create_table :patient_profiles do |t|
       t.integer   :pmd_patient_id,                :null => false,                :unique => true
       t.integer   :pmd_user_id,                   :null => false,                :unique => true
       t.integer   :physician_id,                  :null => false
@@ -21,12 +24,12 @@ class CreatePatientProfiles < ActiveRecord::Migration
       t.date      :date_of_birth,                 :null => false
       t.string    :gender,                        :null => false,                :limit => 1
       t.string    :ethnicity,                     :null => false,                :limit => 60 
-
-      t.timestamps
+ 
+    t.timestamps
     end
   end
-
+ 
   def self.down
-    drop_table  :patient_profiles
+    drop_table :patient_profiles
   end
 end
