@@ -3,6 +3,12 @@ Correct your database.yml file for connectivity
 rake db:drop
 rake db:create
 rake db:migrate
-rake db:fixtures:load
+
+rake db:load_reference_address            # Load reference data for validation
+rake db:load_reference_ethnicity          # Load reference data for validation
+rake db:load_reference_filter_city        # Load reference city data for validation
+rake db:load_reference_filter_state       # Load reference data for validation
+
+rake db:seed
 
 You can log in with UID = admin :PASSWORD = admin
