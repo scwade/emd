@@ -1,6 +1,6 @@
 .DS_Store
-log/*.log
-tmp/**/*
+./log/*.log
+./tmp/**/*
 ./*~
 ./*/*~
 ./*/*/*~
@@ -8,6 +8,6 @@ tmp/**/*
 ./*/*/*/*/*~
 ./*/*/*/*/*/*~
 ./*/*/*/*/*/*/*~
-config/database.yml
-db/*.sqlite3
-*.patch
+./config/database.yml
+./db/*.sqlite3
+./*.patch
