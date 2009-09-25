@@ -101,11 +101,11 @@ class PatientProfile < ActiveRecord::Base
   validates_length_of   :last_name,          :maximum => 255                              
   validates_length_of   :primary_address,    :maximum => 255,    :allow_blank => true     
   validates_length_of   :alternate_address,  :maximum => 255,    :allow_blank => true     
-  validates_length_of   :city,               :maximum => 30,     :allow_blank => true                                        
+  validates_length_of   :city,               :maximum => 60,     :allow_blank => true                                        
   validates_length_of   :state_province,     :is => 2                                     
   validates_length_of   :ethnicity,          :maximum => 60
 #  validates_length_of   :zip5,               :is => 5,           :allow_blank => true
-#  validates_length_of   :zip4,           :is => 4,           :allow_blank => true
+#  validates_length_of   :zip4,               :is => 4,           :allow_blank => true
 #  validates_length_of   :phone_home,         :maximum => 10,     :allow_blank => true
 #  validates_length_of   :phone_work,         :maximum => 10,     :allow_blank => true
 #  validates_length_of   :phone_mobile,       :maximum => 10,     :allow_blank => true

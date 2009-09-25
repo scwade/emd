@@ -1,1 +1,8 @@
-My Notes
+# My Notes  092509
+
+-----------------------
+# Test Patient Profile
+-----------------------
+
+  ruby -I test test/functional/patient_profiles_controller_test.rb
+  ruby -I test test/unit/patient_profile_test.rb

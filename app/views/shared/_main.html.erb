@@ -23,7 +23,12 @@
     </div>
     <div id="main">
       <% if flash[:notice] -%>
-        <div id="notice"><%= flash[:notice] %></div>
+        <div class="noticeBox">
+          <%= image_tag("check-mark.jpg", :size=>"36x36")%>
+          <div id="notice">
+            <%= flash[:notice] %>
+          </div>
+        </div>
       <% end -%>
 
       <%= yield :layout %>

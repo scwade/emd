@@ -24,15 +24,15 @@ namespace :db do
         fin.close
         exit
       end
-    
+
       # Read file
       count = total = 0
       while !fin.eof do
         line = fin.readline
-        s = line.split(",")
+        s = line.chomp!
     
         # load data
-        if !ReferenceFilterCity.create( :description => s[0].titlecase) 
+        if !ReferenceFilterCity.create( :description => s.titlecase) 
           puts "Error trying to load reference_cities table!"
           fin.close
           exit

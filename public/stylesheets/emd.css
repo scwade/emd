@@ -1,8 +1,10 @@
 /* Style sheet for Patient Profile
 
-     Filename: pmdStyle.css
+     Filename: emd.css
 
-     Patient Profile - 07/18/09
+     Patient Profile - 09/24/09
+
+     Incomplete notes
 
      (1) Create the wire frame with ID's by
 	   (a) "#main-wrapper" to encapsulate document
@@ -15,14 +17,11 @@
             (a) "No style added to HTML tag <form>. "#main-form" parent applies style to <form>
             (b) ".main-sectionTitle" to show a visual divide between sections in document.
             (c) ".form-label" and ".form-textInput" for label + input fields on single line
-            (d) ".form-labelPhone" to adjust size and position
-            (e) "#form-button" container for buttons
-            (f) ".form-subButton1" and ".form-subButton2" button alignment left or right
+            (d) "#form-button" container for buttons
+            (e) ".form-subButton1" and ".form-subButton2" button alignment left or right
 		
-     (3) Offsets used to make minor adjustments in presentation
-            (a) "#form-phoneLabelOffset"
 
-     (4) Selectors "#patient_profile_" selector id for drop down selection boxes
+     (3) Selectors "#patient_profile_" selector id for drop down selection boxes
             (a) physician_id
             (b) state
             (c) country_province
@@ -30,7 +29,9 @@
             (e) gender
             (f) date_of_birth
 
-     (5) Class and Id section for index.html
+     (4) Class and Id section for index.html
+     (5) Class and Id section for error
+     (6) Class and Id for autocomplete
 */
 
 
@@ -127,6 +128,8 @@ body {
 }
 
 .form-radioButtons { 
+    clear: left;
+    float: left;
     padding: 8px 1px 8px 14em;
     font-size: 90%;
 }
@@ -167,8 +170,8 @@ body {
 .main-sectionTitle {
     width: 36%;
     position: relative;
-    /*clear: both;
-    float: left;*/
+    clear: both;
+    float: left;
     display: block;
     margin-top: .6em;
     margin-bottom: .6em;
@@ -181,8 +184,9 @@ body {
 }
 
 .form-inputText {
+    float: left;
     width: auto;
-    max-width: 450px;
+    max-width: 28em;
     margin: .25em 0em .25em .2em;
     padding-left: .3em;
     border: inset .23em #ECF0F9;
@@ -190,8 +194,6 @@ body {
     background-color: #FFFEF0;
     font-size: 80%;
 }
-
-.form-inputText { font-size: 80%; }
 
 #patient_profile_physician_id,
 #patient_profile_gender,
@@ -202,6 +204,7 @@ body {
 #patient_profile_date_of_birth_2i, 
 #patient_profile_date_of_birth_3i  {
 
+    float: left;
     width: auto;
     margin: .25em .2em .25em .2em;
     background-color: #FFFEF0;
@@ -318,7 +321,7 @@ div.auto_complete ul li {
 }
 
 
-/* End of pmdstyle.css  */
+/* End of old pmdstyle.css  */
 
 /*div { border: 0 px solid red !important; }  */
 
@@ -381,14 +384,21 @@ a:hover { color: #000 }
   font-size: small;
 }
 
+/* Flash box for image and notice */
+.noticeBox {
+  position: relative;
+  margin-top: .3em;
+  background-color: #C4D1EB;
+}
+
 #notice {
-  max-width: 33%;
-  padding: 1em;
-  background-color: #66CC99 ;
+  display: inline;
+  position: absolute;
+  top: .8em;
   font-size: 1.2em;
   font-weight: bold;
   font-family: verdana;
-  color: white;
+  color: green;
 }
 
 /* Styles for partial in the sidebar (aka my_record) */

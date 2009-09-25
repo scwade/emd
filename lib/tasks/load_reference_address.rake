@@ -29,6 +29,7 @@ namespace :db do
       count = total = 0
       while !fin.eof do
         line = fin.readline
+        line.chomp!
         s = line.split(",")
     
         # load data
