@@ -10,3 +10,5 @@ db/*.sqlite3
 *.patch
 **/*.patch
 public/index*
+./**/bk-*
+bk-*
