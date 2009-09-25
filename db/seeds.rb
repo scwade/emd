@@ -21,6 +21,8 @@
 
 ################  Auto Load all seed files by environment ################################
 # def load_seed_files!  Can demarket to rake methods later 
+# Place in alphabetical order the *.rb files in the appropriate subfolder for desired 
+# environment.  The subfolder 'all' will run in all environments
 
 seed_files = Dir["#{RAILS_ROOT}/db/seed/all/*.rb"] + Dir["#{RAILS_ROOT}/db/seed/#{RAILS_ENV}/*.rb"]
 # Sort by name so we run it in desire precidence (needed for many to many relationships)
