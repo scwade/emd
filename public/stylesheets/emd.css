@@ -187,8 +187,8 @@ body {
     float: left;
     width: auto;
     max-width: 28em;
-    margin: .25em 0em .25em .2em;
-    padding-left: .3em;
+    margin: .25em 0em .25em 0em;
+    padding-left: .2em;
     border: inset .23em #ECF0F9;
     color: black;
     background-color: #FFFEF0;
@@ -206,7 +206,7 @@ body {
 
     float: left;
     width: auto;
-    margin: .25em .2em .25em .2em;
+    margin: .25em .2em .25em 0em;
     background-color: #FFFEF0;
     font-size: 80%;
 }
@@ -220,7 +220,9 @@ body {
 
 .fieldWithErrors {
   float: left;
-  margin: .1em .1em;
+  width: auto;
+  margin: .2em 0em .2em 0em;
+  padding: 0em .2em;
   background-color: #ED1C24;
 }
 
