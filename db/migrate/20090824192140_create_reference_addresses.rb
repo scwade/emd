@@ -1,8 +1,9 @@
 class CreateReferenceAddresses < ActiveRecord::Migration
   def self.up
     create_table :reference_addresses do |t|
-      t.integer :zip5,    :null => false
-      t.string  :state,        :null => false,    :limit => 2
+      t.string  :zip5,    :null=>false,   :limit=>5
+      t.string  :state,   :null=>false,   :limit=>2
+      t.string  :city,    :null=>false,   :limit=>60
 
       t.timestamps
     end

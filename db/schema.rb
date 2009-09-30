@@ -83,8 +83,9 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
   end
 
   create_table "reference_addresses", :force => true do |t|
-    t.integer  "zip5",                    :null => false
-    t.string   "state",      :limit => 2, :null => false
+    t.string   "zip5",       :limit => 5,  :null => false
+    t.string   "state",      :limit => 2,  :null => false
+    t.string   "city",       :limit => 60, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
