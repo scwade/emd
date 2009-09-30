@@ -486,3 +486,9 @@ table .X3 tr.evn { background-color: #ffdfff }
 #my_record .entry .add-to-cart {
    position: relative;
 }
+
+/* For <%= debug @object %> */
+.debug_dump{
+  background-color: yellow;
+  color: black;
+}
