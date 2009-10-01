@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :patient
-  map.resources :patient_profiles, :reference_filter_cities
+  map.resources :patient_profiles, :reference_address
   map.resources :patient_conditions
   map.resources :conditions
   map.resources :users
