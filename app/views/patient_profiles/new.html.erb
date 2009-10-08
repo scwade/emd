@@ -1,4 +1,5 @@
 <!-- New Patient Profile -->    
+<% javascript 'dynamic_states' %>
     <div id="main-wrapper">
       <div id="main-header">'New' Patient Profile</div>
       <div id="main-form">
@@ -62,10 +63,7 @@
                 :method=>:get, :url=>reference_address_path(:js), :with=>"'search=' + element.value"  } %><br />
 
             <label class="form-label">State/Province:</label>
-            <%= 
-              @s = ReferenceFilterState.find(:all, :order=>"state").map { |u| [[u.state, " - ", u.description], u.state] }
-              f.select(:state_province, @s, {:selected=>'CA'}, {:tabindex=>14})
-            %><br />
+            <%= f.text_field :state_province, :size=>2, :maxlength=>2, :tabindex=>14, :class=>"form-inputText" %><br />
 
             <label class="form-label">Zip Code:</label>
             <%= f.text_field :zip5, :size=>5, :maxlength=>5, :tabindex=>15, :class=>"form-inputText" %>

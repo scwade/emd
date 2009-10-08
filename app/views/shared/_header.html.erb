@@ -7,7 +7,10 @@
   <title>PROficientMD</title>
   <%= stylesheet_link_tag "emd", :media => "all" %>
   <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag :defaults %>
+
+ <! For javascript/dynamic_states.js -->
+  <%= yield :head %>
+
 </head>
 
 <body id="my_record">
@@ -16,4 +19,3 @@
     <%= @page_title || "My Medical Records" %>
   </div>
 </body>
-

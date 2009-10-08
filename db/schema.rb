@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090901065316) do
+ActiveRecord::Schema.define(:version => 20090825165746) do
 
   create_table "conditions", :force => true do |t|
     t.string   "name"
@@ -91,12 +91,6 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
   end
 
   create_table "reference_ethnicities", :force => true do |t|
-    t.string   "description", :limit => 60, :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "reference_filter_cities", :force => true do |t|
     t.string   "description", :limit => 60, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
