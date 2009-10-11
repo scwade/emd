@@ -45,7 +45,8 @@ body {
 }
 
 #main-header, .main-sectionTitle, .form-subButton1, .form-subButton2 {
-    background-color: #C4D1EB;
+    background-color: #758AB8;
+    color: white;
 }
  
 /* emd */ 
@@ -56,7 +57,7 @@ body {
     float: right;
     padding: 0;
     font-family: Verdana;
-    color: #262262;
+    color: black;
     font-weight: bold;
     font-size: 1.2em;
     border: solid .1em black;
@@ -81,12 +82,13 @@ body {
 
 #main-header {
     width: 99.5%;
-    height: 1.6em;
-    border: outset .15em #ECF0F9;
+    height: 1em;
+    border: outset .15em #262262;
     font-size: 140%;
     text-align: center;
     /* 0918 rmh added */
-    padding-top: .8em;
+    padding-top: .2em;
+    padding-bottom: .2em;
 }
 
 #main-form {
@@ -130,22 +132,24 @@ body {
 .form-radioButtons { 
     clear: left;
     float: left;
-    padding: 8px 1px 8px 14em;
-    font-size: 90%;
+    margin: .2em .2em .2em 13.5em;
+    font-size: 80%;
+    color: #262262;
 }
 
 .form-subButton1, .form-subButton2 {
     width: auto;
-    position:relative; 
-    float:right; 
-    background-color: #C4D1EB;
+    position: relative; 
+    float: right; 
+    background-color: #E2E3E4;
+    color: #231F20;
 }
 
 .form-subButton2 {
     margin-right: 1.8em;
 }
 
-.form-label, .form-phoneLabel {
+.form-label, .form-phoneLabel, .form-phoneLabel1 {
     width: auto;
     position: relative;
     clear: left;
@@ -155,16 +159,13 @@ body {
     line-height: normal;
     font-weight: bold;
     text-align: right;
-}
-
-.form-label {
+    font-size: 80%;
     width: 13em;
-    font-size: 90%;
+    color: #262262;
 }
 
 .form-phoneLabel {
     width: 22em;
-    font-size: 80%;
 }
 
 .main-sectionTitle {
@@ -173,27 +174,34 @@ body {
     clear: both;
     float: left;
     display: block;
-    margin-top: .6em;
+    margin-top: 1em;
     margin-bottom: .6em;
     padding-left: .5em;
     line-height: normal;
-    border: outset .1em #ECF0F9;
-    font-size: 120%;
+    border: outset .2em #7895BC;
+    font-size: 110%;
     font-weight: bold;
     text-align: left;
 }
 
-.form-inputText {
+.form-inputText, .form-inputText1 {
     float: left;
     width: auto;
     max-width: 28em;
-    margin: .25em 0em .25em 0em;
+    margin: .3em 0em .3em 0em;
     padding-left: .2em;
-    border: inset .23em #ECF0F9;
-    color: black;
+    color: #231F20;
     background-color: #FFFEF0;
-    font-size: 80%;
+    font-family: Verdana;
+    font-size: 75%;
 }
+
+.form-inputText1 {
+    padding-top: .1em;
+    border: #ECF0F9;
+    background-color: #ECF0F9;
+}
+
 
 #patient_profile_physician_id,
 #patient_profile_gender,
@@ -208,7 +216,13 @@ body {
     width: auto;
     margin: .25em .2em .25em 0em;
     background-color: #FFFEF0;
-    font-size: 80%;
+    font-family: Verdana;
+    font-size: 75%;
+}
+
+#patient_profile_gender_f,
+#patient_profile_gender_m {
+    display: inline;
 }
 
 #patient_profile_city_auto_complete {
@@ -258,9 +272,8 @@ body {
 /* Index style */
 
 #index-body {
-    background-color:#ECF0F9;
+    background-color: #ECF0F9;
     font-family: Verdana;
-    /* 0918 rmh */
     font-size: 1.2em;
 }
 
@@ -275,38 +288,37 @@ body {
 #index-newButton {
     color: green; 
     font-weight: bold;
-    /* 0918 rmh */
     font-size: 120%;
 }
 
 .index-th, .index-td {
-    width:10em;
-    text-align:left;
-    color: black;
+    width: 10em;
+    text-align: left;
 }
 
 .index-th {
     font-size: 90%;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .index-td {
     font-size: 80%;
+    color: black;
 }
 
 /* New AutoComplete */
 
 div.auto_complete {
-  position:absolute;
+  position: absolute;
   width: auto;
   border: inset .23em #ECF0F9;
 
 }
 
 div.auto_complete ul {
-  list-style-type:none;
-  margin:0;
-  padding:0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 div.auto_complete ul li.selected { background-color: #C4D1EB;}
@@ -316,10 +328,9 @@ div.auto_complete ul li {
   display: block;
   background-color: #FFFEF0;
   list-style-type: none;
-  padding-left:1em;
-  font-size:100%;
-  font-weight:bold;
-  cursor:pointer;
+  margin-left: .4em;
+  font-size: 90%;
+  cursor: pointer;
 }
 
 
