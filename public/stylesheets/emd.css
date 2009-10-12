@@ -192,6 +192,7 @@ body {
     padding-left: .2em;
     color: #231F20;
     background-color: #FFFEF0;
+    border: inset .1em #FFFEF0;
     font-family: Verdana;
     font-size: 75%;
 }
