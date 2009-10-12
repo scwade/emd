@@ -5,7 +5,6 @@
   document.observe("dom:loaded", function() {
   
     // Disable state, zip5, zip4
-    //Form.Element.disable('patient_profile_state_province');
     $('patient_profile_state_province').disable().style.color='gray';
     $('patient_profile_zip5').disable().style.color='gray';
     $('patient_profile_zip4').disable().style.color='gray';
@@ -16,43 +15,22 @@
 
   function respondToChange(event) {
    //alert(event.type);
+   // Scrub extra spaces
    var array = $F('patient_profile_city').strip().split(",");
+
+   // Assign user selection to city, state, and zip
    $('patient_profile_city').value = array[0];
    $('patient_profile_state_province').value = array[1];
    $('patient_profile_zip5').value = array[2];
+
+   // Scrub extra spaces
    $('patient_profile_state_province').value = $F('patient_profile_state_province').strip();
    $('patient_profile_zip5').value = $F('patient_profile_zip5').strip();
-   //$('patient_profile_first_name').value = $F('patient_profile_city').strip().slice(0);
-   //$('patient_profile_last_name').value = $F('patient_profile_city').strip().split(",", 1);
-   //$('patient_profile_city').value = $F('patient_profile_city').strip().split(",", 1);
    
-   // Or 
-   // document.getElementById('patient_profile_first_name').value = Form.Element.getValue('patient_profile_city');
-   // document.getElementById('patient_profile_first_name').value = $F('patient_profile_city');
-
    // Enable state, zip5, zip4 
-   document.getElementById('patient_profile_state_province').enable().style.color='black';
-   document.getElementById('patient_profile_zip5').enable().style.color='black';
-   document.getElementById('patient_profile_zip4').enable().style.color='black';
-   // or 
-   // $('patient_profile_zip5').enable().style.color='black';
-   // $('patient_profile_zip4').enable().style.color='black';
+   $('patient_profile_state_province').enable().style.color='black';
+   $('patient_profile_zip5').enable().style.color='black';
+   $('patient_profile_zip4').enable().style.color='black';
 
-   // Now filter state, zip5, zip4
-   //filterState();
-   $('patient_profile_state_province').length = 14;
    return false;
   };
-
-  function filterState() {
-   // setZip5(myRecord[2]);
-   $('patient_profile_last_name').value = $F('city_state_zip');
-  }
-  
-  function setZip5(zip5) {
-    $('patient_profile_zip5').value = zip5;
-  }
-  
-  function setZip4(zip4) {
-    $('patient_profile_zip4').value = zip4;
-  }
