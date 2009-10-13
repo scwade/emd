@@ -12,15 +12,9 @@ class PatientProfile < ActiveRecord::Base
 # ----------
 
 #Scrub form
-  before_save :validate_state, :clean_first_last_name
+  before_save :clean_first_last_name
 
 #protected
-  def validate_state
-    unless self.zip5.blank?
-      puts "Checking zip code!"
-    end
-  end
-
   def clean_first_last_name
     unless self.first_name.blank?
       self.first_name.squish!
@@ -46,6 +40,10 @@ class PatientProfile < ActiveRecord::Base
 # ------------------
 # Format validations
 # ------------------
+
+  validates_format_of :state_province,
+                      :unless => Proc.new { |p| p.state_province.blank? },
+                      :with => /^[A-Z]+$/
 
   validates_format_of :zip5,
                       :unless => Proc.new { |p| p.zip5.blank? },
@@ -102,15 +100,8 @@ class PatientProfile < ActiveRecord::Base
   validates_length_of   :primary_address,    :maximum => 255,    :allow_blank => true     
   validates_length_of   :alternate_address,  :maximum => 255,    :allow_blank => true     
   validates_length_of   :city,               :maximum => 60,     :allow_blank => true                                        
-  validates_length_of   :state_province,     :is => 2                                     
+  validates_length_of   :state_province,     :is => 2,           :allow_blank => true                                     
   validates_length_of   :ethnicity,          :maximum => 60
-#  validates_length_of   :zip5,               :is => 5,           :allow_blank => true
-#  validates_length_of   :zip4,               :is => 4,           :allow_blank => true
-#  validates_length_of   :phone_home,         :maximum => 10,     :allow_blank => true
-#  validates_length_of   :phone_work,         :maximum => 10,     :allow_blank => true
-#  validates_length_of   :phone_mobile,       :maximum => 10,     :allow_blank => true
-#  validates_length_of   :phone_fax,          :maximum => 10,     :allow_blank => true
-#  validates_length_of   :phone_emergency,    :maximum => 10,     :allow_blank => true
 
 # ---------------------
 # Numeric validations
@@ -123,7 +114,7 @@ class PatientProfile < ActiveRecord::Base
 # Presence validations
 # --------------------
 
-  validates_presence_of :physician_id, :first_name, :last_name, :date_of_birth, :state_province, :gender, :ethnicity
+  validates_presence_of :physician_id, :first_name, :last_name, :date_of_birth, :gender, :ethnicity
                         
 
 

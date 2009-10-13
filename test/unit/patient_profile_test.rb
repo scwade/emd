@@ -111,7 +111,6 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert p.errors.invalid?(:physician_id)
     assert p.errors.invalid?(:first_name)
     assert p.errors.invalid?(:last_name)
-    assert p.errors.invalid?(:state_province)
     assert p.errors.invalid?(:date_of_birth)
     assert p.errors.invalid?(:gender)
     assert p.errors.invalid?(:ethnicity)
@@ -191,7 +190,7 @@ class PatientProfileTest < ActiveSupport::TestCase
     @max_255 = @max_60 = @max_9 = @is_2 = ""
     255.times { @max_255 = @max_255 + "a" }
      60.times { @max_60  = @max_60  + "a" }
-      2.times { @is_2    = @is_2    + "a" }
+      2.times { @is_2    = @is_2    + "A" }
 
     # Now array to string
     @max_255 = @max_255.to_s
@@ -204,7 +203,7 @@ class PatientProfileTest < ActiveSupport::TestCase
                            :primary_address     => @max_255 + "x",
                            :alternate_address   => @max_255 + "w",
                            :city                => @max_60  + "v",
-                           :state_province      => @is_2    + "u",
+                           :state_province      => @is_2    + "U",
                            :email               => @max_255 + "t",
                            :ethnicity           => @max_60  + "s")
 

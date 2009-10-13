@@ -12,7 +12,7 @@ class CreatePatientProfiles < ActiveRecord::Migration
       t.integer   :zip5,                                                     :limit => 5
       t.integer   :zip4,                                                     :limit => 4
       t.string    :city,                                                     :limit => 60
-      t.string    :state_province,            :null => false,                :limit => 2
+      t.string    :state_province,                                           :limit => 2
       t.string    :email,                     :null => false
       t.string    :phone_home,                                               :limit => 10
       t.string    :phone_mobile,                                             :limit => 10
