@@ -1,8 +1,8 @@
 class CreateEditransactions < ActiveRecord::Migration
   def self.up
     create_table :editransactions do |t|
-			t.column :isa01, :string, :limit=>2
-			t.column :isa02, :string, :limit=>10
+			t.column :isa01, :string, :null => false, :limit=>2
+			t.column :isa02, :string, :null => false, :limit=>10
 			t.column :isa03, :string, :limit=>2
 			t.column :isa04, :string, :limit=>10
 			t.column :isa05, :string, :limit=>2

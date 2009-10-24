@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(:version => 20090825165746) do
   end
 
   create_table "editransactions", :force => true do |t|
-    t.string   "isa01",      :limit => 2
-    t.string   "isa02",      :limit => 10
+    t.string   "isa01",      :limit => 2,  :null => false
+    t.string   "isa02",      :limit => 10, :null => false
     t.string   "isa03",      :limit => 2
     t.string   "isa04",      :limit => 10
     t.string   "isa05",      :limit => 2
