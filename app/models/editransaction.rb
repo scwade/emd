@@ -4,10 +4,19 @@ class Editransaction < ActiveRecord::Base
 # Data entry validation for UI - Scotts stuff 
 # -------------------------------------------
 
-protected
-                def fieled_must_be_higher_than_zero
-                        errors.add(:isa01, "should have number non zero ") if isa01.nil? || isa01 < 01
-                end
+# should be a format validation
+#protected
+#                def fieled_must_be_higher_than_zero
+#                        errors.add(:isa01, "should have number non zero ") if isa01.nil? || isa01 < 01
+#                end
+
+# ------------------
+# Format validations
+# ------------------
+
+#  validates_format_of :isa01,
+#                      :unless => Proc.new { |e| e.isa01.blank? },
+#                      :with => /\d{1,2}$/
 
 # ------------------
 # Length validations
@@ -36,7 +45,7 @@ protected
 # Presence validations
 # --------------------
 
-  validates_presence_of :isa0,  :isa1
+  validates_presence_of :isa01,  :isa02
 
 #-------------------
 # End of model class
@@ -65,6 +74,3 @@ end
 #                      :with    => %r{\.(gif|jpg|png)$}i,
 #                      :message => 'must be a URL for GIF, JPG ' +
 #                                  'or PNG image.'
-
-
-

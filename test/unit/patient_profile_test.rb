@@ -99,7 +99,7 @@ class PatientProfileTest < ActiveSupport::TestCase
   # -----------------------------------------------------------------------------------------
   # Test presence_of validation  
   # -----------------------------------------------------------------------------------------
-  def test_for_prsence_of_attributes
+  def test_for_presence_of_attributes
 
     # Create object
     p = PatientProfile.new
@@ -238,7 +238,7 @@ class PatientProfileTest < ActiveSupport::TestCase
                            :city                => @max_60,
                            :state_province      => @is_2)
 
-    assert !p.valid?
+    assert p.valid?
 
     # Check @errors{} not reported
     assert !p.errors.invalid?(:first_name)
