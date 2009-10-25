@@ -87,13 +87,48 @@ class PatientProfileTest < ActiveSupport::TestCase
       bad.each do |x|
         p.errors.clear
         p.phone_home = p.phone_mobile = p.phone_work = p.phone_fax = p.phone_emergency = x.to_s
-        p.valid? # force the error
+        p.valid? # force the error check
         assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_home)
         assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_mobile)
         assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_work)
         assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_fax)
         assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_emergency)
       end
+  end
+
+  # -----------------------------------------------------------------------------------------
+  # Test format_of :zip5, :zip4
+  # -----------------------------------------------------------------------------------------
+  def test_for_format_of_zip_codes
+    # test conditions
+      bad_zip5 = %W( 0 123456 a ab abc abcd abcde abcdef a1b2c3 )
+      bad_zip4 = %W( 0 12345 a ab abc abcd abcde a1b2 )
+
+    # Create object
+      p = PatientProfile.new
+
+    # Test for good zip format
+      p.zip5 = "12345"
+      p.zip4 = "1234"
+      p.valid? # force the error check
+      assert !p.errors.invalid?(:zip5)
+      assert !p.errors.invalid?(:zip4)
+
+    # Test for bad zip formats
+      bad_zip5.each do |x|
+        p.errors.clear
+        p.zip5 = x 
+        p.valid? # force the error check
+        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:zip5)
+      end
+
+       bad_zip4.each do |x|
+        p.errors.clear
+        p.zip4 = x         
+        p.valid? # force the error check
+        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:zip4)
+      end
+
   end
 
   # -----------------------------------------------------------------------------------------
@@ -129,7 +164,6 @@ class PatientProfileTest < ActiveSupport::TestCase
                               :physician_id            => 3999,
                               :first_name              => 'Lisa',
                               :last_name               => 'Hoyt',
-                              :state_province          => 'AB',
                               :email                   => 'lisa@proficientMD.com',
                               :date_of_birth           => Time.at(0),
                               :gender                  => 'F',
@@ -228,17 +262,14 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert_equal I18n.translate('activerecord.errors.messages.wrong_length', :count=>2),   p.errors.on(:state_province)
     assert_equal I18n.translate('activerecord.errors.messages.too_long',     :count=>60),  p.errors.on(:ethnicity)
   
-
-
-    # Lets test limits ok at max
-    p = PatientProfile.new(:first_name          => @max_255,
-                           :last_name           => @max_255,
-                           :primary_address     => @max_255,
-                           :alternate_address   => @max_255,
-                           :city                => @max_60,
-                           :state_province      => @is_2)
-
-    assert p.valid?
+    p = PatientProfile.create(:first_name         => @max_255,
+                              :last_name          => @max_255,
+                              :primary_address    => @max_255,
+                              :alternate_address  => @max_255,
+                              :city               => @max_60,
+                              :state_province     => @is_2,
+                              :email              => @max_255,
+                              :ethnicity          => @max_60)
 
     # Check @errors{} not reported
     assert !p.errors.invalid?(:first_name)
@@ -247,6 +278,7 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert !p.errors.invalid?(:alternate_address)
     assert !p.errors.invalid?(:city)
     assert !p.errors.invalid?(:state_province)
+    assert !p.errors.invalid?(:ethnicity)
 
   end
 
