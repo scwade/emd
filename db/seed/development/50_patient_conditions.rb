@@ -1,11 +1,17 @@
 #db/seed/development/patient_profiles.rb
 #Development base data
 
-c1 = Condition.find(1)
-c2 = Condition.find(2)
-c3 = Condition.find(3)
+PatientCondition.delete_all
 
-pp1 = PatientProfile.find(1)
+# Get first id's 
+id = Condition.first.id
+id1 = PatientProfile.first.id
+
+c1 = Condition.find(id)
+c2 = Condition.find(id += 1)
+c3 = Condition.find(id += 1)
+
+pp1 = PatientProfile.find(id1)
 pp1.conditions << c1
 pc = pp1.patient_conditions
 pc[0].start_date = "2009-06-18"
@@ -30,7 +36,7 @@ pc[2].treated_by = "Dr. Chao"
 pc[2].treat_notes = "Treated with vitamin D"
 pc[2].save
 
-pp2 = PatientProfile.find(2)
+pp2 = PatientProfile.find(id1 += 1)
 pp2.conditions << c1
 pc = pp2.patient_conditions
 pc[0].start_date = "2009-06-18"

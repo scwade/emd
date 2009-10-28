@@ -4,6 +4,8 @@
     <th>PC id</th>
     <th>PP id</th>
     <th>Condition id</th>
+    <th>Patient</th>
+    <th>Patient id</th>
     <th>Condition name</th>
     <th>Start date</th>
     <th>End date</th>
@@ -15,8 +17,10 @@
   <tr>
     <td><%=h patient_condition.id %></td>
     <td><%=h patient_condition.patient_profile_id %></td>
-    <td><%=h id = patient_condition.condition_id %></td>
-    <td><%= h Condition.find(id).name %></td>
+    <td><%=h patient_condition.condition_id %></td>
+    <td><%=h patient_condition.patient_profile.first_name %></td>
+    <td><%=h patient_condition.patient_profile.pmd_patient_id %></td>
+    <td><%=h patient_condition.condition.name %></td>
     <td><%=h patient_condition.start_date %></td>
     <td><%=h patient_condition.end_date %></td>
     <td><%=h patient_condition.treated_by %></td>

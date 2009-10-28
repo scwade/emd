@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20090825165746) do
 
   create_table "conditions", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.text     "google_url"
     t.text     "wiki_url"
     t.datetime "created_at"

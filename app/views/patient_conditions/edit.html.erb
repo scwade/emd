@@ -4,15 +4,14 @@
 <% form_for(@patient_condition) do |f| %>
   <%= f.error_messages %>
 
-
   <p>
-    <%= f.label :condition_id %><br />
-    <%= f.text_field :condition_id %>
+    <%= f.label :patient_profile_id %><br />
+    <%= collection_select(:patient_condition, :patient_profile_id, PatientProfile.all, :id, :first_name ) %>
   </p>
 
   <p>
-    <%= f.label :patient_profile_id %><br />
-    <%= f.text_field :patient_profile_id %>
+    <%= f.label :condition_id %><br />
+    <%= collection_select(:patient_condition, :condition_id, Condition.all, :id, :name )  %>
   </p>
 
   <p>

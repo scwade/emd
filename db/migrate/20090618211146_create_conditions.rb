@@ -1,11 +1,11 @@
 class CreateConditions < ActiveRecord::Migration
   def self.up
     create_table :conditions do |t|
-      t.string :name
-      t.text :google_url
-      t.text :wiki_url
-      t.timestamps
+      t.string :name,      :null => false
+      t.text   :google_url
+      t.text   :wiki_url
 
+      t.timestamps
     end
   end
 
