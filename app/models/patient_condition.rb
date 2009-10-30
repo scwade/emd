@@ -17,4 +17,48 @@ class PatientCondition < ActiveRecord::Base
   def self.find_my_condition
     find(:all, :order => "condition_name")
   end
+
+# ------------------
+# Length validations
+# ------------------
+
+  validates_length_of   :treated_by,   :maximum => 255,  :allow_blank => true
+  validates_length_of   :treat_notes,  :maximum => 255,  :allow_blank => true
+
+# --------------------
+# Presence validations
+# --------------------
+
+  validates_presence_of :patient_profile_id, :condition_id
+
+# ----------
+# Callbacks
+# ----------
+
+#Scrub form
+  before_save :clean_patient_condition, :validate
+
+# ----------------------------------------------
+# Note all methods after this point are protected
+# ----------------------------------------------
+
+protected 
+
+  def clean_patient_condition
+      self.treated_by.squish! unless self.treated_by.blank?
+      self.treat_notes.squish! unless self.treat_notes.blank?
+  end
+
+ def validate                 
+    if self.start_date.blank?                then errors.add(:start_date, "is an invalid date.")
+       elsif self.end_date.blank?            then errors.add(:end_date, "is an invalid date.")
+       elsif self.start_date > self.end_date then errors.add(:start_date, "must be greater than or equal to end date.")
+       elsif self.start_date > Date.today    then errors.add(:start_date, "must be less than or equal to todays date.")
+       elsif self.end_date > Date.today      then errors.add(:end_date, "must be less than or equal to todays date.")
+    end
+  end
+
+# ------------------------
+# End of Patient Condition
+# ------------------------
 end

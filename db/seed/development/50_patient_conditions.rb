@@ -1,75 +1,36 @@
 #db/seed/development/patient_profiles.rb
 #Development base data
 
+# Initialize
+treated_by = treat_notes = []
+treated_by  << "Dr Wade" << "Dr Hoyt" << "Dr Smith" << "Dr Foot"
+treat_notes << "No problem found" << "Continue treatment" << "Re-check in a month" << "No problem" 
+
 PatientCondition.delete_all
+p = PatientProfile.all
+c = Condition.all
 
-# Get first id's 
-id = Condition.first.id
-id1 = PatientProfile.first.id
+# Each patient gets each condition once only
+p.each do |pv|
+  c.each do |cv|
+    pv.patient_conditions.create(:condition_id => cv.id,
+                                 :start_date   => 10.days.ago,
+                                 :end_date     => 5.days.ago,
+                                 :treated_by   => treated_by[rand(treated_by.count)],
+                                 :treat_notes  => treat_notes[rand(treat_notes.count)] )
+  end
+end
 
-c1 = Condition.find(id)
-c2 = Condition.find(id += 1)
-c3 = Condition.find(id += 1)
-
-pp1 = PatientProfile.find(id1)
-pp1.conditions << c1
-pc = pp1.patient_conditions
-pc[0].start_date = "2009-06-18"
-pc[0].end_date = "2009-06-18"
-pc[0].treated_by = "Dr. Wang"
-pc[0].treat_notes = "Treated with vitamin B"
-pc[0].save
-
-pp1.conditions << c2
-pc = pp1.patient_conditions
-pc[1].start_date = "2008-05-18"
-pc[1].end_date = "2008-05-18"
-pc[1].treated_by = "Dr. Wade"
-pc[1].treat_notes = "Treated with vitamin C"
-pc[1].save
-
-pp1.conditions << c3
-pc = pp1.patient_conditions
-pc[2].start_date = "2009-05-18"
-pc[2].end_date = "2009-04-18"
-pc[2].treated_by = "Dr. Chao"
-pc[2].treat_notes = "Treated with vitamin D"
-pc[2].save
-
-pp2 = PatientProfile.find(id1 += 1)
-pp2.conditions << c1
-pc = pp2.patient_conditions
-pc[0].start_date = "2009-06-18"
-pc[0].end_date = "2009-06-18"
-pc[0].treated_by = "Dr. Wang"
-pc[0].treat_notes = "Treated with vitamin B"
-pc[0].save
-
-pp2.conditions << c2
-pc = pp2.patient_conditions
-pc[1].start_date = "2008-05-18"
-pc[1].end_date = "2008-05-18"
-pc[1].treated_by = "Dr. Wade"
-pc[1].treat_notes = "Treated with vitamin C"
-pc[1].save
-
-pp2.conditions << c3
-pc = pp2.patient_conditions
-pc[2].start_date = "2009-05-18"
-pc[2].end_date = "2009-04-18"
-pc[2].treated_by = "Dr. Chao"
-pc[2].treat_notes = "Treated with vitamin D"
-pc[2].save
-
-## ROR console tests -- working
-#------------------------------
-#devpatientprofile1 = PatientProfile.find(422094565)
-#devcondition1 = Condition.find(56)
-#devpatientprofile1.conditions << devcondition1
-#pc1 = devpatientprofile1.patient_conditions
-#pc1[0].start_date = "2009-06-18"
-#pc1[0].end_date = "2009-06-18"
-#pc1[0].treated_by = "Dr. Wang"
-#pc1[0].treat_notes = "Treated with vitamin B"
-
-
+# Scotts stuff
+### ROR console tests -- working
+##------------------------------
+##devpatientprofile1 = PatientProfile.find(422094565)
+##devcondition1 = Condition.find(56)
+##devpatientprofile1.conditions << devcondition1
+##pc1 = devpatientprofile1.patient_conditions
+##pc1[0].start_date = "2009-06-18"
+##pc1[0].end_date = "2009-06-18"
+##pc1[0].treated_by = "Dr. Wang"
+##pc1[0].treat_notes = "Treated with vitamin B"
+#
+#

@@ -1,52 +1,281 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: "Dr. Wong"
-  treat_notes: "Treated with vitamin E"
-
+    start_date: "2009-10-20"
+    condition_id: "1"
+    patient_profile_id: "1"
+    id: "1"
+    treated_by: No problem found
+    treat_notes: Dr Wade
+    end_date: "2009-10-25"
 two:
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: "Dr. Wang"
-  treat_notes: "Treated with vitamin B"
-  
-3:
-  start_date: 2009-01-01
-  end_date: 2009-02-02
-  treated_by: "Dr. Wade"
-  treat_notes: "<p> Treated with vitamin C </p>"
-  
-4:
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: "Dr. Wang"
-5:
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: "Dr. Wang"
-6:
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: "Dr. Wang"
-7:
-  start_date: 2009-01-01
-  end_date: 2009-02-02
-  treated_by: "Dr. Wade"
-  treat_notes: "<p> Treated with vitamin C </p>" 
-
-8:
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: "Dr. Wade"		
-9:
-  start_date: 2009-06-18
-  end_date: 2009-06-18
-  treated_by: "Dr. Wong"
-10:
-  start_date: 2009-01-01
-  end_date: 2009-02-02
-  treated_by: "Dr. Wade"
-  treat_notes: "<p> Treated with vitamin C </p>" 
-
+    start_date: "2009-10-20"
+    condition_id: "2"
+    patient_profile_id: "1"
+    id: "2"
+    treated_by: Dr Hoyt
+    treat_notes: Re-check in a month
+    end_date: "2009-10-25"
+three:
+    start_date: "2009-10-20"
+    condition_id: "3"
+    patient_profile_id: "1"
+    id: "3"
+    treated_by: No problem
+    treat_notes: Dr Foot
+    end_date: "2009-10-25"
+four:
+    start_date: "2009-10-20"
+    condition_id: "4"
+    patient_profile_id: "1"
+    id: "4"
+    treated_by: Dr Hoyt
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+five:
+    start_date: "2009-10-20"
+    condition_id: "5"
+    patient_profile_id: "1"
+    id: "5"
+    treated_by: Re-check in a month
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+six:
+    start_date: "2009-10-20"
+    condition_id: "6"
+    patient_profile_id: "1"
+    id: "6"
+    treated_by: Dr Foot
+    treat_notes: No problem found
+    end_date: "2009-10-25"
+seven:
+    start_date: "2009-10-20"
+    condition_id: "7"
+    patient_profile_id: "1"
+    id: "7"
+    treated_by: No problem found
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+eight:
+    start_date: "2009-10-20"
+    condition_id: "1"
+    patient_profile_id: "2"
+    id: "8"
+    treated_by: Dr Wade
+    treat_notes: Continue treatment
+    end_date: "2009-10-25"
+nine:
+    start_date: "2009-10-20"
+    condition_id: "2"
+    patient_profile_id: "2"
+    id: "9"
+    treated_by: Dr Foot
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+ten:
+    start_date: "2009-10-20"
+    condition_id: "3"
+    patient_profile_id: "2"
+    id: "10"
+    treated_by: Continue treatment
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+eleven:
+    start_date: "2009-10-20"
+    condition_id: "4"
+    patient_profile_id: "2"
+    id: "11"
+    treated_by: No problem
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+twelve:
+    start_date: "2009-10-20"
+    condition_id: "5"
+    patient_profile_id: "2"
+    id: "12"
+    treated_by: No problem
+    treat_notes: No problem
+    end_date: "2009-10-25"
+thirteen:
+    start_date: "2009-10-20"
+    condition_id: "6"
+    patient_profile_id: "2"
+    id: "13"
+    treated_by: Dr Smith
+    treat_notes: Re-check in a month
+    end_date: "2009-10-25"
+fourteen:
+    start_date: "2009-10-20"
+    condition_id: "7"
+    patient_profile_id: "2"
+    id: "14"
+    treated_by: Re-check in a month
+    treat_notes: Continue treatment
+    end_date: "2009-10-25"
+fithteen:
+    start_date: "2009-10-20"
+    condition_id: "1"
+    patient_profile_id: "3"
+    id: "15"
+    treated_by: Dr Smith
+    treat_notes: No problem
+    end_date: "2009-10-25"
+sixteen:
+    start_date: "2009-10-20"
+    condition_id: "2"
+    patient_profile_id: "3"
+    id: "16"
+    treated_by: Dr Smith
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+seventeen:
+    start_date: "2009-10-20"
+    condition_id: "3"
+    patient_profile_id: "3"
+    id: "17"
+    treated_by: No problem found
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+eighteen:
+    start_date: "2009-10-20"
+    condition_id: "4"
+    patient_profile_id: "3"
+    id: "18"
+    treated_by: Dr Wade
+    treat_notes: Continue treatment
+    end_date: "2009-10-25"
+nineteen:
+    start_date: "2009-10-20"
+    condition_id: "5"
+    patient_profile_id: "3"
+    id: "19"
+    treated_by: Dr Hoyt
+    treat_notes: Dr Wade
+    end_date: "2009-10-25"
+twenty:
+    start_date: "2009-10-20"
+    condition_id: "6"
+    patient_profile_id: "3"
+    id: "20"
+    treated_by: Dr Hoyt
+    treat_notes: No problem found
+    end_date: "2009-10-25"
+twentyone:
+    start_date: "2009-10-20"
+    condition_id: "7"
+    patient_profile_id: "3"
+    id: "21"
+    treated_by: Dr Smith
+    treat_notes: Dr Foot
+    end_date: "2009-10-25"
+twentytwo:
+    start_date: "2009-10-20"
+    condition_id: "1"
+    patient_profile_id: "4"
+    id: "22"
+    treated_by: Dr Hoyt
+    treat_notes: Dr Hoyt
+    end_date: "2009-10-25"
+twentythree:
+    start_date: "2009-10-20"
+    condition_id: "2"
+    patient_profile_id: "4"
+    id: "23"
+    treated_by: No problem
+    treat_notes: No problem
+    end_date: "2009-10-25"
+twentyfour:
+    start_date: "2009-10-20"
+    condition_id: "3"
+    patient_profile_id: "4"
+    id: "24"
+    treated_by: Continue treatment
+    treat_notes: Dr Foot
+    end_date: "2009-10-25"
+twentyfive:
+    start_date: "2009-10-20"
+    condition_id: "4"
+    patient_profile_id: "4"
+    id: "25"
+    treated_by: Dr Smith
+    treat_notes: No problem found
+    end_date: "2009-10-25"
+twentysix:
+    start_date: "2009-10-20"
+    condition_id: "5"
+    patient_profile_id: "4"
+    id: "26"
+    treated_by: Re-check in a month
+    treat_notes: Dr Wade
+    end_date: "2009-10-25"
+twentyseven:
+    start_date: "2009-10-20"
+    condition_id: "6"
+    patient_profile_id: "4"
+    id: "27"
+    treated_by: Re-check in a month
+    treat_notes: Dr Smith
+    end_date: "2009-10-25"
+twentyeight:
+    start_date: "2009-10-20"
+    condition_id: "7"
+    patient_profile_id: "4"
+    id: "28"
+    treated_by: Dr Smith
+    treat_notes: No problem
+    end_date: "2009-10-25"
+twentynine:
+    start_date: "2009-10-20"
+    condition_id: "1"
+    patient_profile_id: "5"
+    id: "29"
+    treated_by: No problem
+    treat_notes: No problem
+    end_date: "2009-10-25"
+thirty:
+    start_date: "2009-10-20"
+    condition_id: "2"
+    patient_profile_id: "5"
+    id: "30"
+    treated_by: Dr Foot
+    treat_notes: Continue treatment
+    end_date: "2009-10-25"
+thirtyone:
+    start_date: "2009-10-20"
+    condition_id: "3"
+    patient_profile_id: "5"
+    id: "31"
+    treated_by: Dr Smith
+    treat_notes: Dr Foot
+    end_date: "2009-10-25"
+thirtytwo:
+    start_date: "2009-10-20"
+    condition_id: "4"
+    patient_profile_id: "5"
+    id: "32"
+    treated_by: Re-check in a month
+    treat_notes: Dr Smith
+    end_date: "2009-10-25"
+thirtythree:
+    start_date: "2009-10-20"
+    condition_id: "5"
+    patient_profile_id: "5"
+    id: "33"
+    treated_by: Dr Foot
+    treat_notes: No problem
+    end_date: "2009-10-25"
+thirtyfour:
+    start_date: "2009-10-20"
+    condition_id: "6"
+    patient_profile_id: "5"
+    id: "34"
+    treated_by: No problem
+    treat_notes: Dr Foot
+    end_date: "2009-10-25"
+thirtyfive:
+    start_date: "2009-10-20"
+    condition_id: "7"
+    patient_profile_id: "5"
+    id: "35"
+    treated_by: Continue treatment
+    treat_notes: No problem found
+    end_date: "2009-10-25"
