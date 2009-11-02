@@ -12,30 +12,30 @@ class EditransactionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create editransaction" do
+  test "should 1 create editransaction" do
     assert_difference('Editransaction.count') do
-      post :create, :editransaction => { }
+      post :create, :editransaction => {:isa01 => 11, :isa02 => 1234567890 }
     end
 
     assert_redirected_to editransaction_path(assigns(:editransaction))
   end
 
-  test "should show editransaction" do
+  test "should 2 show editransaction" do
     get :show, :id => editransactions(:aetnacase1).to_param
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should 3 get edit" do
     get :edit, :id => editransactions(:aetnacase1).to_param
     assert_response :success
   end
 
-  test "should update editransaction" do
+  test "should 4 update editransaction" do
     put :update, :id => editransactions(:aetnacase1).to_param, :editransaction => { }
     assert_redirected_to editransaction_path(assigns(:editransaction))
   end
 
-  test "should destroy editransaction" do
+  test "should 5 destroy editransaction" do
     assert_difference('Editransaction.count', -1) do
       delete :destroy, :id => editransactions(:aetnacase2).to_param
     end
