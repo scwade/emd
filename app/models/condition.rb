@@ -4,7 +4,7 @@ class Condition < ActiveRecord::Base
 # All Methods are private scope
 # ------------------------------
 
-#  private
+  private
 
 # --------------------------------------------------------
 # Table Relationships - let the framework manage the SQL
