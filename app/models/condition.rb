@@ -15,9 +15,9 @@ class Condition < ActiveRecord::Base
 # Format validations
 # ------------------
 
-#  validates_format_of :google_url,
-#                      :unless => Proc.new { |c| c.google_url.blank? },
-#                      :with => /^https:\/\/health\.google\.com\/health\/ref(.)*/
+  validates_format_of :google_url,
+                      :unless => Proc.new { |c| c.google_url.blank? },
+                      :with => /^https:\/\/health\.google\.com\/health\/ref(.)*/
 
 #  validates_format_of :wiki_url,
 #                      :unless => Proc.new { |c| c.wiki_url.blank? },
@@ -43,10 +43,3 @@ class Condition < ActiveRecord::Base
 #-------------------
 
 end
-
-### Validations
-#  validates_uniqueness_of :xxx
-#  validates_associated :condition.name
-#  Validation not currently applicable
-#  validate :fieled_must_be_higher_than_zero
-#  validates_uniqueness_of :isa01

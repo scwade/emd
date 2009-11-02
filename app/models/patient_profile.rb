@@ -1,4 +1,13 @@
 class PatientProfile < ActiveRecord::Base
+# ------------------------------
+# All Methods are private scope
+# ------------------------------
+
+private
+
+# --------------------------------------------------------
+# Table Relationships - let the framework manage the SQL
+# --------------------------------------------------------
 ### Model Table relationships - many to many
   has_many :patient_conditions
   has_many :conditions, :through => :patient_conditions
@@ -6,21 +15,11 @@ class PatientProfile < ActiveRecord::Base
 ### SCW Performance enhancement - Use later
 #  has_many :patient_profiles, :through => :patient_conditions, :select => "distinct patient_profiles.*"
  
-
 # ----------
 # Callbacks
 # ----------
 
-#Scrub form
-  before_save :clean_first_last_name
-
-#protected
-  def clean_first_last_name
-    unless self.first_name.blank?
-      self.first_name.squish!
-      self.last_name.squish!
-    end
-  end
+before_validation CleanLeadingTrailingBlanks.new(:first_name, :last_name, :primary_address, :alternate_address, :city, :state_province) 
 
 # ---------------------------
 # From plugin - Date validation
