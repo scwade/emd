@@ -17,8 +17,8 @@
     <td><%=h condition.name %></td>
     <td><%=h condition.created_at %></td>
     <td><%=h condition.updated_at %></td>   
-    <td><%= link_to_unless condition.google_url.nil?, "Visit Google", condition.google_url, :popup => true %></td>
-    <td><%= link_to_unless condition.wiki_url.nil?, "Visit Wiki", condition.wiki_url, :popup => true %></td>
+    <td><%= link_to_unless condition.google_url.blank?, "Visit Google", condition.google_url, :popup => true %></td>
+    <td><%= link_to_unless condition.wiki_url.blank?, "Visit Wiki", condition.wiki_url, :popup => true %></td>
     <td><%= link_to 'Show', condition %></td>
     <td><%= link_to 'Edit', edit_condition_path(condition) %></td>
     <td><%= link_to 'Destroy', condition, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,5 +1,15 @@
 class Condition < ActiveRecord::Base
 
+# ------------------------------
+# All Methods are private scope
+# ------------------------------
+
+  private
+
+# --------------------------------------------------------
+# Table Relationships - let the framework manage the SQL
+# --------------------------------------------------------
+
 ### Model Table relationships - many to many
   has_many :patient_conditions
   has_many :patient_profiles, :through => :patient_conditions
@@ -11,17 +21,28 @@ class Condition < ActiveRecord::Base
     find(:all, :order => "name")
   end
 
-# ------------------
+# ----------
+# Callbacks
+# ----------
+
+  before_validation CleanLeadingTrailingBlanks.new(:name)
+
+# ---------------------------------------------------------
 # Format validations
-# ------------------
+#   Check google_url   https://health.google.com/health/ref
+#   Check wiki_url     http://wiki.answers.com
+#
+# Future: Add javascript to validate full URL's (ie 404 errors)
+#
+# --------------------------------------------------------
 
   validates_format_of :google_url,
                       :unless => Proc.new { |c| c.google_url.blank? },
                       :with => /^https:\/\/health\.google\.com\/health\/ref(.)*/
 
-#  validates_format_of :wiki_url,
-#                      :unless => Proc.new { |c| c.wiki_url.blank? },
-#                      :with => /@"((https?|ftp|gopher|telnet|file|notes|ms-help):((//)|(\\\\))+[\w\d:#@%/;$()~_?\+-=\\\.&]*)"/
+  validates_format_of :wiki_url,
+                      :unless => Proc.new { |c| c.wiki_url.blank? },
+                      :with => /^http:\/\/wiki\.answers\.com(.)*/
 
 # ------------------
 # Length validations
@@ -29,14 +50,22 @@ class Condition < ActiveRecord::Base
 
   validates_length_of :name,  :maximum => 255
 
-# ----------------------
+# ------------------------------------------
+# Presence validations
+# Note: added :name for problem with unique
+# ------------------------------------------
+
+  validates_presence_of :name
+
+# -----------------------------------------------------------------------
 # Uniqueness validations
-# ----------------------
+# Note: :allow_nil => false and :case_sensitive=> false are not working
+# Use: validates_presence_of to fill hole
+# No fix for case sensitive at this time.
+# -----------------------------------------------------------------------
 
   validates_uniqueness_of :name,
-                          :case_sensitive => :false,
-                          :message => "not unique, already used by different patient"
-
+                          :allow_nil => false 
 
 #-------------------
 # End of model class

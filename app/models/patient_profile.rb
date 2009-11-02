@@ -3,7 +3,7 @@ class PatientProfile < ActiveRecord::Base
 # All Methods are private scope
 # ------------------------------
 
-private
+  private
 
 # --------------------------------------------------------
 # Table Relationships - let the framework manage the SQL
@@ -19,7 +19,7 @@ private
 # Callbacks
 # ----------
 
-before_validation CleanLeadingTrailingBlanks.new(:first_name, :last_name, :primary_address, :alternate_address, :city, :state_province) 
+  before_validation CleanLeadingTrailingBlanks.new(:first_name, :last_name, :primary_address, :alternate_address, :city, :state_province) 
 
 # ---------------------------
 # From plugin - Date validation
