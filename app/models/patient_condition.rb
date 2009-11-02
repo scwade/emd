@@ -1,5 +1,15 @@
 class PatientCondition < ActiveRecord::Base
 
+# ------------------------------
+# All Methods are private scope
+# ------------------------------
+
+  private
+
+# --------------------------------------------------------
+# Table Relationships - let the framework manage the SQL
+# --------------------------------------------------------
+
 #  has_and_belongs_to_many :conditions
   belongs_to :patient_profile
   belongs_to :condition
@@ -18,6 +28,27 @@ class PatientCondition < ActiveRecord::Base
     find(:all, :order => "condition_name")
   end
 
+# ----------
+# Callbacks
+# ----------
+
+  before_validation CleanLeadingTrailingBlanks.new(:treated_by, :treat_notes)
+  before_save :validate
+
+# ------------------------------
+# Note :start_date <= :end_date 
+# ------------------------------
+
+ def validate
+    if self.start_date.blank?                then errors.add(:start_date, "is an invalid date.")
+       elsif self.end_date.blank?            then errors.add(:end_date, "is an invalid date.")
+       elsif self.start_date > self.end_date then errors.add(:start_date, "must be greater than or equal to end date.")
+       elsif self.start_date > Date.today    then errors.add(:start_date, "must be less than or equal to todays date.")
+       elsif self.end_date > Date.today      then errors.add(:end_date, "must be less than or equal to todays date.")
+    end
+  end
+
+
 # ------------------
 # Length validations
 # ------------------
@@ -30,33 +61,6 @@ class PatientCondition < ActiveRecord::Base
 # --------------------
 
   validates_presence_of :patient_profile_id, :condition_id
-
-# ----------
-# Callbacks
-# ----------
-
-#Scrub form
-  before_save :clean_patient_condition, :validate
-
-# ----------------------------------------------
-# Note all methods after this point are protected
-# ----------------------------------------------
-
-protected 
-
-  def clean_patient_condition
-      self.treated_by.squish! unless self.treated_by.blank?
-      self.treat_notes.squish! unless self.treat_notes.blank?
-  end
-
- def validate                 
-    if self.start_date.blank?                then errors.add(:start_date, "is an invalid date.")
-       elsif self.end_date.blank?            then errors.add(:end_date, "is an invalid date.")
-       elsif self.start_date > self.end_date then errors.add(:start_date, "must be greater than or equal to end date.")
-       elsif self.start_date > Date.today    then errors.add(:start_date, "must be less than or equal to todays date.")
-       elsif self.end_date > Date.today      then errors.add(:end_date, "must be less than or equal to todays date.")
-    end
-  end
 
 # ------------------------
 # End of Patient Condition
