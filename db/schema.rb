@@ -114,9 +114,9 @@ ActiveRecord::Schema.define(:version => 20090825165746) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "hashed_password"
-    t.string   "salt"
+    t.string   "name",            :null => false
+    t.string   "hashed_password", :null => false
+    t.string   "salt",            :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
