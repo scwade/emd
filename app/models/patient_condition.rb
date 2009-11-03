@@ -3,7 +3,6 @@ class PatientCondition < ActiveRecord::Base
 # ------------------------------
 # All Methods are private scope
 # ------------------------------
-
   private
 
 # --------------------------------------------------------
@@ -31,15 +30,13 @@ class PatientCondition < ActiveRecord::Base
 # ----------
 # Callbacks
 # ----------
-
   before_validation CleanLeadingTrailingBlanks.new(:treated_by, :treat_notes)
   before_save :validate
 
 # ------------------------------
 # Note :start_date <= :end_date 
 # ------------------------------
-
- def validate
+  def validate
     if self.start_date.blank?                then errors.add(:start_date, "is an invalid date.")
        elsif self.end_date.blank?            then errors.add(:end_date, "is an invalid date.")
        elsif self.start_date > self.end_date then errors.add(:start_date, "must be greater than or equal to end date.")
@@ -48,18 +45,15 @@ class PatientCondition < ActiveRecord::Base
     end
   end
 
-
 # ------------------
 # Length validations
 # ------------------
-
   validates_length_of   :treated_by,   :maximum => 255,  :allow_blank => true
   validates_length_of   :treat_notes,  :maximum => 255,  :allow_blank => true
 
 # --------------------
 # Presence validations
 # --------------------
-
   validates_presence_of :patient_profile_id, :condition_id
 
 # ------------------------

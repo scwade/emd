@@ -2,7 +2,6 @@ class PatientProfile < ActiveRecord::Base
 # ------------------------------
 # All Methods are private scope
 # ------------------------------
-
   private
 
 # --------------------------------------------------------
@@ -18,7 +17,6 @@ class PatientProfile < ActiveRecord::Base
 # ----------
 # Callbacks
 # ----------
-
   before_validation CleanLeadingTrailingBlanks.new(:first_name, :last_name, :primary_address, :alternate_address, :city, :state_province) 
 
 # ---------------------------
@@ -31,7 +29,6 @@ class PatientProfile < ActiveRecord::Base
 #-------------------------
 # Confirmation validations
 #-------------------------
-
   validates_confirmation_of :email,
                             :unless => Proc.new { |p| p.email.blank? },
                             :message => "verification failed, please re-type email address's"
@@ -39,7 +36,6 @@ class PatientProfile < ActiveRecord::Base
 # ------------------
 # Format validations
 # ------------------
-
   validates_format_of :state_province,
                       :unless => Proc.new { |p| p.state_province.blank? },
                       :with => /^[A-Z]+$/
@@ -55,45 +51,36 @@ class PatientProfile < ActiveRecord::Base
   validates_format_of :email,
                       :message => "use format like name@proficientmd.com",
                       :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
-                      
   
   validates_format_of :phone_home,
                       :unless => Proc.new { |p| p.phone_home.blank? },
                       :with => /\d{10}$/
-                       
 
   validates_format_of :phone_mobile,
                       :unless => Proc.new { |p| p.phone_mobile.blank? },
                       :with => /\d{10}$/
-                      
 
   validates_format_of :phone_work,
                       :unless => Proc.new { |p| p.phone_work.blank? },
                       :with => /\d{10}$/
-                      
 
   validates_format_of :phone_fax,
                       :unless => Proc.new { |p| p.phone_fax.blank? },
                       :with => /\d{10}$/
-                      
 
   validates_format_of :phone_emergency,
                       :unless => Proc.new { |p| p.phone_emergency.blank? },
                       :with => /\d{10}$/
-                      
 
 # ---------------------
 # Inclusion validations
 # ---------------------
-
   validates_inclusion_of :gender,
                        :in => %w{ M F }
-                        
 
 # ------------------
 # Length validations
 # ------------------
-
   validates_length_of   :first_name,         :maximum => 255                              
   validates_length_of   :last_name,          :maximum => 255                              
   validates_length_of   :primary_address,    :maximum => 255,    :allow_blank => true     
@@ -105,27 +92,20 @@ class PatientProfile < ActiveRecord::Base
 # ---------------------
 # Numeric validations
 # ---------------------
-
   validates_numericality_of :pmd_patient_id, :pmd_user_id, :physician_id
-                            
 
 # --------------------
 # Presence validations
 # --------------------
-
   validates_presence_of :physician_id, :first_name, :last_name, :date_of_birth, :gender, :ethnicity
                         
-
-
 # ----------------------
 # Uniqueness validations
 # ----------------------
-
   validates_uniqueness_of :pmd_patient_id, :pmd_user_id, :email,
                           :case_sensitive => :false,
                           :message => "not unique, already used by different patient"
                           
-
 #-------------------
 # End of model class
 #-------------------
