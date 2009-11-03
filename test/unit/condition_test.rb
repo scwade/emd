@@ -21,26 +21,26 @@ class ConditionTest < ActiveSupport::TestCase
     bad_wiki_url    = "http://wiki.answers.co"
 
     # Create object
-      c = Condition.new
+    c = Condition.new
 
     # Test for good url format
-      c.google_url = good_google_url
-      c.wiki_url   = good_wiki_url
+    c.google_url = good_google_url
+    c.wiki_url   = good_wiki_url
 
     # Force the error check
-      c.valid?
-      assert !c.errors.invalid?(:google_url)
-      assert !c.errors.invalid?(:wiki_url)
+    c.valid?
+    assert !c.errors.invalid?(:google_url)
+    assert !c.errors.invalid?(:wiki_url)
 
     # Test for bad url formats
-      c.google_url = bad_google_url
-      c.wiki_url   = bad_wiki_url
+    c.google_url = bad_google_url
+    c.wiki_url   = bad_wiki_url
 
     # Check for errors
-      c.valid?
+    c.valid?
 
-      assert_equal I18n.translate('activerecord.errors.messages.invalid'), c.errors.on(:google_url)
-      assert_equal I18n.translate('activerecord.errors.messages.invalid'), c.errors.on(:wiki_url)
+    assert_equal I18n.translate('activerecord.errors.messages.invalid'), c.errors.on(:google_url)
+    assert_equal I18n.translate('activerecord.errors.messages.invalid'), c.errors.on(:wiki_url)
   end
 
 # --------------------------
@@ -69,7 +69,6 @@ class ConditionTest < ActiveSupport::TestCase
 
     # Check @errors{} not reported
     assert !c.errors.invalid?(:name)
-
   end
 
 # ----------------------------
@@ -85,29 +84,26 @@ class ConditionTest < ActiveSupport::TestCase
 
     # Check @errors{} at least one error reported
     assert c.errors.invalid?(:name)
-
   end
 
 # ----------------------------
 # Test uniqness_of validation
 # ----------------------------
   def test_for_uniqness_of_attributes
-
     # Use test fixture data
     c = Condition.create(:name => conditions(:one).name)
 
-   # Check @errors{}
-   assert c.errors.invalid?(:name)
+    # Check @errors{}
+    assert c.errors.invalid?(:name)
 
-   # Check @errors{} msg
-   assert_equal I18n.translate('activerecord.errors.messages.taken'), c.errors.on(:name)
+    # Check @errors{} msg
+    assert_equal I18n.translate('activerecord.errors.messages.taken'), c.errors.on(:name)
   end
 
 # ---------------------------------------------------------------------------------------
 # Now see if we can add at least one
 # -------------------------------------------------------------------------------------
   def test_for_create_condition_is_valid
-
     # Create object
     c = Condition.create(:name => "Headache")
 
@@ -118,6 +114,5 @@ class ConditionTest < ActiveSupport::TestCase
 # ---------------------------
 # End of ConditionTest
 # ---------------------------
-
 end
 

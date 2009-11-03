@@ -10,132 +10,126 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert true
   end
 
-  # -----------------------------------------------------------------------------------------
-  # Test inclusion_of :gender
-  # -----------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
+# Test inclusion_of :gender
+# -----------------------------------------------------------------------------------------
   def test_for_inclusion_of
-
     # Create object
-      p = PatientProfile.new
+    p = PatientProfile.new
 
     # Test for good
-      p.gender = 'M'
-      p.valid? # force error, if any
-      assert !p.errors.invalid?(:gender)
-      p.gender = 'F'
-      p.valid?
-      assert !p.errors.invalid?(:gender)
+    p.gender = 'M'
+    p.valid? # force error, if any
+    assert !p.errors.invalid?(:gender)
+    p.gender = 'F'
+    p.valid?
+    assert !p.errors.invalid?(:gender)
 
     # Test for bad
-      p.gender = 'T'
-      p.valid?
-      assert p.errors.invalid?(:gender)
-      assert_equal I18n.translate('activerecord.errors.messages.inclusion'), p.errors.on(:gender)
-      
+    p.gender = 'T'
+    p.valid?
+    assert p.errors.invalid?(:gender)
+    assert_equal I18n.translate('activerecord.errors.messages.inclusion'), p.errors.on(:gender)
   end
 
-  # -----------------------------------------------------------------------------------------
-  # Test format_of :email 
-  # -----------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
+# Test format_of :email 
+# -----------------------------------------------------------------------------------------
   def test_for_format_of_email
-
     # test data
-      good = %W( h@h.com h@h.net h@h.gov abcdefghijk0123456789@abcdefghijk0123456789.com )
-       bad = %W( @h.com hh.com h@.com h@hcom h@h. )
+    good = %W( h@h.com h@h.net h@h.gov abcdefghijk0123456789@abcdefghijk0123456789.com )
+    bad = %W( @h.com hh.com h@.com h@hcom h@h. )
 
     # Create object
-      p = PatientProfile.new
+    p = PatientProfile.new
 
     # Test for good email format
-      good.each do |x|
-        p.errors.clear
-        p.email = x
-        p.valid? # force error if any
-        assert !p.errors.invalid?(:email)
-      end
+    good.each do |x|
+      p.errors.clear
+      p.email = x
+      p.valid? # force error if any
+      assert !p.errors.invalid?(:email)
+    end
 
     # Test for bad email format
-      bad.each do |x|
-        p.errors.clear
-        p.email = x
-        p.valid? # force the error
-        assert p.errors.invalid?(:email)
-      end
-
+    bad.each do |x|
+      p.errors.clear
+      p.email = x
+      p.valid? # force the error
+      assert p.errors.invalid?(:email)
+    end
   end
 
-  # -----------------------------------------------------------------------------------------
-  # Test format_of :phone_xxx
-  # -----------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
+# Test format_of :phone_xxx
+# -----------------------------------------------------------------------------------------
   def test_for_format_of_phone_numbers
     # test conditions
-      bad = %W( 012345678 abcdefghij )
+    bad = %W( 012345678 abcdefghij )
 
     # Create object
-      p = PatientProfile.new
+    p = PatientProfile.new
 
     # Test for good phone format
-      p.phone_home = p.phone_work = p.phone_mobile = p.phone_fax = p.phone_emergency = "0123456789" 
-      p.valid? # force error if any
-      assert !p.errors.invalid?(:phone_home)
-      assert !p.errors.invalid?(:phone_mobile)
-      assert !p.errors.invalid?(:phone_work)
-      assert !p.errors.invalid?(:phone_fax)
-      assert !p.errors.invalid?(:phone_emergency)
+    p.phone_home = p.phone_work = p.phone_mobile = p.phone_fax = p.phone_emergency = "0123456789" 
+    p.valid? # force error if any
+    assert !p.errors.invalid?(:phone_home)
+    assert !p.errors.invalid?(:phone_mobile)
+    assert !p.errors.invalid?(:phone_work)
+    assert !p.errors.invalid?(:phone_fax)
+    assert !p.errors.invalid?(:phone_emergency)
 
     # Test for bad phone format
-      bad.each do |x|
-        p.errors.clear
-        p.phone_home = p.phone_mobile = p.phone_work = p.phone_fax = p.phone_emergency = x.to_s
-        p.valid? # force the error check
-        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_home)
-        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_mobile)
-        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_work)
-        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_fax)
-        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_emergency)
-      end
+    bad.each do |x|
+      p.errors.clear
+      p.phone_home = p.phone_mobile = p.phone_work = p.phone_fax = p.phone_emergency = x.to_s
+      p.valid? # force the error check
+      assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_home)
+      assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_mobile)
+      assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_work)
+      assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_fax)
+      assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:phone_emergency)
+    end
   end
 
-  # -----------------------------------------------------------------------------------------
-  # Test format_of :zip5, :zip4
-  # -----------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
+# Test format_of :zip5, :zip4
+# -----------------------------------------------------------------------------------------
   def test_for_format_of_zip_codes
     # test conditions
-      bad_zip5 = %W( 0 123456 a ab abc abcd abcde abcdef a1b2c3 )
-      bad_zip4 = %W( 0 12345 a ab abc abcd abcde a1b2 )
+    bad_zip5 = %W( 0 123456 a ab abc abcd abcde abcdef a1b2c3 )
+    bad_zip4 = %W( 0 12345 a ab abc abcd abcde a1b2 )
 
     # Create object
-      p = PatientProfile.new
+    p = PatientProfile.new
 
     # Test for good zip format
-      p.zip5 = "12345"
-      p.zip4 = "1234"
-      p.valid? # force the error check
-      assert !p.errors.invalid?(:zip5)
-      assert !p.errors.invalid?(:zip4)
+    p.zip5 = "12345"
+    p.zip4 = "1234"
+    p.valid? # force the error check
+    assert !p.errors.invalid?(:zip5)
+    assert !p.errors.invalid?(:zip4)
 
     # Test for bad zip formats
-      bad_zip5.each do |x|
-        p.errors.clear
-        p.zip5 = x 
-        p.valid? # force the error check
-        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:zip5)
-      end
+    bad_zip5.each do |x|
+      p.errors.clear
+      p.zip5 = x 
+      p.valid? # force the error check
+      assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:zip5)
+    end
 
-       bad_zip4.each do |x|
-        p.errors.clear
-        p.zip4 = x         
-        p.valid? # force the error check
-        assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:zip4)
-      end
-
+    bad_zip4.each do |x|
+      p.errors.clear
+      p.zip4 = x         
+      p.valid? # force the error check
+      assert_equal I18n.translate('activerecord.errors.messages.invalid'), p.errors.on(:zip4)
+    end
   end
 
-  # -----------------------------------------------------------------------------------------
-  # Test presence_of validation  
-  # -----------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------------
+# Test presence_of validation  
+# -----------------------------------------------------------------------------------------
   def test_for_presence_of_attributes
-
     # Create object
     p = PatientProfile.new
 
@@ -149,15 +143,12 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert p.errors.invalid?(:date_of_birth)
     assert p.errors.invalid?(:gender)
     assert p.errors.invalid?(:ethnicity)
-
   end
 
-
-  # ---------------------------------------------------------------------------------------
-  # Now see if we can add at least one
-  # -------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
+# Now see if we can add at least one
+# -------------------------------------------------------------------------------------
   def test_for_create_patient_profile_is_valid
-
     # Create object
     p = PatientProfile.create(:pmd_patient_id          => 1999,
                               :pmd_user_id             => 2999,
@@ -173,32 +164,30 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert p.valid?
   end
 
-  # ---------------------------------------------------------------------------------------
-  # Test uniqness_of validation
-  # ---------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
+# Test uniqness_of validation
+# ---------------------------------------------------------------------------------------
   def test_for_uniqness_of_attributes
-
     # Use test fixture data
     p = PatientProfile.create(:pmd_patient_id => patient_profiles(:rolland).pmd_patient_id,
                               :pmd_user_id    => patient_profiles(:rolland).pmd_user_id, 
                               :email          => patient_profiles(:rolland).email)
 
-   # Check @errors{}
-   assert p.errors.invalid?(:pmd_patient_id)
-   assert p.errors.invalid?(:pmd_user_id)
-   assert p.errors.invalid?(:email)
+     # Check @errors{}
+     assert p.errors.invalid?(:pmd_patient_id)
+     assert p.errors.invalid?(:pmd_user_id)
+     assert p.errors.invalid?(:email)
 
-   # Check @errors{} msg
-   assert_equal "not unique, already used by different patient", p.errors.on(:pmd_patient_id)
-   assert_equal "not unique, already used by different patient", p.errors.on(:pmd_user_id)
-   assert_equal "not unique, already used by different patient", p.errors.on(:email) 
+     # Check @errors{} msg
+     assert_equal "not unique, already used by different patient", p.errors.on(:pmd_patient_id)
+     assert_equal "not unique, already used by different patient", p.errors.on(:pmd_user_id)
+     assert_equal "not unique, already used by different patient", p.errors.on(:email) 
   end
 
-  # ---------------------------------------------------------------------------------------------
-  # Test numericality_of
-  # ---------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------
+# Test numericality_of
+# ---------------------------------------------------------------------------------------------
   def test_for_numericality_of_attributes
-
     # Create object
     p = PatientProfile.create(:pmd_patient_id => "a",
                               :pmd_user_id    => "b",
@@ -215,10 +204,9 @@ class PatientProfileTest < ActiveSupport::TestCase
     assert_equal I18n.translate('activerecord.errors.messages.not_a_number'), p.errors.on(:physician_id)
   end
 
-
-  # ---------------------------------------------------------------------------------------------
-  # Test length_of
-  # ---------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------
+# Test length_of
+# ---------------------------------------------------------------------------------------------
   def test_for_length_of_attributes
     # Need test data
     @max_255 = @max_60 = @max_9 = @is_2 = ""
@@ -285,5 +273,4 @@ class PatientProfileTest < ActiveSupport::TestCase
 # ---------------------------
 # End of PatientProfileTest 
 # ---------------------------
-
 end 

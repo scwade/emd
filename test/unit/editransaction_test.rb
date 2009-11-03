@@ -14,7 +14,6 @@ class EditransactionTest < ActiveSupport::TestCase
   # Test presence_of validation
   # -----------------------------------------------------------------------------------------
   def test_for_presence_of_attributes
-
     # Create object
     e = Editransaction.new
 
@@ -24,14 +23,12 @@ class EditransactionTest < ActiveSupport::TestCase
     # Check @errors{} at least one error reported
     assert e.errors.invalid?(:isa01)
     assert e.errors.invalid?(:isa02)
-
   end
 
   # ---------------------------------------------------------------------------------------
   # Now see if we can add at least one
   # -------------------------------------------------------------------------------------
   def test_for_create_editransaction_is_valid
-
     # Create object
     e = Editransaction.create(:isa01 => '99',
                               :isa02 => '1234567890')
