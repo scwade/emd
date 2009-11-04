@@ -24,23 +24,23 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should 2 show user" do
-    get :show, :id => users(:one).to_param
+    get :show, :id => users(:scott).to_param
     assert_response :success
   end
 
   test "should 3 get edit" do
-    get :edit, :id => users(:one).to_param
+    get :edit, :id => users(:scott).to_param
     assert_response :success
   end
 
   test "should 4 update user" do
-    put :update, :id => users(:one).to_param, :user => { }
+    put :update, :id => users(:scott).to_param, :user => { }
     assert_redirected_to user_path(assigns(:user))
   end
 
   test "should 5 destroy user" do
     assert_difference('User.count', -1) do
-      delete :destroy, :id => users(:one).to_param
+      delete :destroy, :id => users(:scott).to_param
     end
 
     assert_redirected_to users_path
