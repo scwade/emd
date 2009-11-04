@@ -1,5 +1,8 @@
 #db/seed/development/users.rb
 #Development base data
+
+# Delete all before seeding
+User.delete_all
                    
 user1 = User.create(:name => "Dave", 
   :password => 'secret',

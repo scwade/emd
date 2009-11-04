@@ -1,37 +1,37 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 #BASE DATA
-one:
+scott:
   name: scott
   hashed_password: 8d4f8f80f49fe1085a07234dc5400fc9789774c1
-  salt:  	-6124677780.106066437712971
+  salt: -6124677780.106066437712971
 
-2:
+tiffany:
   name: tiffany
-  hashed_password: tiffany
-  salt: 
+  hashed_password: 3c001420fb78f78faff027756b09a787b899bd2f
+  salt: -6114114380.824929958769304
   
-3:
+miria:
   name: maria
   hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
   salt: -6114114380.824929958769304
   
-4:
+rolland:
   name: rolland
   hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
   salt: -6114114380.824929958769304
   
-5:
+jacki:
   name: jacki
   hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
   salt: -6114114380.824929958769304
   
-6:
+demo:
   name: demo
   hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
   salt: -6114114380.824929958769304
   
-7:
+admin:
   name: admin
   hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
   salt: -6114114380.824929958769304

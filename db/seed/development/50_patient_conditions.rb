@@ -6,7 +6,9 @@ treated_by = treat_notes = []
 treated_by  << "Dr Wade" << "Dr Hoyt" << "Dr Smith" << "Dr Foot"
 treat_notes << "No problem found" << "Continue treatment" << "Re-check in a month" << "No problem" 
 
+# Delete all before seeding
 PatientCondition.delete_all
+
 p = PatientProfile.all
 c = Condition.all
 

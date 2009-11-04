@@ -1,6 +1,9 @@
 #db/seed/development/editransactions.rb
 #Development base data
 
+# Delete all before seeding
+Editransaction.delete_all
+
 e1 = Editransaction.create(
   :isa01 => "11",
   :isa02 => "1234567890",
