@@ -23,7 +23,6 @@ class Condition < ActiveRecord::Base
 # ----------
 # Callbacks
 # ----------
-
   before_validation CleanLeadingTrailingBlanks.new(:name)
 
 # ---------------------------------------------------------
@@ -34,7 +33,6 @@ class Condition < ActiveRecord::Base
 # Future: Add javascript to validate full URL's (ie 404 errors)
 #
 # --------------------------------------------------------
-
   validates_format_of :google_url,
                       :unless => Proc.new { |c| c.google_url.blank? },
                       :with => /^https:\/\/health\.google\.com\/health\/ref(.)*/
@@ -46,28 +44,15 @@ class Condition < ActiveRecord::Base
 # ------------------
 # Length validations
 # ------------------
-
   validates_length_of :name,  :maximum => 255
-
-# ------------------------------------------
-# Presence validations
-# Note: added :name for problem with unique
-# ------------------------------------------
-
-  validates_presence_of :name
 
 # -----------------------------------------------------------------------
 # Uniqueness validations
-# Note: :allow_nil => false and :case_sensitive=> false are not working
-# Use: validates_presence_of to fill hole
-# No fix for case sensitive at this time.
 # -----------------------------------------------------------------------
-
   validates_uniqueness_of :name,
-                          :allow_nil => false 
+                          :case_sensitive => false
 
 #-------------------
 # End of model class
 #-------------------
-
 end

@@ -103,7 +103,7 @@ class PatientProfile < ActiveRecord::Base
 # Uniqueness validations
 # ----------------------
   validates_uniqueness_of :pmd_patient_id, :pmd_user_id, :email,
-                          :case_sensitive => :false,
+                          :case_sensitive => false,
                           :message => "not unique, already used by different patient"
                           
 #-------------------
