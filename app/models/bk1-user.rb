@@ -52,30 +52,19 @@ class User < ActiveRecord::Base
   end
 
   # Need custom validation here 
-  def password_non_blank?
+  def password_non_blank
     errors.add(:password,  "Missing") if self.hashed_password.blank?
     if self.salt.blank? && !self.hashed_password.blank?
       errors.add(:salt, "System Error: contact system administrator")
-    end
+   end
   end
-
-# Place holder for unique if helper doesn't work
-#  # Need custom validation for unique
-#  def unique_name?
-#    if User.find_by_name(name)
-#      errors.add(:name, "duplicate name")
-#    end
-#  end 
 
 
 # --------------------
 # Custom validations
 # --------------------
   validates_confirmation_of :password
-  validate :password_non_blank?
-
-#  Using valiation helper
-#  validate_on_create :unique_name?
+  validate :password_non_blank
 
 # ------------------
 # Length validations
@@ -94,10 +83,9 @@ class User < ActiveRecord::Base
 
 # ----------------------
 # Uniqueness validations
-# Note: for :on the default is all
 # ----------------------
   validates_uniqueness_of :name,
-                          :case_sensitive => false,
+                          :case_sensitive => :false,
                           :message => "not unique, already used by different user"
 
 # ------------
