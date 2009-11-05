@@ -45,5 +45,9 @@ Rails::Initializer.run do |config|
   
   #create the session table with the rake db:sessions:create
   config.action_controller.session_store = :active_record_store
+
+  # Use act_as_audited in development with
+  config.cache_classes = true
+  config.action_controller.perform_caching = true
   
 end
