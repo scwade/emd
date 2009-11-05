@@ -21,10 +21,8 @@ class User < ActiveRecord::Base
   end
 
   def after_destroy
-#    if User.count.zero?
-#    This raise is used wrong, there s/b a rescue or flash(:error, or :notice, etc)
-      raise "Can't delete last user" if User.count.zero?
-#    end
+    #Raise Exception type object, not RunTimeError type for future use.
+    raise Exception, "You can't delete the last user" if User.count.zero?
   end
 
 # ------------------------------------
