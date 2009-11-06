@@ -12,3 +12,6 @@ db/*.sqlite3
 public/index*
 ./**/bk-*
 bk-*
+bk_*
+./**/bk_*
+

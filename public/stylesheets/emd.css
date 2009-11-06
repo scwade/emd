@@ -474,3 +474,7 @@ table .X3 tr.evn { background-color: #ffdfff }
 #my_record .entry .add-to-cart {
    position: relative;
 }
+#user_nav {
+  float: right;
+  font-size: 12px;
+}

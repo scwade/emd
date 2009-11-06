@@ -2,16 +2,14 @@
 
 <table class="X3"rules="none" border="1">
   <tr>
-    <th>Name</th>
-    <th>Hashed password</th>
-    <th>Salt</th>
+    <th>User Login Name</th>
+    <th>Crypted password</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
-    <td><%=h user.name %></td>
-    <td><%=h user.hashed_password %></td>
-    <td><%=h user.salt %></td>
+    <td><%=h user.username %></td>
+    <td><%=h user.crypted_password %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', 
