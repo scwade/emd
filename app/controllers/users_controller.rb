@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
 
-    @users = User.all(:order => :name)
+    @users = User.all(:order => :username)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   # GET /users/new.xml
   def new
     @user = User.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @user }
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # POST /users
@@ -45,8 +45,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = "User #{@user.name} was successfully created."
-        format.html { redirect_to(@user) }
+        flash[:notice] = "User #{@user.username} was successfully registered."
+        format.html { redirect_to(@user) } #      redirect_to root_url
         format.xml  { render :xml => @user, :status => :created,
                              :location => @user }
       else
@@ -59,12 +59,11 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
-
+    @user = current_user
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        flash[:notice] = "User #{@user.name} was successfully updated."
-        format.html { redirect_to(@user) }
+        flash[:notice] = "User #{@user.username} profile was successfully updated."
+        format.html { redirect_to(@user) } #       redirect_to root_url
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,7 +81,7 @@ class UsersController < ApplicationController
     #SCWa - begin
     begin
       @user.destroy
-      flash[:notice] = "User #{@user.name} deleted"
+      flash[:notice] = "User #{@user.username} deleted"
     rescue Exception => e
       flash[:notice] = e.message
     end
@@ -94,3 +93,4 @@ class UsersController < ApplicationController
     end
   end
 end
+
