@@ -2,42 +2,43 @@
 
 #BASE DATA
 scott:
-  name: scott
-  hashed_password: 8d4f8f80f49fe1085a07234dc5400fc9789774c1
-  salt: -6124677780.106066437712971
+  id: 2 
+  username: scott
+  email: scott@proficentmd.com
+  crypted_password: 123456 
 
 tiffany:
-  name: tiffany
-  hashed_password: 3c001420fb78f78faff027756b09a787b899bd2f
-  salt: -6114114380.824929958769304
+  id: 3 
+  username: tiffany
+  email: tiffany@proficentmd.com
+  crypted_password: 123456
   
 miria:
-  name: maria
-  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
-  salt: -6114114380.824929958769304
+  id: 4 
+  username: maria
+  email: maria@proficentmd.com
+  crypted_password: 123456
   
 rolland:
-  name: rolland
-  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
-  salt: -6114114380.824929958769304
+  id: 5 
+  username: rolland
+  email: rolland@proficentmd.com
+  crypted_password: 123456
   
 jacki:
-  name: jacki
-  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
-  salt: -6114114380.824929958769304
+  id: 6 
+  username: jacki
+  email: jacki@proficentmd.com
+  crypted_password: 123456
   
 demo:
-  name: demo
-  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
-  salt: -6114114380.824929958769304
+  id: 7 
+  username: demo
+  email: demo@proficentmd.com
+  crypted_password: 123456
   
 admin:
-  name: admin
-  hashed_password: ddda00bebd1c0e44a1699f8cefd5bb8942d162c8
-  salt: -6114114380.824929958769304
-  
-#TEST DATA
-nonunique:
-  name: maria
-  hashed_password: maria
-  salt: maria
+  id: 8 
+  username: admin
+  email: admin@proficentmd.com
+  crypted_password: 123456

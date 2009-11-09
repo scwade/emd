@@ -37,7 +37,7 @@
 
 /* The wire frame layout */
 body {
-    background-image: url(form-background.png);
+   background-image: url(form-background.png);
 }
 
 #main-wrapper, #main-form, #main-footer, #footer-logo, #footer-copyright, #form-buttons {
@@ -435,12 +435,14 @@ thead {
   font: bold large verdana;
 }
 
-
-table .X3 body { border: 4px}
-table .X3 th { font: bold xx-small verdana } 
-table .X3 td { padding: 1em; font: bold xx-small verdana }
-table .X3 tr.odd { background-color: #d8ffff }
-table .X3 tr.evn { background-color: #ffdfff }
+/* Table X3 class */ 
+.X3 { 
+  border-spacing: .8em .1em;
+  border: inset .1em #FFFEF0;
+  background-color: #ECF0F9;
+  font: 1em verdana; 
+  text-align: left;
+}
 
 .record-title {
    font: bold medium verdana;
@@ -503,4 +505,8 @@ table .X3 tr.evn { background-color: #ffdfff }
 .debug_dump{
   background-color: yellow;
   color: black;
+
+#user_nav {
+  float: right;
+  font-size: 12px;
 }

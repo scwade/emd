@@ -22,13 +22,22 @@
 
     </div>
     <div id="main">
-<!-- Need "x" red image and red text for destroy -->
-      <% if !flash.empty? -%>
+      <% unless flash.empty? -%>
         <div class="noticeBox">
-          <%= image_tag("check-mark.jpg", :size=>"36x36") %>
-          <div id="notice">
-            <%= if !flash[:notice] then flash[:destroy] else flash[:notice] end %>
-          </div>
+          <% unless flash[:notice].blank? %>
+            <%= image_tag("check-mark.png", :size=>"36x36") -%>
+            <div id="notice" style="color: green">  <%= flash[:notice] %>  </div>
+          <% else %>
+            <% unless flash[:yield].blank? %>
+              <%= image_tag("yield-mark.png", :size=>"36x36") -%>
+              <div id="notice" style="color: yellow;" >  <%= flash[:yield] %>  </div>
+            <% else %>
+              <% unless flash[:error].blank? %>
+                <%= image_tag("error-mark.png", :size=>"36x36") -%>
+                <div id="notice" style="color: red" >  <%= flash[:error] %>  </div>
+              <% end %>
+            <% end %>
+          <% end %>
         </div>
       <% end -%>
 

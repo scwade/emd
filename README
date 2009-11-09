@@ -1,12 +1,42 @@
+Correct your database.yml file for connectivity (developers can rever to database.yml.template)
 
-Correct your database.yml file for connectivity
+# APPLICATION DEPENDENCIES:
+# -------------------------
+# The emd Application utilizes the following plugins, gems, and engines
+
+# TODO(rolland) - Ajax, virtual fields, other modules (list install string and URL to source)
+
+# Ruote Workflow Engine - (http://openwferu.rubyforge.org/quickstart.html)
+sudo gem install ruote2.0 # TODO Not yet available........
+
+# Authentication (http://github.com/binarylogic/authlogic_openid)
+sudo gem install authlogic      #basic authentication framework
+sudo gem install authlogic-oid  #authentication open id gem
+sudo gem install ruby-openid    #ruby open id gem
+
+# TO INSTALL:
+# -------------------------
+
+git clone git@github.com:scwade/emd.git
 rake db:drop
 rake db:create
 rake db:migrate
 
+# TODO(rolland) - Rolland to update this list 
 rake db:load_reference_address            # Load reference data for validation
 rake db:load_reference_ethnicity          # Load reference data for validation
 
+# CONFIGURATION:
+# -------------------------
+# First time environment Configuration:
+# NOTE! This command will delete all data in an environment and load it to a known seed state
+# You may add you're own .rb configuration files in [app-root]/db/seed/[environment]/alpha-order.rb]
+
 rake db:seed
 
-You can log in with UID = admin :PASSWORD = admin
+# START:
+# -------------------------
+
+script/server
+
+# Login with UID = admin :PASSWORD = admin, then configure you're users
