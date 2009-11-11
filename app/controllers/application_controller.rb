@@ -1,6 +1,3 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
@@ -13,22 +10,22 @@ class ApplicationController < ActionController::Base
   #    session[:record]
   #  end
 
-
-  ### SCW - Uncomment to enable secure login
+  ##### SCW - Uncomment to enable secure login
   #  before_filter :authorize, :except => :login
   
-  ### See ActionController::Base for details
-  # Filter the contents of submitted sensitive data parameters (like "password")
+  ### Filter Out Sensitive Data from Logs 
+  # Uncomment to filter the contents of sensitive data parameters
+  # Such as your application log (in this case, all fields with names like "password").
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user
   
   private
- 
+
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
   end
-  
+
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record

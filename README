@@ -1,4 +1,4 @@
-Correct your database.yml file for connectivity (developers can rever to database.yml.template)
+Correct your database.yml file for connectivity (developers can refer to database.yml.template)
 
 # APPLICATION DEPENDENCIES:
 # -------------------------
@@ -17,6 +17,7 @@ sudo gem install ruby-openid    #ruby open id gem
 # TO INSTALL:
 # -------------------------
 # Get the main application
+
 git clone git@github.com:scwade/emd.git
 rake db:drop
 rake db:create
@@ -30,8 +31,6 @@ rake db:migrate
 # TODO(rolland) - Rolland to update this list 
 rake db:load_reference_address            # Load reference data for validation
 rake db:load_reference_ethnicity          # Load reference data for validation
-rake db:load_reference_filter_city        # Load reference city data for validation
-rake db:load_reference_filter_state       # Load reference data for validation
 
 # CONFIGURATION:
 # -------------------------

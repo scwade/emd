@@ -3,7 +3,7 @@
 
 ### ROLLAND TODO - Please make this a rake action (this was messing up my seed environments)
 # Delete all before seeding
-#Editransaction.delete_all
+# Editransaction.delete_all
 
 e1 = Editransaction.create(
   :isa01 => "11",

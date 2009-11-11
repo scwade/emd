@@ -10,7 +10,6 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20091110200838) do
-
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
     t.string   "auditable_type"
@@ -127,12 +126,6 @@ ActiveRecord::Schema.define(:version => 20091110200838) do
     t.datetime "updated_at"
   end
 
-  create_table "reference_filter_cities", :force => true do |t|
-    t.string   "description", :limit => 60, :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "reference_filter_states", :force => true do |t|
     t.string   "state",       :limit => 2,  :null => false
     t.string   "description", :limit => 60, :null => false
@@ -158,6 +151,7 @@ ActiveRecord::Schema.define(:version => 20091110200838) do
     t.string   "persistence_token"
     t.integer  "login_count",        :default => 0,  :null => false
     t.integer  "failed_login_count", :default => 0,  :null => false
+
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"

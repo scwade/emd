@@ -1,9 +1,10 @@
 #db/seed/development/xx_patient_profiles.rb
 #Development base data
 
+<<<<<<< HEAD:db/seed/development/03_patient_profiles.rb
 ### ROLLAND TODO - Please make this a rake action (this was messing up my seed environments)
 # Delete all before seeding
-#PatientProfile.delete_all
+# PatientProfile.delete_all
 
 pp1 = PatientProfile.create( 
   :pmd_patient_id => "100000001",

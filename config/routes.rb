@@ -9,8 +9,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :patient_conditions
   map.resources :conditions
   map.resources :editransactions
-  
-#remove SCW  map.resources :my_record
+  map.resources :audit
+
+  ###remove SCW  map.resources :my_record - TODO - clean up my_record in CSS
 
   # The priority is based upon order of creation: first created -> highest priority.
 

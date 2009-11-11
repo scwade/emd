@@ -2,10 +2,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-
     @users = User.all(:order => :username)
-    
-    respond_to do |format|
+        respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
     end
@@ -61,7 +59,6 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.attributes = params[:user]
-#    @user.update_attributes(params[:user]) do |result|
     @user.save do |result|
       respond_to do |format|
         if result
@@ -85,7 +82,7 @@ class UsersController < ApplicationController
       @user.destroy
       flash[:notice] = "User #{@user.username} deleted"
     rescue Exception => e
-      flash[:notice] = e.message
+      flash[:yield] = e.message
     end
     #SCWa - end
     
