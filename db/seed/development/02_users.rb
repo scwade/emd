@@ -2,7 +2,7 @@
 #Development base data
 
 # Delete all before seeding
-User.delete_all
+# User.delete_all
 
 user = %w(scott maria rolland jacki chris lisa)
 

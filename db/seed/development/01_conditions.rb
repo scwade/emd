@@ -2,7 +2,7 @@
 #Development base data
 
 # Delete all before seeding
-Condition.delete_all
+# Condition.delete_all
 
 c1 = Condition.create(:name => 'Abdominal Hernia',
   :google_url => "https://health.google.com/health/ref/Hernia",

@@ -2,7 +2,7 @@
 #Development base data
 
 # Delete all before seeding
-PatientProfile.delete_all
+# PatientProfile.delete_all
 
 pp1 = PatientProfile.create( 
   :pmd_patient_id => "100000001",
