@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>PROficientMD</title>
+  <%= stylesheet_link_tag "emd", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
+ <! For javascript/dynamic_states.js -->
+  <%= yield :head %>
+
+</head>
+
+<body id="my_record">
+  <div id ="containter">
+    <div id="banner">
+      <%= image_tag("logo-header.png") %>
+      <%= @page_title || "My Medical Records" %>
+      <title><%= h(yield(:title) || "Untitled") %></title>
+      <%= yield(:head) %>
+    </div>
+    <div id="user_nav">
+      <% if current_user %>
+        <%= "Welcome" %>
+        <%= h current_user.username %> -
+        <%= link_to "Edit Profile", edit_user_path(:current) %> |
+        <%= link_to "Logout", logout_path %>
+      <% else %>
+        <%= link_to "Register", new_user_path %> |
+        <%= link_to "Login", login_path %>
+      <% end %>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,44 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+#BASE DATA
+scott:
+  id: 2 
+  username: scott
+  email: scott@proficentmd.com
+  crypted_password: 123456 
+
+tiffany:
+  id: 3 
+  username: tiffany
+  email: tiffany@proficentmd.com
+  crypted_password: 123456
+  
+miria:
+  id: 4 
+  username: maria
+  email: maria@proficentmd.com
+  crypted_password: 123456
+  
+rolland:
+  id: 5 
+  username: rolland
+  email: rolland@proficentmd.com
+  crypted_password: 123456
+  
+jacki:
+  id: 6 
+  username: jacki
+  email: jacki@proficentmd.com
+  crypted_password: 123456
+  
+demo:
+  id: 7 
+  username: demo
+  email: demo@proficentmd.com
+  crypted_password: 123456
+  
+admin:
+  id: 8 
+  username: admin
+  email: admin@proficentmd.com
+  crypted_password: 123456
