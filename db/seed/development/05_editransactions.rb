@@ -1,13 +1,17 @@
-#db/seed/development/editransactions.rb
+#db/seed/development/xx_editransactions.rb
 #Development base data
+
+### ROLLAND TODO - Please make this a rake action (this was messing up my seed environments)
+# Delete all before seeding
+#Editransaction.delete_all
 
 e1 = Editransaction.create(
   :isa01 => "11",
-  :isa02 => "0123456789",
+  :isa02 => "1234567890",
   :isa03 => "11",
   :isa04 => "1010101010",
   :isa05 => "11",
-  :isa06 => "012345678901234",
+  :isa06 => "123456789012340",
   :isa07 => "11",
   :isa08 => "101010101010101",
   :isa09 => "123456",
@@ -23,7 +27,7 @@ e1.save
 
 e2 = Editransaction.create(
   :isa01 => "12",
-  :isa02 => "0123456789",
+  :isa02 => "1234567890",
   :isa03 => "11",
   :isa04 => "2342134323",
   :isa05 => "11",
@@ -47,7 +51,7 @@ e3 = Editransaction.create(
   :isa03 => "11",
   :isa04 => "2342134323",
   :isa05 => "11",
-  :isa06 => "012345678901234",
+  :isa06 => "123456789012340",
   :isa07 => "11",
   :isa08 => "101010101010101",
   :isa09 => "123456",
@@ -63,9 +67,9 @@ e3.save
 
 e4 = Editransaction.create(
   :isa01 => "14",
-  :isa02 => "0123456789",
+  :isa02 => "1234567890",
   :isa03 => "11",
-  :isa04 => "0202020202",
+  :isa04 => "2020202020",
   :isa05 => "11",
   :isa06 => "101010101010101",
   :isa07 => "11",

@@ -2,30 +2,35 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-
-# SCW - Adding method for user linking to subset of conditions (my records, my conditions) 
-#  def find_record
-#    unless session[:record]         # if there is no record in session
-#      session[:record] = Record.new # then add a new one
-#    end
-#    session[:record]
-#  end
-
-# SCW - section 11.4 - layout - not sure its working
-  layout "editransaction"
-
-  ##### SCW - Uncomment to enable secure login
-#  before_filter :authorize, :except => :login
-
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  # SCW TODO - Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
-  protected
-  def authorize
-    unless User.find_by_id(session[:user_id])
-      flash[:notice] = "Please log in"
-      redirect_to :controller => 'admin', :action => 'login'
-    end
+
+  ### SCW - Adding method for user linking to subset of conditions (my records, my conditions) 
+  #  def find_record
+  #    unless session[:record]         # if there is no record in session
+  #      session[:record] = Record.new # then add a new one
+  #    end
+  #    session[:record]
+  #  end
+
+
+  ### SCW - Uncomment to enable secure login
+  #  before_filter :authorize, :except => :login
+  
+  ### See ActionController::Base for details
+  # Filter the contents of submitted sensitive data parameters (like "password")
+  filter_parameter_logging :password, :password_confirmation
+  helper_method :current_user
+  
+  private
+ 
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+  
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
   end
 end

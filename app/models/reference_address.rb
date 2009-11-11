@@ -1,3 +1,8 @@
 class ReferenceAddress < ActiveRecord::Base
- # self.primary_key = "zip5_id"
+
+# ------------------------------
+# All Methods are private scope
+# ------------------------------
+  private
+
 end

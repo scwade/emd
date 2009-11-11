@@ -13,7 +13,6 @@
 # Rollands Rake stuff -- Please make a much smaller/faster set for development!!!!!!!!!! thx
 #rake db:load_reference_address            # Load reference data for validation
 #rake db:load_reference_ethnicity          # Load reference data for validation
-#rake db:load_reference_filter_city        # Load reference city data for validation
 #rake db:load_reference_filter_state       # Load reference data for validation
 #########################################################################################
 

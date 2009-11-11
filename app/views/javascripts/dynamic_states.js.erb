@@ -1,0 +1,53 @@
+// Defined functions
+
+// Register event with document, disable elements
+
+  document.observe("dom:loaded", function() {
+  
+    try {
+      // Disable state, zip5, zip4
+      $('patient_profile_state_province').disable().style.color='gray';
+      $('patient_profile_zip5').disable().style.color='gray';
+      $('patient_profile_zip4').disable().style.color='gray'; 
+    } catch(error) {
+      alert('Error trying to disable state and zip code fields.' + '\n\n' + 'Please try again!');
+    } 
+
+  
+    // Register callback with event handler
+    try {
+      $('patient_profile_city_auto_complete').observe('click', respondToChange);
+    } catch(error) {
+      alert('Error trying to register callback event.' + '\n\n' + 'Please try again!');
+    }
+  });
+
+  function respondToChange(event) {
+   //alert(event.type);
+   // Scrub extra spaces
+   try {
+     var array = $F('patient_profile_city').strip().split(",");
+
+     // Assign user selection to city, state, and zip
+     $('patient_profile_city').value = array[0];
+     $('patient_profile_state_province').value = array[1];
+     $('patient_profile_zip5').value = array[2];
+
+     // Scrub extra spaces
+     $('patient_profile_state_province').value = $F('patient_profile_state_province').strip();
+     $('patient_profile_zip5').value = $F('patient_profile_zip5').strip();
+   } catch(error) {
+     alert('Error unable to load state and zip codes field');
+   }
+   
+   // Enable state, zip5, zip4 
+   try {
+     $('patient_profile_state_province').enable().style.color='black';
+     $('patient_profile_zip5').enable().style.color='black';
+     $('patient_profile_zip4').enable().style.color='black';
+   } catch(error) {
+     alert('Error trying to enable state and zip code fields');
+   }
+
+   return false;
+  };

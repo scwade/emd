@@ -33,7 +33,7 @@ namespace :db do
         s = line.split(",")
     
         # load data
-        if !ReferenceAddress.create( :state => s[1], :zip5=> s[0] ) 
+        if !ReferenceAddress.create( :city=>s[2].titlecase, :state=>s[1], :zip5=>s[0] ) 
           puts "Error trying to load reference_addresses table!"
           fin.close
           exit

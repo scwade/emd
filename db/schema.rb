@@ -9,10 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090901065316) do
+ActiveRecord::Schema.define(:version => 20091110200838) do
+
+  create_table "audits", :force => true do |t|
+    t.integer  "auditable_id"
+    t.string   "auditable_type"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "username"
+    t.string   "action"
+    t.text     "changes"
+    t.integer  "version",        :default => 0
+    t.datetime "created_at"
+  end
+
+  add_index "audits", ["auditable_id", "auditable_type"], :name => "auditable_index"
+  add_index "audits", ["created_at"], :name => "index_audits_on_created_at"
+  add_index "audits", ["user_id", "user_type"], :name => "user_index"
 
   create_table "conditions", :force => true do |t|
-    t.string   "name"
+    t.string   "name",       :null => false
     t.text     "google_url"
     t.text     "wiki_url"
     t.datetime "created_at"
@@ -20,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
   end
 
   create_table "editransactions", :force => true do |t|
-    t.string   "isa01",      :limit => 2
-    t.string   "isa02",      :limit => 10
+    t.string   "isa01",      :limit => 2,  :null => false
+    t.string   "isa02",      :limit => 10, :null => false
     t.string   "isa03",      :limit => 2
     t.string   "isa04",      :limit => 10
     t.string   "isa05",      :limit => 2
@@ -38,6 +54,21 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
     t.string   "isa16",      :limit => 1
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "open_id_authentication_associations", :force => true do |t|
+    t.integer "issued"
+    t.integer "lifetime"
+    t.string  "handle"
+    t.string  "assoc_type"
+    t.binary  "server_url"
+    t.binary  "secret"
+  end
+
+  create_table "open_id_authentication_nonces", :force => true do |t|
+    t.integer "timestamp",  :null => false
+    t.string  "server_url"
+    t.string  "salt",       :null => false
   end
 
   create_table "patient_conditions", :force => true do |t|
@@ -62,7 +93,7 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
     t.integer  "zip5",              :limit => 8
     t.integer  "zip4"
     t.string   "city",              :limit => 60
-    t.string   "state_province",    :limit => 2,  :null => false
+    t.string   "state_province",    :limit => 2
     t.string   "email",                           :null => false
     t.string   "phone_home",        :limit => 10
     t.string   "phone_mobile",      :limit => 10
@@ -83,8 +114,9 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
   end
 
   create_table "reference_addresses", :force => true do |t|
-    t.integer  "zip5",                    :null => false
-    t.string   "state",      :limit => 2, :null => false
+    t.string   "zip5",       :limit => 5,  :null => false
+    t.string   "state",      :limit => 2,  :null => false
+    t.string   "city",       :limit => 60, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,11 +151,24 @@ ActiveRecord::Schema.define(:version => 20090901065316) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "hashed_password"
-    t.string   "salt"
+    t.string   "username"
+    t.string   "email",              :default => "", :null => false
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.integer  "login_count",        :default => 0,  :null => false
+    t.integer  "failed_login_count", :default => 0,  :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "openid_identifier"
+    t.string   "perishable_token",   :default => "", :null => false
   end
+
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

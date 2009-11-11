@@ -12,30 +12,30 @@ class ConditionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create condition" do
+  test "should 1 create condition" do
     assert_difference('Condition.count') do
-      post :create, :condition => { }
+      post :create, :condition => {:name => "Headache" }
     end
 
     assert_redirected_to condition_path(assigns(:condition))
   end
 
-  test "should show condition" do
+  test "should 2 show condition" do
     get :show, :id => conditions(:one).to_param
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should 3 get edit" do
     get :edit, :id => conditions(:one).to_param
     assert_response :success
   end
 
-  test "should update condition" do
+  test "should 4 update condition" do
     put :update, :id => conditions(:one).to_param, :condition => { }
     assert_redirected_to condition_path(assigns(:condition))
   end
 
-  test "should destroy condition" do
+  test "should 5 destroy condition" do
     assert_difference('Condition.count', -1) do
       delete :destroy, :id => conditions(:two).to_param
     end

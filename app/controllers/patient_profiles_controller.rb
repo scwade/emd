@@ -1,5 +1,4 @@
 class PatientProfilesController < ApplicationController
-  auto_complete_for :patient_profiles, :city
 
   # GET /patient_profiles
   # GET /patient_profiles.xml

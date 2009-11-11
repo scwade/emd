@@ -88,7 +88,7 @@ class PatientConditionsController < ApplicationController
     @patient_condition = PatientCondition.new(params[:patient_condition])
     respond_to do |format|
       if @patient_condition.save
-        flash[:notice] = 'PatientCondition was successfully created.'
+        flash[:notice] = 'Patient Condition was successfully created.'
         format.html { redirect_to(@patient_condition) }
         format.xml  { render :xml => @patient_condition, :status => :created, :location => @patient_condition }
       else
@@ -105,7 +105,7 @@ class PatientConditionsController < ApplicationController
 
     respond_to do |format|
       if @patient_condition.update_attributes(params[:patient_condition])
-        flash[:notice] = 'PatientCondition was successfully updated.'
+        flash[:notice] = 'Patient Condition was successfully updated.'
         format.html { redirect_to(@patient_condition) }
         format.xml  { head :ok }
       else
@@ -122,6 +122,9 @@ class PatientConditionsController < ApplicationController
     @patient_condition.destroy
 
     respond_to do |format|
+      if @patient_condition.destroy
+        flash[:notice] = 'Patient Condition was successfully deleted.'
+      end
       format.html { redirect_to(patient_conditions_url) }
       format.xml  { head :ok }
     end

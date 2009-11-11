@@ -1,70 +1,130 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+rolland: 
+    id: 1
+    city: Union City
+    zip5: "94587"
+    created_at: 2009-10-30 10:25:43
+    state_province: CO
+    primary_address: 32455 Capitola Ct
+    ethnicity: "12"
+    phone_emergency: "5104290790"
+    updated_at: 2009-10-30 10:25:43
+    phone_fax: "5104290790"
+    gender: M
+    phone_home: "5104290790"
+    pmd_user_id: "100000001"
+    id: "1"
+    phone_work: "5105520948"
+    alternate_address: 33691 Simple Ct
+    pmd_patient_id: "100000001"
+    last_name: Hoyt
+    date_of_birth: "2004-09-09"
+    physician_id: "10"
+    phone_mobile: "5105520948"
+    email: rolland@proficientMD.com
+    zip4: "1234"
+    first_name: Rolland
 
-rolland:
-  id:  1000
-  pmd_patient_id: 100000000 
-  pmd_user_id:    100000000 
-  physician_id:   100000000 
-  first_name: Rolland
-  last_name: Hoyt
-  primary_address: 32455 Capitola Ct
-  alternate_address: 33691 Simple Ct 
-  city: Union City 
-  zip5: 10000 
-  zip4: 1234 
-  state_province: CA 
-  email: rolland@proficientMD.com 
-  phone_home: 5104290790 
-  phone_mobile: 5105520948 
-  phone_work: 5105520948
-  phone_fax: 5104290790
-  phone_emergency: 5104290790 
-  date_of_birth: 19570902  
-  gender: M
-  ethnicity: "white" 
+jacki: 
+    id: 2
+    city: Union City
+    zip5: "94587"
+    created_at: 2009-10-30 10:25:43
+    state_province: AB
+    primary_address: 32455 Capitola Ct
+    ethnicity: "12"
+    phone_emergency: "5104290790"
+    updated_at: 2009-10-30 10:25:43
+    phone_fax: "5104290790"
+    gender: M
+    phone_home: "5104290790"
+    pmd_user_id: "100000002"
+    id: "2"
+    phone_work: "5105520948"
+    alternate_address: 33691 Simple Ct
+    pmd_patient_id: "100000002"
+    last_name: Hoyt
+    date_of_birth: "2005-09-24"
+    physician_id: "12"
+    phone_mobile: "5105520948"
+    email: jacki@proficientMD.com
+    zip4: "1234"
+    first_name: Jacki
 
-jacki:
-  id: 1001
-  pmd_patient_id: 200000100 
-  pmd_user_id:    200000100 
-  physician_id:   200000100 
-  first_name: Jacki 
-  last_name: Hoyt
-  primary_address: 32455 Capitola Ct
-  alternate_address: 33691 Simple Ct
-  city: Union City
-  zip5: 10000 
-  zip4: 7777 
-  state_province: WY 
-  email: jacki@proficientMD.com
-  phone_home: 5104290790
-  phone_mobile: 5105520948
-  phone_work: 5105520948
-  phone_fax: 5104290790
-  phone_emergency: 5104290790
-  date_of_birth: 19601030
-  gender: F 
-  ethnicity: "white" 
+whaky_jacki: 
+    id: 3
+    city: Union City
+    zip5: "94587"
+    created_at: 2009-10-30 10:25:43
+    state_province: AB
+    primary_address: 32455 Capitola Ct
+    ethnicity: "12"
+    phone_emergency: "5104290790"
+    updated_at: 2009-10-30 10:25:43
+    phone_fax: "5104290790"
+    gender: F
+    phone_home: "5104290790"
+    pmd_user_id: "100000003"
+    id: "3"
+    phone_work: "5105520948"
+    alternate_address: 33691 Simple Ct
+    pmd_patient_id: "100000003"
+    last_name: Jacky
+    date_of_birth: "2005-09-24"
+    physician_id: "10"
+    phone_mobile: "5105520948"
+    email: wacky@proficientMD.com
+    zip4: "1234"
+    first_name: Whaky Jacky
 
-chris:
-  id: 1002
-  pmd_patient_id: 300000200 
-  pmd_user_id:    300000200 
-  physician_id:   300000200 
-  first_name: Chris 
-  last_name: Hoyt
-  primary_address: 32455 Capitola Ct
-  alternate_address: 33691 Simple Ct
-  city: Union City
-  zip5: 10000 
-  zip4: 8888 
-  state_province: AZ 
-  email: chris@proficientMD.com
-  phone_home: 5104290790
-  phone_mobile: 5105520948
-  phone_work: 5105520948
-  phone_fax: 5104290790
-  phone_emergency: 5104290790
-  date_of_birth: 19810709
-  gender: M
-  ethnicity: "white"
+chris: 
+    id: 4
+    city: Union City
+    zip5: "94587"
+    created_at: 2009-10-30 10:25:43
+    state_province: AB
+    primary_address: 32455 Capitola Ct
+    ethnicity: "11"
+    phone_emergency: "5104290790"
+    updated_at: 2009-10-30 10:25:43
+    phone_fax: "5104290790"
+    gender: M
+    phone_home: "5104290790"
+    pmd_user_id: "100000004"
+    id: "4"
+    phone_work: "5105520948"
+    alternate_address: 33691 Simple Ct
+    pmd_patient_id: "100000004"
+    last_name: Hoyt
+    date_of_birth: "2005-09-24"
+    physician_id: "10"
+    phone_mobile: "5105520948"
+    email: chris@proficientMD.com
+    zip4: "1234"
+    first_name: Chris
+
+scott: 
+    id: 5
+    city: Oxnard
+    zip5: "93035"
+    created_at: 2009-10-30 10:25:43
+    state_province: CA
+    primary_address: 3600 harbor
+    ethnicity: "10"
+    phone_emergency: "5555555555"
+    updated_at: 2009-10-30 10:25:43
+    phone_fax: "5555555555"
+    gender: M
+    phone_home: "5555555555"
+    pmd_user_id: "111111111"
+    id: "5"
+    phone_work: "5555555555"
+    alternate_address: none
+    pmd_patient_id: "111111111"
+    last_name: Wade
+    date_of_birth: "2005-09-24"
+    physician_id: "11"
+    phone_mobile: "5555555555"
+    email: scott@proficientMD.com
+    zip4: "1234"
+    first_name: Scott

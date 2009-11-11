@@ -1,5 +1,7 @@
 <!-- Edit Patient Profile -->
 
+<% javascript 'dynamic_states' %>
+
     <div id="main-wrapper">
       <div id="main-header">'Edit' Patient Profile</div>
       <div id="main-form">
@@ -62,13 +64,10 @@
             <%= text_field_with_auto_complete :patient_profile, :city,
               { :size=>24, :maxlength=>60, :tabindex=>13, :class=>"form-inputText" },
               { :min_chars=>3, :skip_style => true,
-                :method=>:get, :url=>reference_filter_cities_path(:js), :with=>"'search=' + element.value"  } %><br />
-	
+                :method=>:get, :url=>reference_address_path(:js), :with=>"'search=' + element.value"  } %><br />
+
             <label class="form-label">State/Province:</label>
-            <%= 
-              @s = ReferenceFilterState.find(:all, :order=>"state").map { |u| [[u.state, " - ", u.description], u.state] }
-              f.select(:state_province, @s, {:selected=>@patient_profile.state_province}, {:tabindex=>14})
-            %><br />
+            <%= f.text_field :state_province, :size=>2, :maxlength=>2, :tabindex=>14, :class=>"form-inputText" %><br />
 
             <label class="form-label">Zip Code:</label>
             <%= f.text_field :zip5, :size=>5, :maxlength=>5, :tabindex=>15, :class=>"form-inputText" %>
@@ -96,13 +95,14 @@
               <%= button_to 'Back', patient_profile_path(@patient_profile.id), :method=>:get, :tabindex=>22, :class=>"form-subButton2" %>
             </div>
       </div><!-- End of class="main-form" -->
-		
+
       <div id="main-footer">
         <div id="footer-logo">
           <%= image_tag("logo.png", :size=>"155x35") %>
         </div>
       </div>
-      <div id="footer-copyright"> &#169; 2009. ProficientMD. All rights reserved. </div>
+
+      <div id="footer-copyright"> &#169; 2009. ProficientMD. All rights reserved. />
 
     </div><!-- End of class="main-wrapper" -->
 
