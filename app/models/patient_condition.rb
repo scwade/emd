@@ -1,5 +1,10 @@
 class PatientCondition < ActiveRecord::Base
 
+# --------
+# Plugins
+# --------
+  acts_as_audited
+
 # ------------------------------
 # All Methods are private scope
 # ------------------------------

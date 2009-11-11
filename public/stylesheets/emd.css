@@ -508,6 +508,10 @@ thead {
 }
 
 #user_nav {
+  position: relative;
+  width: 100%;
+  text-align: right;
+  clear: both;
   float: right;
   font-size: 12px;
 }
