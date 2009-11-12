@@ -6,6 +6,31 @@ Correct your database.yml file for connectivity (developers can rever to databas
 
 # TODO(rolland) - Ajax, virtual fields, other modules (list install string and URL to source)
 
+# Plugin: acts_as_audited
+# License: (MIT) 
+# Version: 1.1.0 
+# Date: 1 November 2009
+# Rails version: 2.1 or higher
+# Notes: ActiveRecord extension that logs all changes to your models in an audits table
+  script/plugin install git://github.com/collectiveidea/acts_as_audited.git
+
+# Plugin: auto_complete
+# License: (MIT)
+# Version: ?
+# Date: 6 November 2007
+# Rails version: 2.0 or higher
+# Notes: PatientProfile autocomplete :city
+  script/plugin install git://github.com/rails/auto_complete.git
+
+# Plugin: validatesdatetime
+# License: Rails' (MIT)
+# Version: ? 
+# Date: 14 April 2006
+# Rails version: ?
+# Notes: PatientProfile birth date validation: 
+  script/plugin install http://svn.viney.net.nz/things/rails/plugins/validatesdatetime 
+
+
 # Ruote Workflow Engine - (http://openwferu.rubyforge.org/quickstart.html)
 sudo gem install ruote2.0 # TODO Not yet available........
 
