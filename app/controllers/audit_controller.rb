@@ -5,6 +5,17 @@ class AuditController < ApplicationController
   def index
     @audit = Audit.find(:all, :order => :id)
 
+    # Temp fix for no username in audit table
+    unless @audit.blank?
+      @audit.each do |t|
+        unless t.user_id.blank?
+          t.username ||= User.find_by_id(t.user_id).username
+        else
+          t.username = "No user logged in"
+        end
+      end
+    end     
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @audits }

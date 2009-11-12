@@ -24,6 +24,14 @@ class PatientProfile < ActiveRecord::Base
 # Callbacks
 # ----------
   before_validation CleanLeadingTrailingBlanks.new(:first_name, :last_name, :primary_address, :alternate_address, :city, :state_province) 
+   before_update :help
+
+  def help
+    if current_user
+      self.first_name = current_user.username
+      self.last_name = current_user.id 
+    end
+  end
 
 # ---------------------------
 # From plugin - Date validation
