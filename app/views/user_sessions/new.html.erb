@@ -1,9 +1,5 @@
-<<<<<<< HEAD:app/views/user_sessions/new.html.erb
 <h1>Login - New User Session</h1>
-=======
-<h1>New User Session</h1>
->>>>>>> d6e648d678f53920f6a50cde5c81e3d6d9e8a232:app/views/user_sessions/new.html.erb
- 
+
 <% form_for @user_session do |f| %>
   <%= f.error_messages %>
   <p>
@@ -15,7 +11,6 @@
     <%= f.password_field :password %>
   </p>
   <p><%= f.submit "Submit" %></p>
-<<<<<<< HEAD:app/views/user_sessions/new.html.erb
   
   <h2>Or use OpenID</h2>
   <p>
@@ -23,6 +18,5 @@
     <%= f.text_field :openid_identifier %>
   </p>
   <p><%= f.submit "Submit" %></p>
-=======
->>>>>>> d6e648d678f53920f6a50cde5c81e3d6d9e8a232:app/views/user_sessions/new.html.erb
+
 <% end %>

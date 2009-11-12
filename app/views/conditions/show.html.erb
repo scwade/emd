@@ -1,0 +1,33 @@
+<p>
+  <b>ID:</b>
+  <%=h @condition.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @condition.name %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%=h @condition.created_at %>
+</p>
+
+<p>
+  <b>Updated:</b>
+  <%=h @condition.updated_at %>
+</p>
+
+<p>
+  <b>Google_url:</b>
+  <%=h @condition.google_url %>
+</p>
+
+<p>
+  <b>wiki_url:</b>
+  <%=h @condition.wiki_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_condition_path(@condition) %> |
+<%= link_to 'Back', conditions_path %>

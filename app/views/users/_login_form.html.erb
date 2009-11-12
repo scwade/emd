@@ -1,9 +1,5 @@
 <% form_for @user do |f| %>
   <%= f.error_messages %>
-<<<<<<< HEAD:app/views/users/_login_form.html.erb
-
-=======
->>>>>>> d6e648d678f53920f6a50cde5c81e3d6d9e8a232:app/views/users/_login_form.html.erb
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>
@@ -12,7 +8,6 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
-<<<<<<< HEAD:app/views/users/_login_form.html.erb
 
   <% if @user.openid_identifier.blank? %>
     <p>
@@ -33,15 +28,4 @@
   </p>
   <p><%= f.submit "Submit" %></p>
 
-=======
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
->>>>>>> d6e648d678f53920f6a50cde5c81e3d6d9e8a232:app/views/users/_login_form.html.erb
 <% end %>

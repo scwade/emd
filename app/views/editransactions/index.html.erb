@@ -1,0 +1,51 @@
+<h1>Listing of EDI Transactions</h1>
+  <table class="X3"rules="none" border="1">
+  <tr>
+#Need to make this data driven table headers in the future.
+    <th>ISA01</th>
+    <th>ISA02</th>
+    <th>ISA03</th>
+    <th>ISA04</th>
+    <th>ISA05</th>
+    <th>ISA06</th>
+    <th>ISA07</th>
+    <th>ISA08</th>
+    <th>ISA09</th>
+    <th>ISA10</th>
+    <th>ISA11</th>
+    <th>ISA12</th>
+    <th>ISA13</th>
+    <th>ISA14</th>
+    <th>ISA15</th>
+    <th>ISA16</th>
+  </tr>
+
+<% @editransactions.each do |editransaction| %>
+  <tr>
+    <td><%=h editransaction.isa01 %></td>
+    <td><%=h editransaction.isa02 %></td>
+    <td><%=h editransaction.isa03 %></td>
+    <td><%=h editransaction.isa04 %></td>
+    <td><%=h editransaction.isa05 %></td>
+    <td><%=h editransaction.isa06 %></td>
+    <td><%=h editransaction.isa07 %></td>
+    <td><%=h editransaction.isa08 %></td>
+    <td><%=h editransaction.isa09 %></td>
+    <td><%=h editransaction.isa10 %></td>
+    <td><%=h editransaction.isa11 %></td>
+    <td><%=h editransaction.isa12 %></td>
+    <td><%=h editransaction.isa13 %></td>
+    <td><%=h editransaction.isa14 %></td>
+    <td><%=h editransaction.isa15 %></td>
+    <td><%=h editransaction.isa16 %></td>    
+        
+    <td><%= link_to 'Show', editransaction %></td>
+    <td><%= link_to 'Edit', edit_editransaction_path(editransaction) %></td>
+    <td><%= link_to 'Destroy', editransaction, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New editransaction', new_editransaction_path %>

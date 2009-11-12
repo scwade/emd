@@ -3,13 +3,18 @@ Correct your database.yml file for connectivity (developers can refer to databas
 # APPLICATION DEPENDENCIES:
 # -------------------------
 # The emd Application utilizes the following plugins, gems, and engines
+### Basic UI - "Active_scafolding" http://activescaffold.com
+script/plugin install git://github.com/activescaffold/active_scaffold.git
 
-# TODO(rolland) - Ajax, virtual fields, other modules (list install string and URL to source)
+### TODO(rolland) - Ajax, virtual fields, other modules (list install string and URL to source)
 
-# Ruote Workflow Engine - (http://openwferu.rubyforge.org/quickstart.html)
-sudo gem install ruote2.0 # TODO Not yet available........
+### Validations - "Validates Date" TODO(rolland -- example URL)
+script/plugin install http://svn.viney.net.nz/things/rails/plugins/validates_date_time
 
-# Authentication (http://github.com/binarylogic/authlogic_openid)
+### Ruote Workflow Engine - (http://openwferu.rubyforge.org/quickstart.html)
+sudo gem install ruote2.0 # TODO (SCW) Not yet available........
+
+### Authentication - "authlogic" (http://github.com/binarylogic/authlogic_openid)
 sudo gem install authlogic      #basic authentication framework
 sudo gem install authlogic-oid  #authentication open id gem
 sudo gem install ruby-openid    #ruby open id gem
@@ -31,6 +36,7 @@ rake db:migrate
 # TODO(rolland) - Rolland to update this list 
 rake db:load_reference_address            # Load reference data for validation
 rake db:load_reference_ethnicity          # Load reference data for validation
+# REMEMVER http://svn.viney.net.nz/things/rails/plugins/validates_date_time/
 
 # CONFIGURATION:
 # -------------------------
