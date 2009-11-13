@@ -1,50 +1,51 @@
 <%= render :partial => "shared/header" %> 
   <div id="columns">
     <div id="side">
-      <div id="record">
-      </div>
+      <div id="my_record">
 <!-- LOCAL -->
-      <a href="/patient_conditions">Patient Conditions</a><br />
-      <a href="/conditions">Conditions(ref)</a><br />
-      <a href="/patient_profiles">Patient Profiles(ref)</a><br />
-      <a href="/editransactions">EDI transactions</a><br />
-      <a href="/users">List Users</a><br />
-      <a href="/audit">Audit Records</a><br />
+        <a href="/patient_conditions">Patient Conditions</a><br />
+        <a href="/conditions">Conditions(ref)</a><br />
+        <a href="/patient_profiles">Patient Profiles(ref)</a><br />
+        <a href="/editransactions">EDI transactions</a><br />
+        <a href="/users">List Users</a><br />
+        <a href="/audit">Audit Records</a><br />
 
-      <p></p>
+        <p></p>
 <!-- CHANGE ENVIRONMENT -->
-    <p> Change ENV </p>
-    <ul>
-    <a href="http://localhost:3000/conditions">LOCAL</a><br />
-    <a href="http://emd.heroku.com/conditions">Heroku</a><br />
-    <a href="http://192.168.1.101:3000/conditions">Scott (pvt)</a><br />
-    <a href="http://scwade.blogdns.com:3000/conditions">Scott (pub)</a><br />
-    </ul>
+       <h3> Change ENV </h3>
+         <div style="margin-left: 1.5em; margin-top: -1em; ">
+            <a href="http://localhost:3000/conditions">LOCAL</a><br />
+            <a href="http://emd.heroku.com/conditions">Heroku</a><br />
+            <a href="http://192.168.1.101:3000/conditions">Scott (pvt)</a><br />
+            <a href="http://scwade.blogdns.com:3000/conditions">Scott (pub)</a><br />
+         </div>
+      </div><!-- end of record -->
+    </div><!-- end of side -->
 
-    </div>
     <div id="main">
       <% unless flash.empty? -%>
         <div class="noticeBox">
           <% unless flash[:notice].blank? %>
             <%= image_tag("check-mark.png", :size=>"36x36") -%>
-            <div id="notice" style="color: green">  <%= flash[:notice] %>  </div>
+            <div id="notice" style="color: green"><%= flash[:notice] %></div>
           <% else %>
             <% unless flash[:yield].blank? %>
               <%= image_tag("yield-mark.png", :size=>"36x36") -%>
-              <div id="notice" style="color: yellow;" >  <%= flash[:yield] %>  </div>
+              <div id="notice" style="color: yellow;" ><%= flash[:yield] %></div>
             <% else %>
               <% unless flash[:error].blank? %>
                 <%= image_tag("error-mark.png", :size=>"36x36") -%>
-                <div id="notice" style="color: red" >  <%= flash[:error] %>  </div>
+                <div id="notice" style="color: red" ><%= flash[:error] %></div>
               <% end %>
             <% end %>
           <% end %>
-        </div>
+        </div><!-- end of noticeBox -->
       <% end -%>
 
       <%= yield :layout %>
-    </div>
-  </div>
-</body>
-</html>
 
+      </div><!-- end of main --> 
+    </div><!-- end of columns -->
+  </div><!-- end of container -->
+</body><!-- end of my_record and body -->
+</html>

@@ -59,7 +59,7 @@ body {
     font-family: Verdana;
     color: black;
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.2em;
     border: solid .1em black;
 }
 
@@ -83,14 +83,12 @@ body {
 #main-header {
     width: 99.5%;
     height: 1em;
-    border: outset .15em #C4D1E3;
+    border: outset .15em #262262;
     font-size: 140%;
     text-align: center;
     /* 0918 rmh added */
     padding-top: .2em;
     padding-bottom: .2em;
-    background-color: #C4D1E3;
-    color: #262262;
 }
 
 #main-form {
@@ -277,12 +275,12 @@ body {
 #index-body {
     background-color: #ECF0F9;
     font-family: Verdana;
-    font-size: 1.7em;
+    font-size: 1.2em;
 }
 
 #index-title {
-    background-color: #C4D1EB;
-    border: outset .1em #C4D1EB;
+    background-color: #C4D1FB;
+    border: outset .1em #ECF0F9;
     font-size: 120%;
     font-weight: bold;
     color: #262262
@@ -380,12 +378,7 @@ a:hover { color: #000 }
 }
 
 #main {
-/* rolland */
-  float:right;
-  width: 89%;
-  color: #262262;
-/* end */
-/*  margin-left: 13em; */
+  margin-left: 13em;
   padding-left: .1em;
   padding-top:  .1em;
   background-color: #C4D1EB;
@@ -396,24 +389,13 @@ a:hover { color: #000 }
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
-  width: 10%;
+  width: 12em;
   background: #C4D1EB;
 }
-/* Rolland
+
 #side a {
   color: #7895BC;
   font-size: small;
-}
-*/
-#record a, #record p {
-  font-weight: bold;
-  color: #758AB8;
-  font-size: small;
-}
-
-#record p {
-  color: #262262;
-  font-size: 14px;
 }
 
 /* Flash box for image and notice */
@@ -436,14 +418,8 @@ a:hover { color: #000 }
 /* Styles for partial in the sidebar (aka my_record) */
 #record, #record table {
   font-size: smaller;
-  font-weight: bold;
-  color: #262262;
+  color:       white;
   height: 30px;
-}
-
-#my_record {
-  width: auto;
-  height: auto;
 }
 
 #record table {
@@ -453,9 +429,6 @@ a:hover { color: #000 }
   border-top: 1px dotted #595 ;
   border-bottom: 1px dotted #595 ;
   margin-bottom: 5px;
-}
-
-#main table th {
 }
 
 thead {
@@ -469,17 +442,6 @@ thead {
   background-color: #ECF0F9;
   font: 1em verdana; 
   text-align: left;
-}
-
-.X3 tbody th {
-  color: #262262;
-  font-size: 12px;
-  text-decoration: underline;
-}
-
-.X3 tbody td {
-  font-size: 11px;
-  font-weight: lighter;
 }
 
 .record-title {
@@ -550,16 +512,6 @@ thead {
   width: 100%;
   text-align: right;
   clear: both;
-  float: left;
+  float: right;
   font-size: 12px;
-  background-color: #758AB8;
-}
-
-body {
-  background-color: #758AB8;
-}
-
-#user_nav a {
-  font-weight: bold;
-  color: white;
 }

@@ -1,8 +1,9 @@
-<h1>&#60Company Name&#62 Audit Records</h1>
+<!-- Begin Audit index -->
+<h1>&#60;Company Name&#62; Audit Records</h1>
 
 <table class="X3" rules="none" border="1">
   <tr>
-    <th> Id              </th>
+    <th> Id              </th> 
     <th> Auditable id    </th>
     <th> Auditable type  </th>
     <th> User id         </th>
@@ -24,7 +25,7 @@
     <td><%= h audit.username         %></td>
     <td><%= h audit.action           %></td>
 
-    <td><%= h truncate(audit.changes.to_s, :length => 120 ) %></td>
+    <td><%= h truncate(audit.changes.to_s, :length => 60 ) %></td>
 
     <td><%= h audit.version          %></td>
     <td><%= h audit.created_at       %></td>
@@ -37,3 +38,4 @@
 </table>
 
 <br />
+<!-- End Audit index -->

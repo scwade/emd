@@ -1,7 +1,8 @@
+<!-- Begin editransaction -->
 <h1>EDI Transactions</h1>
-  <table class="X3"rules="none" border="1">
+  <table class="X3" rules="none" border="1">
   <tr>
-#Need to make this data driven table headers in the future.
+<!-- Need to make this data driven table headers in the future. -->
     <th>ISA01</th>
     <th>ISA02</th>
     <th>ISA03</th>
@@ -44,8 +45,10 @@
     <td><%= link_to 'Destroy', editransaction, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
-</table>
+  </table>
 
 <br />
 
 <%= link_to 'New editransaction', new_editransaction_path %>
+
+<!-- End of editransaction -->

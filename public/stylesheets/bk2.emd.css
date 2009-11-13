@@ -59,7 +59,7 @@ body {
     font-family: Verdana;
     color: black;
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.2em;
     border: solid .1em black;
 }
 
@@ -83,14 +83,12 @@ body {
 #main-header {
     width: 99.5%;
     height: 1em;
-    border: outset .15em #C4D1E3;
+    border: outset .15em #262262;
     font-size: 140%;
     text-align: center;
     /* 0918 rmh added */
     padding-top: .2em;
     padding-bottom: .2em;
-    background-color: #C4D1E3;
-    color: #262262;
 }
 
 #main-form {
@@ -277,12 +275,12 @@ body {
 #index-body {
     background-color: #ECF0F9;
     font-family: Verdana;
-    font-size: 1.7em;
+    font-size: 1.2em;
 }
 
 #index-title {
-    background-color: #C4D1EB;
-    border: outset .1em #C4D1EB;
+    background-color: #C4D1FB;
+    border: outset .1em #ECF0F9;
     font-size: 120%;
     font-weight: bold;
     color: #262262
