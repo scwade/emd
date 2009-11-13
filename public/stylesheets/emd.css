@@ -478,8 +478,12 @@ thead {
 }
 
 .X3 tbody td {
-  font-size: 11px;
+/* Rolland
+  font-size: 12px;
   font-weight: lighter;
+  line-height: 5px;
+*/
+  font: 12px/5px lighter;
 }
 
 .record-title {
