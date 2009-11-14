@@ -3,7 +3,7 @@ class AuditController < ApplicationController
   # GET /audit
   # GET /audit.xml
   def index
-    @audit = Audit.find(:all, :order => :id)
+    @audit = Audit.find(:all, :order => "id desc")
 
     # For debug nil=off, true=on
     if debug = true 

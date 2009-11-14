@@ -356,9 +356,7 @@ pre {
   font-size: 11px;
 }
 
-a { color: #444; }
-a:visited { color: #666; }
-a:hover { color: #000 }
+#side a:hover { color: #FFF }
 
 /* Styles for main page */
 #banner {
@@ -486,6 +484,15 @@ thead {
   font: 12px/5px lighter;
 }
 
+#record table tbody tr td a { 
+  font-weight: bold; 
+  color: #758AB8;
+}
+
+#record table tbody tr td a:hover {
+    color: #262262;
+}
+
 .record-title {
    font: bold medium verdana;
 }
@@ -567,3 +574,5 @@ body {
   font-weight: bold;
   color: white;
 }
+
+#user_nav a:hover { color: #C4D1EB; }
