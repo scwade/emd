@@ -3,18 +3,16 @@ class AuditController < ApplicationController
   # GET /audit
   # GET /audit.xml
   def index
-    @audit = Audit.find(:all, :order => "id desc")
+    @audit = Audit.find(:all, :order => "id DESC")
 
-    # For debug nil=off, true=on
-    if debug = true 
-      # Temp fix for no username in audit table
-      unless @audit.blank?
-        @audit.each do |t|
-          unless t.user_id.blank?
-            t.username ||= User.find_by_id(t.user_id).username + "-debug"
-          else
-            t.username = "No user logged in"
-          end
+    # By design, the plugin "acts_as_audit" model attribute "username" is not populated for applications that implement
+    # a User model. Use the Audit models attribute "user_id" to obtain "username" from User model. 
+    unless @audit.blank?
+      @audit.each do |t|
+        unless t.user_id.blank?
+          t.username ||= User.find_by_id(t.user_id).username
+        else
+          t.username = "No user logged in"
         end
       end
     end     

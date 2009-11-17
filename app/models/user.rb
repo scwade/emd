@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  # When used with authentic do this
+  # When used with acts_as_authentic do this
   acts_as_audited :except => [
     :crypted_password, 
     :persistence_token,
@@ -9,10 +9,7 @@ class User < ActiveRecord::Base
     :last_request_at,
   ]
 
-  acts_as_authentic
+  # Plugin
+  acts_as_authentic 
 
-#  To make confirgurations changes
-#   acts_as_authentic do |option|
-#     option.require_password_confirmation(true)
-#   end
 end

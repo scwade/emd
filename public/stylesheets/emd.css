@@ -2,36 +2,11 @@
 
      Filename: emd.css
 
-     Patient Profile - 09/24/09
+     Need to re-factor 11/17/09
+     (1) New wire frame
+     (2) Add global reset for browser compatibility
+     (3) Rename class and id's in views
 
-     Incomplete notes
-
-     (1) Create the wire frame with ID's by
-	   (a) "#main-wrapper" to encapsulate document
-               - "#main-header" title of page
-	       - "#main-form" to contain a form
-	       - "#main-footer" to contain logo and revision date
-	       - "#main-copyright" last object in document
-
-     (2) The "#main-form" use classes for most of the styling
-            (a) "No style added to HTML tag <form>. "#main-form" parent applies style to <form>
-            (b) ".main-sectionTitle" to show a visual divide between sections in document.
-            (c) ".form-label" and ".form-textInput" for label + input fields on single line
-            (d) "#form-button" container for buttons
-            (e) ".form-subButton1" and ".form-subButton2" button alignment left or right
-		
-
-     (3) Selectors "#patient_profile_" selector id for drop down selection boxes
-            (a) physician_id
-            (b) state
-            (c) country_province
-            (d) ethinicity
-            (e) gender
-            (f) date_of_birth
-
-     (4) Class and Id section for index.html
-     (5) Class and Id section for error
-     (6) Class and Id for autocomplete
 */
 
 
@@ -382,8 +357,6 @@ pre {
   float:right;
   width: 89%;
   color: #262262;
-/* end */
-/*  margin-left: 13em; */
   padding-left: .1em;
   padding-top:  .1em;
   background-color: #C4D1EB;
@@ -396,6 +369,7 @@ pre {
   padding-bottom: 1em;
   width: 10%;
   background: #C4D1EB;
+  height: 70em;
 }
 /* Rolland
 #side a {
@@ -563,16 +537,31 @@ thead {
   clear: both;
   float: left;
   font-size: 12px;
+/*
   background-color: #758AB8;
+*/
+ background-color: #C4D1EB;
 }
 
 body {
-  background-color: #758AB8;
+  background-color: #C4D1EB;
 }
 
 #user_nav a {
   font-weight: bold;
-  color: white;
+  color: #758AB8;
 }
 
-#user_nav a:hover { color: #C4D1EB; }
+#user_nav a:hover { color: white; }
+
+#mainScrollableWindow {
+  max-height: 60em;
+  overflow: scroll;
+  margin-top: 20px;
+}
+
+#mainScrollableWindow th {
+  border: 1px solid #C4D1EB;
+  background-color: #C4D1EB;
+  color: #262262;
+}
