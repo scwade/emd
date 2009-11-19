@@ -1,44 +1,27 @@
 <!-- Begin Audit index -->
 <h1>&#60;Company Name&#62; Audit Records</h1>
 
-<div id="mainScrollableWindow">
-  <table class="X3" rules="fixed">
-    <tbody>
-      <tr>
-        <th> Id              </th>
-        <th> Auditable id    </th>
-        <th> Auditable type  </th>
-        <th> User id         </th>
-        <th> User type       </th>
-        <th> Username        </th>
-        <th> Action          </th>
-        <th> Changes         </th>
-        <th> Version         </th>
-        <th> Created at      </th>
-      </tr>
-  
-      <% @audit.each do |audit| %>
-        <tr>
-          <td><%= h audit.id              %></td>
-          <td><%= h audit.auditable_id    %></td>
-          <td><%= h audit.auditable_type  %></td>
-          <td><%= h audit.user_id         %></td>
-          <td><%= h audit.user_type       %></td>
-          <td><%= h audit.username        %></td>
-          <td><%= h audit.action          %></td>
-      
-          <td><%= h truncate(audit.changes.to_s, :length => 60 ) %></td>
-      
-          <td><%= h audit.version          %></td>
-          <td><%= h audit.created_at       %></td>
-    
-          <td><%= link_to 'Show',   audit  %></td>
-          <td><%= link_to 'Delete', audit, :method => :delete %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div><!-- end of mainScrollWindow -->
-    
-<br />
-<!-- End Audit index -->
+<div style="width: 30em; font-size: 1.1em;">
+  <% form_tag('/audit/show_filter/1', :method=>:put) do %>
+    <fieldset style="background-color: #ECF0F9;">
+      <legend>Filter Audit Records</legend>
+
+      <div style="margin-bottom: .4em;">
+        <label for="username" style="width: 8em; float: left;">User name:</label>
+          <%= text_field_tag :username, params[:username] %>
+      </div>
+
+      <div style="margin-bottom: .4em;">
+        <label for="userid" style="width: 8em; float: left;">User id:</label>
+          <%= text_field_tag :user_id, params[:user_id] ,:size => 10 %>
+      </div>
+
+      <div>
+        <%= submit_tag "Show Filtered Records" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<%= render :partial => "audit" %>
+

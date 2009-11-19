@@ -9,7 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :editransactions
   map.resources :user_sessions
-  map.resources :audit
+  map.resources :audit, :member => { :show_filter => :get }
+
 #remove SCW  map.resources :my_record
 
   # The priority is based upon order of creation: first created -> highest priority.
