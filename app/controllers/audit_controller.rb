@@ -19,7 +19,23 @@ class AuditController < ApplicationController
   # SHOW /audit/1.xml
   def show
     @audit = Audit.find(params[:id])
-    @audit.username = @audit.user.username unless @audit.user_id.blank?
+    unless @audit.user_id.blank?
+      @audit.username = @audit.user.username
+
+      if @audit.auditable_type == "PatientCondtion"
+        x = PatientCondtion.find(@audit.auditable_id).patient_profile_id
+        @name = PatientProfile.find(x).first_name
+      elsif @audit.auditable_type == "PatientProfile"
+        @name = PatientProfile.find(@audit.auditable_id).first_name
+      elsif @audit.auditable_type == "User"
+        @name = @audit.user.username
+      end
+
+      @audit[:patient] = @name
+
+    else
+      @audit[:patient] = "n/a"
+    end
     
     respond_to do |format|
       format.html # show.html.erb

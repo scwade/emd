@@ -6,6 +6,7 @@
     <tbody>
       <tr>
         <th> Id              </th>
+        <th> Patient         </th>
         <th> Auditable id    </th>
         <th> Auditable type  </th>
         <th> User id         </th>
@@ -19,6 +20,7 @@
       <% audit = @audit %>
       <tr>
         <td><%= h audit.id              %></td>
+        <td><%= h audit.patient         %></td>
         <td><%= h audit.auditable_id    %></td>
         <td><%= h audit.auditable_type  %></td>
         <td><%= h audit.user_id         %></td>
