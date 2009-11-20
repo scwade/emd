@@ -1,45 +1,49 @@
 <!-- Begin User index -->
 <h1>&#60;Company Name&#62; User Accounts</h1>
 
-<table class="X3" rules="none" border="1">
-  <tr>
-    <th> Id </th>
-    <th> User Login Name </th>
-    <th> Email </th>
-    <th> Crypted password </th>
-    <th> Password_salt </th>
-    <th> Persistence token </th>
-    <th> Login count </th>
-    <th> Failed login count </th>
-    <th> Last request at </th>
-    <th> Current login at </th>
-    <th> Last login at </th>
-    <th> Current login ip </th>
-    <th> Last login ip </th>
-  </tr>
+<div id="mainScrollableWindow">
+  <table class="X3" rules="fixed">
+    <tbody>
+      <tr>
+        <th> Id </th>
+        <th> User Login Name </th>
+        <th> Email </th>
+        <th> Crypted password </th>
+        <th> Password_salt </th>
+        <th> Persistence token </th>
+        <th> Login count </th>
+        <th> Failed login count </th>
+        <th> Last request at </th>
+        <th> Current login at </th>
+        <th> Last login at </th>
+        <th> Current login ip </th>
+        <th> Last login ip </th>
+      </tr>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= h user.id %></td>
-    <td><%= h truncate(user.username,           :length => 60 ) %></td>
-    <td><%= h truncate(user.email,              :length => 20 ) %></td>
-    <td><%= h truncate(user.crypted_password,   :length => 20 ) %></td>
-    <td><%= h truncate(user.password_salt,      :length => 20 ) %></td>
-    <td><%= h truncate(user.persistence_token,  :length => 20 ) %></td>
-    <td><%= h user.login_count %></td>
-    <td><%= h user.failed_login_count %></td>
-    <td><%= h user.last_request_at %></td>
-    <td><%= h user.current_login_at %></td>
-    <td><%= h user.last_login_at %></td>
-    <td><%= h truncate(user.current_login_ip,   :length => 20 ) %></td>
-    <td><%= h truncate(user.last_login_ip,      :length => 20 ) %></td>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= h user.id %></td>
+          <td><%= h truncate(user.username,           :length => 60 ) %></td>
+          <td><%= h truncate(user.email,              :length => 20 ) %></td>
+          <td><%= h truncate(user.crypted_password,   :length => 20 ) %></td>
+          <td><%= h truncate(user.password_salt,      :length => 20 ) %></td>
+          <td><%= h truncate(user.persistence_token,  :length => 20 ) %></td>
+          <td><%= h user.login_count %></td>
+          <td><%= h user.failed_login_count %></td>
+          <td><%= h user.last_request_at %></td>
+          <td><%= h user.current_login_at %></td>
+          <td><%= h user.last_login_at %></td>
+          <td><%= h truncate(user.current_login_ip,   :length => 20 ) %></td>
+          <td><%= h truncate(user.last_login_ip,      :length => 20 ) %></td>
 
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?',  :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?',  :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- end of mainScrollWindow -->
 
 <br />
 

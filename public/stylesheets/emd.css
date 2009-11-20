@@ -555,7 +555,7 @@ body {
 #user_nav a:hover { color: white; }
 
 #mainScrollableWindow {
-  max-height: 60em;
+  max-height: 40em;
   overflow: scroll;
   margin-top: 20px;
 }

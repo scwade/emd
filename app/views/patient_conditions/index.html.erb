@@ -1,40 +1,44 @@
 <!-- Begin Patient Conditions index -->
 <h1>Patient Conditions</h1>
-  <table class="X3" rules="none" border="1">
-  <tr>
-    <th>PC id</th>
-    <th>PP id</th>
-    <th>Condition id</th>
-    <th>Patient</th>
-    <th>Patient id</th>
-    <th>Condition name</th>
-    <th>Start date</th>
-    <th>End date</th>
-    <th>Treated by</th>
-    <th>Treat notes</th>
-  </tr>
 
-<% @patient_conditions.each do |patient_condition| %>
-  <tr>
-    <td><%=h patient_condition.id %></td>
-    <td><%=h patient_condition.patient_profile_id %></td>
-    <td><%=h patient_condition.condition_id %></td>
-    <td><%=h patient_condition.patient_profile.first_name %></td>
-    <td><%=h patient_condition.patient_profile.pmd_patient_id %></td>
-    <td><%=h patient_condition.condition.name %></td>
-    <td><%=h patient_condition.start_date %></td>
-    <td><%=h patient_condition.end_date %></td>
-    <td><%=h patient_condition.treated_by %></td>
-    <td><%=h patient_condition.treat_notes %></td>
-    <td><%= link_to 'Show', patient_condition %></td>
-    <td><%= link_to 'Edit', edit_patient_condition_path(patient_condition) %></td>
-    <td><%= link_to 'Destroy', patient_condition, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="mainScrollableWindow">
+  <table class="X3" rules="fixed">
+    <tbody>
+      <tr>
+        <th>PC id</th>
+        <th>PP id</th>
+        <th>Condition id</th>
+        <th>Patient</th>
+        <th>Patient id</th>
+        <th>Condition name</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Treated by</th>
+        <th>Treat notes</th>
+      </tr>
+
+      <% @patient_conditions.each do |patient_condition| %>
+        <tr>
+          <td><%=h patient_condition.id %></td>
+          <td><%=h patient_condition.patient_profile_id %></td>
+          <td><%=h patient_condition.condition_id %></td>
+          <td><%=h patient_condition.patient_profile.first_name %></td>
+          <td><%=h patient_condition.patient_profile.pmd_patient_id %></td>
+          <td><%=h patient_condition.condition.name %></td>
+          <td><%=h patient_condition.start_date %></td>
+          <td><%=h patient_condition.end_date %></td>
+          <td><%=h patient_condition.treated_by %></td>
+          <td><%=h patient_condition.treat_notes %></td>
+          <td><%= link_to 'Show', patient_condition %></td>
+          <td><%= link_to 'Edit', edit_patient_condition_path(patient_condition) %></td>
+          <td><%= link_to 'Destroy', patient_condition, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- end of mainScrollWindow -->
 
 <br />
 
 <%= link_to 'New patient_condition', new_patient_condition_path %>
-
 <!-- End Patient Conditions index -->
