@@ -18,8 +18,13 @@ class AuditController < ApplicationController
   # SHOW /audit/1
   # SHOW /audit/1.xml
   def show
-    redirect_to :action => show_filter
-    #flash[:yield] = "Not implemented yet"
+    @audit = Audit.find(params[:id])
+    @audit.username = @audit.user.username unless @audit.user_id.blank?
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml { render :xml => @audits }
+    end
   end
 
   # SHOW_FILTER /audit/1
