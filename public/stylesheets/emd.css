@@ -447,6 +447,7 @@ thead {
   color: #262262;
   font-size: 12px;
   text-decoration: underline;
+  background-color: #C4D1EB;
 }
 
 .X3 tbody td {
@@ -558,10 +559,4 @@ body {
   max-height: 40em;
   overflow: scroll;
   margin-top: 20px;
-}
-
-#mainScrollableWindow th {
-  border: 1px solid #C4D1EB;
-  background-color: #C4D1EB;
-  color: #262262;
 }
