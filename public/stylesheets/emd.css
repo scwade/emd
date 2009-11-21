@@ -2,44 +2,22 @@
 
      Filename: emd.css
 
-     Patient Profile - 09/24/09
+     Need to re-factor 11/17/09
+     (1) New wire frame
+     (2) Add global reset for browser compatibility
+     (3) Rename class and id's in views
 
-     Incomplete notes
-
-     (1) Create the wire frame with ID's by
-	   (a) "#main-wrapper" to encapsulate document
-               - "#main-header" title of page
-	       - "#main-form" to contain a form
-	       - "#main-footer" to contain logo and revision date
-	       - "#main-copyright" last object in document
-
-     (2) The "#main-form" use classes for most of the styling
-            (a) "No style added to HTML tag <form>. "#main-form" parent applies style to <form>
-            (b) ".main-sectionTitle" to show a visual divide between sections in document.
-            (c) ".form-label" and ".form-textInput" for label + input fields on single line
-            (d) "#form-button" container for buttons
-            (e) ".form-subButton1" and ".form-subButton2" button alignment left or right
-		
-
-     (3) Selectors "#patient_profile_" selector id for drop down selection boxes
-            (a) physician_id
-            (b) state
-            (c) country_province
-            (d) ethinicity
-            (e) gender
-            (f) date_of_birth
-
-     (4) Class and Id section for index.html
-     (5) Class and Id section for error
-     (6) Class and Id for autocomplete
 */
 
 
 /* The wire frame layout */
 body {
-/* SCW_disabled for now.....  background-image: url(form-background.png);  */
+/* SCW_disabled for now.....  
+  background-image: url(form-background.png); 
+*/
+  background: #ECF0F9;
 }
-
+ 
 #main-wrapper, #main-form, #main-footer, #footer-logo, #footer-copyright, #form-buttons {
     background-color: #ECF0F9;
 }
@@ -59,7 +37,7 @@ body {
     font-family: Verdana;
     color: black;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.4em;
     border: solid .1em black;
 }
 
@@ -83,12 +61,14 @@ body {
 #main-header {
     width: 99.5%;
     height: 1em;
-    border: outset .15em #262262;
+    border: outset .15em #C4D1E3;
     font-size: 140%;
     text-align: center;
     /* 0918 rmh added */
     padding-top: .2em;
     padding-bottom: .2em;
+    background-color: #C4D1E3;
+    color: #262262;
 }
 
 #main-form {
@@ -275,12 +255,12 @@ body {
 #index-body {
     background-color: #ECF0F9;
     font-family: Verdana;
-    font-size: 1.2em;
+    font-size: 1.7em;
 }
 
 #index-title {
-    background-color: #C4D1FB;
-    border: outset .1em #ECF0F9;
+    background-color: #C4D1EB;
+    border: outset .1em #C4D1EB;
     font-size: 120%;
     font-weight: bold;
     color: #262262
@@ -354,9 +334,7 @@ pre {
   font-size: 11px;
 }
 
-a { color: #444; }
-a:visited { color: #666; }
-a:hover { color: #000 }
+#side a:hover { color: #FFF }
 
 /* Styles for main page */
 #banner {
@@ -378,7 +356,10 @@ a:hover { color: #000 }
 }
 
 #main {
-  margin-left: 13em;
+/* rolland */
+  float:right;
+  width: 89%;
+  color: #262262;
   padding-left: .1em;
   padding-top:  .1em;
   background-color: #C4D1EB;
@@ -389,13 +370,25 @@ a:hover { color: #000 }
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
-  width: 12em;
+  width: 10%;
   background: #C4D1EB;
+  height: 70em;
 }
-
+/* Rolland
 #side a {
   color: #7895BC;
   font-size: small;
+}
+*/
+#record a, #record p {
+  font-weight: bold;
+  color: #758AB8;
+  font-size: small;
+}
+
+#record p {
+  color: #262262;
+  font-size: 14px;
 }
 
 /* Flash box for image and notice */
@@ -418,8 +411,14 @@ a:hover { color: #000 }
 /* Styles for partial in the sidebar (aka my_record) */
 #record, #record table {
   font-size: smaller;
-  color:       white;
+  font-weight: bold;
+  color: #262262;
   height: 30px;
+}
+
+#my_record {
+  width: auto;
+  height: auto;
 }
 
 #record table {
@@ -429,6 +428,9 @@ a:hover { color: #000 }
   border-top: 1px dotted #595 ;
   border-bottom: 1px dotted #595 ;
   margin-bottom: 5px;
+}
+
+#main table th {
 }
 
 thead {
@@ -442,6 +444,31 @@ thead {
   background-color: #ECF0F9;
   font: 1em verdana; 
   text-align: left;
+}
+
+.X3 tbody th {
+  color: #262262;
+  font-size: 12px;
+  text-decoration: underline;
+  background-color: #C4D1EB;
+}
+
+.X3 tbody td {
+/* Rolland
+  font-size: 12px;
+  font-weight: lighter;
+  line-height: 5px;
+*/
+  font: 12px/5px lighter;
+}
+
+#record table tbody tr td a { 
+  font-weight: bold; 
+  color: #758AB8;
+}
+
+#record table tbody tr td a:hover {
+    color: #262262;
 }
 
 .record-title {
@@ -508,8 +535,37 @@ thead {
 }
 /* SCW added -- TODO review all css sections for consistency and proper catagorization */
 #user_nav {
+<<<<<<< HEAD:public/stylesheets/emd.css
   float: right;
+=======
+  position: relative;
+  width: 100%;
+  text-align: right;
+  clear: both;
+  float: left;
+>>>>>>> ba5aeeb14bc7a61f79904209a813661baa4bd10c:public/stylesheets/emd.css
   font-size: 12px;
+/*
+  background-color: #758AB8;
+*/
+ background-color: #C4D1EB;
+}
+
+body {
+  background-color: #C4D1EB;
+}
+
+#user_nav a {
+  font-weight: bold;
+  color: #758AB8;
+}
+
+#user_nav a:hover { color: white; }
+
+#mainScrollableWindow {
+  max-height: 40em;
+  overflow: scroll;
+  margin-top: 20px;
 }
 /* embeds the openid image in the text field */
 input#user_openid_identifier, input#user_session_openid_identifier {

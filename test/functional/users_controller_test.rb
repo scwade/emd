@@ -27,7 +27,6 @@ class UsersControllerTest < ActionController::TestCase
                                :password_confirmation => 123456
       }
     end
-
     assert_redirected_to user_path(assigns(:user))
   end
 
@@ -36,23 +35,21 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-   puts "\n ********** \n User controller action: Edit test not implemented yet"
-#  test "should 5 get edit" do
-#    get :edit, :id => users(:scott).to_param 
-#    assert_response :success
-#  end
+  test "should 5 get edit" do
+    get :edit, :id => users(:scott).to_param 
+    assert_response :success
+  end
 
-   puts " User controller action: Update test not implemented yet \n ********** \n "
-#  test "should 6 update user" do
-#    put :update, :id => users(:scott).to_param 
-#    assert_redirected_to user_path(assigns(:user))
-#  end
+  test "should 6 update user" do
+    put :update, :id => users(:scott).to_param 
+    assert_redirected_to user_path(assigns(:user))
+  end
 
   test "should 7 destroy user" do
     assert_difference('User.count', -1) do
       delete :destroy, :id => users(:scott).to_param
     end
-
     assert_redirected_to users_path
   end
+
 end

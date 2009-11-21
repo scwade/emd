@@ -1,10 +1,6 @@
 #db/seed/development/conditions.rb
 #Development base data
 
-### ROLLAND TODO - Please make this a rake action (this was messing up my seed environments)
-# Delete all before seeding 
-# Condition.delete_all
-
 c1 = Condition.create(:name => 'Abdominal Hernia',
   :google_url => "https://health.google.com/health/ref/Hernia",
   :wiki_url => "http://wiki.answers.com/Q/Special:Search&search=have%2Babdominal%2Bhernia&limitn=old")

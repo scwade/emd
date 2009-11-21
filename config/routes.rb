@@ -5,7 +5,6 @@ ActionController::Routing::Routes.draw do |map|
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
   map.resources :user_sessions
-  
   map.resources :users
   map.resources :password_resets
   map.resources :patient
@@ -13,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :patient_conditions
   map.resources :conditions
   map.resources :editransactions
-  map.resources :audit
+  map.resources :audit, :member => { :show_filter => :get }
 
   ###remove SCW  map.resources :my_record - TODO - clean up my_record in CSS
 

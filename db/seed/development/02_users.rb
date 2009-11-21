@@ -17,8 +17,6 @@
 #setup :activate_authlogic
 #UserSession.create(users(:admin))
 
-
-
 ### Setup Patient user accounts
 user = %w(dave scott tiffany maria rolland jacki chris lisa)
 
