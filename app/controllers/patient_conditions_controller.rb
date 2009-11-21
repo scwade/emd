@@ -1,4 +1,23 @@
 class PatientConditionsController < ApplicationController
+
+### acl9 access control restriction pre-load filters
+  before_filter :load_patient_condition, :only => [:edit, :update, :destroy, :show]
+  before_filter :require_user
+  
+  access_control do
+### acl9 access control examples
+#   allow all
+#   allow logged_in
+#   allow anonymous, :to => [:index]#, :show]
+#   allow logged_in, :except => :destroy
+  allow all, :to => [:index, :show]
+  allow :admin
+  allow logged_in, :to => [:new, :create]
+  allow :owner, :manager, :of => :patient_condition, :to => [:edit, :update]
+  allow :patient_manager, :to => [:new, :create, :destroy]
+
+  end
+
   # GET /patient_conditions
   # GET /patient_conditions.xml
   def index
@@ -89,6 +108,8 @@ class PatientConditionsController < ApplicationController
     respond_to do |format|
       if @patient_condition.save
         flash[:notice] = 'Patient Condition was successfully created.'
+        ### Assign acl9 Roles on Create
+        current_user.has_role!(:owner, @patient_condition) 
         format.html { redirect_to(@patient_condition) }
         format.xml  { render :xml => @patient_condition, :status => :created, :location => @patient_condition }
       else
@@ -129,4 +150,11 @@ class PatientConditionsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+  def load_patient_condition
+    @patient_condition = PatientCondition.find(params[:id])
+  end
+
 end

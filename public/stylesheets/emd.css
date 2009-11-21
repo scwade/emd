@@ -37,7 +37,7 @@
 
 /* The wire frame layout */
 body {
-   background-image: url(form-background.png);
+/* SCW_disabled for now.....  background-image: url(form-background.png);  */
 }
 
 #main-wrapper, #main-form, #main-footer, #footer-logo, #footer-copyright, #form-buttons {

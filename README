@@ -1,8 +1,8 @@
 Correct your database.yml file for connectivity (developers can refer to database.yml.template)
 
-# APPLICATION DEPENDENCIES:
-# -------------------------
-# The emd Application utilizes the following plugins, gems, and engines
+### APPLICATION DEPENDENCIES:
+### -------------------------
+###The emd Application utilizes the following plugins, gems, and engines
 ### Basic UI - "Active_scafolding" http://activescaffold.com
 script/plugin install git://github.com/activescaffold/active_scaffold.git
 
@@ -19,12 +19,18 @@ sudo gem install authlogic      #basic authentication framework
 sudo gem install authlogic-oid  #authentication open id gem
 sudo gem install ruby-openid    #ruby open id gem
 
-# TO INSTALL:
-# -------------------------
-# Get the main application
+### Authorization - "acl9" (http://github.com/be9/acl9)
+### Added to environment.rb as a gem
+# config.gem "acl9", :source => "http://gemcutter.org", :lib => "acl9"
+sudo rake gems:install 
+
+### TO INSTALL:
+### -------------------------
+### Get the main application
 
 git clone git@github.com:scwade/emd.git
 rake db:drop
+
 rake db:create
 rake db:migrate
 

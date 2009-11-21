@@ -5,8 +5,14 @@
 # Delete all before seeding
 # PatientCondition.delete_all
 
+### Login User admin to enable seed data creation
+Authlogic::Session::Base.controller = Authlogic::ControllerAdapters::RailsAdapter.new(self)
+
+lu =UserSession.create(:username => 'admin', :password => 'amdin')
+
 # Initialize
-treated_by = treat_notes = []
+treated_by = []
+treat_notes = []
 treated_by  << "Dr. Wade" << "Dr. Chao" << "Dr. Reeves" << "Dr. Madany" << "Dr. Wang"
 treat_notes << "Placed on high dose of vitamin C" << "Placed on high dose of vitamin B" << "Placed on high dose of vitamin D" << "Reassess after referral" 
 

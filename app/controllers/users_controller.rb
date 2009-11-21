@@ -1,4 +1,18 @@
 class UsersController < ApplicationController
+
+  ### Begin acl9 configuration to use user and roles for User class
+  before_filter :require_user
+  before_filter :set_allowed_roles
+  before_filter :load_user      , :except => [:index, :new, :create]
+  before_filter :allow_to_edit? , :only =>   [:edit, :update, :destroy]
+  before_filter :get_role,       :only =>   [:create, :update]
+
+  ### End acl9 configuration
+  access_control do
+    allow :admin
+    allow :doctor
+  end
+
   # GET /users
   # GET /users.xml
   def index
@@ -25,14 +39,16 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     
-      respond_to do |format|
-        format.html # new.html.erb
-        format.xml  { render :xml => @user }
-      end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @user }
     end
+  end
 
   # GET /users/1/edit
+  # GET /users/current/edit
   def edit
+#    @user = User.find(params[:id])
     @user = current_user
   end
 
@@ -40,10 +56,16 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-    @user.save do |result|
+    ### Add the creator of the object (in this case User) into our record
+    @user.creator = current_user
+    ### Save the user roles when saving the user
+    #@user.save do |result|
+    @user.save && check_and_set_role do |result|
+
       respond_to do |format|
         if result
           flash[:notice] = "User #{@user.username} was successfully registered."
+#          @user.has_role!(:patient) # Add default group for user
           format.html { redirect_to(@user) } #      redirect_to root_url
           format.xml  { render :xml => @user, :status => :created, :location => @user }
         else
@@ -57,8 +79,11 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
+#    @user = User.find(params[:id])
     @user = current_user
-    @user.attributes = params[:user]
+    ### Save the user roles when saving the user
+    #@user.attributes = params[:user]
+    check_and_set_role && @user.attributes = params[:user]
     @user.save do |result|
       respond_to do |format|
         if result
@@ -91,5 +116,62 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
-end
 
+  private
+
+  def bakset_allowed_roles
+    @allowed_roles = if current_user.has_role?(:admin)
+      User::ROLES
+### SCW - TODO (review this sample later for non hardcoded roles
+#          elsif current_user.has_role?(:partner)
+#           %w(partner_1 partner_2)
+        else
+          ### They Should Not Be Here -- TODO
+          []
+          #@user.errors.add(:base, 'You cannot assign this role to this user')
+      end
+  end
+
+          def set_allowed_roles
+            @allowed_roles = if current_user.has_role?(:admin)
+                              User::ROLES
+                            elsif current_user.has_role?(:partner)
+                              %w(partner_1 partner_2)
+                            else
+                              # WTF
+                              []
+                            end
+          end
+
+  def check_and_set_role
+    return true if @user == current_user
+
+    if @allowed_roles.include?(@role)
+      @user.has_no_roles!
+      @user.has_role!(@role)
+
+      true
+    else
+      @user.errors.add(:base, 'You cannot assign this role to this user')
+
+      false
+    end
+  end
+
+  def load_user
+    @user = User.find(params[:id])
+  end
+
+  def get_role
+    @role = params[:user].delete('role')
+  end
+
+  def allow_to_edit?
+    return if @user == current_user
+
+    unless @allowed_roles.include?(@user.role) && @user.creator == current_user
+        flash[:notice] = "You cannot edit this user!"
+        redirect_to users_path
+    end
+  end
+end
