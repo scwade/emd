@@ -12,7 +12,7 @@
 
 /* The wire frame layout */
 body {
-   background-image: url(form-background.png);
+   background: #ECF0F9;
 }
 
 #main-wrapper, #main-form, #main-footer, #footer-logo, #footer-copyright, #form-buttons {
