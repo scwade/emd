@@ -1,4 +1,5 @@
-require File.expand_path(File.dirname(__FILE__) + "/../../config/environment")
+### SCW - Commented out to enable 'rake gems:install' to work
+#require File.expand_path(File.dirname(__FILE__) + "/../../config/environment")
 require File.expand_path(File.dirname(__FILE__) + "/../../test/ordered_fixtures")
 
 ENV["FIXTURE_ORDER"] ||= ""
