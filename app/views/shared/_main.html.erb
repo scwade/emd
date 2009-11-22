@@ -1,7 +1,8 @@
 <%= render :partial => "shared/header" %> 
   <div id="columns">
     <div id="side">
-      <div id="my_record">
+      <div id="record">
+      </div><!-- end of record -->
 <!-- LOCAL -->
         <a href="/patient_conditions">Patient Conditions</a><br />
         <a href="/conditions">Conditions(ref)</a><br />
@@ -12,14 +13,13 @@
 
         <p></p>
 <!-- CHANGE ENVIRONMENT -->
-       <h3> Change ENV </h3>
+       <p> Change ENV </p>
          <div style="margin-left: 1.5em; margin-top: -1em; ">
             <a href="http://localhost:3000/conditions">LOCAL</a><br />
             <a href="http://emd.heroku.com/conditions">Heroku</a><br />
             <a href="http://192.168.1.101:3000/conditions">Scott (pvt)</a><br />
             <a href="http://scwade.blogdns.com:3000/conditions">Scott (pub)</a><br />
          </div>
-      </div><!-- end of record -->
     </div><!-- end of side -->
 
     <div id="main">

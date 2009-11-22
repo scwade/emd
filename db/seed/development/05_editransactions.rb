@@ -1,13 +1,6 @@
 #db/seed/development/xx_editransactions.rb
 #Development base data
 
-<<<<<<< HEAD:db/seed/development/05_editransactions.rb
-### ROLLAND TODO - Please make this a rake action (this was messing up my seed environments)
-# Delete all before seeding
-# Editransaction.delete_all
-
-=======
->>>>>>> ba5aeeb14bc7a61f79904209a813661baa4bd10c:db/seed/development/05_editransactions.rb
 e1 = Editransaction.create(
   :isa01 => "11",
   :isa02 => "1234567890",
