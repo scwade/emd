@@ -1,33 +1,40 @@
-<div id="index-body">
-
-    <h1 id="index-title">ProficientMD - List of current patients</h1>
+<!-- Begin Patient Profile -->
+<h1>&#60;Company Name&#62; Patient Profile Records</h1>
     
-    <table>
+<div id="mainScrollableWindow">
+  <table class="X3" rules="none">
+    <tbody>
       <tr>
-        <th class="index-th">Id:</th>
-        <th class="index-th">Patient Id</th>
-        <th class="index-th">User Id</th>
-        <th class="index-th">First Name</th>
-        <th class="index-th">Last Name</th>
+        <th>Active:</th>
+        <th>Id:</th>
+        <th>Patient Id</th>
+        <th>User Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
       </tr>
     
-    <% for patient_profile in @patient_profiles %>
+      <% for patient_profile in @patient_profiles %>
       <tr>
-        <td class="index-td"><%=h patient_profile.id %></td>
-        <td class="index-td"><%=h patient_profile.pmd_patient_id %></td>
-        <td class="index-td"><%=h patient_profile.pmd_user_id %></td>
-        <td class="index-td"><%=h patient_profile.first_name %></td>
-        <td class="index-td"><%=h patient_profile.last_name %></td>
-        <td class="index-td"><%= button_to 'Show Patient Record', patient_profile_path(patient_profile.id), :method=>:get , :class=>"form-subButton1"%></td>
-        <td class="index-td"><%= button_to 'Delete', patient_profile_path(patient_profile.id), :method=>:delete, :class=>"form-subButton1" %></td>
+        <td><%=h (patient_profile.active_patient.equal? true) ? 'Yes' : 'No' %></td>
+        <td><%=h patient_profile.id %></td>
+        <td><%=h patient_profile.pmd_patient_id %></td>
+        <td><%=h patient_profile.pmd_user_id %></td>
+        <td><%=h patient_profile.first_name %></td>
+        <td><%=h patient_profile.last_name %></td>
+        <td><%= link_to 'Show',   patient_profile_path(patient_profile.id) %></td>
+        
+        <% if patient_profile.active_patient.equal? true %>
+          <td><%= link_to 'Disable', patient_profile_path(patient_profile.id), :method => :delete %></td>
+        <% else %>
+          <td><%= link_to 'Enable', patient_profile_path(patient_profile.id), :method => :delete %></td>
+        <% end %>
       </tr>
-    <%end%>
-    
-    </table>
-    <br />
-    
-    <p>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- end of mainScrollWindow -->
+ 
+  <p>
     <%= link_to 'New patient_profile', new_patient_profile_path, :id=>"index-newButton" %>
-    </p>
-    
-</div>
+  </p>
+<!-- End Patient Profile index -->

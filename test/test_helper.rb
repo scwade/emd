@@ -1,6 +1,10 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
+### Adding Authlogic Test Case (next 3 lines)
+require "authlogic/test_case"
+setup :activate_authlogic
+UserSession.create(users(:admin))
 
 class ActiveSupport::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method

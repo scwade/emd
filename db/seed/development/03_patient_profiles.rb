@@ -1,10 +1,6 @@
 #db/seed/development/xx_patient_profiles.rb
 #Development base data
 
-### ROLLAND TODO - Please make this a rake action (this was messing up my seed environments)
-# Delete all before seeding
-# PatientProfile.delete_all
-
 pp1 = PatientProfile.create( 
   :pmd_patient_id => "100000001",
   :pmd_user_id => "100000001",
@@ -25,7 +21,8 @@ pp1 = PatientProfile.create(
   :phone_emergency =>  "5104290790",
   :date_of_birth => "2004-09-09",
   :gender =>  "M",
-  :ethnicity => "12")
+  :ethnicity => "White",
+  :active_patient => 1)
 pp1.save 
 
 pp2 = PatientProfile.create( 
@@ -48,7 +45,8 @@ pp2 = PatientProfile.create(
   :phone_emergency =>  "5104290790",
   :date_of_birth =>  "2005-09-24",
   :gender =>  "M",
-  :ethnicity => "12")
+  :ethnicity => "White",
+  :active_patient => 1)
 pp2.save
 
 pp3 = PatientProfile.create( 
@@ -71,7 +69,8 @@ pp3 = PatientProfile.create(
   :phone_emergency =>  "5104290790",
   :date_of_birth =>  "2005-09-24",
   :gender =>  "F",
-  :ethnicity => "12")
+  :ethnicity => "White",
+  :active_patient => 1)
 pp3.save 
 
 pp4 = PatientProfile.create( 
@@ -94,7 +93,8 @@ pp4 = PatientProfile.create(
   :phone_emergency =>  "5104290790",
   :date_of_birth =>  "2005-09-24",
   :gender =>  "M",
-  :ethnicity => "11")
+  :ethnicity => "White",
+  :active_patient => 1)
 pp4.save
 
 pp5 = PatientProfile.create( 
@@ -117,7 +117,8 @@ pp5 = PatientProfile.create(
   :phone_emergency =>  "5555555555",
   :date_of_birth =>  "2005-09-24",
   :gender =>  "M",
-  :ethnicity => "10")
+  :ethnicity => "White",
+  :active_patient => 1)
 pp5.save
 
 pp6 = PatientProfile.create( 
@@ -129,6 +130,7 @@ pp6 = PatientProfile.create(
   :email =>  "brian1@aa.com",
   :date_of_birth =>  "1895-09-24",
   :gender =>  "M",
-  :ethnicity => "African")
+  :ethnicity => "African",
+  :active_patient => 1)
 pp6.save 
 

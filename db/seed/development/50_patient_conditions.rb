@@ -5,8 +5,14 @@
 # Delete all before seeding
 # PatientCondition.delete_all
 
+### Login User admin to enable seed data creation
+Authlogic::Session::Base.controller = Authlogic::ControllerAdapters::RailsAdapter.new(self)
+
+lu =UserSession.create(:username => 'admin', :password => 'amdin')
+
 # Initialize
-treated_by = treat_notes = []
+treated_by = []
+treat_notes = []
 treated_by  << "Dr. Wade" << "Dr. Chao" << "Dr. Reeves" << "Dr. Madany" << "Dr. Wang"
 treat_notes << "Placed on high dose of vitamin C" << "Placed on high dose of vitamin B" << "Placed on high dose of vitamin D" << "Reassess after referral" 
 
@@ -23,17 +29,3 @@ p.each do |pv|
                                  :treat_notes  => treat_notes[rand(treat_notes.count)] )
   end
 end
-
-# Scotts stuff
-### ROR console tests -- working
-##------------------------------
-##devpatientprofile1 = PatientProfile.find(422094565)
-##devcondition1 = Condition.find(56)
-##devpatientprofile1.conditions << devcondition1
-##pc1 = devpatientprofile1.patient_conditions
-##pc1[0].start_date = "2009-06-18"
-##pc1[0].end_date = "2009-06-18"
-##pc1[0].treated_by = "Dr. Wang"
-##pc1[0].treat_notes = "Treated with vitamin B"
-#
-#

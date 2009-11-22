@@ -1,31 +1,36 @@
-<h1>Reference Condition Listings</h1>
+<!-- Begin Condition References index -->
+<h1>Condition References</h1>
 
-<table class="X3"rules="none" border="1">
-  <tr>
-    <th>Condition ID</th>
-    <th>Condition Name</th>
-    <th>Create Date</th>
-    <th>Update Date</th>
-    <th>Google Link</th>
-    <th>Wiki Link</th>
+<div id="mainScrollableWindow">
+  <table class="X3" rules="fixed">
+    <tbody>
+      <tr>
+        <th>Condition ID</th>
+        <th>Condition Name</th>
+        <th>Create Date</th>
+        <th>Update Date</th>
+        <th>Google Link</th>
+        <th>Wiki Link</th>
+      </tr>
 
-  </tr>
-
-<% @conditions.each do |condition| %>
-  <tr>
-    <td><%=h condition.id %></td>
-    <td><%=h condition.name %></td>
-    <td><%=h condition.created_at %></td>
-    <td><%=h condition.updated_at %></td>   
-    <td><%= link_to_unless condition.google_url.blank?, "Visit Google", condition.google_url, :popup => true %></td>
-    <td><%= link_to_unless condition.wiki_url.blank?, "Visit Wiki", condition.wiki_url, :popup => true %></td>
-    <td><%= link_to 'Show', condition %></td>
-    <td><%= link_to 'Edit', edit_condition_path(condition) %></td>
-    <td><%= link_to 'Destroy', condition, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+      <% @conditions.each do |condition| %>
+        <tr>
+          <td><%=h condition.id %></td>
+          <td><%=h condition.name %></td>
+          <td><%=h condition.created_at %></td>
+          <td><%=h condition.updated_at %></td>   
+          <td><%= link_to_unless condition.google_url.blank?, "Visit Google", condition.google_url, :popup => true %></td>
+          <td><%= link_to_unless condition.wiki_url.blank?, "Visit Wiki", condition.wiki_url, :popup => true %></td>
+          <td><%= link_to 'Show', condition %></td>
+          <td><%= link_to 'Edit', edit_condition_path(condition) %></td>
+          <td><%= link_to 'Destroy', condition, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- end of mainScrollWindow -->
 
 <br />
 
 <%= link_to 'New condition', new_condition_path %>
+<!-- End Condition References index -->

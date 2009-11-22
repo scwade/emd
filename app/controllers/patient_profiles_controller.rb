@@ -86,7 +86,14 @@ class PatientProfilesController < ApplicationController
   # DELETE /patient_profiles/1.xml
   def destroy
     @patient_profile = PatientProfile.find(params[:id])
-    @patient_profile.destroy
+    if @patient_profile.active_patient
+      @patient_profile.active_patient = 0
+      flash[:yield] = 'Patient ' + @patient_profile.first_name + " inactive now."    
+    else
+      @patient_profile.active_patient = 1
+      flash[:notice] = 'Patient ' + @patient_profile.first_name + " active now."
+    end
+    @patient_profile.save
 
     respond_to do |format|
       format.html { redirect_to(patient_profiles_url) }

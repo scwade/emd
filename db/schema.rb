@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091109152525) do
+ActiveRecord::Schema.define(:version => 20091119174512) do
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"
@@ -83,28 +83,29 @@ ActiveRecord::Schema.define(:version => 20091109152525) do
   end
 
   create_table "patient_profiles", :force => true do |t|
-    t.integer  "pmd_patient_id",                  :null => false
-    t.integer  "pmd_user_id",                     :null => false
-    t.integer  "physician_id",                    :null => false
-    t.string   "first_name",                      :null => false
-    t.string   "last_name",                       :null => false
+    t.integer  "pmd_patient_id",                                    :null => false
+    t.integer  "pmd_user_id",                                       :null => false
+    t.integer  "physician_id",                                      :null => false
+    t.string   "first_name",                                        :null => false
+    t.string   "last_name",                                         :null => false
     t.string   "primary_address"
     t.string   "alternate_address"
     t.integer  "zip5",              :limit => 8
     t.integer  "zip4"
     t.string   "city",              :limit => 60
     t.string   "state_province",    :limit => 2
-    t.string   "email",                           :null => false
+    t.string   "email",                                             :null => false
     t.string   "phone_home",        :limit => 10
     t.string   "phone_mobile",      :limit => 10
     t.string   "phone_work",        :limit => 10
     t.string   "phone_fax",         :limit => 10
     t.string   "phone_emergency",   :limit => 10
-    t.date     "date_of_birth",                   :null => false
-    t.string   "gender",            :limit => 1,  :null => false
-    t.string   "ethnicity",         :limit => 60, :null => false
+    t.date     "date_of_birth",                                     :null => false
+    t.string   "gender",            :limit => 1,                    :null => false
+    t.string   "ethnicity",         :limit => 60,                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active_patient",                  :default => true, :null => false
   end
 
   create_table "patients", :force => true do |t|
@@ -140,6 +141,21 @@ ActiveRecord::Schema.define(:version => 20091109152525) do
     t.datetime "updated_at"
   end
 
+  create_table "roles", :force => true do |t|
+    t.string   "name",              :limit => 40
+    t.string   "authorizable_type", :limit => 40
+    t.integer  "authorizable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -165,6 +181,7 @@ ActiveRecord::Schema.define(:version => 20091109152525) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
     t.string   "openid_identifier"
   end
 
