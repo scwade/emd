@@ -1,52 +1,89 @@
-<!-- Begin User index -->
-<h1>&#60;Company Name&#62; User Accounts</h1>
+<!-- begin index.html User Accounts -->
+<div>
+  <h3>User Accounts</h3>
 
-<div id="mainScrollableWindow">
-  <table class="X3" rules="fixed">
-    <tbody>
-      <tr>
-        <th> Id </th>
-        <th> User Login Name </th>
-        <th> Email </th>
-        <th> Crypted password </th>
-        <th> Password_salt </th>
-        <th> Persistence token </th>
-        <th> Login count </th>
-        <th> Failed login count </th>
-        <th> Last request at </th>
-        <th> Current login at </th>
-        <th> Last login at </th>
-        <th> Current login ip </th>
-        <th> Last login ip </th>
-      </tr>
+  <div id="mainScrollableWindow">
+    <div id="myHeaderRow"> 
+      <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft width4"> ID </div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width11"> USER</div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width18"> EMAIL </div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width16"> C </div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width16"> S </div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width16"> P </div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center width30"> LP </div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center width40"> LF</div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center width230"> LOGIN ( Prev. / Current / Last )</div>
+      <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center width190"> IP ( Current / Last )</div>            
+    </div><br /><!-- end of myHeaderRow -->
+  </div><!-- end of mainScrollableWindow -->
 
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= h user.id %></td>
-          <td><%= h truncate(user.username,           :length => 60 ) %></td>
-          <td><%= h truncate(user.email,              :length => 20 ) %></td>
-          <td><%= h truncate(user.crypted_password,   :length => 20 ) %></td>
-          <td><%= h truncate(user.password_salt,      :length => 20 ) %></td>
-          <td><%= h truncate(user.persistence_token,  :length => 20 ) %></td>
-          <td><%= h user.login_count %></td>
-          <td><%= h user.failed_login_count %></td>
-          <td><%= h user.last_request_at %></td>
-          <td><%= h user.current_login_at %></td>
-          <td><%= h user.last_login_at %></td>
-          <td><%= h truncate(user.current_login_ip,   :length => 20 ) %></td>
-          <td><%= h truncate(user.last_login_ip,      :length => 20 ) %></td>
+  <div id="mainScrollableWindow1">
+  <% row = 1;%>
+    <% @users.each do |user| %>
+    <div class="myDataRow">
+      <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft width4"><%= h user.id %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width11"><%= h truncate(user.username, :length => 10 ) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width18"><%= h truncate(user.email, :length => 20 ) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft gray16"><%= h truncate(user.crypted_password,   :length => 3 ) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft gray16"><%= h truncate(user.password_salt,      :length => 3 ) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft gray16"><%= h truncate(user.persistence_token,  :length => 3 ) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center width30"><%= h truncate(user.login_count.to_s,  :length => 4 ) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center width40"><%= h truncate(user.failed_login_count.to_s,  :length => 4 ) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft gray68 right"><%= h user.last_request_at.to_s.slice(0,10) %></div>
+      <div class="floatLeft grayDivide" >/</div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft gray68 center"><%= h user.current_login_at.to_s.slice(0,10) %></div>
+      <div class="floatLeft grayDivide">/</div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft gray70"><%= h user.last_login_at.to_s.slice(0,10) %></div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width96"><%= h user.current_login_ip.to_s.slice(0,15) %></div>
+      <div class="floatLeft divide"> / </div>
+      <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft width96"><%= h user.last_login_ip.to_s.slice(0,15) %></div>
 
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?',  :method => :delete %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div><!-- end of mainScrollWindow -->
+  <% row+=1 %>
+    </div><!-- end of myDataRow -->
+    <% end %>
+  </div><!-- end of mainScrollWindow1 -->
+  <br />
+</div><!-- end of index.html -->
 
-<br />
+<% javascript_tag :defer => 'defer' do -%>
 
-<%= link_to 'Register', new_user_path %>
+// Register event with document, disable elements
+  alert("You called.")
 
-<!-- End User index -->
+  document.observe("dom:loaded", function() {
+  
+    // Register callback with event handler
+    try {
+      Element.observe(window, 'resize', respondToChange);
+    } catch(error) {
+      alert('Error trying to register callback event.' + '\n\n' + 'Please try again!');
+    }
+  });
+
+  function respondToChange(event) {
+   alert(event.type);
+   // Change size
+   var cWin  = $('mainScrollableWindow').getWidth();
+   var mWin  = $('mainScrollableWindow');
+   var mWin1 = $('mainScrollableWindow1');
+
+  if (cWin > 1300) {
+    mWin.style.width = "99%";
+    mWin.style.fontSize  = "1em";
+    mWin1.style.fontSize = "1em";
+  } else if ( cWin > 1180 ) {
+    mWin.style.width = "98.5%";
+    mWin.style.fontSize = "1em";
+    mWin1.style.fontSize = "1em";
+  } else {
+      mWin.style.width = "98%";
+      mWin.style.fontSize  = "1em";
+      mWin1.style.fontSize = "1em";
+  }
+
+   return false;
+  };
+
+<% end %>
+
+<!-- end index.html User Accounts -->

@@ -1,14 +1,46 @@
-<h1>User Account</h1>
+<!-- show.html @user Account -->
+<h3>User Account</h3>
 
-<p>
-  <b>User Login Name:</b>
-  <%=h @user.username %>
-</p>
+<div class="page">
+  <p>
+    <p><b>User Id:  &nbsp;</b><%= h @user.id %></p>
+    <p><b>Login Name: &nbsp;</b><%=h @user.username %></p>
+    <p><b>Email: &nbsp;</b><%=h @user.email %></p>
+    <p><b>Login Count: &nbsp;</b><%= h @user.login_count %></p>
+    <p><b>Failed Login Count: &nbsp;</b><%= h @user.failed_login_count %></p>
+    <p><b>Last Request At: &nbsp;</b><%= h @user.last_request_at%></p>
+    <p><b>Current Login At: &nbsp;</b><%= h @user.current_login_at %></p>
+    <p><b>Last Login At: &nbsp;</b><%= h @user.last_login_at %></p>
+    <p><b>Current Login IP: &nbsp;</b><%= h @user.current_login_ip %></p>
+    <p><b>Last Login IP: &nbsp;</b><%= h @user.last_login_ip %></p>
+  </p>
 
-<p>
-  <b>Crypted password:</b>
-  <%=h @user.crypted_password %>
-</p>
+  <p>
+    <b>Password Salt: &nbsp;</b>
+    <%=h @user.password_salt %>
+  </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <p>
+    <b>Crypted Password: &nbsp;</b>
+    <%=h @user.crypted_password.to_s.slice(0,64) %>
+    <div style="display: inline; position: relative; left: 150px;">
+      <%=h @user.crypted_password.to_s.slice(64,64) %>
+    </div>
+  </p>
+
+  <p>
+    <b>Persistence Token: &nbsp;</b>
+    <%=h @user.persistence_token.to_s.slice(0,64) %>
+    <div style="display: inline; position: relative; left: 150px;">
+      <%=h @user.persistence_token.to_s.slice(64,64) %>
+    </div>
+  </p>
+
+  <h5>
+    <p>
+      <%= link_to 'Edit', edit_user_path(@user) %> |
+      <%= link_to 'Back', users_path %>
+    </p>
+  </h5>
+</div>
+
