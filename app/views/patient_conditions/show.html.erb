@@ -1,35 +1,29 @@
-<h1>Patient Condition</h1>
+<!-- show.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Patient Condition</p>
+</div>
 
-<p>
-  <b>Patient Profile:</b>
-  <%=h @patient_condition.patient_profile.first_name %>
-</p>
+<div class="indent10">
+  <div class="floatLeftLabel">Patient Profile:</div>
+  <div class="floatLeftData"><%=h @patient_condition.patient_profile.first_name %></div>
+  <div class="floatLeftLabel">Condition:</div>
+  <div class="floatLeftData"><%=h @patient_condition.condition.name %></div>
+  <div class="floatLeftLabel">Start Date:</div>
+  <div class="floatLeftData"><%=h @patient_condition.start_date %></div> 
+  <div class="floatLeftLabel">End Date:</div>
+  <div class="floatLeftData"><%=h @patient_condition.end_date %></div>
+  <div class="floatLeftLabel">Treated by:</div>
+  <div class="floatLeftData"><%=h @patient_condition.treated_by %></div>
+  <div class="floatLeftLabel">Treat notes:</div>
+  <div class="floatLeftData"><%=h @patient_condition.treat_notes %></div>
+</div>
 
-<p>
-  <b>Condition:</b>
-  <%=h @patient_condition.condition.name %>
-</p>
+<br />
 
-<p>
-  <b>Start date:</b>
-  <%=h @patient_condition.start_date %>
-</p>
-
-<p>
-  <b>End date:</b>
-  <%=h @patient_condition.end_date %>
-</p>
-
-<p>
-  <b>Treated by:</b>
-  <%=h @patient_condition.treated_by %>
-</p>
-
-<p>
-  <b>Treat notes:</b>
-  <%=h @patient_condition.treat_notes %>
-</p>
-
-
-<%= link_to 'Edit', edit_patient_condition_path(@patient_condition) %> |
-<%= link_to 'Back', patient_conditions_path %>
+<div class="floatLeft clearBoth indent marginTop20 link">
+    <%= link_to 'Edit', edit_patient_condition_path(@patient_condition) %> |
+    <%= link_to 'Back', patient_conditions_path %> |
+    <div class="indent" style="display: inline">
+      <%= link_to 'Destroy', patient_condition_path(@patient_condition.id), :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+</div><!-- end of link -->

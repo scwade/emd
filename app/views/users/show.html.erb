@@ -1,46 +1,50 @@
-<!-- show.html @user Account -->
-<h3>User Account</h3>
-
-<div class="page">
-  <p>
-    <p><b>User Id:  &nbsp;</b><%= h @user.id %></p>
-    <p><b>Login Name: &nbsp;</b><%=h @user.username %></p>
-    <p><b>Email: &nbsp;</b><%=h @user.email %></p>
-    <p><b>Login Count: &nbsp;</b><%= h @user.login_count %></p>
-    <p><b>Failed Login Count: &nbsp;</b><%= h @user.failed_login_count %></p>
-    <p><b>Last Request At: &nbsp;</b><%= h @user.last_request_at%></p>
-    <p><b>Current Login At: &nbsp;</b><%= h @user.current_login_at %></p>
-    <p><b>Last Login At: &nbsp;</b><%= h @user.last_login_at %></p>
-    <p><b>Current Login IP: &nbsp;</b><%= h @user.current_login_ip %></p>
-    <p><b>Last Login IP: &nbsp;</b><%= h @user.last_login_ip %></p>
-  </p>
-
-  <p>
-    <b>Password Salt: &nbsp;</b>
-    <%=h @user.password_salt %>
-  </p>
-
-  <p>
-    <b>Crypted Password: &nbsp;</b>
-    <%=h @user.crypted_password.to_s.slice(0,64) %>
-    <div style="display: inline; position: relative; left: 150px;">
-      <%=h @user.crypted_password.to_s.slice(64,64) %>
-    </div>
-  </p>
-
-  <p>
-    <b>Persistence Token: &nbsp;</b>
-    <%=h @user.persistence_token.to_s.slice(0,64) %>
-    <div style="display: inline; position: relative; left: 150px;">
-      <%=h @user.persistence_token.to_s.slice(64,64) %>
-    </div>
-  </p>
-
-  <h5>
-    <p>
-      <%= link_to 'Edit', edit_user_path(@user) %> |
-      <%= link_to 'Back', users_path %>
-    </p>
-  </h5>
+<!-- show.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>User Account</p>
 </div>
 
+<div class="indent10">
+  <div class="floatLeftLabel">User ID:</div>
+  <div class="floatLeftData"><%= h @user.id %></div>
+  <div class="floatLeftLabel">Login Name:</div>
+  <div class="floatLeftData"><%=h @user.username %></div>
+  <div class="floatLeftLabel">Email:</div>
+  <div class="floatLeftData"><%=h @user.email %></div> 
+  <div class="floatLeftLabel">Login Count:</div>
+  <div class="floatLeftData"><%= h @user.login_count %></div>
+  <div class="floatLeftLabel">Failed Login Count:</div>
+  <div class="floatLeftData"><%= h @user.failed_login_count %></div>
+  <div class="floatLeftLabel">Last Request At:</div>
+  <div class="floatLeftData"><%= h @user.last_request_at%></div>
+  <div class="floatLeftLabel">Current Login At:</div>
+  <div class="floatLeftData"><%= h @user.current_login_at %></div>
+  <div class="floatLeftLabel">Last Login At:</div>
+  <div class="floatLeftData"><%= h @user.last_login_at %></div>
+  <div class="floatLeftLabel">Current Login IP:</div>
+  <div class="floatLeftData"><%= h @user.current_login_ip %></div>
+  <div class="floatLeftLabel">Last Login IP:</div>
+  <div class="floatLeftData"><%= h @user.last_login_ip %></div>
+
+  <div class="floatLeftLabel">Crypted Password:</div>
+  <div class="floatLeftData"><%=h @user.crypted_password.to_s.slice(0,64) %></div>
+  <div class="floatLeftLabel">64-127:</div>
+  <div class="floatLeftData"><%=h @user.crypted_password.to_s.slice(64,64) %></div>
+
+  <div class="floatLeftLabel">Password Salt:</div>
+  <div class="floatLeftData"><%=h @user.password_salt %></div>
+
+  <div class="floatLeftLabel">Persistence Token:</div>
+  <div class="floatLeftData"><%=h @user.persistence_token.to_s.slice(0,64) %></div>
+  <div class="floatLeftLabel">64-127:</div>
+  <div class="floatLeftData"><%=h @user.persistence_token.to_s.slice(64,64) %></div>
+</div>
+
+<br />
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'Edit', edit_user_path(@user) %>  | 
+  <%= link_to 'Back', users_path %> |
+  <div class="indent" style="display: inline">
+      <%= link_to 'Delete', user_path(@user.id), :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+</div><!-- end of link -->

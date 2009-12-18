@@ -1,14 +1,22 @@
-<h1>Electronic Data Interchange Transaction <%= @editransaction.isa01 %></h1>
+<!-- show.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Electronic Data Interchange Transaction</p>
+</div>
 
-  <p>  <b>Field One</b>  
-    <%=h @editransaction.isa01 %> 
-  </p> 
-  <p>  <b>Field Two</b>  
-    <%=h @editransaction.isa02 %> 
-  </p>
-  <p>  <b>Field Three</b>  
-    <%=h @editransaction.isa03 %> 
-  </p>
+<div class="indent10">
+  <div class="floatLeftLabel">Transaction #:</div>
+  <div class="floatLeftData"><%=h @editransaction.isa01 %></div>
+  <div class="floatLeftLabel">Field One:</div>
+  <div class="floatLeftData"><%=h @editransaction.isa01 %></div>
+  <div class="floatLeftLabel">Field Two:</div>
+  <div class="floatLeftData"><%=h @editransaction.isa02 %></div> 
+  <div class="floatLeftLabel">Field Three:</div>
+  <div class="floatLeftData"><%=h @editransaction.isa03 %></div>
+</div>
 
-<%= link_to 'Edit', edit_editransaction_path(@editransaction) %> |
-<%= link_to 'Back', editransactions_path %>
+<br />
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'Edit', edit_editransaction_path(@editransaction) %> |
+  <%= link_to 'Back', editransactions_path %>
+</div><!-- end of link -->

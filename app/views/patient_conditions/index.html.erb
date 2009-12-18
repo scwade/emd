@@ -1,44 +1,52 @@
-<!-- Begin Patient Conditions index -->
-<h1>Patient Conditions</h1>
+<!-- index.html.erb -->
+<% javascript 'show_record' %>
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Patient Conditions</p>
+</div>
 
-<div id="mainScrollableWindow">
-  <table class="X3" rules="fixed">
-    <tbody>
-      <tr>
-        <th>PC id</th>
-        <th>PP id</th>
-        <th>Condition id</th>
-        <th>Patient</th>
-        <th>Patient id</th>
-        <th>Condition name</th>
-        <th>Start date</th>
-        <th>End date</th>
-        <th>Treated by</th>
-        <th>Treat notes</th>
-      </tr>
-
-      <% @patient_conditions.each do |patient_condition| %>
-        <tr>
-          <td><%=h patient_condition.id %></td>
-          <td><%=h patient_condition.patient_profile_id %></td>
-          <td><%=h patient_condition.condition_id %></td>
-          <td><%=h patient_condition.patient_profile.first_name %></td>
-          <td><%=h patient_condition.patient_profile.pmd_patient_id %></td>
-          <td><%=h patient_condition.condition.name %></td>
-          <td><%=h patient_condition.start_date %></td>
-          <td><%=h patient_condition.end_date %></td>
-          <td><%=h patient_condition.treated_by %></td>
-          <td><%=h patient_condition.treat_notes %></td>
-          <td><%= link_to 'Show', patient_condition %></td>
-          <td><%= link_to 'Edit', edit_patient_condition_path(patient_condition) %></td>
-          <td><%= link_to 'Destroy', patient_condition, :confirm => 'Are you sure?', :method => :delete %></td>
-        </tr>
-      <% end %>
-    </tbody>
+<div class="indent20 clearBoth">
+  <table cellspacing="0" cellpadding="0">
+    <tr><th>
+      <div id="mainScrollWindowHeader" style="width: 1060px;">
+        <div id="mainHeaderRow" 
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft patientConditionCol0"> PC ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol1"> PP ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol2"> CONDITION ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol3"> FIRST NAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol4"> PATIENT ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol5"> CONDITION NAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol6"> START DATE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol7"> END DATE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol8"> TREATED BY </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol9"> TREAT NOTES </div>
+        </div><br /><!-- end of mainHeaderRow -->
+      </div><!-- end of mainScrollWindowHeader -->
+    </th></tr>
+    <tr><td>
+      <div id="mainScrollWindowData" style="width: 1060px;">
+      <% row=1 %>
+        <% @patient_conditions.each do |patient_condition| %>
+        <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
+          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft patientConditionCol0"><%=h patient_condition.id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol1"><%=h patient_condition.patient_profile_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol2"><%=h patient_condition.condition_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol3"><%=h patient_condition.patient_profile.first_name %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol4"><%=h patient_condition.patient_profile.pmd_patient_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol5"><%=h patient_condition.condition.name %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol6"><%=h patient_condition.start_date %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol7"><%=h patient_condition.end_date %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol8">
+            <%=h patient_condition.treated_by.blank? ?  "---" : patient_condition.treated_by  -%></div> 
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientConditionCol9">
+            <%=h patient_condition.treat_notes.blank? ? "---" : patient_condition.treat_notes -%></div>
+          <% row+=1 %><br />
+        </div><!-- end of mainDataRow -->
+        <% end %>
+      </div><!-- end of mainScrollWindowData -->
+    </td></tr>
   </table>
-</div><!-- end of mainScrollWindow -->
+</div><!-- end of indent -->
 
-<br />
-
-<%= link_to 'New patient_condition', new_patient_condition_path %>
-<!-- End Patient Conditions index -->
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'New Patient Condition', new_patient_condition_path %>
+</div><!-- end of link -->

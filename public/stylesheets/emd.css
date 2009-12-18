@@ -1,4 +1,20 @@
-/* Begin emd.css */
+/*  emd.css
+*   12/17/09
+*
+*   Body - wireframe
+*     #wrapper  for viewport
+*       #banner for header
+*       #status - container
+*         #roundedCorner - chrome
+*         #spinner       - status indicator
+*         #noticeBox     - flash messages
+*         #userSession   - login/logout control
+*       #side for navigation
+*         #sideNavigation container
+*       #mainWrapper - container
+*         #mainContent  container for view templates
+*       #footer container for footnotes
+*/    
 
 /* Universal Reset */
 * {
@@ -6,11 +22,7 @@
   padding: 0;
 }
 
-body {
-  font: 10px/15px Verdans;
-  background-color: #ECF0F9;
-}
-
+/* Default selectors */
 h1, h2, h3, h4, h5, h6, a {
   line-height: 150%;
   text-align: left;
@@ -25,41 +37,153 @@ h4 { font-size: 1.5em; }
 h5 { font-size:   1em; }
 h6 { font-size:  .5em; }
 
+/* Global classes */
+.opaque100, .opaque90, .opaque80, .opaque70 {
+  background: white url("../images/sunset-sailing.jpg");
+  background: no-repeat;
+}
+.opaque100 {
+	-ms-filter: "alpha(opacity=100)";
+  opacity: 1.0;
+}
+.opaque90 {
+	-ms-filter: "alpha(opacity=90)";
+  opacity: 0.9;
+}
+.opaque80 {
+	-ms-filter: "alpha(opacity=80)";
+  opacity: 0.8;
+}
+.opaque70 {
+	-ms-filter: "alpha(opacity=70)";
+  opacity: 0.7;
+}
 .floatLeft {
   float: left;
   position: relative;
 }
-
-.page {
-  font-size: 120%; 
-  line-height: 100%;
+.floatRight {
+  float: right;
+  position: relative;
+}
+.clearBoth {
+  clear: both;
+}
+.clearLeft {
+  clear: left;
+}
+.clearRight {
+  clear: right;
+}
+.displayInline {
+  display: inline;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.bold {
+  font-weight: bold;
+}
+.indent, .indent10 {
+  margin-left: 10px;
+}
+.indent5 {
+  margin-left: 5px;
+}
+.indent20 {
+  margin-left: 20px;
+}
+.indent30 {
+  margin-left: 30px;
+}
+.marginTop20 {
+  margin-top: 20px;
+}
+.marginBottom20 {
+  margin-bottom: 20px;
+}
+.gray {
+  background: #E7EBE9;
+}
+.aliceBlue {
+  background: #ECF0F9;
+}
+.lightSteelBlue {
+  background: #C4D1EB;
+}
+.darkTurquoise {
+  background: #758AB8;
+}
+.paleTurquoise {
+  background: #B3E4FA;
+}
+.mediumBlue {
+  background: #262262;
+}
+.divide {
+  padding: 0 2px;
+}
+div .link a {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.link a:hover {
+  color: #758AB8;
+}
+.scrollWindow {
+  max-height: 380px;
+  overflow-y: scroll;
+  margin: 10px;
 }
 
 /* High Level Navigation */
 a { text-decoration: none; }
 a:link { color: #262262; }
 a:visited { color: #262262; }
+a:hover { color: white; text-decoration: underline;}
 a:active { color: #262262; }
-a:hover { color: white; }
 
-/* Wrap the viewport - 1024x768 best practice is to design to width 980px */
-#wrapper {
-    min-width: 980px;
-    max-width: 1900px;
-    position: relative;
-    margin: 0 auto;
-    font: bold 1em Verdana, Tahoma, "Times New Roman", "Courier New";
-    color: #262262;
+/* Body
+*   Note: make 1em predictable and easier to caculate by setting
+*   font-size to 10px; 1em = 10px or 2.2em = 22px.
+*/
+body {
+  font: 10px/15px Verdana, Helvetica, Arial, 'Courier New', 'Times New Roman';
+  background: #ECF0F9 url("../images/sunset-sailing.jpg");
+  background-repeat: no-repeat;
 }
 
-/* Header layout */
+/* Wrap the viewport
+* - 1024x768 best practice is to design to width 980px 
+*/
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 980px;
+  min-height: 560px;
+  overflow: hidden;
+  font: bold 1em Verdana, Tahoma, Helvetica, Arial, 'Courier New', 'Times New Roman', Consolas;
+  color: #262262;
+}
+
+/* Header layout 
+*   hImage - absolute
+*   hBanner
+*/
 #hBanner {
   display: block;
-  position: relative;
-  clear: both;
-  float: left;
+  position: fixed;
   width: 100%;
-  height: 60px;
 }
 #hTitle {
   position: relative;
@@ -72,33 +196,102 @@ a:hover { color: white; }
 #hTitle p {
   position: relative;
   text-align: center;
-  font: small-caps 280% "Verdana", "Tahoma", "Times New Roman", "Courier New";
+  font: small-caps 280% Verdana, Tahoma, Helvetica, Arial, 'Courier New', 'Times New Roman', Consolas;
 }
 #hImage {
   position: absolute;
   left: 10px;
   top: 10px;
   height: 10px;
-  z-index: 10;
+  z-index: 100;
 }
 
-/* Left side column layout */
+/*  #status - container
+*     #roundCorner (image)
+*     .noticeBox (flash)
+*     #userSession (navigation)
+*/
+#status {
+  position: fixed; 
+  top: 60px; 
+  left: 150px;
+  right: 0px; 
+  height: 20px; 
+  background-color: #ECF0F9;
+}
+#roundCorner {
+  position: fixed;
+  top: 60px;
+  left: 150px;
+  z-index: 10;
+}
+/* Flash and Spinner box for image and notice */
+#noticeBox, #spinnerBox {
+  position: fixed;
+  top: 60px;
+  left: 200px;
+}
+#noticeMsg {
+  position: fixed;
+  top: 62px;
+  left: 230px;
+  font-size: 1.2em;
+}
+div.spinnerMsg:after { 
+  content: "Loading... ";
+  margin-left: 10px; 
+  font-size: 1.2em; 
+  color: green;
+}
+
+/* Session login/logout user */
+#userSession {
+  position: fixed;
+  top: 60px;
+  right: 5px;
+  clear: right;
+  height: 20px;
+  margin-right: 5px;
+  text-align: right;
+  background-color: #ECF0F9;
+  font-size: 110%;
+}
+#userSession a:hover {
+  color: #758AB8;
+  font-size: 100%;
+}
+#userSession a:active {
+  cursor: wait;
+}
+#userSessionName {
+  display: inline;
+  color: green;
+}
+
+/* Side Navigation
+*   #side container
+*   #sideNavigation
+*   #sideNavigationSub0
+*   #sideNavigationSub1
+*/
 #side {
-  clear: left;
-  float: left;
+  position: fixed;
+  top: 60px;
+  left: 0;
   margin: 0;
   padding: 0;
   width: 150px;
   height: 22px;
   background-color: #758AB8;
-  /*border-top: 2px solid black;*/
   max-width: 150px;
 }
+
 #sideNavigation {
-  clear: left;
-  float: left;
+  position: fixed;
+  top: 82px;
+  left: 0;
+  height: 300px;
   width: 150px;
-  height: 780px;
   background-color: #758AB8;
   text-align: left;
   font-size: 90%;
@@ -125,53 +318,20 @@ a:hover { color: white; }
   font-size: 1.2em;
   font-weight: bold;
 }
-
-/* User navigation */
-#userSession {
-  clear: right;
-  float: right;
-  width: 70%;
-  height: 20px;
-  margin-right: 5px;
-  text-align: right;
- /* border-top: 2px solid black;*/
-  background-color: #ECF0F9;
-  font-size: 110%;
-}
-#userSession a:hover {
-  color: #758AB8;
-}
-#userSessionName {
-  display: inline;
-  color: green;
-}
-
-/* Main content page */
-#main {
-  position: relative;
-  float: left;
-  left: 0px;
-  top: 0px;
-  z-index: -10;
-}
-#mainContent {
-  float: left;
-/* 1024x768 */
-  width: 830px;
-/* 1920x1080 
-  width: 1730px;*/
-  margin: 0;
-  padding: 0;
-  height: 768px;
-  background-color: #ECF0F9;
-  margin: 5px 0px 10px 10px;
-  font: normal normal normal 1em/1.5em "Verdana", "Tahoma", "Times New Roman", "Courier New";
+#sideNavigationBottom {
+  position: fixed;
+  top: 382px;
+  left: 0;
+  bottom: 20px;
+  width: 150px;
+  background-color: #758AB8;
 }
 
 /* Footer layout */
 #footer {
+  position: fixed;
   clear: both;
-  float: left;
+  bottom: 0px;
   width: 100%;
   height: 20px;
   background-color: #C4D1EB;
@@ -182,89 +342,461 @@ a:hover { color: white; }
   margin: 5px;
 }
 
-/* Main Content Container */
-#mainContent a:hover {
-  color: #758AB8;
+/* #mainWrapper to control environment
+*   #mainContent - contains view templates
+*/
+#mainWrapper {
+  position: fixed;
+  clear: right;
+  top: 80px;
+  left: 150px;
+  bottom: 20px;
+  right: 0px;
+  margin: 0;
+  padding: 0;
+  background-color: #ECF0F9;
+  font: normal normal normal 1em/1.5em Verdana, Tahoma, Helvetica, Arial, 'Courier New', 'Times New Roman', Consolas;
+  color: #262262;
 }
-#mainScrollableWindow {
-  height: 1.5em;
-  width: 98%;
-  font-size: 100%;
-  margin-top: 10px;
+
+/* Navigation */
+.mainDataRow:link div {
   background-color: #758AB8;
-  color: white;
-  text-align: left;
-  vertical-align: middle;
 }
-#mainScrollableWindow1 {
+.mainDataRow:visited div {
+  background-color: #758AB8;
+}
+.mainDataRow:hover div {
+  background-color: #C4D1EB;
+}
+.mainDataRow:active div  {
+  background-color: #758AB8;
+}
+
+/* #mainContent
+*   container for all view templates
+*/
+#mainContent {
+  position: fixed;
+  clear: right;
+  top: 82px;
+  left: 160px;
+  right: 10px;
+  bottom: 30px;
+  overflow: auto;
+  width: 100%;
+/*
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #ECF0F9;
+  font: normal normal normal 1em/1.5em Verdana, Tahoma, Helvetica, Arial, 'Courier New', 'Times New Roman', sans-serif;
+  color: #262262;
+*/
+}
+#mainScrollWindowHeader{
   position: relative;
   clear: both;
   float: left;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow-y: scroll;
+  width: auto;
+  height: 1.5em;
+  vertical-align: middle;
+  text-align: left;
+  background-color: #758AB8;
+  color: white;
+}
+#mainScrollWindowData, #mainScrollWindowData1 {
+  position: relative;
+  /* Safari fix? */
+  float: left;
+  /* rolland */
+  clear: both;
+  width: auto;
+/* Adjust max-height with resize */
+  max-height: 300px;
+/* ----------------------------- */
+  overflow: scroll;
   overflow-x: hidden;
   border-bottom: 1px solid black;
-  background: #C4D1EB;
-  font: 1em Verdana;
-  line-height: 1.5em;
-  text-align: left;
-  vertical-align: middle;
+  background: #ECF0F9;
+  cursor: pointer;
 }
-#myHeaderRow {
+#mainHeaderRow {
   clear: both;
-  height: 1em; 
+  font-weight: bold;
+text-align: left;
+}
+.mainDataRow {
+}
+
+/* HTML Table styles */
+tr:hover {
+  background: #ECF0F9;
+}
+table {
+  padding: 5px 5px 5px 5px;
+  border-collapse: separate;
+}
+.X3 { 
+  border-spacing: 1em;
+  border: inset .1em #FFFEF0;
+  background-color: #C4D1EB;
+  font-weight: lighter;
+}
+.X3 tbody th {
   text-decoration: underline;
+  font-weight: bolder;
+  color: #000;
 }
-#myDataRow {
-  clear: both;
-}
-.gray, .gray16, .gray68, .gray70, .grayDivide {
-  background: #E7EBE9;
-}
-.gray16 {
-  width: 16px; 
-}
-.gray68 {
-  width: 68px;
-}
-.gray70 {
-  width: 70px;
-}
-.grayDivide, divide {
-  padding: 0px 2px;
-}
-.center {
-  text-align: center;
-}
-.right {
+
+/* Show Template for all views
+*  
+*/
+.floatLeftLabel, .floatLeftLabelTitle12, .floatLeftLabelTable14, .floatLeftLabelTitle18 {
+  float: left;
+  position: relative;
+  width: 130px;
+  height: 20px;
   text-align: right;
+  clear: left;
+  font-weight: bold;
 }
-.width230 {
-  width: 230px;
+.floatLeftLabelPageTitle {
+  float: left;
+  position: relative;
+  clear: both;
+  width: 90%;
+  height: 30px;
+  _height: 50px;
+  border-bottom: 2px solid #262262;
+  padding-bottom: .5em;
+  font-size: 2.4em;
 }
-.width190 {
-  width: 190px;
+.floatLeftLabelTitle12 {
+  font-size: 1.2em;
 }
-.width96 {
-  width: 96px;
+.floatLeftLabelTitle14 {
+  font-size: 1.4em;
 }
-.width40 {
+.floatLeftLabelTitle18 {
+  font-size: 1.8em;
+  font-weight: normal;
+  width: auto;
+  height: auto;
+  margin: 15px 0;
+margin: 10px 0;
+}
+
+.floatLeftLabel {
+  font-size: 1.1em;
+}
+.floatLeftData {
+  float: left;
+  position: relative;
+  margin-left: 8px;
+  font-size: 1.1em;
+  width: 800px;
+  overflow: auto;
+}
+
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: Audit
+*/
+.auditCol0 {
   width: 40px;
 }
-.width30 {
-  width: 30px;
+.auditCol1 {
+  width: 75px;
 }
-.width16 {
+.auditCol2 {
+  width: 125px;
+}
+.auditCol3 {
+  width: 80px;
+}
+.auditCol4 {
+  width: 80px;
+}
+.auditCol5 {
+  width: 110px;
+}
+.auditCol6 {
+  width: 60px;
+}
+.auditCol7 {
+  width: 270px;
+}
+.auditCol8 {
+  width: 70px;
+}
+.auditCol9 {
+  width: 130px;
+}
+
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: condition
+*/
+.conditionCol0 {
+  width: 80px;
+}
+.conditionCol1 {
+  width: 300px;
+}
+.conditionCol2 {
+  width: 100px;
+}
+.conditionCol3 {
+  width: 100px;
+}
+.conditionCol4 {
+  width: 100px;
+}
+.conditionCol5 {
+  width: 100px;
+}
+
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: editransaction
+*/
+.editransactionCol0 {
+  width: 46px;
+}
+.editransactionCol1, .editransactionCol3, .editransactionCol5, .editransactionCol7,
+.editransactionCol11, .editransactionCol14, .editransactionCol15, .editransactionCol16 {
+  width: 50px;
+}
+.editransactionCol2, .editransactionCol4 {
+  width: 75px;
+}
+.editransactionCol6, .editransactionCol8 {
+  width: 111px;
+}
+.editransactionCol9, .editransactionCol10, .editransactionCol12 {
+  width: 50px;
+}
+.editransactionCol13 {
+  width: 75px;
+}
+
+
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: Patient Conditions
+*/
+.patientConditionCol0 {
+  width: 45px;
+}
+.patientConditionCol1 {
+  width: 45px;
+}
+.patientConditionCol2 {
+  width: 80px;
+}
+.patientConditionCol3 {
+  width: 110px;
+}
+.patientConditionCol4 {
+  width: 80px;
+}
+.patientConditionCol5 {
+  width: 220px;
+}
+.patientConditionCol6 {
+  width: 80px;
+}
+.patientConditionCol7 {
+  width: 80px;
+}
+.patientConditionCol8 {
+  width: 150px;
+}
+.patientConditionCol9 {
+  width: 150px;
+}
+
+/* Div matrix to simulate a table with <div>'s
+*   A, .patientProfileCo6, row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: Patient Profile
+*/
+.patientProfileCol0 {
+  width: 40px;
+}
+.patientProfileCol1, .patientProfileCol2 {
+  width: 110px;
+}
+.patientProfileCol3, .patientProfileCol4, .patientProfileCol5 {
+  width: 80px;
+}
+.patientProfileCol6 {
+  width: 85px;
+}
+.patientProfileCol7 {
+  width: 50px;
+}
+.patientProfileCol8 {
+  width: 80px;
+}
+.patientProfileCol9 {
+  width: 55px;
+}
+
+/* Patient profile styles */
+.patientProfileId {
+  float: left; 
+  width: 85px;
+  margin-right: 5px; 
+  text-align: right; 
+  font-size: 1.1em;
+  font-weight: bold;
+}
+th {
+  font-weight: normal;
+}
+
+
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: User
+*/
+.userCol0 {
+  width: 40px;
+}
+.userCol1 {
+  width: 105px;
+}
+.userCol2 {
+  width: 145px;
+}
+.userCol3, .userCol4, .userCol5 {
   width: 16px;
 }
-.width4 {
-  width: 4%;
+.userCol6, .userCol7 {
+  width: 25px;
 }
-.width11 {
-  width: 11%;
+.userCol8, .userCol9, .userCol10 {
+  width: 75px;
 }
-.width18 {
-  width: 18%;
+.userCol11, .userCol12 {
+  width: 100px;
+}
+
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: Template
+*/
+/*.XXXCol0 {
+  width: 40px;
+}
+.XXXCol1 {
+  width: 40px;
+}
+.XXXCol2 {
+  width: 40px;
+}
+.XXXCol3 {
+  width: 40px;
+}
+.XXXCol4 {
+  width: 40px;
+}
+.XXXCol5 {
+  width: 40px;
+}
+.XXXCol6 {
+  width: 40px;
+}
+.XXXCol7 {
+  width: 40px;
+}
+.XXXCol8 {
+  width: 40px;
+}
+.XXXCol9 {
+  width: 40px;
+}
+*/
+
+
+/* Misc. styles
+*   AutoComplete
+*   Error
+*/
+
+/* AutoComplete */
+div.auto_complete {
+  position:absolute;
+  width: auto;
+  border: inset .23em #ECF0F9;
+  z-index: 100;
+}
+div.auto_complete ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+div.auto_complete ul li.selected { background-color: #C4D1EB;}
+div.auto_complete ul li {
+  height: auto;
+  display: block;
+  background-color: #FFFEF0;
+  list-style-type: none;
+  padding-left:1em;
+  font-size:100%;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* Error */
+.fieldWithErrors {  
+}
+.fieldWithErrors input, .fieldWithErrors select {
+  border: 2px solid red;
+}
+#errorExplanation {
+  position: relative;
+  clear: both;
+  float: left;
+  margin: 1em 0;
+  background-color: #E2E3E4;
+}
+#errorExplanation h2 {
+  padding: 0 5px;
+  background-color: #ED1C24;
+  font-size: 150%;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+#errorExplanation p {
+  margin: 5px 0 5px 10px;
+  font-size: 120%;
+  font-weight: bold;
+}
+#errorExplanation ul li {
+  margin: 0 0 2px 30px;
+  font-size: 100%;
+  font-weight: bold;
 }

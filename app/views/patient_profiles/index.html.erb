@@ -1,40 +1,50 @@
-<!-- Begin Patient Profile -->
-<h1>&#60;Company Name&#62; Patient Profile Records</h1>
-    
-<div id="mainScrollableWindow">
-  <table class="X3" rules="none">
-    <tbody>
-      <tr>
-        <th>Active:</th>
-        <th>Id:</th>
-        <th>Patient Id</th>
-        <th>User Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-      </tr>
-    
-      <% for patient_profile in @patient_profiles %>
-      <tr>
-        <td><%=h (patient_profile.active_patient.equal? true) ? 'Yes' : 'No' %></td>
-        <td><%=h patient_profile.id %></td>
-        <td><%=h patient_profile.pmd_patient_id %></td>
-        <td><%=h patient_profile.pmd_user_id %></td>
-        <td><%=h patient_profile.first_name %></td>
-        <td><%=h patient_profile.last_name %></td>
-        <td><%= link_to 'Show',   patient_profile_path(patient_profile.id) %></td>
-        
-        <% if patient_profile.active_patient.equal? true %>
-          <td><%= link_to 'Disable', patient_profile_path(patient_profile.id), :method => :delete %></td>
-        <% else %>
-          <td><%= link_to 'Enable', patient_profile_path(patient_profile.id), :method => :delete %></td>
+<!-- index.html.erb -->
+<% javascript 'show_record' %>
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Patient Profile Records</p>
+</div>
+
+<div class="indent20 clearBoth">
+  <table cellspacing="0" cellpadding="0">
+    <tr><th>
+      <div id="mainScrollWindowHeader" style="width: 800px;">
+        <div id="mainHeaderRow" 
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft patientProfileCol0"> ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol1"> FIRST NAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol2"> LAST NAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol3"> PATIENT ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol4"> USER ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol5"> PHYSICIAN </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol6"> HOME PHONE</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol7"> GENDER </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol8"> BIRTH DATE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol9"> ACTIVE </div>
+        </div><br /><!-- end of mainHeaderRow -->
+      </div><!-- end of mainScrollWindowHeader -->
+    </th></tr>
+    <tr><td>
+      <div id="mainScrollWindowData" style="width: 800px;">
+      <% row=1 %>
+        <% @patient_profiles.each do |patient_profile| %>
+        <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
+          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft patientProfileCol0"><%= h patient_profile.id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol1"><%= h patient_profile.first_name %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol2"><%= h patient_profile.last_name %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol3"><%= h patient_profile.pmd_patient_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol4"><%= h patient_profile.pmd_user_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol5"><%= h patient_profile.physician_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol6"><%= h patient_profile.phone_home %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol7"><%= h patient_profile.gender %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol8"><%= h patient_profile.date_of_birth %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol9"><%= h (patient_profile.active_patient.equal? true) ? 'Yes' : 'No' %></div>
+          <% row+=1 %><br />
+        </div><!-- end of mainDataRow -->
         <% end %>
-      </tr>
-      <% end %>
-    </tbody>
+      </div><!-- end of mainScrollWindowData -->
+    </td></tr>
   </table>
-</div><!-- end of mainScrollWindow -->
- 
-  <p>
-    <%= link_to 'New patient_profile', new_patient_profile_path, :id=>"index-newButton" %>
-  </p>
-<!-- End Patient Profile index -->
+</div><!-- end of indent -->
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'New Patient Proifle', new_patient_profile_path %>
+</div><!-- end of link -->

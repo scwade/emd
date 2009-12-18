@@ -1,42 +1,25 @@
-<h1>Edit Patient Condtion</h1>
-  <table class="X3"rules="none" border="1">
-  <tr>
-<% form_for(@patient_condition) do |f| %>
+<!-- edit.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Edit - Patient Condition</p>
+</div>
+
+<div class=" clearBoth indent">
+  <% form_for(@patient_condition) do |f| %>
   <%= f.error_messages %>
+</div>
 
-  <p>
-    <%= f.label :patient_profile_id %><br />
-    <%= collection_select(:patient_condition, :patient_profile_id, PatientProfile.all, :id, :first_name ) %>
-  </p>
+<div class="clearBoth indent">
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :patient_profile_id %><div><%= collection_select(:patient_condition, :patient_profile_id, PatientProfile.all, :id, :first_name ) %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :condition_id       %><div><%= collection_select(:patient_condition, :condition_id, Condition.all, :id, :name )  %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :start_date         %><div><%= f.date_select :start_date, {:start_year=>1800, :end_year=>Time.now.year} %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :end_date           %><div><%= f.date_select :end_date, {:start_year=>1800, :end_year=>Time.now.year} %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :treated_by         %><div><%= f.text_field :treated_by %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :treat_notes        %><div><%= f.text_field :treat_notes %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Update'           %></div>
+  <% end %>
+</div><!-- end of indent -->
 
-  <p>
-    <%= f.label :condition_id %><br />
-    <%= collection_select(:patient_condition, :condition_id, Condition.all, :id, :name )  %>
-  </p>
-
-  <p>
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date, {:start_year=>1800, :end_year=>Time.now.year} %>
-  </p>
-  <p>
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date, {:start_year=>1800, :end_year=>Time.now.year} %>
-  </p>
-  <p>
-    <%= f.label :treated_by %><br />
-    <%= f.text_field :treated_by %>
-  </p>
-  <p>
-    <%= f.label :treat_notes %><br />
-    <%= f.text_field :treat_notes %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @patient_condition %> |
-<%= link_to 'Back', patient_conditions_path %>
-
-  </tr>
-</table>
+<div class="floatLeft clearBoth indent marginTop20 link">
+    <%= link_to 'Show', @patient_condition %> |
+    <%= link_to 'Back', patient_conditions_path %>
+</div><!-- end of link -->

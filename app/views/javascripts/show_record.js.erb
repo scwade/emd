@@ -1,0 +1,52 @@
+//<![CDATA[ showRecord
+
+  //Wait for document to load
+  document.observe("dom:loaded", function() {
+  
+    try {
+      // Hide spinner
+      var spinner = $('spinnerBox');
+      spinner.hide();
+
+      // Register callback with event handler 
+      Element.observe('mainScrollWindowData', 'click', respondToChange);
+    } catch(error) {
+      alert('Error trying to register callback event.' + '\n\n' + 'Please try again!');
+    };
+    return false;
+  });
+
+  // Event handler
+  // Capture event on any row element, then read id from col0, and call show.html.erb
+  function respondToChange(event) {
+  //alert(event.type);
+
+    try {
+      // Hide noticeBox
+      var noticeBox = $('noticeBox');
+      if (noticeBox) {
+        noticeBox.hide();
+      }
+
+      // Show spinner
+      var spinner = $('spinnerBox');
+      spinner.show();
+
+      //alert("Testing spinner! ");
+  
+      //var clickedRow = Event.findElement(event, '*');
+      var clickedRow = Event.findElement(event, 'div'); 
+      window.location.replace(document.URL + "/" + ($("row" + (clickedRow.id.slice(3,clickedRow.id.indexOf("c")) + "col0"))).innerHTML.strip());
+    } catch(error) {
+        // Hide spinner
+        try {
+          spinner.hide();
+        } catch(error) {
+          alert("Trying to hide spinner! ");
+        }
+      alert('Error trying to fetch account details.\n\n' + 'Please try again!');
+    };
+    return false;
+  };
+    
+//]]> End of showRecord

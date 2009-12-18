@@ -4,22 +4,49 @@
 <body>
   <div id="wrapper">
     <div id="hBanner">
-      <div id="hTitle">
-        <p><%= @page_title || '&lt;Company Name&gt; Medical Records' %></P>
+      <div class="opaque70" id="hTitle">
+        <p><%= @page_title || '&lt;Company Name&gt; Medical Records' %></p>
         <div id="hImage"><%= image_tag("logo-header.png") %></div>
       </div><!-- end of hTitle -->
-    <div><!- end of hBanner -->
+    </div><!-- end of hBanner -->
 
-    <div id="side">
+    <div class="opaque70" id="side">
     </div><!-- end of side -->
 
-    <div id="main"><%= image_tag("left-rounded-corner.png") %></div>
+    <div id="roundCorner" ><%= image_tag("left-rounded-corner.png") %></div>
+
+    <div id="status">
+    <!-- spinner box -->
+      <div class="spinnerMsg" id="spinnerBox" style="display: none">
+        <%= image_tag("ajax-loader.gif", :size=>"18x18") -%>
+      </div><!-- end of spinner box -->
+
+    <!-- flash notices -->
+      <% unless flash.empty? -%>
+        <div id="noticeBox">
+          <% unless flash[:notice].blank? %>
+            <%= image_tag("check-mark.png", :size=>"20x20") -%>
+            <div id="noticeMsg"><%= flash[:notice] %></div>
+          <% else %>
+            <% unless flash[:yield].blank? %>
+              <%= image_tag("yield-mark.png", :size=>"20x20") -%>
+              <div id="noticeMsg"><%= flash[:yield] %></div>
+            <% else %>
+              <% unless flash[:error].blank? %>
+                <%= image_tag("error-mark.png", :size=>"20x20") -%>
+                <div id="noticeMsg"><%= flash[:error] %></div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div><!-- end of noticeBox -->
+      <% end -%>
+
       <div id="userSession">
         <% if current_user %>
           <%= "Welcome:" %>
           <div id="userSessionName">
             <%= h current_user.username %>
-          </div> -
+          </div><!-- end of userSessionName -->
           <%= link_to "Edit Profile", edit_user_path(:current) %> |
           <%= link_to "Logout", logout_path %>
         <% else %>
@@ -27,9 +54,9 @@
           <%= link_to "Login", login_path %>
         <% end %>
       </div><!-- end of userSession -->
-    </div><!-- end of main -->
+    </div><!-- end of status -->
 
-    <div id="sideNavigation">
+    <div class="opaque70" id="sideNavigation">
       <h3> Patient Menu: </h3>
       <div id="sideNavigationSub0">
         <div><a href="/patient_conditions">Patient Conditions</a></div>
@@ -48,13 +75,17 @@
       </div><!-- end of sideNavigationSub1 -->
     </div><!-- end sideNavigation -->
 
-    <div id="mainContent">
-      <%= yield :layout %>
-    </div><!-- end of main -->
+    <div class="opaque70" id="sideNavigationBottom" >
+    </div>
 
-    <div id="footer"><p>My Footer</p>
+    <div class="opaque80" id="mainWrapper">
+      <div id="mainContent">
+        <%= yield :layout %>
+      </div><!-- end of mainContent -->
+    </div><!-- end of mainWrapper -->
+
+    <div class="opaque70" id="footer"><p>My Footer</p>
     </div><!-- end of footer -->
-
   </div><!-- end of wrapper -->
 </body>
 </html>

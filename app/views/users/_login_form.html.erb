@@ -1,23 +1,14 @@
-<!-- Begin login user -->
-<div class="pad" >
-  <% form_for @user do |f| %>
-    <%= f.error_messages %>
-    <p>
-      <%= f.label :username %><br />
-      <%= f.text_field :username %>
-    </p>
-    <p>
-      <%= f.label :email %><br />
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %>
-    </p>
-    <p><%= f.submit "Submit" %></p>
-  <% end %>
+<!-- _login_form.html -->
+<div class=" clearBoth indent">
+  <% form_for(@user) do |f| %>
+  <%= f.error_messages %>
 </div>
+
+<div class="clearBoth indent">
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :username              %><div><%= f.text_field :username %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :email                 %><div><%= f.text_field :email %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :password              %><div><%= f.password_field :password %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :password_confirmation %><div><%= f.password_field :password_confirmation %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Update'              %></div>
+  <% end %>
+</div><!-- end of indent -->

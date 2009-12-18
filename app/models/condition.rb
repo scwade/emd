@@ -46,11 +46,17 @@ class Condition < ActiveRecord::Base
 # ------------------
   validates_length_of :name,  :maximum => 255
 
+# Presence_of validations
+#-------------------------
+  validates_presence_of :name,
+                        :allow_blank => false
+
 # -----------------------------------------------------------------------
 # Uniqueness validations
 # -----------------------------------------------------------------------
   validates_uniqueness_of :name,
-                          :case_sensitive => false
+                          :case_sensitive => false,
+                          :allow_blank => false
 
 #-------------------
 # End of model class

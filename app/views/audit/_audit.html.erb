@@ -1,43 +1,49 @@
-<!-- Begin Audit Partial -->
+<!-- audit.html.erb -->
+<div class="indent20 clearBoth">
+  <table cellspacing="0" cellpadding="0">
+    <tr><th>
+      <div id="mainScrollWindowHeader" style="width: 1060px;">
+        <div id="mainHeaderRow">
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol0"> ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol1"> AUDIT ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol2"> AUDIT TYPE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol3"> USER ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol4"> USER TYPE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol5"> USERNAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol6"> ACTION </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol7"> CHANGES </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol8"> VERSION </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol9"> CREATED AT </div>
+        </div><br /><!-- end of mainHeaderRow -->
+      </div><!-- end of mainScrollWindowHeader -->
+    </th></tr>
+    <tr><td>
+      <div id="mainScrollWindowData" style="width: 1060px;">
+      <% row=1 %>
+        <% @audit.each do |audit| %>
 
-<div id="mainScrollableWindow">
-  <table class="X3" rules="fixed">
-    <tbody>
-      <tr>
-        <th> Id              </th>
-        <th> Auditable id    </th>
-        <th> Auditable type  </th>
-        <th> User id         </th>
-        <th> User type       </th>
-        <th> Username        </th>
-        <th> Action          </th>
-        <th> Changes         </th>
-        <th> Version         </th>
-        <th> Created at      </th>
-      </tr>
-  
-      <% @audit.each do |audit| %>
-        <tr>
-          <td><%= h audit.id              %></td>
-          <td><%= h audit.auditable_id    %></td>
-          <td><%= h audit.auditable_type  %></td>
-          <td><%= h audit.user_id         %></td>
-          <td><%= h audit.user_type       %></td>
-          <td><%= h audit.username        %></td>
-          <td><%= h audit.action          %></td>
-      
-          <td><%= h truncate(audit.changes.to_s, :length => 60 ) %></td>
-      
-          <td><%= h audit.version          %></td>
-          <td><%= h audit.created_at       %></td>
-    
-          <td><%= link_to 'Show',   audit  %></td>
-          <td><%= link_to 'Delete', audit, :method => :delete %></td>
-        </tr>
-      <% end %>
-    </tbody>
+        <!-- Temp Fix for Blank Div's (No user logged in) -->
+        <% audit.user_id = 0 unless !audit.user_id.blank? %>
+        <% audit.user_type = "No user" unless !audit.user_type.blank?%>
+        <% audit.username = "none" unless !audit.username.blank? %>
+
+        <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol0"><%= h audit.id              %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol1"><%= h audit.auditable_id    %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol2"><%= h audit.auditable_type  %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol3"><%= h audit.user_id         %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol4"><%= h audit.user_type       %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol5"><%= h audit.username        %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol6"><%= h audit.action          %></div>
+
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol7"><%= h truncate(audit.changes.to_s, :length => 40 ) %></div>
+        
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol8"><%= h audit.version          %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol9"><%= h audit.created_at.to_s.slice(0,20) %></div>
+          <% row+=1 %><br />
+        </div><!-- end of mainDataRow -->
+        <% end %>
+      </div><!-- end of mainScrollWindowData -->
+    </div></tr>
   </table>
-</div><!-- end of mainScrollWindow -->
-    
-<br />
-<!-- End Audit index -->
+</div><!-- end of indent -->

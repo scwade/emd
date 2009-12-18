@@ -18,6 +18,9 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
+  # For audit_filter view to show an audit record.
+  map.connect 'audit/show_filter/:id', :controller => 'audit', :action => 'show_filter'
+  map.connect 'audit/show_filter/1/:id', :controller => 'audit', :action => 'show'
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
@@ -45,7 +48,9 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => 'patient_profiles'
+  # Rolland - This should be are front page, like a login screen or something.
+  #  map.root :controller => 'patient_profiles' s/b format map.root :patient_profiles
+  map.root :login
 
   # See how all your routes lay out with "rake routes"
 

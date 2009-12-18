@@ -1,4 +1,4 @@
-// Defined functions
+//<![CDATA[ Dynamic States
 
 // Register event with document, disable elements
 
@@ -13,7 +13,6 @@
       alert('Error trying to disable state and zip code fields.' + '\n\n' + 'Please try again!');
     } 
 
-  
     // Register callback with event handler
     try {
       $('patient_profile_city_auto_complete').observe('click', respondToChange);
@@ -51,3 +50,4 @@
 
    return false;
   };
+//]]> End of Dynamic States

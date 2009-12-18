@@ -1,17 +1,20 @@
-<!-- new.html New User Session -->
-<div class="pad" >
-  <h3>New User Session</h3>
-   
-  <% form_for @user_session do |f| %>
-    <%= f.error_messages %>
-    <p>
-      <%= f.label :username %><br />
-      <%= f.text_field :username %>
-    </p>
-    <p>
-      <%= f.label :password %><br />
-      <%= f.password_field :password %>
-    </p>
-    <p><%= f.submit "Submit" %></p>
-  <% end %>
+<!-- new.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>New - User Session</p>
 </div>
+
+<div class=" clearBoth indent">
+  <% form_for(@user_session) do |f| %>
+  <%= f.error_messages %>
+</div>
+
+<div class="clearBoth indent">
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :username  %><div><%= f.text_field :username, :size=>30 %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :password  %><div><%= f.text_field :password %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Create'  %></div>
+  <% end %>
+</div><!-- end of indent -->
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+    <%= link_to 'Back', users_path %>
+</div><!-- end of link -->
