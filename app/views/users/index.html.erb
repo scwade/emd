@@ -1,52 +1,59 @@
-<!-- Begin User index -->
-<h1>&#60;Application&#62; User Accounts</h1>
-
-<div id="mainScrollableWindow">
-  <table class="X3" rules="fixed">
-    <tbody>
-      <tr>
-        <th> Id </th>
-        <th> User Login Name </th>
-        <th> Email </th>
-        <th> Crypted password </th>
-        <th> Password_salt </th>
-        <th> Persistence token </th>
-        <th> Login count </th>
-        <th> Failed login count </th>
-        <th> Last request at </th>
-        <th> Current login at </th>
-        <th> Last login at </th>
-        <th> Current login ip </th>
-        <th> Last login ip </th>
-      </tr>
-
+<!-- index.html.erb -->
+<% javascript 'show_record' %>
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>User Accounts</p>
+</div>
+ 
+<div class="indent20 clearBoth">
+<table cellspacing="0" cellpadding="1px">
+  <tr><th>
+    <div id="mainScrollWindowHeader" style="width: 840px;">
+      <div id="mainHeaderRow">
+        <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft userCol0"> ID </div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol1"> USER</div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol2"> EMAIL </div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol3"> C </div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol4"> S </div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol5"> P </div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol6"> LP </div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol7"> LF</div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol8"> Login(LR)</div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol9"> Login(C)</div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol10"> Login(L)</div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol11"> Current IP</div>
+        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol12"> Last IP</div>
+      </div><br /><!-- end of mainHeaderRow -->
+    </div><!-- end of mainScrollWindowHeader -->
+  </th></tr>
+  <tr><td>
+    <div id="mainScrollWindowData" style="width: 840px;">
+    <% row = 1;%>
       <% @users.each do |user| %>
-        <tr>
-          <td><%= h user.id %></td>
-          <td><%= h truncate(user.username,           :length => 20 ) %></td>
-          <td><%= h truncate(user.email,              :length => 10 ) %></td>
-          <td><%= h truncate(user.crypted_password,   :length => 10 ) %></td>
-          <td><%= h truncate(user.password_salt,      :length => 10 ) %></td>
-          <td><%= h truncate(user.persistence_token,  :length => 10 ) %></td>
-          <td><%= h user.login_count %></td>
-          <td><%= h user.failed_login_count %></td>
-          <td><%= h user.last_request_at %></td>
-          <td><%= h user.current_login_at %></td>
-          <td><%= h user.last_login_at %></td>
-          <td><%= h truncate(user.current_login_ip,   :length => 15 ) %></td>
-          <td><%= h truncate(user.last_login_ip,      :length => 15 ) %></td>
-
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?',  :method => :delete %></td>
-        </tr>
+      <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
+        <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft userCol0"> <%= h user.id %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol1"> <%= h truncate(user.username, :length => 10 ) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol2"> <%= h truncate(user.email, :length => 20 ) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol3"> <%= h truncate(user.crypted_password, :length => 3 ) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol4"> <%= h truncate(user.password_salt, :length => 3 ) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol5"> <%= h truncate(user.persistence_token, :length => 3 ) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol6"> <%= h truncate(user.login_count.to_s, :length => 4 ) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue center userCol7"> <%= h truncate(user.failed_login_count.to_s, :length => 4 ) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol8"> <%= h user.last_request_at.to_s.slice(0,10) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue center userCol9"> <%= h user.current_login_at.to_s.slice(0,10) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol10"> <%= h user.last_login_at.to_s.slice(0,10) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol11"> <%= h user.current_login_ip.to_s.slice(0,15) %></div>
+        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol12"> <%= h user.last_login_ip.to_s.slice(0,15) %></div>
+ 
+        <% row+=1 %><br />
+      </div><!-- end of mainDataRow -->
       <% end %>
-    </tbody>
-  </table>
-</div><!-- end of mainScrollWindow -->
-
-<br />
-
-<%= link_to 'Register', new_user_path %>
-
-<!-- End User index -->
+    </div><!-- end of mainScrollWindowData -->
+  </td></tr>
+</table>
+ 
+</div><!-- end of indent -->
+ 
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'New User', new_user_path %>
+</div><!-- end of link -->
+ 

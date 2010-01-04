@@ -1,18 +1,20 @@
 class UsersController < ApplicationController
 
-  ### Begin acl9 configuration to use user and roles for User class
-  before_filter :require_user
-  before_filter :set_allowed_roles
-  before_filter :load_user      , :except => [:index, :new, :create]
-  before_filter :allow_to_edit? , :only =>   [:edit, :update, :destroy]
-  before_filter :get_role,       :only =>   [:create, :update]
+  ### Acl9 - BEGIN configuration to use user and roles for User class
+#  before_filter :require_user                                         # Require user to login
+#  before_filter :set_allowed_roles                                    # Finds all user's roles; hold it in hash @allowed_roles
+#  before_filter :load_user, :except => [:index, :new, :create]        # 
+#  before_filter :allow_to_edit?, :only => [:edit, :update, :destroy]
+#  before_filter :get_role, :only =>  [:create, :update]
 
-  ### End acl9 configuration
-  access_control do
-    allow :admin
-    allow :doctor
-  end
-
+#  access_control do
+#    allow :all
+#    allow :admin
+#    allow :doctor
+#  end
+  ### Acl9 - END configuration
+  
+  
   # GET /users
   # GET /users.xml
   def index
@@ -48,8 +50,8 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   # GET /users/current/edit
   def edit
-#    @user = User.find(params[:id])
-    @user = current_user
+      #@user = current_user
+      @user = User.find(params[:id])
   end
 
   # POST /users
@@ -61,7 +63,6 @@ class UsersController < ApplicationController
     ### Save the user roles when saving the user
     #@user.save do |result|
     @user.save && check_and_set_role do |result|
-
       respond_to do |format|
         if result
           flash[:notice] = "User #{@user.username} was successfully registered."
@@ -79,8 +80,8 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-#    @user = User.find(params[:id])
-    @user = current_user
+    @user = User.find(params[:id])
+    #@user = current_user
     ### Save the user roles when saving the user
     #@user.attributes = params[:user]
     check_and_set_role && @user.attributes = params[:user]
@@ -88,7 +89,7 @@ class UsersController < ApplicationController
       respond_to do |format|
         if result
           flash[:notice] = "User #{@user.username} profile was successfully updated."
-          format.html { redirect_to(@user) } #       redirect_to root_url
+          format.html { redirect_to(@user) } 
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
@@ -119,29 +120,27 @@ class UsersController < ApplicationController
 
   private
 
-  def bakset_allowed_roles
-    @allowed_roles = if current_user.has_role?(:admin)
-      User::ROLES
-### SCW - TODO (review this sample later for non hardcoded roles
-#          elsif current_user.has_role?(:partner)
-#           %w(partner_1 partner_2)
-        else
-          ### They Should Not Be Here -- TODO
-          []
-          #@user.errors.add(:base, 'You cannot assign this role to this user')
-      end
+  def set_allowed_roles   #SCW - Work In Process (WIP)
+    if current_user.has_role?(:admin)
+      @allowed_roles = User::ROLES
+    elsif current_user.has_role?(:doctor)
+      %w(:doctor)
+    else
+      ### They Should Not Be Here -- TODO
+      []
+    end
   end
 
-          def set_allowed_roles
-            @allowed_roles = if current_user.has_role?(:admin)
-                              User::ROLES
-                            elsif current_user.has_role?(:partner)
-                              %w(partner_1 partner_2)
-                            else
-                              # WTF
-                              []
-                            end
-          end
+  def origin_set_allowed_roles
+    @allowed_roles = if current_user.has_role?(:admin)
+                      User::ROLES
+                    elsif current_user.has_role?(:partner)
+                      %w(partner_1 partner_2)
+                    else
+                      # WTF
+                      []
+                    end
+  end
 
   def check_and_set_role
     return true if @user == current_user

@@ -3,31 +3,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+  <!-- IE8 mode is 100% compatible with CSS2.1 and some of CSS3. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=8" />
   <title>PROficientMD</title>
   <%= stylesheet_link_tag "emd", :media => "all" %>
+
+  <!-- Include javascript -->
   <%= javascript_include_tag :defaults %>
-  <!-- For javascript/dynamic_states.js -->
-  <%= yield :head %> 
-
+  <%= yield :head %>
 </head>
-
-<body>
-  <div id="record">
-    <div id="banner">
-      <%= image_tag("logo-header.png") %>
-      <%= @page_title || "My Medical Records" %>
-      <%= yield(:head) %>
-    </div><!-- end of banner -->
-
-    <div id="user_nav">
-      <% if current_user %>
-        <%= "Welcome" %>
-        <%= h current_user.username %> -
-        <%= link_to "Edit Profile", edit_user_path(:current) %> |
-        <%= link_to "Logout", logout_path %>
-      <% else %>
-        <%= link_to "Register", new_user_path %> |
-        <%= link_to "Login", login_path %>
-      <% end %>
-    </div><!-- end of user_nav -->

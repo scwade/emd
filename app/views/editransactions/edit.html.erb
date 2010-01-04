@@ -1,76 +1,56 @@
-<h1>Edit Electronic Data Interchange Transaction</h1>
+<!-- edit.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Edit - Electronic Data Interchange Transaction</p>
+</div>
 
-<% form_for(@editransaction) do |f| %>
+<div class=" clearBoth indent">
+  <% form_for(@editransaction) do |f| %>
   <%= f.error_messages %>
-  <div>
-    <%= f.label :"Aetna ISA01 " %>:
-    <%= f.text_field :isa01, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA02 " %>:
-    <%= f.text_field :isa02, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA03 " %>:
-    <%= f.text_field :isa03, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA04 " %>:
-    <%= f.text_field :isa04, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA05 " %>:
-    <%= f.text_field :isa05, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA06 " %>:
-    <%= f.text_field :isa06, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA07 " %>:
-    <%= f.text_field :isa07, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA08 " %>:
-    <%= f.text_field :isa08, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA09 " %>:
-    <%= f.text_field :isa09, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA10 " %>:
-    <%= f.text_field :isa10, :size => 40 %>
-  </div>     
-  <div>
-    <%= f.label :"Aetna ISA11 " %>:
-    <%= f.text_field :isa11, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA12 " %>:
-    <%= f.text_field :isa12, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA13 " %>:
-    <%= f.text_field :isa13, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA14 " %>:
-    <%= f.text_field :isa14, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA15 " %>:
-    <%= f.text_field :isa15, :size => 40 %>
-  </div> 
-  <div>
-    <%= f.label :"Aetna ISA16 " %>:
-    <%= f.text_field :isa16, :size => 40 %>
-  </div> 
+</div>
 
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA01 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa01, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA02 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa02, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA03 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa03, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA04 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa04, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA05 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa05, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA06 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa06, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA07 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa07, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA08 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa08, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA09 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa09, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA10 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa10, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA11 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa11, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA12 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa12, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA13 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa13, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA14 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa14, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA15 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa15, :size => 40 %></div>
+    <div class="floatLeftLabel"><%= f.label :"Aetna ISA16 " %></div>
+    <div class="floatLeftData"><%= f.text_field :isa16, :size => 40 %></div>
 
-<%= link_to 'Show', @editransaction %> |
-<%= link_to 'Back', editransactions_path %>
+    <div class="floatLeft clearBoth" style="margin: 15px 0 5px 135px;">
+      <%= f.submit  'Update', :confirm=>"Are you sure?" %>
+    </div>
+  <% end %>
+</div><!-- end of indent -->
+
+<br />
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'Show', @editransaction %> |
+  <%= link_to 'Back', editransactions_path %>
+</div><!-- end of link -->

@@ -1,24 +1,22 @@
-<h1>Edit Condition</h1>
+<!-- edit.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Edit - Condition</p>
+</div>
 
-<% form_for(@condition) do |f| %>
+<div class=" clearBoth indent">
+  <% form_for(@condition) do |f| %>
   <%= f.error_messages %>
- 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :size => 30 %>
-  </p>
-  <p>
-    <%= f.label :google_url %><br />
-    <%= f.text_field :google_url %>
-  </p>
-  <p>
-    <%= f.label :wiki_url %><br />
-    <%= f.text_field :wiki_url %>
-  </p>  
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+</div>
 
-<%= link_to 'Show', @condition %> |
-<%= link_to 'Back', conditions_path %>
+<div class="clearBoth indent">
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :name        %><div><%= f.text_field :name, :size=>30 %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :google_url  %><div><%= f.text_field :google_url %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :wiki_url    %><div><%= f.text_field :wiki_url %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Update'    %></div>
+  <% end %>
+</div><!-- end of indent -->
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+    <%= link_to 'Show', @condition %> | 
+    <%= link_to 'Back', conditions_path %>
+</div><!-- end of link -->

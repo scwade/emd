@@ -1,35 +1,29 @@
-<h1>Condition</h1>
+<!-- show.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Condition</p>
+</div>
 
-<p>
-  <b>ID:</b>
-  <%=h @condition.id %>
-</p>
+  <div class="floatLeftLabel">ID:</div>
+  <div class="floatLeftData"><%=h @condition.id %></div>
+  <div class="floatLeftLabel">Name:</div>
+  <div class="floatLeftData"><%=h @condition.name %></div>
+  <div class="floatLeftLabel">Created:</div>
+  <div class="floatLeftData"><%=h @condition.created_at %></div> 
+  <div class="floatLeftLabel">Updated:</div>
+  <div class="floatLeftData"><%=h @condition.updated_at %></div>
+  <div class="floatLeftLabel">Google URL:</div>
+  <div class="floatLeftData"><%=h @condition.google_url %></div>
+  <div class="floatLeftLabel">Wiki URL:</div>
+  <div class="floatLeftData"><%=h @condition.wiki_url %></div>
 
-<p>
-  <b>Name:</b>
-  <%=h @condition.name %>
-</p>
+<br />
 
-<p>
-  <b>Created:</b>
-  <%=h @condition.created_at %>
-</p>
-
-<p>
-  <b>Updated:</b>
-  <%=h @condition.updated_at %>
-</p>
-
-<p>
-  <b>Google_url:</b>
-  <%=h @condition.google_url %>
-</p>
-
-<p>
-  <b>wiki_url:</b>
-  <%=h @condition.wiki_url %>
-</p>
-
-
-<%= link_to 'Edit', edit_condition_path(@condition) %> |
-<%= link_to 'Back', conditions_path %>
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'Edit', edit_condition_path(@condition) %> |
+  <%= link_to 'Back', conditions_path %>
+<!-- not support yet 
+  <div class="indent" style="display: inline">
+      <%= link_to 'Destroy', condition_path(@condition.id), :confirm => 'Are you sure?', :method => :delete %>
+  </div>
+-->
+</div><!-- end of link -->

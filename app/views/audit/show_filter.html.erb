@@ -1,4 +1,10 @@
-<!-- Begin Show Filter Audit -->
-<h1>&#60;Company Name&#62; Show Filter Audit Records</h1>
-
+<!-- show_filter.html.erb -->
+<% javascript 'show_record' %>
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Audit Filtered Record(s)</p>
+</div>
 <%= render :partial => "audit" %>
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+  <%= link_to 'Index',   audit_index_path  %>
+</div><!-- end of link -->

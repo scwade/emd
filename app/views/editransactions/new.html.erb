@@ -1,28 +1,22 @@
-<h1>New Manual EDI Transaction</h1>
-
-<% form_for(@editransaction) do |f| %>
-  <%= f.error_messages %>
-  <p>
-
-	<fieldset>
-  <legend>Manual Entry of Transaction Data - TBD Convert this to dynamic variables</legend>
-  <div>
-    <%= f.label :"Aetna ISA01 " %>:
-    <%= f.text_field :isa01, :size => 2 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA02 " %>:
-    <%= f.text_field :isa02, :size => 40 %>
-  </div>
-  <div>
-    <%= f.label :"Aetna ISA03 " %>:
-    <%= f.text_field :isa03, :size => 2 %>
-  </div>
-  </fieldset>
-    
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', editransactions_path %>
+<!-- new.html.erb -->
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>New - Electronic Data Interchange Transactions </p>
 </div>
+
+<div class=" clearBoth indent">
+  <% form_for(@editransaction) do |f| %>
+  <%= f.error_messages %>
+</div>
+
+
+<div class="clearBoth indent">
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :"Aetna ISA01" %><div><%= f.text_field :isa01, :size=>4 %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :"Aetan ISA02" %><div><%= f.text_field :isa02, :size=>12 %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :"Aetan ISA03" %><div><%= f.text_field :isa03, :size=>4 %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Create'%></div>
+  <% end %>
+</div><!-- end of indent -->
+
+<div class="floatLeft clearBoth indent marginTop20 link">
+    <%= link_to 'Back', editransactions_path %> 
+</div><!-- end of link -->

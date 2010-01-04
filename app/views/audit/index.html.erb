@@ -1,16 +1,12 @@
-<!-- Begin Audit index -->
-<h1>&#60;Application&#62; Audit Records</h1>
-
-<div style="width: 30em; font-size: 1.1em;">
+<!-- index.html.erb -->
+<% javascript 'show_record' %>
+<div class="floatLeftLabelPageTitle marginBottom20">
+    <p>Audit Records</p>
+</div>
+<div class="indent30 marginBottom clearBoth" style="width: 30em; font-size: 1.1em;">
   <% form_tag('/audit/show_filter/1', :method=>:put) do %>
     <fieldset style="background-color: #ECF0F9;">
       <legend>Filter Audit Records</legend>
-<!--
-      <div style="margin-bottom: .4em;">
-        <label for="username" style="width: 8em; float: left;">User name:</label>
-          <%= text_field_tag :username, params[:username] %>
-      </div>
--->
 
       <div style="margin-bottom: .4em;">
         <label for="userid" style="width: 8em; float: left;">User id:</label>
@@ -25,4 +21,3 @@
 </div>
 
 <%= render :partial => "audit" %>
-
