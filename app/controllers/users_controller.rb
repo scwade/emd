@@ -47,10 +47,14 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
   # GET /users/current/edit
+  ####### SCW - PERFORMANCE - THINK THROUGH THE EDIT PROFILE AND EDIT USER Implementations.
+  #def edit_self
+  #    @user = current_user
+  #end
+
+  # GET /users/1/edit       
   def edit
-      #@user = current_user
       @user = User.find(params[:id])
   end
 

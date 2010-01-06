@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
   
   def create
     @user_session = UserSession.new(params[:user_session])
-    ###Add block to handle openid handoff for authentication
+    ###Add block to handle openid handoff for authenticationl
     @user_session.save do |result|
       if result
         flash[:notice] = "Successfully logged in."

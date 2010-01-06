@@ -24,6 +24,12 @@ ActionController::Routing::Routes.draw do |map|
   # For audit_filter view to show an audit record.
   map.connect 'audit/show_filter/:id', :controller => 'audit', :action => 'show_filter'
   map.connect 'audit/show_filter/1/:id', :controller => 'audit', :action => 'show'
+  
+  ### Enable javascript table row mouse selector for show action
+  map.connect 'javascripts/show_record/.', :controller => 'javascripts', :action => 'show_record'
+  
+  ### Enable javascript dynamic state lookup from city 
+  map.connect 'javascripts/dynamic_states/.', :controller => 'javascripts', :action => 'dynamic_states'
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
@@ -51,8 +57,8 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => 'patient_profiles', :action => 'index'
-
+#  map.root :controller => 'patient_profiles', :action => 'index'
+  map.root :users
   # See how all your routes lay out with "rake routes"
 
   # Install the default routes as the lowest priority.

@@ -47,7 +47,7 @@
           <div id="userSessionName">
             <%= h current_user.username %>
           </div><!-- end of userSessionName -->
-          <%= link_to "Edit Profile", edit_user_path(:current) %> |
+          <%= link_to "| Edit Profile", edit_user_path(current_user.id) %> |
           <%= link_to "Logout", logout_path %>
         <% else %>
           <%= link_to "Register", new_user_path %> |
