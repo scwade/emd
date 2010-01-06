@@ -1,22 +1,23 @@
-<!-- new.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
-    <p>New - Electronic Data Interchange Transactions </p>
+<!-- begin new editransaction' -->
+<div class="labelPageTitle">
+    <p>New - Electronic Data Interchange Transaction </p>
 </div>
 
-<div class=" clearBoth indent">
+<div class="formLayout">
   <% form_for(@editransaction) do |f| %>
   <%= f.error_messages %>
 </div>
 
 
-<div class="clearBoth indent">
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :"Aetna ISA01" %><div><%= f.text_field :isa01, :size=>4 %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :"Aetan ISA02" %><div><%= f.text_field :isa02, :size=>12 %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :"Aetan ISA03" %><div><%= f.text_field :isa03, :size=>4 %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Create'%></div>
+<div class="formLayout">
+  <div class="formLayout1"><%= f.label :"Aetna ISA01" %><div><%= f.text_field :isa01, :size=>4 %></div></div>
+  <div class="formLayout1"><%= f.label :"Aetan ISA02" %><div><%= f.text_field :isa02, :size=>12 %></div></div>
+  <div class="formLayout1"><%= f.label :"Aetan ISA03" %><div><%= f.text_field :isa03, :size=>4 %></div></div>
+  <div class="formLayout1"><%= f.submit 'Create', :confirm => 'Are you sure?'%></div>
   <% end %>
-</div><!-- end of indent -->
+</div><!-- end of formLayout -->
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-    <%= link_to 'Back', editransactions_path %> 
-</div><!-- end of link -->
+<div class="navLink">
+    <%= link_to 'Cancel', editransactions_path, :confirm => 'Are you sure?' %> 
+</div><!-- end of navLink -->
+<!-- end of 'editransaction' -->

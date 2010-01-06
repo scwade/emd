@@ -1,0 +1,64 @@
+/* Filter Audit Records
+*   Model: Audit
+*   View(s): show_filter.html
+*   Usage: filter audit records by User Id
+*/
+
+.filterAuditRecordBox {
+  clear: both;
+  width: 20em;
+  margin: 0 0 20px 20px;
+  font-size: 110%;
+}
+.filterAuditCaption {
+  background-color: #ECF0F9;
+}
+.filterAuditInputField {
+  width: 5em;
+  float: left;
+  margin: 1em;
+}
+#filterAuditSubmit {
+  clear: both;
+  margin: 0 0 1em 1em;
+}
+#filterAuditSubmit input {
+  background-color:#C4D1EB;
+  border: 1px outset #C4D1EB;
+  color:#262262;
+  padding:0 1px;
+}
+
+/* Custom Labels
+*  
+*/
+.auditAttributeTitle, .auditLabel {
+  float: left;
+  position: relative;
+  clear: both;
+  text-align: right;
+  height: 20px;
+  font-weight: bold;
+}
+
+.auditAttributeTitle  {
+  width: 210px;
+  font-size: 1.4em;
+  margin: 1em 0;
+}
+.auditLabel {
+  width: 115px;
+  font-size: 1.1em;
+}
+.auditData {
+  float: left;
+  position: relative;
+  margin-left: 8px;
+  font-size: 1.1em;
+  width: 800px;
+  overflow: auto;
+}
+.auditLayout {
+  clear: both;
+  margin-left: 10px;
+}

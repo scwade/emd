@@ -1,21 +1,22 @@
-<!-- new.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
+<!-- begin new 'condition' -->
+<div class="labelPageTitle">
     <p>New - Condition</p>
 </div>
 
-<div class=" clearBoth indent">
+<div class="formLayout">
   <% form_for(@condition) do |f| %>
   <%= f.error_messages %>
 </div>
 
-<div class="clearBoth indent">
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :name        %><div><%= f.text_field :name, :size=>30 %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :google_url  %><div><%= f.text_field :google_url %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :wiki_url    %><div><%= f.text_field :wiki_url %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Create'    %></div>
+<div class="formLayout">
+  <div class="formInput"><%= f.label :name        %><div><%= f.text_field :name, :size=>90 %></div></div>
+  <div class="formInput"><%= f.label :google_url  %><div><%= f.text_field :google_url, :size=>120 %></div></div>
+  <div class="formInput"><%= f.label :wiki_url    %><div><%= f.text_field :wiki_url, :size=>120 %></div></div>
+  <div class="formInput"><%= f.submit 'Create', :confirm => 'Are you sure?'    %></div>
   <% end %>
-</div><!-- end of indent -->
+</div><!-- end of formLayout -->
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-    <%= link_to 'Back', conditions_path %>
-</div><!-- end of link -->
+<div class="navLink">
+    <%= link_to 'Cancel', conditions_path, :confirm => 'Are you sure?' %>
+</div><!-- end of navLink -->
+<!-- end of 'condition' -->

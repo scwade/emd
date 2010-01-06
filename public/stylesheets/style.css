@@ -1,0 +1,220 @@
+/*  Styles
+*   Date: 01/05/2010
+*
+*  Best practice 
+*    () Use semantic names
+*/
+
+/* AutoComplete rules
+*   
+*  Notes: IE doesn't work
+*/
+.twoColFixLay div.auto_complete {
+  border: inset .23em #ECF0F9;
+  position:absolute;
+  width: auto;
+  z-index: 100;
+}
+.twoColFixLay div.auto_complete ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.twoColFixLay div.auto_complete ul li.selected { background-color: #C4D1EB;}
+.twoColFixLay div.auto_complete ul li {
+  background-color: #FFFEF0;
+  cursor: pointer;
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  height: auto;
+  list-style-type: none;
+  line-height: 1.3em;
+  padding-left: .5em;
+}
+
+/* Error rules
+*   
+*  Notes: For all forms
+*/
+.twoColFixLay .fieldWithErrors {  
+}
+.twoColFixLay .fieldWithErrors input, .fieldWithErrors select {
+  border: 2px solid red;
+}
+.twoColFixLay #errorExplanation {
+  background-color: #E2E3E4;
+  clear: both;
+  float: left;
+  margin: 1em 0;
+  position: relative; 
+}
+.twoColFixLay #errorExplanation h2 {
+  background-color: #ED1C24;
+  color: #FFFFFF;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 0 5px;
+}
+.twoColFixLay #errorExplanation p {
+  font-size: 120%;
+  font-weight: bold;
+  margin: 5px 0 5px 10px;
+}
+.twoColFixLay #errorExplanation ul li {
+  font-size: 100%;
+  font-weight: bold;
+  margin: 0 0 2px 30px;
+}
+
+/* Form rules
+*   
+*  Notes: For all forms
+*/
+.twoColFixLay div.formLayout {
+  clear: both;
+  margin-left: 0px;
+}
+.twoColFixLay div.formLayout10 {
+  clear: both;
+  margin-left: 10px;
+}
+.twoColFixLay div.formLayout1 {
+  clear: left;
+  float: left;
+  margin: 5px 0 5px 10px;
+  position: relative;
+}
+.twoColFixLay div.formLayout2 {
+  display: inline;
+  float: left;
+  margin: 5px 0 5px 10px;
+  position: relative;
+}
+.twoColFixLay input, select {
+  border: 1px inset #C4D1EB;
+}
+.twoColFixLay div.formInput, .twoColFixLay div.formInput0, .twoColFixLay div.formInput1 {
+  float: left;
+  margin: 5px 0 5px 10px;
+  position: relative;
+}
+.twoColFixLay div.formInput {
+  clear: left;
+}
+.twoColFixLay div.formInput0 {
+  clear: left;
+  margin-left: 0px;
+}
+.twoColFixLay div.formInput1 {
+  display: inline;
+}
+.twoColFixLay div.formLabel, .twoColFixLay div.formLabel1, .twoColFixLay div.formData {
+  float: left;
+  font-size: 1.1em;
+  position: relative;
+}
+.twoColFixLay div.formLabel {
+  clear: left;
+  font-weight: bold;
+  height: 20px;
+  text-align: right;
+  width: 130px;
+}
+.twoColFixLay div.formLabel1 {
+  font-size: 1.2em;
+}
+.twoColFixLay div.formData {
+  margin-left: 8px;
+  overflow: auto;
+  width: 800px;
+}
+.twoColFixLay div.formTitle {
+  clear: both;
+  float: left;
+  font-size: 1.8em;
+  font-weight: normal;
+  height: auto;
+  margin: 0px 0px 10px 15px;
+  position: relative;
+  text-align: right;
+  width: auto;
+}
+/* Radio Button */
+.twoColFixLay #patient_profile_gender_m, .twoColFixLay #patient_profile_gender_f {
+  border: 1px solid #C4D1EB;
+}
+/* Submit Buttons */
+.twoColFixLay #patient_condition_submit, .twoColFixLay #condition_submit, .twoColFixLay #patient_profile_submit,
+.twoColFixLay #editransaction_submit, .twoColFixLay #user_submit, .twoColFixLay #user_session_submit { 
+  background-color: #C4D1EB;
+  border: 1px outset #C4D1EB;
+  color: #262262;
+  padding: 0px 1px;
+}
+
+/* Label rules
+*   
+*  Notes: For all views
+*/
+.twoColFixLay .floatLeftLabel, .twoColFixLay .floatLeftLabelTitle12, .twoColFixLay .floatLeftLabelTable14, .twoColFixLay .labelTitle18 {
+  clear: left;
+  float: left;
+  font-weight: bold;
+  height: 20px;
+  position: relative;
+  text-align: right;
+  width: 130px;
+}
+.twoColFixLay .labelPageTitle {
+  border-bottom: 2px solid #262262;
+  clear: both;
+  float: right;
+  font-size: 2.4em;
+  height: 30px; 
+/*  _height: 50px;*/
+  margin: 0 1% 20px 1%;
+  padding-bottom: 1em;
+  position: relative;
+  width: 98%;
+}
+.twoColFixLay .floatLeftLabelTitle12 {
+  font-size: 1.2em;
+}
+.twoColFixLay .floatLeftLabelTitle14 {
+  font-size: 1.4em;
+}
+.twoColFixLay .labelTitle18 {
+  font-size: 1.8em;
+  font-weight: normal;
+  height: auto;
+  margin: 0px 0px 10px 15px;
+  width: auto;
+}
+.twoColFixLay .floatLeftLabel {
+  font-size: 1.1em;
+}
+.twoColFixLay .floatLeftData {
+  float: left;
+  font-size: 1.1em;
+  margin-left: 8px;
+  overflow: auto;
+  position: relative;
+  width: 800px;
+}
+
+/* navLink rules
+*   
+*  Notes: Format for navigation links at bottom of pages
+*/
+.twoColFixLay div .navLink  {
+  clear: both;
+  float: left;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 20px 0 0 10px;
+  position: relative;
+}
+.twoColFixLay div .navLink a:hover {
+  color: #758AB8;
+}

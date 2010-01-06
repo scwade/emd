@@ -1,12 +1,13 @@
-<!-- new.html.erb -->
+<!-- begin new 'user' -->
 
-<div class="floatLeftLabelPageTitle marginBottom20">
+<div class="labelPageTitle">
     <p>New - User Account</p>
 </div>
 
 <%= render :partial => 'login_form' %>
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-  <%= link_to 'Back', users_path %>
+<div class="navLink">
+  <%= link_to 'Cancel', users_path, :confirm => 'Are you sure?' %>
   </div>
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'user' -->

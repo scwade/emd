@@ -1,9 +1,9 @@
-<!-- show.html.erb -->
-<div class="floatLeftLabelPageTitle">
+<!-- begin show 'patient profile' -->
+<div class="labelPageTitle">
     <p>Patient Profile</p>
 </div>
 
-<div class="floatLeftLabelTitle18">
+<div class="labelTitle18">
     <p>Patient ID's:</p>
 </div>
 
@@ -14,7 +14,7 @@
   <div class="floatLeftData"><%=h @patient_profile.pmd_user_id%></div>
 </div>
 
-<div class="floatLeftLabelTitle18">
+<div class="labelTitle18">
     <p>Contact Information:</p>
 </div>
 
@@ -56,7 +56,7 @@
 </div>
 
 <br />
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'Edit', edit_patient_profile_path(@patient_profile.id) %> | 
   <%= link_to "Back", patient_profiles_path %> |
   <% if @patient_profile.active_patient.equal? true %>
@@ -64,4 +64,5 @@
   <% else %>
     <div class="indext10" style="display: inline; color: green;"><%= link_to 'Enable', patient_profile_path(@patient_profile.id), :method => :delete %></div> 
   <% end %>
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'patient profile' -->

@@ -1,24 +1,24 @@
-<!-- show.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
+<!-- begin show 'condition' -->
+<div class="labelPageTitle">
     <p>Condition</p>
 </div>
 
-  <div class="floatLeftLabel">ID:</div>
-  <div class="floatLeftData"><%=h @condition.id %></div>
-  <div class="floatLeftLabel">Name:</div>
-  <div class="floatLeftData"><%=h @condition.name %></div>
-  <div class="floatLeftLabel">Created:</div>
-  <div class="floatLeftData"><%=h @condition.created_at %></div> 
-  <div class="floatLeftLabel">Updated:</div>
-  <div class="floatLeftData"><%=h @condition.updated_at %></div>
-  <div class="floatLeftLabel">Google URL:</div>
-  <div class="floatLeftData"><%=h @condition.google_url %></div>
-  <div class="floatLeftLabel">Wiki URL:</div>
-  <div class="floatLeftData"><%=h @condition.wiki_url %></div>
+  <div class="formLabel">ID:</div>
+  <div class="formData"><%=h @condition.id %></div>
+  <div class="formLabel">Name:</div>
+  <div class="formData"><%=h @condition.name %></div>
+  <div class="formLabel">Created:</div>
+  <div class="formData"><%=h @condition.created_at %></div> 
+  <div class="formLabel">Updated:</div>
+  <div class="formData"><%=h @condition.updated_at %></div>
+  <div class="formLabel">Google URL:</div>
+  <div class="formData"><%=h @condition.google_url %></div>
+  <div class="formLabel">Wiki URL:</div>
+  <div class="formData"><%=h @condition.wiki_url %></div>
 
 <br />
 
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'Edit', edit_condition_path(@condition) %> |
   <%= link_to 'Back', conditions_path %>
 <!-- not support yet 
@@ -26,4 +26,5 @@
       <%= link_to 'Destroy', condition_path(@condition.id), :confirm => 'Are you sure?', :method => :delete %>
   </div>
 -->
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'condition' -->

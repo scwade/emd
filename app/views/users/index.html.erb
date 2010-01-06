@@ -1,58 +1,58 @@
-<!-- index.html.erb -->
+<!-- begin index 'user' -->
 <% javascript 'show_record' %>
-<div class="floatLeftLabelPageTitle marginBottom20">
+<div class="labelPageTitle">
     <p>User Accounts</p>
 </div>
 
-<div class="indent20 clearBoth">
-<table cellspacing="0" cellpadding="1px">
-  <tr><th>
-    <div id="mainScrollWindowHeader" style="width: 840px;">
-      <div id="mainHeaderRow"> 
-        <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft userCol0"> ID </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol1"> USER</div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol2"> EMAIL </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol3"> C </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol4"> S </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol5"> P </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol6"> LP </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol7"> LF</div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol8"> Login(LR)</div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol9"> Login(C)</div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol10"> Login(L)</div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol11"> Current IP</div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol12"> Last IP</div>
-      </div><br /><!-- end of mainHeaderRow -->
-    </div><!-- end of mainScrollWindowHeader -->
-  </th></tr>
-  <tr><td>
-    <div id="mainScrollWindowData" style="width: 840px;">
-    <% row = 1;%>
-      <% @users.each do |user| %>
-      <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
-        <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft userCol0">                  <%= h user.id %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol1">        <%= h truncate(user.username,  :length => 10 ) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol2">                  <%= h truncate(user.email,  :length => 20 ) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol3">        <%= h truncate(user.crypted_password,  :length => 3 ) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol4">        <%= h truncate(user.password_salt,  :length => 3 ) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol5">        <%= h truncate(user.persistence_token,  :length => 3 ) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol6">           <%= h truncate(user.login_count.to_s,  :length => 4 ) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue center userCol7"> <%= h truncate(user.failed_login_count.to_s,  :length => 4 ) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol8">           <%= h user.last_request_at.to_s.slice(0,10) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue center userCol9"> <%= h user.current_login_at.to_s.slice(0,10) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center userCol10">          <%= h user.last_login_at.to_s.slice(0,10) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft aliceBlue userCol11">       <%= h user.current_login_ip.to_s.slice(0,15) %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft userCol12">                 <%= h user.last_login_ip.to_s.slice(0,15) %></div>
+<div class="tableLayout">
+  <table cellspacing="0" cellpadding="1px">
+    <tr><th>
+      <div class="userTableWidth" id="mainScrollWindowHeader">
+        <div id="mainHeaderRow"> 
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="userCol0"  title="User ID"> ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol1"  title="User Name"> USER</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol2"  title="Email"> EMAIL </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol3"  title="Crypted Password"> C </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol4"  title="Password Salt"> S </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol5"  title="Persistence Token"> P </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol6"  title="Login Count"> LP </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol7"  title="Failed Login Count"> LF</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol8"  title="Login Last Request"> Login(LR)</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol9"  title="Login Current"> Login(C)</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol10" title="Login Last"> Login(L)</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol11" title="Current Login IP"> Current IP</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="userCol12" title="Last Login IP"> Last IP</div>
+        </div><br /><!-- end of mainHeaderRow -->
+      </div><!-- end of mainScrollWindowHeader -->
+    </th></tr>
+    <tr><td>
+      <div class="userTableWidth" id="mainScrollWindowData">
+      <% row = 1;%>
+        <% @users.each do |user| %>
+        <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
+          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="userCol0"><%= h user.id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol1"><%= h truncate(user.username,  :length => 10 ) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol2"><%= h truncate(user.email,  :length => 20 ) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol3"><%= h truncate(user.crypted_password,  :length => 3 ) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol4"><%= h truncate(user.password_salt,  :length => 3 ) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol5"><%= h truncate(user.persistence_token,  :length => 3 ) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol6"><%= h truncate(user.login_count.to_s,  :length => 4 ) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol7"><%= h truncate(user.failed_login_count.to_s,  :length => 4 ) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol8"><%= h user.last_request_at.to_s.slice(0,10) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol9"><%= h user.current_login_at.to_s.slice(0,10) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol10"><%= h user.last_login_at.to_s.slice(0,10) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol11"><%= h user.current_login_ip.to_s.slice(0,15) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="userCol12"><%= h user.last_login_ip.to_s.slice(0,15) %></div>
 
-        <% row+=1 %><br />
-      </div><!-- end of mainDataRow -->
-      <% end %>
-    </div><!-- end of mainScrollWindowData -->
-  </td></tr>
-</table>
+          <% row+=1 %><br />
+        </div><!-- end of mainDataRow -->
+        <% end %>
+      </div><!-- end of mainScrollWindowData -->
+    </td></tr>
+  </table>
+</div><!-- end of tableLayout -->
 
-</div><!-- end of indent -->
-
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'New User', new_user_path %>
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'user' -->

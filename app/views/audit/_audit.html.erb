@@ -1,49 +1,47 @@
-<!-- audit.html.erb -->
-<div class="indent20 clearBoth">
+<!-- begin index 'audit' -->
+<div class="formLayout10">
   <table cellspacing="0" cellpadding="0">
     <tr><th>
-      <div id="mainScrollWindowHeader" style="width: 1060px;">
-        <div id="mainHeaderRow">
-          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol0"> ID </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol1"> AUDIT ID </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol2"> AUDIT TYPE </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol3"> USER ID </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol4"> USER TYPE </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol5"> USERNAME </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol6"> ACTION </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol7"> CHANGES </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center auditCol8"> VERSION </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft auditCol9"> CREATED AT </div>
-        </div><br /><!-- end of mainHeaderRow -->
+      <div class="mainScrollWindowHeader auditTableWidth">
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="auditCol0"> ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol1"> AUDIT ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol2"> AUDIT TYPE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol3"> USER ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol4"> USER TYPE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol5"> USERNAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol6"> ACTION </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol7"> CHANGES </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol8"> VERSION </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="auditCol9"> CREATED AT </div>
       </div><!-- end of mainScrollWindowHeader -->
     </th></tr>
     <tr><td>
-      <div id="mainScrollWindowData" style="width: 1060px;">
+      <div class="auditTableWidth" id="mainScrollWindowData">
       <% row=1 %>
         <% @audit.each do |audit| %>
 
-        <!-- Temp Fix for Blank Div's (No user logged in) -->
+        <!-- Temp Fix for (No user logged in) -->
         <% audit.user_id = 0 unless !audit.user_id.blank? %>
         <% audit.user_type = "No user" unless !audit.user_type.blank?%>
         <% audit.username = "none" unless !audit.username.blank? %>
 
         <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol0"><%= h audit.id              %></div>
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol1"><%= h audit.auditable_id    %></div>
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol2"><%= h audit.auditable_type  %></div>
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol3"><%= h audit.user_id         %></div>
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol4"><%= h audit.user_type       %></div>
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol5"><%= h audit.username        %></div>
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol6"><%= h audit.action          %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="auditCol0"><%= h audit.id %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol1"><%= h audit.auditable_id %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol2"><%= h audit.auditable_type %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol3"><%= h audit.user_id %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol4"><%= h audit.user_type %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol5"><%= h audit.username %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol6"><%= h audit.action %></div>
 
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol7"><%= h truncate(audit.changes.to_s, :length => 40 ) %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol7"><%= h truncate(audit.changes.to_s, :length => 40 ) %></div>
         
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center auditCol8"><%= h audit.version          %></div>
-            <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft auditCol9"><%= h audit.created_at.to_s.slice(0,20) %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol8"><%= h audit.version %></div>
+            <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="auditCol9"><%= h audit.created_at.to_s.slice(0,20) %></div>
           <% row+=1 %><br />
         </div><!-- end of mainDataRow -->
         <% end %>
       </div><!-- end of mainScrollWindowData -->
-    </div></tr>
+    </td></tr>
   </table>
-</div><!-- end of indent -->
+</div><!-- end of 'audit' -->

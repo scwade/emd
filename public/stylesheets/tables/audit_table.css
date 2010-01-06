@@ -1,0 +1,54 @@
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: Audit
+*/
+.auditTableWidth {
+  width: 1050px;
+}
+.auditTableWidth1 {
+  width: 1066px;
+}
+.auditCol0, .auditCol1, .auditCol2, .auditCol3, .auditCol4,
+.auditCol5, .auditCol6, .auditCol7, .auditCol8, .auditCol9 {
+  height: 15px;
+  float: left;
+  position: relative;
+}
+.auditCol1, .auditCol3,
+.auditCol4, .auditCol6, .auditCol8 {
+  text-align: center;
+}
+.auditCol0 {
+  width: 38px;
+  padding-left: 2px;
+}
+.auditCol1 {
+  width: 75px;
+}
+.auditCol2 {
+  width: 125px;
+}
+.auditCol3 {
+  width: 80px;
+}
+.auditCol4 {
+  width: 80px;
+}
+.auditCol5 {
+  width: 110px;
+}
+.auditCol6 {
+  width: 63px;
+}
+.auditCol7 {
+  width: 260px;
+}
+.auditCol8 {
+  width: 70px;
+}
+.auditCol9 {
+  width: 130px;
+}

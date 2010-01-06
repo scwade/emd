@@ -1,42 +1,43 @@
-<!-- index.html.erb -->
+<!-- begin index 'conditions' -->
 <% javascript 'show_record' %>
-<div class="floatLeftLabelPageTitle marginBottom20">
+<div class="labelPageTitle">
     <p>Conditions</p>
 </div>
 
-<div class="indent20 clearBoth">
-  <table cellspacing="0" cellpadding="0" rule="fixed">
+<div class="tableLayout">
+  <table cellspacing="0" cellpadding="0">
     <tr><th>
-      <div id="mainScrollWindowHeader" style="width: 800px;">
+      <div class="conditionTableWidth" id="mainScrollWindowHeader">
         <div id="mainHeaderRow"> 
-          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft conditionCol0"> CONDITION ID </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol1"> CONDITION NAME </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol2"> CREATE DATE </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol3"> UPDATE DATE </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol4"> GOOGLE LINK </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol5"> WIKI LINK </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="conditionCol0"> ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="conditionCol1"> CONDITION NAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="conditionCol2"> CREATE DATE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="conditionCol3"> UPDATE DATE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="conditionCol4"> GOOGLE LINK </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="conditionCol5"> WIKI LINK </div>
         </div><br /><!-- end of mainHeaderRow -->
       </div><!-- end of mainScrollWindowHeader -->
     </th></tr>
     <tr><td>
-      <div id="mainScrollWindowData" style="width: 800px;">
+      <div class="conditionTableWidth" id="mainScrollWindowData">
       <% row=1 %>
         <% @conditions.each do |condition| %>
         <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
-          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft conditionCol0"><%=h condition.id %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol1"><%=h condition.name %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol2"><%=h condition.created_at.to_s.slice(0,10) %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol3"><%=h condition.updated_at.to_s.slice(0,10) %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol4"><%= link_to_unless condition.google_url.blank?, "Visit Google", condition.google_url, :popup => true %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft conditionCol5"><%= link_to_unless condition.wiki_url.blank?, "Visit Wiki", condition.wiki_url, :popup => true %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="conditionCol0"><%=h condition.id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="conditionCol1"><%=h truncate(condition.name, :length=>55) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="conditionCol2"><%=h condition.created_at.to_s.slice(0,10) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="conditionCol3"><%=h condition.updated_at.to_s.slice(0,10) %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="conditionCol4"><%= link_to_unless condition.google_url.blank?, "Visit Google", condition.google_url, :popup => true %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="conditionCol5"><%= link_to_unless condition.wiki_url.blank?, "Visit Wiki", condition.wiki_url, :popup => true %></div>
           <% row+=1 %><br />
         </div><!-- end of mainDataRow -->
         <% end %>
       </div><!-- end of mainScrollWindowData -->
     </td></tr>
   </table>
-</div><!-- end of indent -->
+</div><!-- end of tableLayout -->
 
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'New condition', new_condition_path %>
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'conditions' -->

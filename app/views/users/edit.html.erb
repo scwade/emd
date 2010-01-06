@@ -1,11 +1,12 @@
-<!-- edit.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
+<!-- begin edit 'user' -->
+<div class="labelPageTitle">
     <p>Edit - User Account</p>
 </div>
 
 <%= render :partial => 'login_form' %>
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-  <%= link_to 'Show', @user %> |
-  <%= link_to 'Back', users_path %>
-</div><!-- end of link -->
+<div class="navLink">
+  <%= link_to 'Back', @user %> |
+  <%= link_to 'Index', users_path %>
+</div><!-- end of navLink -->
+<!-- end of 'user' -->

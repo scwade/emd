@@ -1,20 +1,20 @@
 <!-- new.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
+<div class="labelPageTitle">
     <p>New - User Session</p>
 </div>
 
-<div class=" clearBoth indent">
+<div class="tableLayout">
   <% form_for(@user_session) do |f| %>
   <%= f.error_messages %>
 </div>
 
-<div class="clearBoth indent">
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :username  %><div><%= f.text_field :username, :size=>30 %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :password  %><div><%= f.text_field :password %></div></div>
-  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Create'  %></div>
+<div class="tableLayout">
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :username  %><div><%= f.text_field :username, :size=>32 %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.label :password  %><div><%= f.text_field :password, :size=>32 %></div></div>
+  <div class="floatLeft clearLeft" style="margin: 5px 0 5px 10px;"><%= f.submit 'Create', :confirm => 'Are you sure?'  %></div>
   <% end %>
 </div><!-- end of indent -->
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-    <%= link_to 'Back', users_path %>
+<div class="navLink">
+    <%= link_to 'Cancel', users_path, :confirm => 'Are you sure?' %>
 </div><!-- end of link -->

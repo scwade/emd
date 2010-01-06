@@ -1,0 +1,19 @@
+/* HTML Table styles */
+tr:hover {
+  background: #ECF0F9;
+}
+table {
+  padding: 5px 5px 5px 5px;
+  border-collapse: separate;
+}
+.X3 { 
+  border-spacing: 1em;
+  border: inset .1em #FFFEF0;
+  background-color: #C4D1EB;
+  font-weight: lighter;
+}
+.X3 tbody th {
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #000;
+}

@@ -1,0 +1,36 @@
+/*  Default styles
+*   Date: 01/05/2010
+*
+*/
+
+/*  Block level tags
+*   Date: 01/05/2010
+*
+*   Reset:
+*     () margin
+*     () padding
+*/
+blockquote, br, center, dd, div, dl, dt,
+h1, h2, h3, h4, h5, h6, li, object, ol, p,
+pre, table, td, th, tr, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+  line-height: 150%;
+  text-align: left;
+}
+
+h1 { font-size:   3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size:   2em; }
+h4 { font-size: 1.5em; }
+h5 { font-size:   1em; }
+h6 { font-size:  .5em; }
+
+p { 
+  font-size: 1em;
+  line-height: 120%;
+  margin: 10px 0;
+}

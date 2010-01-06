@@ -1,0 +1,51 @@
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: Patient Conditions
+*/
+.patientConditionTableWidth {
+  width: 1060px;
+}
+.patientConditionCol0, .patientConditionCol1, .patientConditionCol2, .patientConditionCol3, .patientConditionCol4,
+.patientConditionCol5, .patientConditionCol6, .patientConditionCol7, .patientConditionCol8, .patientConditionCol9 {
+  height: 15px;
+  float: left;
+  position: relative;
+}
+.patientConditionCol1, .patientConditionCol2,
+.patientConditionCol4  {
+  text-align: center;
+}
+.patientConditionCol0 {
+  width: 43px;
+  padding-left: 2px;
+}
+.patientConditionCol1 {
+  width: 45px;
+}
+.patientConditionCol2 {
+  width: 80px;
+}
+.patientConditionCol3 {
+  width: 110px;
+}
+.patientConditionCol4 {
+  width: 80px;
+}
+.patientConditionCol5 {
+  width: 220px;
+}
+.patientConditionCol6 {
+  width: 80px;
+}
+.patientConditionCol7 {
+  width: 80px;
+}
+.patientConditionCol8 {
+  width: 150px;
+}
+.patientConditionCol9 {
+  width: 153px;
+}

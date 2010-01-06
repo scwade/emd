@@ -21,7 +21,9 @@ ActionController::Routing::Routes.draw do |map|
   # For audit_filter view to show an audit record.
   map.connect 'audit/show_filter/:id', :controller => 'audit', :action => 'show_filter'
   map.connect 'audit/show_filter/1/:id', :controller => 'audit', :action => 'show'
-
+  map.connect 'javascripts/show_record/.', :controller => 'javascripts', :action => 'show_record'
+  map.connect 'javascripts/dynamic_states/.', :controller => 'javascripts', :action => 'dynamic_states'
+  #map.connect 'javascripts/show_record/:id', :controller => 'javascripts', :action => 'show_record'
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
@@ -57,7 +59,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-  map.connect ':controller/:action.:format'
+  #map.connect ':controller/:action/:id'
+  #map.connect ':controller/:action/:id.:format'
+  #map.connect ':controller/:action.:format'
 end

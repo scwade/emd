@@ -1,50 +1,51 @@
-<!-- index.html.erb -->
+<!-- begin index 'patient profile' -->
 <% javascript 'show_record' %>
-<div class="floatLeftLabelPageTitle marginBottom20">
+<div class="labelPageTitle">
     <p>Patient Profile Records</p>
 </div>
 
-<div class="indent20 clearBoth">
+<div class="tableLayout">
   <table cellspacing="0" cellpadding="0">
     <tr><th>
-      <div id="mainScrollWindowHeader" style="width: 800px;">
-        <div id="mainHeaderRow" 
-          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft patientProfileCol0"> ID </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol1"> FIRST NAME </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol2"> LAST NAME </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol3"> PATIENT ID </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol4"> USER ID </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol5"> PHYSICIAN </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol6"> HOME PHONE</div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol7"> GENDER </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol8"> BIRTH DATE </div>
-          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol9"> ACTIVE </div>
+      <div class="patientProfileTableWidth" id="mainScrollWindowHeader">
+        <div id="mainHeaderRow"> 
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="patientProfileCol0"> ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol1"> FIRST NAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol2"> LAST NAME </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol3"> PATIENT ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol4"> USER ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol5"> PHYSICIAN </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol6"> HOME PHONE</div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol7"> GENDER </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol8"> BIRTH DATE </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol9"> ACTIVE </div>
         </div><br /><!-- end of mainHeaderRow -->
       </div><!-- end of mainScrollWindowHeader -->
     </th></tr>
     <tr><td>
-      <div id="mainScrollWindowData" style="width: 800px;">
+      <div class="patientProfileTableWidth" id="mainScrollWindowData">
       <% row=1 %>
         <% @patient_profiles.each do |patient_profile| %>
         <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
-          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft patientProfileCol0"><%= h patient_profile.id %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol1"><%= h patient_profile.first_name %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol2"><%= h patient_profile.last_name %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol3"><%= h patient_profile.pmd_patient_id %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol4"><%= h patient_profile.pmd_user_id %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft patientProfileCol5"><%= h patient_profile.physician_id %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol6"><%= h patient_profile.phone_home %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol7"><%= h patient_profile.gender %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol8"><%= h patient_profile.date_of_birth %></div>
-          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center patientProfileCol9"><%= h (patient_profile.active_patient.equal? true) ? 'Yes' : 'No' %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="patientProfileCol0"><%= h patient_profile.id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol1"><%= h patient_profile.first_name %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol2"><%= h patient_profile.last_name %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol3"><%= h patient_profile.pmd_patient_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol4"><%= h patient_profile.pmd_user_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol5"><%= h patient_profile.physician_id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol6"><%= h patient_profile.phone_home %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol7"><%= h patient_profile.gender %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol8"><%= h patient_profile.date_of_birth %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol9"><%= h (patient_profile.active_patient.equal? true) ? 'Yes' : 'No' %></div>
           <% row+=1 %><br />
         </div><!-- end of mainDataRow -->
         <% end %>
       </div><!-- end of mainScrollWindowData -->
     </td></tr>
   </table>
-</div><!-- end of indent -->
+</div><!-- end of tableLayout -->
 
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'New Patient Proifle', new_patient_profile_path %>
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'patient profile' -->

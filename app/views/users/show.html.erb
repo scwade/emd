@@ -1,5 +1,5 @@
-<!-- show.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
+<!-- begin show 'user' -->
+<div class="labelPageTitle">
     <p>User Account</p>
 </div>
 
@@ -41,10 +41,11 @@
 
 <br />
 
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'Edit', edit_user_path(@user) %>  | 
   <%= link_to 'Back', users_path %> |
   <div class="indent" style="display: inline">
       <%= link_to 'Delete', user_path(@user.id), :confirm => 'Are you sure?', :method => :delete %>
   </div>
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'user' -->

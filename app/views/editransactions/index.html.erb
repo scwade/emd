@@ -1,66 +1,66 @@
-<!-- index.html.erb -->
+<!-- begin index 'editransaction' -->
 <% javascript 'show_record' %>
-<div class="floatLeftLabelPageTitle marginBottom20">
-    <p>Edit - Electronic Data Interchange Transactions</p>
+<div class="labelPageTitle">
+    <p>Electronic Data Interchange Transactions</p>
 </div>
 
-<div class="indent20 clearBoth">
-<table cellspacing="0" cellpadding="1px">
-  <tr><th>
-    <div id="mainScrollWindowHeader" style="width: 1060px;">
-      <div id="mainHeaderRow"> 
-        <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center editransactionCol0"> ID </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center editransactionCol1"> ISA01 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol2"> ISA02 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol3"> ISA03 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol4"> ISA04 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol5"> ISA05 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol6"> ISA06 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol7"> ISA07 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol8"> ISA08 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol9"> ISA09 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol10"> ISA10 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol11"> ISA11 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol12"> ISA12 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol13"> ISA13 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol14"> ISA14 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol15"> ISA15 </div>
-        <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol16"> ISA16 </div>
-      </div><br /><!-- end of mainHeaderRow -->
-    </div><!-- end of mainScrollWindowHeader -->
-  </th></tr>
-  <tr><td>
-    <div id="mainScrollWindowData" style="width: 1060px;">
-    <% row = 1;%>
-      <% @editransactions.each do |editransaction| %>
-      <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
-        <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center editransactionCol0"><%=h editransaction.id %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="floatLeft center editransactionCol1"><%=h editransaction.isa01 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol2"><%=h editransaction.isa02 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol3"><%=h editransaction.isa03 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol4"><%=h editransaction.isa04 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol5"><%=h editransaction.isa05 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol6"><%=h editransaction.isa06 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol7"><%=h editransaction.isa07 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol8"><%=h editransaction.isa08 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol9"><%=h editransaction.isa09 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol10"><%=h editransaction.isa10 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol11"><%=h editransaction.isa11 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol12"><%=h editransaction.isa12 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol13"><%=h editransaction.isa13 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol14"><%=h editransaction.isa14 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol15"><%=h editransaction.isa15 %></div>
-        <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="floatLeft center editransactionCol16"><%=h editransaction.isa16 %></div>
+<div class="tableLayout">
+  <table cellspacing="0" cellpadding="1px">
+    <tr><th>
+      <div class="editransactionTableWidth" id="mainScrollWindowHeader">
+        <div id="mainHeaderRow"> 
+          <div id="<%= 'row' + 0.to_s + 'col' + (col= 0).to_s %>" class="editransactionCol0"> ID </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol1"> ISA01 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol2"> ISA02 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol3"> ISA03 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol4"> ISA04 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol5"> ISA05 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol6"> ISA06 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol7"> ISA07 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol8"> ISA08 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol9"> ISA09 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol10"> ISA10 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol11"> ISA11 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol12"> ISA12 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol13"> ISA13 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol14"> ISA14 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol15"> ISA15 </div>
+          <div id="<%= 'row' + 0.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol16"> ISA16 </div>
+        </div><br /><!-- end of mainHeaderRow -->
+      </div><!-- end of mainScrollWindowHeader -->
+    </th></tr>
+    <tr><td>
+      <div class="editransactionTableWidth" id="mainScrollWindowData">
+      <% row=1 %>
+        <% @editransactions.each do |editransaction| %>
+        <div class="mainDataRow" id="<%= 'row' + row.to_s %>">
+          <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="editransactionCol0"><%=h editransaction.id %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol1"><%=h editransaction.isa01 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol2"><%=h editransaction.isa02 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol3"><%=h editransaction.isa03 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol4"><%=h editransaction.isa04 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol5"><%=h editransaction.isa05 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol6"><%=h editransaction.isa06 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol7"><%=h editransaction.isa07 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol8"><%=h editransaction.isa08 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol9"><%=h editransaction.isa09 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol10"><%=h editransaction.isa10 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol11"><%=h editransaction.isa11 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol12"><%=h editransaction.isa12 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol13"><%=h editransaction.isa13 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol14"><%=h editransaction.isa14 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol15"><%=h editransaction.isa15 %></div>
+          <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="editransactionCol16"><%=h editransaction.isa16 %></div>
 
-        <% row+=1 %><br />
-      </div><!-- end of mainDataRow -->
-      <% end %>
-    </div><!-- end of mainScrollWindowData -->
-  </td></tr>
-</table>
+          <% row+=1 %><br />
+        </div><!-- end of mainDataRow -->
+        <% end %>
+      </div><!-- end of mainScrollWindowData -->
+    </td></tr>
+  </table>
+</div><!-- end of tableLayout -->
 
-</div><!-- end of indent -->
-
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'New editransaction', new_editransaction_path %>
-</div><!-- end of link --><!-- editransaction.html.erb -->
+</div><!-- end of navLink -->
+<!-- end of 'editransaction' -->

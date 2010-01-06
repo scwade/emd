@@ -1,0 +1,41 @@
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: editransaction
+*/
+.editransactionTableWidth {
+  width: 1060px;
+}
+.editransactionCol0, .editransactionCol1, .editransactionCol2, .editransactionCol3,
+.editransactionCol4, .editransactionCol5, .editransactionCol6, .editransactionCol7,
+.editransactionCol8, .editransactionCol9, .editransactionCol10, .editransactionCol11,
+.editransactionCol12, .editransactionCol13, .editransactionCol14, .editransactionCol15,
+.editransactionCol16  {
+  height: 15px;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+.editransactionCol0 {
+  width: 44px;
+  padding-left: 2px;
+  text-align: left;
+}
+.editransactionCol1, .editransactionCol3, .editransactionCol5, .editransactionCol7,
+.editransactionCol11, .editransactionCol14, .editransactionCol15, .editransactionCol16 {
+  width: 50px;
+}
+.editransactionCol2, .editransactionCol4 {
+  width: 75px;
+}
+.editransactionCol6, .editransactionCol8 {
+  width: 111px;
+}
+.editransactionCol9, .editransactionCol10, .editransactionCol12 {
+  width: 50px;
+}
+.editransactionCol13 {
+  width: 75px;
+}

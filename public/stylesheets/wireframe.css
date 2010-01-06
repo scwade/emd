@@ -1,0 +1,222 @@
+/* wireframe design pattern
+*  Date: 01/05/2010
+*
+*  Psuedo namespace class on body element
+*    .twoColFixLay = (two column fixed layout )
+*
+*  Best practice (body)
+*    () font-family = linked fonts, web safe fonts, core web fonts, generic fonts
+*        x linked font not used for current design
+*        - Verdana = web safe, core, generic sans-serif
+*        - Tahoma = web safe, generic sans-serif
+*        - Arial = web safe, core, generic sans-serif
+*    () Normalize font em calulations by setting font size to 10px (62.5%) 
+*       i.e. 2em = 20px
+*    () Specify background-color with image in case image doesn't render
+*/
+
+body {
+  background: #ECF0F9 url("../images/sunset-sailing.jpg");
+  background-repeat: no-repeat;
+  color: #262262;
+  font: 62.5%/120% Verdana, Tahoma, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Wrap viewport ( document ) layout
+*  Date: 01/05/2010
+*
+*  Best practice 
+*    () Position absolute - parent = <html> = document 
+*    () Width and Height determined by content. 
+*    () A container for all static, relative objects in document 
+*/
+.twoColFixLay #wrapper {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+/*  Banner ( The Header ) layout
+*   Objects:
+*     #banner
+*     #title (text)
+*     #logo (image)
+*/
+.twoColFixLay #banner {
+  min-width: 980px; /* same min-width in footer */
+  position: fixed; /* Parent viewport */
+  width: 100%;
+}
+.twoColFixLay #title {
+  background-color: #758AB8;
+  color: black;
+  float: left;
+  height: 60px;
+  width: 100%;
+}
+.twoColFixLay #title p {
+  font: small-caps 280% Verdana, Tahoma, Arial, sans-serif;
+  text-align: center;
+}
+.twoColFixLay #logo {
+  height: 10px;
+  left: 10px;
+  position: absolute; /* Parent = #banner */
+  top: 10px;
+  z-index: 100;
+}
+
+/* Footer layout
+*  Date: 01/05/2010
+*
+*  Notes: 
+*    () Pinned to bottom by position: fixed
+*    () "clear:both" to keep objects from floating on either side
+*/
+.twoColFixLay #footer {
+  background-color: #C4D1EB;
+  bottom: 0px;
+  clear: both;
+  color: #262262;
+  font-weight: bold;
+  height: 20px;
+  left: 0px;
+  min-width: 980px; /* Same as #banner */
+  position: fixed; /* Parent = viewport */
+  width: 100%;
+}
+.twoColFixLay #footer p {
+  text-align: center;
+  margin: 5px;
+}
+
+/* Main layout
+*  Date: 01/05/2010
+*
+*  Notes:
+*    () #mainContent for all views
+*    () Scroll bars for overflow
+*/
+.twoColFixLay #mainContent {
+  background-color: #ECF0F9;
+  bottom: 20px;
+  clear: right;
+  left: 170px; /* Fixed width side column */
+  margin: 0;
+  overflow: auto;
+  padding: 2px 0px 10px 10px;
+  position: fixed; /* Parent = viewport, content scroll bars */
+  right: 0px;
+  top: 80px;
+}
+.twoColFixLay #mainContent a         { text-decoration: none; }
+.twoColFixLay #mainContent a:link    { color: #262262; }
+.twoColFixLay #mainContent a:visited { color: #262262; }
+.twoColFixLay #mainContent a:hover   { color: #758AB8; text-decoration: underline; }
+.twoColFixLay #mainContent a:active  { color: #262262; }
+
+/* Side layout
+*  Date: 01/05/2010
+*
+*  Notes:
+*    () Navigation for all views
+*    () Fixed width for now 
+*/
+.twoColFixLay #side {
+  background-color: #758AB8;
+  bottom: 20px;
+  left: 0px;
+  padding: 10px;
+  position: fixed;
+  text-align: left;
+  top: 60px;
+  width: 15em;
+}
+.twoColFixLay #side h4 {
+/*  border-bottom: 1px solid white; */
+  color: white;
+  padding: 20px 0px 10px 0px;
+}
+.twoColFixLay #side a {
+  font-size: 120%;
+}
+.twoColFixLay #side li {
+/*  border-bottom: 1px solid white; */
+  font-weight: bold;
+  list-style-type: none;
+  padding: 3px 5px;
+}
+
+.twoColFixLay #side a         { text-decoration: none; }
+.twoColFixLay #side a:link    { color: #262262; }
+.twoColFixLay #side a:visited { color: #262262; }
+.twoColFixLay #side a:hover   { color: #FFF; text-decoration: underline; }
+.twoColFixLay #side a:active  { color: #262262; }
+
+
+/* Status layout
+*  Date: 01/05/2010
+*
+*  Objects:
+*    #status (wireframe)
+*    #roundCorner (image)
+*    #noticeBox, #noticeMsg (flash)
+*    #spinnerBox (javascript)
+*    #userSession (navigation)
+*/
+.twoColFixLay #status {
+  background-color: #ECF0F9;
+  height: 20px;  
+  left: 170px;
+  position: fixed; 
+  top: 60px; 
+  right: 0px;
+}
+.twoColFixLay #roundCorner {
+  left: 170px;
+  position: fixed;
+  top: 60px;
+  z-index: 10;
+}
+/* Flash and Spinner box for image and notice */
+.twoColFixLay #noticeBox, .twoColFixLay #spinnerBox {
+  left: 200px;
+  position: fixed;
+  top: 60px;
+}
+.twoColFixLay #noticeMsg {
+  font-size: 1.2em;
+  left: 230px;
+  position: fixed;
+  top: 62px;
+}
+.twoColFixLay div.spinnerMsg:after { 
+  color: green;
+  content: "Loading... ";
+  font-size: 1.2em;
+  margin-left: 10px; 
+}
+/* Session login/logout user */
+.twoColFixLay #userSession {
+  background-color: #ECF0F9;
+  clear: right;
+  font-size: 110%;
+  font-weight: bold;
+  height: 20px;
+  margin-right: 5px;
+  position: fixed;
+  right: 5px;
+  text-align: right;
+  top: 60px;
+}
+.twoColFixLay #userSessionName {
+  color: green;
+  display: inline;
+}
+.twoColFixLay #userSession a         { text-decoration: none; }
+.twoColFixLay #userSession a:link    { color: #262262; }
+.twoColFixLay #userSession a:visited { color: #262262; }
+.twoColFixLay #userSession a:hover   { color: #758AB8; text-decoration: underline; }
+.twoColFixLay #userSession a:active  { color: #262262; }

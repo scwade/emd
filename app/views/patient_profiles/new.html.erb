@@ -1,23 +1,23 @@
-<!-- new.html.erb -->
+<!-- begin new 'patient profile' -->
 <% javascript 'dynamic_states' %>
-<div class="floatLeftLabelPageTitle">
+<div class="labelPageTitle">
     <p>New - Patient Profile</p>
 </div>
 
-<div class="floatLeftLabelTitle18">
+<div class="labelTitle18">
     <p>Patient ID's:</p>
 </div>
 
 <% form_for @patient_profile do |f| %>
 
-<div class="floatLeft clearBoth indent20">
+<div class="floatLeft clearBoth">
   <div class="floatLeftLabelTitle12">Patient ID:</div>
-  <div class="floatLeftData"><%= f.text_field :pmd_patient_id, :size=>16, :readonly=>:true %></div>
+  <div class="floatLeftData"><%= f.text_field :pmd_patient_id, :size=>10, :readonly=>:true %></div>
   <div class="floatLeftLabelTitle12">User ID:</div>
-  <div class="floatLeftData"><%= f.text_field :pmd_user_id, :size=>16, :readonly=>:true %></div>
+  <div class="floatLeftData"><%= f.text_field :pmd_user_id, :size=>10, :readonly=>:true %></div>
 </div>
 
-<div class="floatLeftLabelTitle18">
+<div class="labelTitle18">
     <p>Contact Information:</p>
 </div>
 
@@ -49,11 +49,11 @@
         <th>Emergency: </th>
       </tr>
       <tr>
-        <td><%= f.text_field :phone_home, :size=> 10 %></td>
-        <td><%= f.text_field :phone_mobile, :size=> 10 %></td>
-        <td><%= f.text_field :phone_work, :size=> 10 %></td>
-        <td><%= f.text_field :phone_fax, :size=> 10 %></td>
-        <td><%= f.text_field :phone_emergency, :size=> 10 %></td>
+        <td><%= f.text_field :phone_home, :size=> 9, :maxlength=>10 %></td>
+        <td><%= f.text_field :phone_mobile, :size=> 9, :maxlength=>10 %></td>
+        <td><%= f.text_field :phone_work, :size=> 9, :maxlength=>10 %></td>
+        <td><%= f.text_field :phone_fax, :size=> 9, :maxlength=>10 %></td>
+        <td><%= f.text_field :phone_emergency, :size=> 9, :maxlength=>10 %></td>
       </tr>
     </table>
   </div>
@@ -84,8 +84,9 @@
     <%= f.submit  'Submit', :confirm=>"Are you sure?" %>
   </div>
   <% end %>
-</div><!-- end of indent -->
+</div><!-- end of indent20 -->
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-    <%= link_to 'Back', patient_profiles_path %>
-</div><!-- end of link -->
+<div class="navLink">
+    <%= link_to 'Cancel', patient_profiles_path, :confirm => 'Are you sure?' %>
+</div><!-- end of navLink -->
+<!-- end of 'patient profile' -->

@@ -1,0 +1,57 @@
+div.tableLayout {
+  clear: both;
+  margin-left: 20px;
+  margin: 5px 0 5px 10px;
+}
+.mainScrollWindowHeader {
+  height: 1.5em;
+  text-align: left;
+  background-color: #758AB8;
+  color: white;
+  font-weight: bold;
+}
+#mainScrollWindowHeader, #mainScrollWindowData, #mainScrollWindowData1 {
+  position: relative;
+  clear: both;
+  float: left;
+/* width: auto; */
+}
+#mainScrollWindowHeader{
+  height: 1.5em;
+  vertical-align: middle;
+  text-align: left;
+  background-color: #758AB8;
+  color: white;
+  font-weight: bold;
+}
+#mainScrollWindowData, #mainScrollWindowData1 {
+/* Adjust max-height with resize */
+  max-height: 300px;
+/* ----------------------------- */
+  overflow: scroll;
+  overflow-x: hidden;
+  background: #ECF0F9;
+  cursor: pointer;
+}
+#mainScrollWindowData1 {
+  margin-left: 15px;
+}
+#mainHeaderRow {
+  clear: both;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Navigation */
+.mainDataRow:link div {
+  background-color: #758AB8;
+}
+.mainDataRow:visited div {
+  background-color: #758AB8;
+}
+.mainDataRow:hover div {
+  background-color: #C4D1EB;
+}
+.mainDataRow:active div  {
+  background-color: #758AB8;
+}

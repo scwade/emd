@@ -68,29 +68,29 @@ ActiveRecord::Schema.define(:version => 20091119174512) do
   end
 
   create_table "patient_profiles", :force => true do |t|
-    t.integer  "pmd_patient_id",                                     :null => false
-    t.integer  "pmd_user_id",                                        :null => false
-    t.integer  "physician_id",                                       :null => false
-    t.string   "first_name",                                         :null => false
-    t.string   "last_name",                                          :null => false
+    t.integer  "pmd_patient_id",                                    :null => false
+    t.integer  "pmd_user_id",                                       :null => false
+    t.integer  "physician_id",                                      :null => false
+    t.string   "first_name",                                        :null => false
+    t.string   "last_name",                                         :null => false
     t.string   "primary_address"
     t.string   "alternate_address"
     t.integer  "zip5",              :limit => 8
     t.integer  "zip4"
     t.string   "city",              :limit => 60
     t.string   "state_province",    :limit => 2
-    t.string   "email",                                              :null => false
+    t.string   "email",                                             :null => false
     t.string   "phone_home",        :limit => 10
     t.string   "phone_mobile",      :limit => 10
     t.string   "phone_work",        :limit => 10
     t.string   "phone_fax",         :limit => 10
     t.string   "phone_emergency",   :limit => 10
-    t.date     "date_of_birth",                                      :null => false
-    t.string   "gender",            :limit => 1,                     :null => false
-    t.string   "ethnicity",         :limit => 60,                    :null => false
+    t.date     "date_of_birth",                                     :null => false
+    t.string   "gender",            :limit => 1,                    :null => false
+    t.string   "ethnicity",         :limit => 60,                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "active_patient",                  :default => false, :null => false
+    t.boolean  "active_patient",                  :default => true, :null => false
   end
 
   create_table "patients", :force => true do |t|

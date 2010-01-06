@@ -1,29 +1,28 @@
-<!-- show.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
+<!-- begin show 'patient condition' -->
+<div class="labelPageTitle">
     <p>Patient Condition</p>
 </div>
 
-<div class="indent10">
-  <div class="floatLeftLabel">Patient Profile:</div>
-  <div class="floatLeftData"><%=h @patient_condition.patient_profile.first_name %></div>
-  <div class="floatLeftLabel">Condition:</div>
-  <div class="floatLeftData"><%=h @patient_condition.condition.name %></div>
-  <div class="floatLeftLabel">Start Date:</div>
-  <div class="floatLeftData"><%=h @patient_condition.start_date %></div> 
-  <div class="floatLeftLabel">End Date:</div>
-  <div class="floatLeftData"><%=h @patient_condition.end_date %></div>
-  <div class="floatLeftLabel">Treated by:</div>
-  <div class="floatLeftData"><%=h @patient_condition.treated_by %></div>
-  <div class="floatLeftLabel">Treat notes:</div>
-  <div class="floatLeftData"><%=h @patient_condition.treat_notes %></div>
+<div class="formLayout">
+  <div class="formLabel">Patient Profile:</div>
+  <div class="formData"><%=h @patient_condition.patient_profile.first_name %></div>
+  <div class="formLabel">Condition:</div>
+  <div class="formData"><%=h @patient_condition.condition.name %></div>
+  <div class="formLabel">Start Date:</div>
+  <div class="formData"><%=h @patient_condition.start_date %></div> 
+  <div class="formLabel">End Date:</div>
+  <div class="formData"><%=h @patient_condition.end_date %></div>
+  <div class="formLabel">Treated by:</div>
+  <div class="formData"><%=h @patient_condition.treated_by %></div>
+  <div class="formLabel">Treat notes:</div>
+  <div class="formData"><%=h @patient_condition.treat_notes %></div>
 </div>
 
 <br />
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-    <%= link_to 'Edit', edit_patient_condition_path(@patient_condition) %> |
-    <%= link_to 'Back', patient_conditions_path %> |
-    <div class="indent" style="display: inline">
-      <%= link_to 'Destroy', patient_condition_path(@patient_condition.id), :confirm => 'Are you sure?', :method => :delete %>
-    </div>
-</div><!-- end of link -->
+<div class="navLink">
+    <%= link_to 'Edit', edit_patient_condition_path(@patient_condition) %> |        
+    <%= link_to 'Back', patient_conditions_path %> |         
+    <%= link_to 'Delete', patient_condition_path(@patient_condition.id), :confirm => 'Are you sure?', :method => :delete %>
+</div><!-- end of navLink -->
+<!-- end of 'patient condition' -->

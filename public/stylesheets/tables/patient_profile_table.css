@@ -1,0 +1,56 @@
+/* Div matrix to simulate a table with <div>'s
+*   A, .patientProfileCo6, row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: Patient Profile
+*/
+.patientProfileTableWidth {
+  width: 800px;
+}
+.patientProfileCol0, .patientProfileCol1, .patientProfileCol2, .patientProfileCol3, .patientProfileCol4,
+.patientProfileCol5, .patientProfileCol6, .patientProfileCol7, .patientProfileCol8, .patientProfileCol9 {
+  height: 15px;
+  float: left;
+  position: relative;
+}
+.patientProfileCol5, .patientProfileCol6, .patientProfileCol7, 
+.patientProfileCol8, .patientProfileCol9 {
+  text-align: center;
+}
+.patientProfileCol0 {
+  width: 38px;
+  padding-left: 2px;
+  text-align: left;
+}
+.patientProfileCol1, .patientProfileCol2 {
+  width: 110px;
+}
+.patientProfileCol3, .patientProfileCol4, .patientProfileCol5 {
+  width: 80px;
+}
+.patientProfileCol6 {
+  width: 85px;
+}
+.patientProfileCol7 {
+  width: 60px;
+}
+.patientProfileCol8 {
+  width: 80px;
+}
+.patientProfileCol9 {
+  width: 58px;
+}
+
+/* Patient profile styles */
+.patientProfileId {
+  float: left; 
+  width: 85px;
+  margin-right: 5px; 
+  text-align: right; 
+  font-size: 1.1em;
+  font-weight: bold;
+}
+th {
+  font-weight: normal;
+}

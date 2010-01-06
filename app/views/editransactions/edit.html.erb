@@ -1,9 +1,9 @@
-<!-- edit.html.erb -->
-<div class="floatLeftLabelPageTitle marginBottom20">
+<!-- begin edit 'editransaction' -->
+<div class="labelPageTitle">
     <p>Edit - Electronic Data Interchange Transaction</p>
 </div>
 
-<div class=" clearBoth indent">
+<div class="formLayout">
   <% form_for(@editransaction) do |f| %>
   <%= f.error_messages %>
 </div>
@@ -46,11 +46,12 @@
       <%= f.submit  'Update', :confirm=>"Are you sure?" %>
     </div>
   <% end %>
-</div><!-- end of indent -->
+</div><!-- end of formLayout -->
 
 <br />
 
-<div class="floatLeft clearBoth indent marginTop20 link">
-  <%= link_to 'Show', @editransaction %> |
-  <%= link_to 'Back', editransactions_path %>
-</div><!-- end of link -->
+<div class="navLink">
+  <%= link_to 'Back', @editransaction %> |
+  <%= link_to 'Index', editransactions_path %>
+</div><!-- end of navLink -->
+<!-- end of 'editransaction' -->

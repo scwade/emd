@@ -1,10 +1,11 @@
-<!-- show_filter.html.erb -->
+<!-- begin show_filter 'audit' -->
 <% javascript 'show_record' %>
-<div class="floatLeftLabelPageTitle marginBottom20">
+<div class="labelPageTitle">
     <p>Audit Filtered Record(s)</p>
 </div>
 <%= render :partial => "audit" %>
 
-<div class="floatLeft clearBoth indent marginTop20 link">
+<div class="navLink">
   <%= link_to 'Index',   audit_index_path  %>
-</div><!-- end of link -->
+</div><!-- end of navLink -->
+<!-- end of 'audit' -->

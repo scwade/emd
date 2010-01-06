@@ -1,0 +1,35 @@
+/* Div matrix to simulate a table with <div>'s
+*   A row x col table of div blocks;
+*   Note: each index view template will define
+*         the # of columns and initial column width.
+*
+*   Table: condition
+*/
+.conditionTableWidth {
+  width: 800px;
+}
+.conditionCol0, .conditionCol1, .conditionCol2, .conditionCol3, .conditionCol4,
+.conditionCol5 {
+  height: 15px;
+  float: left;
+  position: relative;
+}
+.conditionCol0 {
+  width: 43px;
+  padding-left: 2px;
+}
+.conditionCol1 {
+  width: 370px;
+}
+.conditionCol2 {
+  width: 95px;
+}
+.conditionCol3 {
+  width: 95px;
+}
+.conditionCol4 {
+  width: 95px;
+}
+.conditionCol5 {
+  width: 83px;
+}

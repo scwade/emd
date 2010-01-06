@@ -1,0 +1,93 @@
+<%= render :partial => "shared/header" %> 
+<!-- begin shared/_main -->
+
+<body>
+  <div id="wrapper">
+    <%= render :partial => "shared/main_banner" %>
+
+
+    <div class="opaque70" id="side">
+    </div><!-- end of side -->
+
+    <div id="roundCorner" ><%= image_tag("left-rounded-corner.png") %></div>
+
+    <div id="status">
+    <!-- spinner box -->
+      <div class="spinnerMsg" id="spinnerBox" style="display: none">
+        <%= image_tag("ajax-loader.gif", :size=>"18x18") -%>
+      </div><!-- end of spinner box -->
+
+    <!-- flash notices -->
+      <% unless flash.empty? -%>
+        <div id="noticeBox">
+          <% unless flash[:notice].blank? %>
+            <%= image_tag("check-mark.png", :size=>"20x20") -%>
+            <div id="noticeMsg"><%= flash[:notice] %></div>
+          <% else %>
+            <% unless flash[:yield].blank? %>
+              <%= image_tag("yield-mark.png", :size=>"20x20") -%>
+              <div id="noticeMsg"><%= flash[:yield] %></div>
+            <% else %>
+              <% unless flash[:error].blank? %>
+                <%= image_tag("error-mark.png", :size=>"20x20") -%>
+                <div id="noticeMsg"><%= flash[:error] %></div>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div><!-- end of noticeBox -->
+      <% end -%>
+
+      <div id="userSession">
+        <% if current_user %>
+          <%= "Welcome:" %>
+          <div id="userSessionName">
+            <%= h current_user.username %>
+          </div><!-- end of userSessionName -->
+          <%= link_to "Edit Profile", edit_user_path(:current) %> |
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to "Register", new_user_path %> |
+          <%= link_to "Login", login_path %>
+        <% end %>
+      </div><!-- end of userSession -->
+    </div><!-- end of status -->
+
+    <div class="opaque70" id="sideNavigation">
+      <h3> Patient Menu: </h3>
+      <div id="sideNavigationSub0">
+        <div><a href="/patient_conditions">Patient Conditions</a></div>
+        <div><a href="/conditions">Conditions(ref)</a></div>
+        <div><a href="/patient_profiles">Patient Profiles(ref)</a></div>
+        <div><a href="/editransactions">EDI transactions</a></div>
+        <div><a href="/users">List Users</a></div>
+        <div><a href="/audit">Audit Records</a></div>
+      </div><!-- end sideNavigationSub0 -->
+
+      <div id="sideNavigationSub1">
+        <div><a href="http://localhost:3000/conditions">LOCAL</a></div>
+        <div><a href="http://emd.heroku.com/conditions">Heroku</a></div>
+        <div><a href="http://192.168.1.101:3000/conditions">Scott (pvt)</a></div>
+        <div><a href="http://scwade.blogdns.com:3000/conditions">Scott (pub)</a></div>
+      </div><!-- end of sideNavigationSub1 -->
+    </div><!-- end sideNavigation -->
+
+    <div class="opaque70" id="sideNavigationBottom" >
+    </div>
+
+    <div class="opaque80" id="mainWrapper">
+      <table cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <div id="mainContent">
+              <%= yield :layout %>
+            </div><!-- end of mainContent -->
+          </td>
+        </tr>
+      </table>
+    </div><!-- end of mainWrapper -->
+
+    <div class="opaque70" id="footer"><p>My Footer</p>
+    </div><!-- end of footer -->
+  </div><!-- end of wrapper -->
+</body>
+</html>
