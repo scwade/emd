@@ -56,6 +56,21 @@ ActiveRecord::Schema.define(:version => 20091119174512) do
     t.datetime "updated_at"
   end
 
+  create_table "open_id_authentication_associations", :force => true do |t|
+    t.integer "issued"
+    t.integer "lifetime"
+    t.string  "handle"
+    t.string  "assoc_type"
+    t.binary  "server_url"
+    t.binary  "secret"
+  end
+
+  create_table "open_id_authentication_nonces", :force => true do |t|
+    t.integer "timestamp",  :null => false
+    t.string  "server_url"
+    t.string  "salt",       :null => false
+  end
+
   create_table "patient_conditions", :force => true do |t|
     t.integer  "patient_profile_id"
     t.integer  "condition_id"
@@ -113,9 +128,30 @@ ActiveRecord::Schema.define(:version => 20091119174512) do
     t.datetime "updated_at"
   end
 
+  create_table "reference_filter_cities", :force => true do |t|
+    t.string   "description", :limit => 60, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "reference_filter_states", :force => true do |t|
     t.string   "state",       :limit => 2,  :null => false
     t.string   "description", :limit => 60, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name",              :limit => 40
+    t.string   "authorizable_type", :limit => 40
+    t.integer  "authorizable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -132,12 +168,12 @@ ActiveRecord::Schema.define(:version => 20091119174512) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.string   "email"
+    t.string   "email",              :default => "", :null => false
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
-    t.integer  "login_count",        :default => 0, :null => false
-    t.integer  "failed_login_count", :default => 0, :null => false
+    t.integer  "login_count",        :default => 0,  :null => false
+    t.integer  "failed_login_count", :default => 0,  :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
@@ -145,6 +181,8 @@ ActiveRecord::Schema.define(:version => 20091119174512) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "creator_id"
+    t.string   "openid_identifier"
   end
 
 end

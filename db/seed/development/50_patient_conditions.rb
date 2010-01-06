@@ -1,10 +1,20 @@
-#db/seed/development/patient_profiles.rb
+#db/seed/development/xx_patient_conditions.rb
 #Development base data
 
+### ROLLAND TODO - Please make this a rake action (this was messing up my seed environments)
+# Delete all before seeding
+# PatientCondition.delete_all
+
+### Login User admin to enable seed data creation
+Authlogic::Session::Base.controller = Authlogic::ControllerAdapters::RailsAdapter.new(self)
+
+lu =UserSession.create(:username => 'admin', :password => 'amdin')
+
 # Initialize
-treated_by = treat_notes = []
-treated_by  << "Dr Wade" << "Dr Hoyt" << "Dr Smith" << "Dr Foot"
-treat_notes << "No problem found" << "Continue treatment" << "Re-check in a month" << "No problem" 
+treated_by = []
+treat_notes = []
+treated_by  << "Dr. Wade" << "Dr. Chao" << "Dr. Reeves" << "Dr. Madany" << "Dr. Wang"
+treat_notes << "Placed on high dose of vitamin C" << "Placed on high dose of vitamin B" << "Placed on high dose of vitamin D" << "Reassess after referral" 
 
 p = PatientProfile.all
 c = Condition.all

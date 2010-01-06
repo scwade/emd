@@ -77,7 +77,5 @@
 @import url(tables/patient_profile_table.css);
 @import url(tables/user_table.css);
 
-
-
 /* structural class names for development */
 @import url(structural.css);

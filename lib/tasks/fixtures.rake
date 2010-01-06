@@ -1,4 +1,9 @@
-require File.expand_path(File.dirname(__FILE__) + "/../../config/environment")
+### SCW - Commented out to enable 'rake gems:install' to work
+### http://www.ruby-forum.com/topic/190386
+### This allowed the gem to attempt to install - 
+### To get raound permission issues, run rake as sudo --- gems installed properly
+### SCW test rake gems:install comment out following line
+#require File.expand_path(File.dirname(__FILE__) + "/../../config/environment")
 require File.expand_path(File.dirname(__FILE__) + "/../../test/ordered_fixtures")
 
 ENV["FIXTURE_ORDER"] ||= ""

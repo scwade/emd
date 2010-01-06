@@ -1,55 +1,69 @@
-Correct your database.yml file for connectivity (developers can rever to database.yml.template)
+Correct your database.yml file for connectivity (developers can refer to database.yml.template)
 
-# APPLICATION DEPENDENCIES:
-# -------------------------
-# The emd Application utilizes the following plugins, gems, and engines
+### APPLICATION DEPENDENCIES:
+### -------------------------
+### The emd Application utilizes the following plugins, gems, and engines
 
-# TODO(rolland) - Ajax, virtual fields, other modules (list install string and URL to source)
+### Basic UI - "Active_scafolding" http://activescaffold.com
+script/plugin install git://github.com/activescaffold/active_scaffold.git
 
-# Plugin: acts_as_audited
-# License: (MIT) 
-# Version: 1.1.0 
-# Date: 1 November 2009
-# Rails version: 2.1 or later 
-# Notes: ActiveRecord extension that logs all changes to your models in an audits table
-  script/plugin install git://github.com/collectiveidea/acts_as_audited.git
+### Plugin: acts_as_audited
+### License: (MIT) 
+### Version: 1.1.0 
+### Date: 1 November 2009
+### Rails version: 2.1 or later 
+### Notes: ActiveRecord extension that logs all changes to your models in an audits table
+script/plugin install git://github.com/collectiveidea/acts_as_audited.git
 
-# Plugin: auto_complete
-# License: (MIT)
-# Version: ?
-# Date: 6 November 2007
-# Rails version: 2.0 or later 
-# Notes: PatientProfile autocomplete :city
-  script/plugin install git://github.com/rails/auto_complete.git
+### Plugin: auto_complete
+### License: (MIT)
+### Version: ?
+### Date: 6 November 2007
+### Rails version: 2.0 or later 
+### Notes: PatientProfile autocomplete :city
+script/plugin install git://github.com/rails/auto_complete.git
 
-# Plugin: validatesdatetime
-# License: Rails' (MIT)
-# Version: 409 
-# Date: 5 March 2009 
-# Rails version: 2.0 or later 
-# Notes: PatientProfile birth date validation: 
-  script/plugin install http://svn.viney.net.nz/things/rails/plugins/validatesdatetime 
+### Plugin: validatesdatetime
+### License: Rails' (MIT)
+### Version: 409 
+### Date: 5 March 2009 
+### Rails version: 2.0 or later 
+### Notes: PatientProfile birth date validation: 
+script/plugin install http://svn.viney.net.nz/things/rails/plugins/validatesdatetime 
+script/plugin install http://svn.viney.net.nz/things/rails/plugins/validates_date_time
 
-
-# Ruote Workflow Engine - (http://openwferu.rubyforge.org/quickstart.html)
+### Ruote Workflow Engine - (http://openwferu.rubyforge.org/quickstart.html)
 sudo gem install ruote2.0 # TODO Not yet available........
 
-# Authentication (http://github.com/binarylogic/authlogic_openid)
+### Authentication - "authlogic" (http://github.com/binarylogic/authlogic_openid)
 sudo gem install authlogic      #basic authentication framework
 sudo gem install authlogic-oid  #authentication open id gem
 sudo gem install ruby-openid    #ruby open id gem
 
-# TO INSTALL:
-# -------------------------
+### Authorization - "acl9" (http://github.com/be9/acl9)
+### Added to environment.rb as a gem
+### config.gem "acl9", :source => "http://gemcutter.org", :lib => "acl9"
+sudo rake gems:install 
+
+### TO INSTALL:
+### -------------------------
+### Get the main application
 
 git clone git@github.com:scwade/emd.git
 rake db:drop
+
 rake db:create
+rake db:migrate
+
+# get the opend ID plugin
+script/plugin install git://github.com/rails/open_id_authentication.git
+rake open_id_authentication:db:create
 rake db:migrate
 
 # TODO(rolland) - Rolland to update this list 
 rake db:load_reference_address            # Load reference data for validation
 rake db:load_reference_ethnicity          # Load reference data for validation
+# REMEMVER http://svn.viney.net.nz/things/rails/plugins/validates_date_time/
 
 # CONFIGURATION:
 # -------------------------

@@ -1,30 +1,24 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
+### Filters added to this controller apply to all controllers in the application.
+### Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-# SCW - Adding method for user linking to subset of conditions (my records, my conditions) 
-#  def find_record
-#    unless session[:record]         # if there is no record in session
-#      session[:record] = Record.new # then add a new one
-#    end
-#    session[:record]
-#  end
 
-# SCW - section 11.4 - layout - not sure its working
-#  layout "editransaction"
-
-##### SCW - Uncomment to enable secure login
-#  before_filter :authorize, :except => :login
+  ### Add this line to elegantly handle access denial
+  rescue_from 'Acl9::AccessDenied', :with => :access_denied
   
-  # See ActionController::Base for details
-  # Uncomment this to filter the contents of submitted sensitive data parameters
-  # from your application log (in this case, all fields with names like "password").
-  filter_parameter_logging :password, :password_confirmation
-  helper_method :current_user
+  helper :all # include all helpers, all the time
 
-  private
+  ### See ActionController::RequestForgeryProtection for details
+  ### Uncomment the :secret if you're not using the cookie session store
+  protect_from_forgery # :secret => '1c6897ca751fffeb8e1be8d234aa6896'
+ 
+  ### Filter Out Sensitive Data from Logs 
+  # Uncomment to filter the contents of sensitive data parameters
+  # Such as your application log (in this case, all fields with names like "password").
+  filter_parameter_logging :password, :password_confirmation
+  helper_method :current_user, :current_user_session
+  
+  protected
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
@@ -34,5 +28,48 @@ class ApplicationController < ActionController::Base
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
+#    @current_user = current_user_session && current_user_session.user
   end
+  
+  def require_user
+    unless current_user
+      store_location
+      flash[:notice] = "You must be logged in to access this page"
+      redirect_to new_user_session_url
+      return false
+    end
+  end
+
+  def require_no_user
+    if current_user
+      store_location
+      flash[:notice] = "You must be logged out to access this page"
+      redirect_to user_url
+      return false
+    end
+  end
+  
+  def store_location
+    session[:return_to] = request.request_uri
+  end
+  
+  def redirect_back_or_default(default)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
+  end
+
+#  private
+      
+  def access_denied
+    ### SCW - TODO - make this a subpage of the system and handle more elegantly
+    #def access_denied
+    if current_user
+      #render :template => 'home/access_denied'
+      render :file => File.join(RAILS_ROOT, 'public', '403.html'), :status => 403
+    else
+      flash[:notice] = 'Access denied. Try to log in first.'
+      redirect_to login_path
+    end
+  end
+
 end

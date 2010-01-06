@@ -3,6 +3,7 @@ class PatientProfile < ActiveRecord::Base
 # --------
 # Plugins
 # --------
+
   acts_as_audited
 
 # ------------------------------
@@ -95,24 +96,24 @@ class PatientProfile < ActiveRecord::Base
   validates_length_of   :state_province,     :is => 2,           :allow_blank => true                                     
   validates_length_of   :ethnicity,          :maximum => 60
 
-# ---------------------
-# Numeric validations
-# ---------------------
-  validates_numericality_of :pmd_patient_id, :pmd_user_id, :physician_id
+  # ---------------------
+  # Numeric validations
+  # ---------------------
+    validates_numericality_of :pmd_patient_id, :pmd_user_id, :physician_id
 
-# --------------------
-# Presence validations
-# --------------------
-  validates_presence_of :physician_id, :first_name, :last_name, :date_of_birth, :gender, :ethnicity
-                        
-# ----------------------
-# Uniqueness validations
-# ----------------------
-  validates_uniqueness_of :pmd_patient_id, :pmd_user_id, :email,
-                          :case_sensitive => false,
-                          :message => "not unique, already used by different patient"
+  # --------------------
+  # Presence validations
+  # --------------------
+    validates_presence_of :physician_id, :first_name, :last_name, :date_of_birth, :gender, :ethnicity
                           
-#-------------------
-# End of model class
-#-------------------
+  # ----------------------
+  # Uniqueness validations
+  # ----------------------
+    validates_uniqueness_of :pmd_patient_id, :pmd_user_id, :email,
+                            :case_sensitive => false,
+                            :message => "not unique, already used by different patient"
+                            
+  #-------------------
+  # End of model class
+  #-------------------
 end

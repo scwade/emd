@@ -1,4 +1,4 @@
-#db/seed/development/01_patient_profiles.rb
+#db/seed/development/xx_patient_profiles.rb
 #Development base data
 
 pp1 = PatientProfile.create( 

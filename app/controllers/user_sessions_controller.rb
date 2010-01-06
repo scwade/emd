@@ -1,15 +1,22 @@
 class UserSessionsController < ApplicationController
+  ### Begin acl9 configuration to use user and roles for User class
+  before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_user, :only => :destroy
+
   def new
     @user_session = UserSession.new
   end
   
   def create
     @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
-      flash[:notice] = "Successfully logged in."
-      redirect_to(patient_profiles_url)
-    else
-      render :action => 'new'
+    ###Add block to handle openid handoff for authenticationl
+    @user_session.save do |result|
+      if result
+        flash[:notice] = "Successfully logged in."
+        redirect_to root_url
+      else
+        render :action => 'new'
+      end
     end
   end
   

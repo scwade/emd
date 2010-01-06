@@ -1,4 +1,4 @@
-#db/seed/development/editransactions.rb
+#db/seed/development/xx_editransactions.rb
 #Development base data
 
 e1 = Editransaction.create(

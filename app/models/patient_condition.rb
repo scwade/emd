@@ -2,6 +2,7 @@ class PatientCondition < ActiveRecord::Base
 
   # Plugins
   acts_as_audited
+  acts_as_authorization_object
 
   private
 
