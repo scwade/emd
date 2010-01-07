@@ -1,0 +1,46 @@
+<!-- begin '_login' -->
+<div class="formLayout">
+  <% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+
+  <% if @user.openid_identifier.blank? %>
+    <p>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+    </p>
+    <p><%= f.submit "Submit" %></p>
+  
+    <h2>Or use OpenID</h2>
+  <% end %>
+  <p>
+    <%= f.label :openid_identifier, "OpenID URL" %><br />
+    <%= f.text_field :openid_identifier %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+
+
+
+</div>
+
+<div class="formLayout">
+  <div class="formLayout1"><%= f.label :username              %><div><%= f.text_field :username, :size=>32 %></div></div>
+  <div class="formLayout1"><%= f.label :email                 %><div><%= f.text_field :email, :size=>32 %></div></div>
+  <div class="formLayout1"><%= f.label :password              %><div><%= f.password_field :password, :size=>32 %></div></div>
+  <div class="formLayout1"><%= f.label :password_confirmation %><div><%= f.password_field :password_confirmation, :size=>32 %></div></div>
+  <div class="formLayout1"><%= f.submit 'Update', :confirm => 'Are you sure?' %></div>
+  <% end %>
+</div><!-- end of formLayout -->
+<!-- end of '_login' -->

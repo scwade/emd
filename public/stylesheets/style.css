@@ -79,6 +79,12 @@
   clear: both;
   margin-left: 10px;
 }
+.twoColFixLay div.formLayout15 {
+  clear: both;
+  margin-left: 15px;
+/* ######## */
+margin: 0;
+}
 .twoColFixLay div.formLayout1 {
   clear: left;
   float: left;
@@ -181,6 +187,10 @@
   padding-bottom: 1em;
   position: relative;
   width: 98%;
+/* ######### */
+float: left;
+margin: 0 0 20px 0;
+width: 100%;
 }
 .twoColFixLay .floatLeftLabelTitle12 {
   font-size: 1.2em;
@@ -216,8 +226,10 @@
   float: left;
   font-size: 1.1em;
   font-weight: bold;
-  margin: 20px 0 0 10px;
+  margin: 20px 0 0 20px;
   position: relative;
+/* ######### */
+margin: 20px 0 0 0;
 }
 .twoColFixLay div .navLink a:hover {
   color: #758AB8;

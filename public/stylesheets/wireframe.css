@@ -110,6 +110,8 @@ body {
   position: fixed; /* Parent = viewport, content scroll bars */
   right: 0px;
   top: 80px;
+/* ######### */
+padding: 2px 30px 10px 30px;
 }
 .twoColFixLay #mainContent a         { text-decoration: none; }
 .twoColFixLay #mainContent a:link    { color: #262262; }
