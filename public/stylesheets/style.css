@@ -129,7 +129,7 @@
   overflow: auto;
   width: 800px;
 }
-.twoColFixLay div.formTitle {
+.twoColFixLay div.formTitle, .twoColFixLay div.formTitle1 {
   clear: both;
   float: left;
   font-size: 1.8em;
@@ -140,6 +140,10 @@
   text-align: right;
   width: auto;
 }
+.twoColFixLay div.formTitle1 {
+  margin: 0 0 0 10px;
+}
+  
 /* Radio Button */
 .twoColFixLay #patient_profile_gender_m, .twoColFixLay #patient_profile_gender_f {
   border: 1px solid #C4D1EB;
