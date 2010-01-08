@@ -16,10 +16,8 @@
   <div class="formData"><%=h @patient_condition.treated_by %></div>
   <div class="formLabel">Treat notes:</div>
   <div class="formData"><%=h @patient_condition.treat_notes %></div>
-</div>
-
+</div><!-- end of formLayout -->
 <br />
-
 <div class="navLink">
     <%= link_to 'Edit', edit_patient_condition_path(@patient_condition) %> |        
     <%= link_to 'Back', patient_conditions_path %> |         

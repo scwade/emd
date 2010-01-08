@@ -13,7 +13,8 @@ class UserSessionsController < ApplicationController
     @user_session.save do |result|
       if result
         flash[:notice] = "Successfully logged in."
-        redirect_to root_url
+        ###redirect_to root_url
+        redirect_to(:patient_profiles)
       else
         render :action => 'new'
       end

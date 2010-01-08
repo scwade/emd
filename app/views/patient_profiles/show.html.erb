@@ -7,52 +7,52 @@
     <p>Patient ID's:</p>
 </div>
 
-<div class="floatLeft clearBoth indent20">
+<div class="formLayout10">
   <div class="floatLeftLabelTitle12">Patient ID:</div>
-  <div class="floatLeftData"><%=h @patient_profile.pmd_patient_id %></div>
+  <div class="formData"><%=h @patient_profile.pmd_patient_id %></div>
   <div class="floatLeftLabelTitle12">User ID:</div>
-  <div class="floatLeftData"><%=h @patient_profile.pmd_user_id%></div>
+  <div class="formData"><%=h @patient_profile.pmd_user_id%></div>
 </div>
 
 <div class="labelTitle18">
     <p>Contact Information:</p>
 </div>
 
-<div class="indent20">
-  <div class="floatLeftLabel">Primary Physician:</div>
-  <div class="floatLeftData"><%=h @patient_profile.physician_id %></div>
-  <div class="floatLeftLabel">First Name:</div>
-  <div class="floatLeftData"><%=h @patient_profile.first_name%></div>
-  <div class="floatLeftLabel">Last Name:</div>
-  <div class="floatLeftData"><%=h @patient_profile.last_name %></div>
-  <div class="floatLeftLabel">Email:</div>
-  <div class="floatLeftData"><%=h @patient_profile.email%></div>
+<div class="formLayout10">
+  <div class="formLabel">Primary Physician:</div>
+  <div class="formData"><%=h @patient_profile.physician_id %></div>
+  <div class="formLabel">First Name:</div>
+  <div class="formData"><%=h @patient_profile.first_name%></div>
+  <div class="formLabel">Last Name:</div>
+  <div class="formData"><%=h @patient_profile.last_name %></div>
+  <div class="formLabel">Email:</div>
+  <div class="formData"><%=h @patient_profile.email%></div>
 
-  <div class="floatLeftLabel">Home:  </div>
-  <div class="floatLeftData"><%=h number_to_phone(@patient_profile.phone_home, :area_code=>true, :delimiter=>" ")%></div>
-  <div class="floatLeftLabel">Mobile:  </div>
-  <div class="floatLeftData"><%=h number_to_phone(@patient_profile.phone_mobile, :area_code=>true, :delimiter=>" ")%></div>
-  <div class="floatLeftLabel">Work:  </div>
-  <div class="floatLeftData"><%=h number_to_phone(@patient_profile.phone_work, :area_code=>true, :delimiter=>" ")%></div>
-  <div class="floatLeftLabel">Fax: </div>
-  <div class="floatLeftData"><%=h number_to_phone(@patient_profile.phone_fax, :area_code=>true, :delimiter=>" ")%></div>
-  <div class="floatLeftLabel">Emergency: </div>
-  <div class="floatLeftData"><%=h number_to_phone(@patient_profile.phone_emergency, :area_code=>true, :delimiter=>" ")%></div>
+  <div class="formLabel">Home:  </div>
+  <div class="formData"><%=h number_to_phone(@patient_profile.phone_home, :area_code=>true, :delimiter=>" ")%></div>
+  <div class="formLabel">Mobile:  </div>
+  <div class="formData"><%=h number_to_phone(@patient_profile.phone_mobile, :area_code=>true, :delimiter=>" ")%></div>
+  <div class="formLabel">Work:  </div>
+  <div class="formData"><%=h number_to_phone(@patient_profile.phone_work, :area_code=>true, :delimiter=>" ")%></div>
+  <div class="formLabel">Fax: </div>
+  <div class="formData"><%=h number_to_phone(@patient_profile.phone_fax, :area_code=>true, :delimiter=>" ")%></div>
+  <div class="formLabel">Emergency: </div>
+  <div class="formData"><%=h number_to_phone(@patient_profile.phone_emergency, :area_code=>true, :delimiter=>" ")%></div>
 
-  <div class="floatLeftLabel">Address:  </div>
-  <div class="floatLeftData"><%=h @patient_profile.primary_address %></div>
-  <div class="floatLeftLabel">Address2:  </div>
-  <div class="floatLeftData"><%=h @patient_profile.alternate_address %></div>
-  <div class="floatLeftLabel">City:  </div>
-  <div class="floatLeftData"><%=h @patient_profile.city %></div>
-  <div class="floatLeftLabel">State/Province:  </div>
-  <div class="floatLeftData"><%=h @patient_profile.state_province %></div>
-  <div class="floatLeftLabel">Ethnicity: </div>
-  <div class="floatLeftData"><%=h @patient_profile.ethnicity %></div>
-  <div class="floatLeftLabel">Gender: </div>
-  <div class="floatLeftData"><%=h @patient_profile.gender %></div>
-  <div class="floatLeftLabel">Date of Birth: </div>
-  <div class="floatLeftData"><%=h @patient_profile.date_of_birth %></div>
+  <div class="formLabel">Address:  </div>
+  <div class="formData"><%=h @patient_profile.primary_address %></div>
+  <div class="formLabel">Address2:  </div>
+  <div class="formData"><%=h @patient_profile.alternate_address %></div>
+  <div class="formLabel">City:  </div>
+  <div class="formData"><%=h @patient_profile.city %></div>
+  <div class="formLabel">State/Province:  </div>
+  <div class="formData"><%=h @patient_profile.state_province %></div>
+  <div class="formLabel">Ethnicity: </div>
+  <div class="formData"><%=h @patient_profile.ethnicity %></div>
+  <div class="formLabel">Gender: </div>
+  <div class="formData"><%=h @patient_profile.gender %></div>
+  <div class="formLabel">Date of Birth: </div>
+  <div class="formData"><%=h @patient_profile.date_of_birth %></div>
 </div>
 
 <br />

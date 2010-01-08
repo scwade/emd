@@ -3,6 +3,7 @@
     <p>Condition</p>
 </div>
 
+<div class="formLayout">
   <div class="formLabel">ID:</div>
   <div class="formData"><%=h @condition.id %></div>
   <div class="formLabel">Name:</div>
@@ -15,9 +16,8 @@
   <div class="formData"><%=h @condition.google_url %></div>
   <div class="formLabel">Wiki URL:</div>
   <div class="formData"><%=h @condition.wiki_url %></div>
-
+</div><!-- end of formLayout -->
 <br />
-
 <div class="navLink">
   <%= link_to 'Edit', edit_condition_path(@condition) %> |
   <%= link_to 'Back', conditions_path %>
