@@ -1,9 +1,7 @@
 <!-- begin show 'patient condition' -->
-<div class="labelPageTitle">
-    <p>Patient Condition</p>
-</div>
+<h3 class="labelPageTitle"><dfn>Patient Condition</dfn></h3>
 
-<div class="formLayout">
+<div class="formLayout10">
   <div class="formLabel">Patient Profile:</div>
   <div class="formData"><%=h @patient_condition.patient_profile.first_name %></div>
   <div class="formLabel">Condition:</div>
@@ -20,7 +18,7 @@
 <br />
 <div class="navLink">
     <%= link_to 'Edit', edit_patient_condition_path(@patient_condition) %> |        
-    <%= link_to 'Back', patient_conditions_path %> |         
+    <%= link_to 'Index', patient_conditions_path %> |         
     <%= link_to 'Delete', patient_condition_path(@patient_condition.id), :confirm => 'Are you sure?', :method => :delete %>
 </div><!-- end of navLink -->
 <!-- end of 'patient condition' -->

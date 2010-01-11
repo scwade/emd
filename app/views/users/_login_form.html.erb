@@ -1,25 +1,43 @@
 <!-- begin '_login' -->
 
-<div class="formLayout">
+<div class="formLayout10">
   <% form_for(@user) do |f| %>
-  <%= f.error_messages %>
-</div>
+  <%= f.error_messages -%>
 
-<div class="formLayout">
-  <div class="formLayout1"><%= f.label :username              %><div><%= f.text_field :username, :size=>32 %></div></div>
-  <div class="formLayout1"><%= f.label :email                 %><div><%= f.text_field :email, :size=>32 %></div></div>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username, :size=>32 %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :size=>32 %>
+  </p>
 
   <% if @user.openid_identifier.blank? %>
-  <div class="formLayout1"><%= f.label :password              %><div><%= f.password_field :password, :size=>32 %></div></div>
-  <div class="formLayout1"><%= f.label :password_confirmation %><div><%= f.password_field :password_confirmation, :size=>32 %></div></div>
-  <div class="formLayout1"><%= f.submit 'Submit', :confirm => 'Are you sure?' %></div>
+    <p>
+      <%= f.label :password %><br />
+      <%= f.password_field :password, :size=>32 %>
+    </p>
+
+    <p>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, :size=>32 %>
+    </p>
+
   <% end %>
-  <div class="formTitle1">
-    <br />
-    <p>Or use OpenID:</p>
-  </div>
-  <div class="formLayout1"><%= f.label :openid_identifier, "OpenID URL" %><div><%= f.text_field :openid_identifier, :size=>32 %></div></div>
-  <div class="formLayout1"><%= f.submit 'Submit', :confirm => 'Are you sure?' %></div>
+  <br />
+  <h4 class="formTitle1">Or use OpenID:</h4>
+
+  <p>
+    <%= f.label :openid_identifier, "OpenID URL" %><br />
+    <%= f.text_field :openid_identifier, :size=>32 %>
+  </p>
+
+  <p>
+    <%= f.submit 'Submit', :confirm => 'Are you sure?' %>
+    <%= f.submit 'Reset', :type => 'reset',  :confirm => 'Are you sure?'%>
+  </p>
   <% end %>
 </div><!-- end of formLayout -->
 <!-- end of '_login' -->

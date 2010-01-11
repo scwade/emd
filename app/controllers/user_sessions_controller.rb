@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
       if result
         flash[:notice] = "Successfully logged in."
         redirect_to root_url
-        ###redirect_to(:patient_profiles) rolland workaround
+        ### rmh for test redirect_to user_path( User.find_by_username(@user_session.username).id )
       else
         render :action => 'new'
       end

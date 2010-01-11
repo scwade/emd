@@ -7,18 +7,21 @@
 
 /* AutoComplete rules
 *   
-*  Notes: IE doesn't work
+*  Notes: IE position works with !important, but scrolling ul list is fragile
 */
 .twoColFixLay div.auto_complete {
   border: inset .23em #ECF0F9;
-  position:absolute;
-  width: auto;
+  left: 0px !important;
+  overflow-y: auto;
+  top: 0px !important;
+  position:relative !important;
   z-index: 100;
 }
 .twoColFixLay div.auto_complete ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  height: 100%;
+  max-height: 100px;
 }
 .twoColFixLay div.auto_complete ul li.selected { background-color: #C4D1EB;}
 .twoColFixLay div.auto_complete ul li {
@@ -30,24 +33,30 @@
   height: auto;
   list-style-type: none;
   line-height: 1.3em;
-  padding-left: .5em;
+  margin-left: .3em;
 }
 
 /* Error rules
 *   
 *  Notes: For all forms
 */
-.twoColFixLay .fieldWithErrors {  
+.twoColFixLay .fieldWithErrors label { 
+  margin: 0;
+  padding: 0;
+  float: left; 
 }
 .twoColFixLay .fieldWithErrors input, .fieldWithErrors select {
   border: 2px solid red;
+}
+.twoColFixLay .formLayout10 p {
+  clear: both;
+  display: block;
 }
 .twoColFixLay #errorExplanation {
   background-color: #E2E3E4;
   clear: both;
   float: left;
   margin: 1em 0;
-  position: relative; 
 }
 .twoColFixLay #errorExplanation h2 {
   background-color: #ED1C24;
@@ -71,20 +80,28 @@
 *   
 *  Notes: For all forms
 */
-.twoColFixLay div.formLayout {
+.twoColFixLay div.formLayout,   .twoColFixLay div.formLayout p, 
+.twoColFixLay div.formLayout10, .twoColFixLay div.formLayout10 p,
+.twoColFixLay div.formLayout15, .twoColFixLay div.formLayout15 p,
+.twoColFixLay div.formLayout20, .twoColFixLay div.formLayout20 p {
   clear: both;
+}
+.twoColFixLay div.formLayout {
   margin-left: 0px;
 }
+.twoColFixLay div.formLayout5 {
+  margin-left: 5px;
+}
 .twoColFixLay div.formLayout10 {
-  clear: both;
   margin-left: 10px;
 }
 .twoColFixLay div.formLayout15 {
-  clear: both;
   margin-left: 15px;
-/* ######## */
-margin: 0;
 }
+.twoColFixLay div.formLayout20 {
+  margin-left: 20px;
+}
+/*
 .twoColFixLay div.formLayout1 {
   clear: left;
   float: left;
@@ -97,10 +114,12 @@ margin: 0;
   margin: 5px 0 5px 10px;
   position: relative;
 }
+*/
 .twoColFixLay input, select {
   border: 1px inset #C4D1EB;
 }
-.twoColFixLay div.formInput, .twoColFixLay div.formInput0, .twoColFixLay div.formInput1 {
+.twoColFixLay div.formInput, .twoColFixLay div.formInputNext,
+.twoColFixLay div.formInput0 {
   float: left;
   margin: 5px 0 5px 10px;
   position: relative;
@@ -112,8 +131,13 @@ margin: 0;
   clear: left;
   margin-left: 0px;
 }
-.twoColFixLay div.formInput1 {
+.twoColFixLay div.formInputNext {
   display: inline;
+}
+.twoColFixLay div.formButton {
+  clear: both;
+  float: left;
+  margin: 15px 0 15px 10px;
 }
 .twoColFixLay div.formLabel, .twoColFixLay div.formLabel1, .twoColFixLay div.formData {
   float: left;
@@ -179,18 +203,13 @@ margin: 0;
 .twoColFixLay .labelPageTitle {
   border-bottom: 2px solid #262262;
   clear: both;
-  float: right;
-  font-size: 2.4em;
+  float: left;
+  font-weight: lighter;
   height: 30px; 
 /*  _height: 50px;*/
-  margin: 0 1% 20px 1%;
-  padding-bottom: 1em;
-  position: relative;
-  width: 98%;
-/* ######### */
-float: left;
-margin: 0 0 20px 0;
-width: 100%;
+  margin: 0 0 20px 0;
+  padding: 0px 0px 10px 0px;
+  width: 100%;
 }
 .twoColFixLay .floatLeftLabelTitle12 {
   font-size: 1.2em;
@@ -226,10 +245,7 @@ width: 100%;
   float: left;
   font-size: 1.1em;
   font-weight: bold;
-  margin: 20px 0 0 20px;
-  position: relative;
-/* ######### */
-margin: 20px 0 0 0;
+  margin: 20px 0 0 0;
 }
 .twoColFixLay div .navLink a:hover {
   color: #758AB8;

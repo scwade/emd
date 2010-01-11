@@ -1,22 +1,32 @@
 <!-- begin new 'condition' -->
-<div class="labelPageTitle">
-    <p>New - Condition</p>
-</div>
+<h3 class="labelPageTitle"><dfn>New - Condition</dfn></h3>
 
-<div class="formLayout">
+<div class="formLayout10">
   <% form_for(@condition) do |f| %>
-  <%= f.error_messages %>
-</div>
+  <%= f.error_messages -%>
 
-<div class="formLayout">
-  <div class="formInput"><%= f.label :name        %><div><%= f.text_field :name, :size=>90 %></div></div>
-  <div class="formInput"><%= f.label :google_url  %><div><%= f.text_field :google_url, :size=>120 %></div></div>
-  <div class="formInput"><%= f.label :wiki_url    %><div><%= f.text_field :wiki_url, :size=>120 %></div></div>
-  <div class="formInput"><%= f.submit 'Create', :confirm => 'Are you sure?'    %></div>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :size=>90 %>
+  </p>
+
+  <p>
+    <%= f.label :google_url %><br />
+    <%= f.text_field :google_url, :size=>120 %>
+  </p>
+
+  <p>
+    <%= f.label :wiki_url %><br />
+    <%= f.text_field :wiki_url, :size=>120 %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create', :confirm => 'Are you sure?' %>&nbsp;
+    <%= f.submit "Reset", :type => "reset",  :confirm => 'Are you sure?'%>
+  </p>
+
   <% end %>
-</div><!-- end of formLayout -->
+</div><!-- end of formLayout10 -->
 
-<div class="navLink">
-    <%= link_to 'Cancel', conditions_path, :confirm => 'Are you sure?' %>
-</div><!-- end of navLink -->
+<%= link_to 'Index', conditions_path, :class =>"navLink" %>
 <!-- end of 'condition' -->

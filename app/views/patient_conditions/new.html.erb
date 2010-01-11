@@ -1,25 +1,47 @@
 <!-- begin new 'patient condtion' -->
-<div class="labelPageTitle">
-    <p>New - Patient Condition</p>
-</div>
+<h3 class="labelPageTitle"><dfn>New - Patient Condition</dfn></h3>
 
-<div class="formLayout">
+<div class="formLayout10">
   <% form_for(@patient_condition) do |f| %>
-  <%= f.error_messages %>
-</div>
+  <%= f.error_messages -%>
 
-<div class="formLayout">
-  <div class="formInput"><%= f.label :patient_profile_id %><div><%= collection_select(:patient_condition, :patient_profile_id, PatientProfile.all, :id, :first_name ) %></div></div>
-  <div class="formInput"><%= f.label :condition_id       %><div><%= collection_select(:patient_condition, :condition_id, Condition.all, :id, :name )  %></div></div>
-  <div class="formInput"><%= f.label :start_date         %><div><%= f.date_select :start_date, {:start_year=>1800, :end_year=>Time.now.year} %></div></div>
-  <div class="formInput"><%= f.label :end_date           %><div><%= f.date_select :end_date, {:start_year=>1800, :end_year=>Time.now.year} %></div></div>
-  <div class="formInput"><%= f.label :treated_by         %><div><%= f.text_field :treated_by %></div></div>
-  <div class="formInput"><%= f.label :treat_notes        %><div><%= f.text_field :treat_notes %></div></div>
-  <div class="formInput"><%= f.submit 'Create', :confirm => 'Are you sure?' %></div>
+  <p>
+    <%= f.label :patient_profile_id %><br />
+    <%= collection_select(:patient_condition, :patient_profile_id, PatientProfile.all, :id, :first_name ) %>
+  </p>
+
+  <p>
+    <%= f.label :condition_id %><br />
+    <%= collection_select(:patient_condition, :condition_id, Condition.all, :id, :name )  %>
+  </p>
+
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date, {:start_year=>1800, :end_year=>Time.now.year} %>
+  </p>
+
+  <p>
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date, {:start_year=>1800, :end_year=>Time.now.year} %>
+  </p>
+
+  <p>
+    <%= f.label :treated_by %><br />
+    <%= f.text_field :treated_by %>
+  </p>
+
+  <p>
+    <%= f.label :treat_notes %><br />
+    <%= f.text_field :treat_notes %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create', :confirm => 'Are you sure?' %>&nbsp;
+    <%= f.submit "Reset", :type => "reset",  :confirm => 'Are you sure?'%>
+  </p>
+
   <% end %>
-</div><!-- end of formLayout -->
+</div><!-- end of formLayout10 -->
 
-<div class="navLink">
-    <%= link_to 'Cancel', patient_conditions_path, :confirm => 'Are you sure?' %>
-</div><!-- end of navLink -->
+  <%= link_to 'Index', patient_conditions_path, :class => "navLink" %>
 <!-- end of 'patient condtion' -->

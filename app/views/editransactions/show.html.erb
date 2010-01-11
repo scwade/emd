@@ -1,23 +1,47 @@
 <!-- begin show 'editransaction' -->
-<div class="labelPageTitle">
-    <p>Electronic Data Interchange Transaction</p>
-</div>
+<h3 class="labelPageTitle"><dfn>Electronic Data Interchange Transaction</dfn></h3>
 
 <div class="formLayout">
-  <div class="formLabel ">Transaction #:</div>
+  <div class="formLabel ">TRANSACTION #:</div>
+  <div class="formData"><%=h @editransaction.id %></div>
+  <div class="formLabel ">ISA01:</div>
   <div class="formData"><%=h @editransaction.isa01 %></div>
-  <div class="formLabel ">Field One:</div>
-  <div class="formData"><%=h @editransaction.isa01 %></div>
-  <div class="formLabel ">Field Two:</div>
-  <div class="formData"><%=h @editransaction.isa02 %></div> 
-  <div class="formLabel ">Field Three:</div>
-  <div class="formData"><%=h @editransaction.isa03 %></div>
+  <div class="formLabel ">ISA02:</div>
+  <div class="formData"><%=h @editransaction.isa02 %></div>
+  <div class="formLabel ">ISA03:</div>
+  <div class="formData"><%=h @editransaction.isa03 %></div> 
+  <div class="formLabel ">ISA04:</div>
+  <div class="formData"><%=h @editransaction.isa04 %></div>
+  <div class="formLabel ">ISA05:</div>
+  <div class="formData"><%=h @editransaction.isa05 %></div>
+  <div class="formLabel ">ISA06:</div>
+  <div class="formData"><%=h @editransaction.isa06 %></div>
+  <div class="formLabel ">ISA07:</div>
+  <div class="formData"><%=h @editransaction.isa07 %></div> 
+  <div class="formLabel ">ISA08:</div>
+  <div class="formData"><%=h @editransaction.isa08 %></div>
+  <div class="formLabel ">ISA09:</div>
+  <div class="formData"><%=h @editransaction.isa09 %></div>
+  <div class="formLabel ">ISA10:</div>
+  <div class="formData"><%=h @editransaction.isa10 %></div>
+  <div class="formLabel ">ISA11:</div>
+  <div class="formData"><%=h @editransaction.isa11 %></div> 
+  <div class="formLabel ">ISA12:</div>
+  <div class="formData"><%=h @editransaction.isa12 %></div>
+  <div class="formLabel ">ISA13:</div>
+  <div class="formData"><%=h @editransaction.isa13 %></div>
+  <div class="formLabel ">ISA14:</div>
+  <div class="formData"><%=h @editransaction.isa14 %></div>
+  <div class="formLabel ">ISA15:</div>
+  <div class="formData"><%=h @editransaction.isa15 %></div> 
+  <div class="formLabel ">ISA16:</div>
+  <div class="formData"><%=h @editransaction.isa16 %></div>
 </div><!-- end of formLayout -->
 
 <br />
 
 <div class="navLink">
   <%= link_to 'Edit', edit_editransaction_path(@editransaction) %> |
-  <%= link_to 'Back', editransactions_path %>
+  <%= link_to 'Index', editransactions_path %>
 </div><!-- end of navLink -->
 <!-- end of 'editransaction' -->

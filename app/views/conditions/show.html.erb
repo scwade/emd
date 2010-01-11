@@ -1,7 +1,5 @@
 <!-- begin show 'condition' -->
-<div class="labelPageTitle">
-    <p>Condition</p>
-</div>
+<h3 class="labelPageTitle"><dfn>Condition</dfn></h3>
 
 <div class="formLayout">
   <div class="formLabel">ID:</div>
@@ -19,12 +17,13 @@
 </div><!-- end of formLayout -->
 <br />
 <div class="navLink">
-  <%= link_to 'Edit', edit_condition_path(@condition) %> |
-  <%= link_to 'Back', conditions_path %>
+    <%= link_to 'Edit', edit_condition_path(@condition) %> | 
+    <%= link_to 'Index', conditions_path %>
+</div><!-- end of navLink -->
+
 <!-- not support yet 
   <div class="indent" style="display: inline">
       <%= link_to 'Destroy', condition_path(@condition.id), :confirm => 'Are you sure?', :method => :delete %>
   </div>
 -->
-</div><!-- end of navLink -->
 <!-- end of 'condition' -->

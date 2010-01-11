@@ -1,8 +1,6 @@
 <!-- begin index 'user' -->
 <% javascript 'show_record' %>
-<div class="labelPageTitle">
-    <p>User Accounts</p>
-</div>
+<h3 class="labelPageTitle"><dfn>User Accounts</dfn></h3>
 
 <div class="tableLayout">
   <table cellspacing="0" cellpadding="1px">
@@ -52,7 +50,5 @@
   </table>
 </div><!-- end of tableLayout -->
 
-<div class="navLink">
-  <%= link_to 'New User', new_user_path %>
-</div><!-- end of navLink -->
+<%= link_to 'New User', new_user_path, :class=>"navLink" %>
 <!-- end of 'user' -->

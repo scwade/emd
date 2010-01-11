@@ -1,24 +1,20 @@
 <!-- begin show 'patient profile' -->
-<div class="labelPageTitle">
-    <p>Patient Profile</p>
-</div>
+<h3 class="labelPageTitle"><dfn>Patient Profile</dfn></h3>
 
-<div class="labelTitle18">
-    <p>Patient ID's:</p>
-</div>
+<div class="formLayout20">
+  <h4 class="clearBoth">
+    <dfn>Patient ID's:</dfn>
+  </h4><br />
 
-<div class="formLayout10">
-  <div class="floatLeftLabelTitle12">Patient ID:</div>
+  <div class="formLabel">Patient ID:</div>
   <div class="formData"><%=h @patient_profile.pmd_patient_id %></div>
-  <div class="floatLeftLabelTitle12">User ID:</div>
+  <div class="formLabel">User ID:</div>
   <div class="formData"><%=h @patient_profile.pmd_user_id%></div>
-</div>
 
-<div class="labelTitle18">
-    <p>Contact Information:</p>
-</div>
+  <h4 class="clearBoth">
+    <br /><dfn>Contact Information:</dfn>
+  </h4><br />
 
-<div class="formLayout10">
   <div class="formLabel">Primary Physician:</div>
   <div class="formData"><%=h @patient_profile.physician_id %></div>
   <div class="formLabel">First Name:</div>
@@ -60,9 +56,9 @@
   <%= link_to 'Edit', edit_patient_profile_path(@patient_profile.id) %> | 
   <%= link_to "Back", patient_profiles_path %> |
   <% if @patient_profile.active_patient.equal? true %>
-    <div class="indent10" style="display: inline; color: red;"><%= link_to 'Disable', patient_profile_path(@patient_profile.id), :method => :delete %></div> 
+    <%= link_to 'Disable', patient_profile_path(@patient_profile.id), :method => :delete %></div> 
   <% else %>
-    <div class="indext10" style="display: inline; color: green;"><%= link_to 'Enable', patient_profile_path(@patient_profile.id), :method => :delete %></div> 
+    <%= link_to 'Enable', patient_profile_path(@patient_profile.id), :method => :delete %></div> 
   <% end %>
 </div><!-- end of navLink -->
 <!-- end of 'patient profile' -->

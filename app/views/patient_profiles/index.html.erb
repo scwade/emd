@@ -1,8 +1,6 @@
 <!-- begin index 'patient profile' -->
 <% javascript 'show_record' %>
-<div class="labelPageTitle">
-    <p>Patient Profile Records</p>
-</div>
+<h3 class="labelPageTitle"><dfn>Patient Profile Records</dfn></h3>
 
 <div class="tableLayout">
   <table cellspacing="0" cellpadding="0">
@@ -45,7 +43,5 @@
   </table>
 </div><!-- end of tableLayout -->
 
-<div class="navLink">
-  <%= link_to 'New Patient Proifle', new_patient_profile_path %>
-</div><!-- end of navLink -->
+<%= link_to 'New Patient Proifle', new_patient_profile_path, :class => "navLink" %>
 <!-- end of 'patient profile' -->

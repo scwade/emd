@@ -1,9 +1,7 @@
 <!-- begin show 'user' -->
-<div class="labelPageTitle">
-    <p>User Account</p>
-</div>
+<h3 class="labelPageTitle"><dfn>User Account</dfn></h3>
 
-<div class="formLayout">
+<div class="formLayout10">
   <div class="formLabel">User ID:</div>
   <div class="formData"><%= h @user.id %></div>
   <div class="formLabel ">Login Name:</div>
@@ -42,9 +40,8 @@
 
 <div class="navLink">
   <%= link_to 'Edit', edit_user_path(@user) %>  | 
-  <%= link_to 'Back', users_path %> |
-  <div class="indent" style="display: inline">
-      <%= link_to 'Delete', user_path(@user.id), :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to 'Index', users_path %> |
+  <%= link_to 'Delete', user_path(@user.id), :confirm => 'Are you sure?', :method => :delete %>
   </div>
 </div><!-- end of navLink -->
 <!-- end of 'user' -->

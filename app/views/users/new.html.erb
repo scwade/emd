@@ -1,13 +1,5 @@
 <!-- begin new 'user' -->
-
-<div class="labelPageTitle">
-    <p>New - User Account</p>
-</div>
-
-<%= render :partial => 'login_form' %>
-
-<div class="navLink">
-  <%= link_to 'Cancel', users_path, :confirm => 'Are you sure?' %>
-  </div>
-</div><!-- end of navLink -->
+<h3 class="labelPageTitle"><dfn>New - User Account</dfn></h3>
+  <%= render :partial => 'login_form' %>
+  <%= link_to 'Index', users_path, :class => "navLink" %>
 <!-- end of 'user' -->
