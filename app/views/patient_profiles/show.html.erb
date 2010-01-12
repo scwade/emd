@@ -1,9 +1,9 @@
 <!-- begin show 'patient profile' -->
-<h3 class="labelPageTitle"><dfn>Patient Profile</dfn></h3>
+<h3 class="labelPageTitle">Patient Profile</h3>
 
 <div class="formLayout20">
   <h4 class="clearBoth">
-    <dfn>Patient ID's:</dfn>
+    Patient ID's:
   </h4><br />
 
   <div class="formLabel">Patient ID:</div>
@@ -12,7 +12,7 @@
   <div class="formData"><%=h @patient_profile.pmd_user_id%></div>
 
   <h4 class="clearBoth">
-    <br /><dfn>Contact Information:</dfn>
+    <br />Contact Information:
   </h4><br />
 
   <div class="formLabel">Primary Physician:</div>
@@ -54,7 +54,7 @@
 <br />
 <div class="navLink">
   <%= link_to 'Edit', edit_patient_profile_path(@patient_profile.id) %> | 
-  <%= link_to "Back", patient_profiles_path %> |
+  <%= link_to "Index", patient_profiles_path %> |
   <% if @patient_profile.active_patient.equal? true %>
     <%= link_to 'Disable', patient_profile_path(@patient_profile.id), :method => :delete %></div> 
   <% else %>

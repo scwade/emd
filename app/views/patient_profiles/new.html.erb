@@ -1,23 +1,22 @@
 <!-- begin new 'patient profile' -->
 <% javascript 'dynamic_states' %>
-<h3 class="labelPageTitle"><dfn>New - Patient Profile</dfn></h3>
+<h3 class="labelPageTitle">New - Patient Profile</h3>
 
 <div class="formLayout20">
   <h4 class="clearBoth">
-    <dfn>Patient ID's:</dfn>
+    Patient ID's:
   </h4><br />
 
   <% form_for @patient_profile do |f| %>
-  <div class="formLabel">Patient ID:</div>
-  <div class="formData"><%=h @patient_profile.pmd_patient_id %></div>
-  <div class="formLabel">User ID:</div>
-  <div class="formData"><%=h @patient_profile.pmd_user_id%></div>
+  <div class="formTitle"><%= f.label "Patient ID:" %>
+  <div class="formTitleInput"><%= f.text_field :pmd_patient_id, :size=>10, :class=>"formTitleInput", :readonly=>:readonly, :disabled=>:disabled %></div></div>
+  <div class="formTitle1"><%= f.label "User ID:" %>
+  <div class="formTitleInput"><%= f.text_field :pmd_user_id, :size=>10, :class=>"formTitleInput", :readonly=>:readonly, :disabled=>:disabled %></div></div>
 
   <h4 class="clearBoth">
-    <br /><dfn>Contact Information:</dfn>
+    <br />Contact Information:
   </h4><br />
   <%=error_messages_for(:patient_profile) %>
-
 
   <div class="formInput">
       <%= f.label :physician_id %><br />
@@ -40,7 +39,6 @@
   <div class="formInput"><%= f.label (:primary_address).titlecase %><div><%= f.text_field :primary_address, :size=> 40 %></div></div>
   <div class="formInputNext"><%= f.label (:alternate_address).titlecase + ' ( Apt#, P.O. Box )' %><div><%= f.text_field :alternate_address, :size=> 40 %></div></div>
 
-
   <div class="formInput"><%= f.label (:city).titlecase %><div><%= text_field_with_auto_complete :patient_profile, :city,
        { :size=>32 },
        { :min_chars=>3, :skip_style => true,
@@ -50,9 +48,10 @@
   <div class="formInputNext"><%= f.label (:zip5).titlecase %><div><%= f.text_field :zip5, :size=> 7 %></div></div>
   <div class="formInputNext"><%= f.label (:zip4).titlecase %><div><%= f.text_field :zip4, :size=> 6 %></div></div>
 
-
-  <div class="formInput">Ethnicity: <br /><%= @e = ReferenceEthnicity.find(:all, :order => "description").map { |u| [u.description, u.description] }
-                      f.select(:ethnicity, @e, {:selected=>@patient_profile.ethnicity} ) %></div>
+  <div class="formInput"><%= f.label (:ethnicity).titlecase %>
+    <% @e = ReferenceEthnicity.find(:all, :order => "description").map { |u| [u.description, u.description] } %>
+    <div><%= f.select(:ethnicity, @e, {:selected=>@patient_profile.ethnicity} ) %></div>
+  </div>
 
   <div class="formInput">
     <b>Gender:</b>
@@ -68,7 +67,7 @@
       <%= f.submit 'Create', :confirm => 'Are you sure?' %>&nbsp;
       <%= f.submit 'Reset', :type => 'reset',  :confirm => 'Are you sure?'%>
   </div>
+  <%= link_to 'Index', patient_profiles_path, :class =>"navLink" %> 
   <% end %>
 </div><!-- end of formLayout20 -->
-<%= link_to 'Index', patient_profiles_path, :class =>"navLink" %> 
 <!-- end of 'patient profile' -->

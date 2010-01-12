@@ -1,10 +1,12 @@
 <!-- new user account -->
-<h3 class="labelPageTitle"><dfn>New - User Session<dfn></h3>
+<h3 class="labelPageTitle">New - User Session</h3>
 
 
 <div class="formLayout10">
   <% form_for(@user_session) do |f| -%>
   <%= f.error_messages -%>
+
+  <h4>User (option 1)</h4>
 
   <p>
     <%= f.label :username %><br />
@@ -21,8 +23,14 @@
   </p>
 
   <p><%= link_to "Forgot password?", new_password_reset_path %></p>  
+
+  <p>
+    <%= f.submit 'Submit', :confirm => 'Are you sure?' %>&nbsp;
+    <%= f.submit "Reset", :type => "reset",  :confirm => 'Are you sure?'%>
+  </p>
   
-  <h4>Or use OpenID</h4>
+  <br />
+  <h4>OpenID (option 2)</h4>
 
   <p>
     <%= f.label :openid_identifier, "OpenID URL" %><br />

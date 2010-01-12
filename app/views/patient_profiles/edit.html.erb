@@ -1,10 +1,10 @@
 <!-- begin edit 'patient profile' -->
 <% javascript 'dynamic_states' %>
-<h3 class="labelPageTitle"><dfn>Edit - Patient Profile</dfn></h3>
+<h3 class="labelPageTitle">Edit - Patient Profile</h3>
 
 <div class="formLayout20">
   <h4 class="clearBoth">
-    <dfn>Patient ID's:</dfn>
+    Patient ID's:
   </h4><br />
 
   <% form_for @patient_profile do |f| %>
@@ -14,10 +14,9 @@
   <div class="formData"><%=h @patient_profile.pmd_user_id%></div>
 
   <h4 class="clearBoth">
-    <br /><dfn>Contact Information:</dfn>
+    <br />Contact Information:
   </h4><br />
   <%=error_messages_for(:patient_profile) %>
-
 
   <div class="formInput">
       <%= f.label :physician_id %><br />
@@ -29,17 +28,17 @@
   <div class="formInput" ><%= f.label (:first_name).titlecase %><div><%= f.text_field :first_name, :size=>32%></div></div>
   <div class="formInputNext"><%= f.label (:last_name).titlecase %><div><%= f.text_field :last_name, :size=>32 %></div></div>
   <div class="formInput" ><%= f.label (:email).titlecase %><div><%= f.text_field :email, :size=> 32 %></div></div>
-  <div class="formInputNext"><%= f.label (:email_confirmation).titlecase %><div><%= f.text_field :email_confirmation, :size=> 32 %></div></div>
+  <div class="formInputNext"><%= f.label (:email_confirmation).titlecase %><div><% @v = @patient_profile.email %>
+    <%= f.text_field :email_confirmation, :size=> 32, :value => @v %></div></div>
 
-  <div class="formInput"><%= f.label 'Home' %><div><%= f.text_field :phone_home, :size=> 9, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Mobile' %><div><%= f.text_field :phone_mobile, :size=> 9, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Work' %><div><%= f.text_field :phone_work, :size=> 9, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Fax' %><div><%= f.text_field :phone_fax, :size=> 9, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Emergency' %><div><%= f.text_field :phone_emergency, :size=> 9, :maxlength=>10 %></div></div>
+  <div class="formInput"><%= f.label 'Home' %><div><%= f.text_field :phone_home, :size=> 10, :maxlength=>10 %></div></div>
+  <div class="formInputNext"><%= f.label 'Mobile' %><div><%= f.text_field :phone_mobile, :size=> 10, :maxlength=>10 %></div></div>
+  <div class="formInputNext"><%= f.label 'Work' %><div><%= f.text_field :phone_work, :size=> 10, :maxlength=>10 %></div></div>
+  <div class="formInputNext"><%= f.label 'Fax' %><div><%= f.text_field :phone_fax, :size=> 10, :maxlength=>10 %></div></div>
+  <div class="formInputNext"><%= f.label 'Emergency' %><div><%= f.text_field :phone_emergency, :size=> 10, :maxlength=>10 %></div></div>
 
   <div class="formInput"><%= f.label (:primary_address).titlecase %><div><%= f.text_field :primary_address, :size=> 40 %></div></div>
   <div class="formInputNext"><%= f.label (:alternate_address).titlecase + ' ( Apt#, P.O. Box )' %><div><%= f.text_field :alternate_address, :size=> 40 %></div></div>
-
 
   <div class="formInput"><%= f.label (:city).titlecase %><div><%= text_field_with_auto_complete :patient_profile, :city,
        { :size=>32 },
@@ -50,9 +49,10 @@
   <div class="formInputNext"><%= f.label (:zip5).titlecase %><div><%= f.text_field :zip5, :size=> 7 %></div></div>
   <div class="formInputNext"><%= f.label (:zip4).titlecase %><div><%= f.text_field :zip4, :size=> 6 %></div></div>
 
-
-  <div class="formInput">Ethnicity: <br /><%= @e = ReferenceEthnicity.find(:all, :order => "description").map { |u| [u.description, u.description] }
-                      f.select(:ethnicity, @e, {:selected=>@patient_profile.ethnicity} ) %></div>
+  <div class="formInput"><%= f.label (:ethnicity).titlecase %>
+    <% @e = ReferenceEthnicity.find(:all, :order => "description").map { |u| [u.description, u.description] } %>
+    <div><%= f.select(:ethnicity, @e, {:selected=>@patient_profile.ethnicity} ) %></div>
+  </div>
 
   <div class="formInput">
     <b>Gender:</b>
@@ -65,10 +65,11 @@
   </div></div>
 
   <div class="formButton"><%= f.submit 'Update', :confirm => 'Are you sure?' %></div>
-</div><!-- end of formLayout20 -->
-  <% end %>
-<div class="navLink">
+
+  <div class="navLink">
     <%= link_to 'Back', @patient_profile %> |
     <%= link_to 'Index', patient_profiles_path %>
-</div><!-- end of navLink -->
+  </div><!-- end of navLink -->
+  <% end %>
+</div><!-- end of formLayout20 -->
 <!-- end of 'patient profile' -->

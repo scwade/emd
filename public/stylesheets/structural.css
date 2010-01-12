@@ -12,9 +12,17 @@
 	-ms-filter: "alpha(opacity=90)";
   opacity: 0.9;
 }
+.opaque85 {
+	-ms-filter: "alpha(opacity=85)";
+  opacity: 0.85;
+}
 .opaque80 {
 	-ms-filter: "alpha(opacity=80)";
   opacity: 0.8;
+}
+.opaque75 {
+	-ms-filter: "alpha(opacity=75)";
+  opacity: 0.75;
 }
 .opaque70 {
 	-ms-filter: "alpha(opacity=70)";

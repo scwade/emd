@@ -13,13 +13,11 @@
   border: inset .23em #ECF0F9;
   left: 0px !important;
   overflow-y: auto;
-  top: 0px !important;
+  top: 5px !important;
   position:relative !important;
   z-index: 100;
 }
 .twoColFixLay div.auto_complete ul {
-  margin: 0;
-  padding: 0;
   height: 100%;
   max-height: 100px;
 }
@@ -33,7 +31,6 @@
   height: auto;
   list-style-type: none;
   line-height: 1.3em;
-  margin-left: .3em;
 }
 
 /* Error rules
@@ -101,20 +98,6 @@
 .twoColFixLay div.formLayout20 {
   margin-left: 20px;
 }
-/*
-.twoColFixLay div.formLayout1 {
-  clear: left;
-  float: left;
-  margin: 5px 0 5px 10px;
-  position: relative;
-}
-.twoColFixLay div.formLayout2 {
-  display: inline;
-  float: left;
-  margin: 5px 0 5px 10px;
-  position: relative;
-}
-*/
 .twoColFixLay input, select {
   border: 1px inset #C4D1EB;
 }
@@ -157,21 +140,26 @@
 .twoColFixLay div.formData {
   margin-left: 8px;
   overflow: auto;
-  width: 800px;
+  width: 600px;
 }
+/* Only new patient profile */
 .twoColFixLay div.formTitle, .twoColFixLay div.formTitle1 {
-  clear: both;
-  float: left;
-  font-size: 1.8em;
-  font-weight: normal;
-  height: auto;
-  margin: 0px 0px 10px 15px;
-  position: relative;
-  text-align: right;
-  width: auto;
+  clear: left;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.twoColFixLay div.formTitle {
+  text-indent: 58px;
 }
 .twoColFixLay div.formTitle1 {
-  margin: 0 0 0 10px;
+  text-indent: 74px;
+}
+.twoColFixLay div.formTitleInput {
+  display: inline;
+  margin-left: 8px;
+}
+.twoColFixLay div.formTitleInput + .twoColFixLay input {
+  font-size: 1.2em;
 }
   
 /* Radio Button */
@@ -191,49 +179,15 @@
 *   
 *  Notes: For all views
 */
-.twoColFixLay .floatLeftLabel, .twoColFixLay .floatLeftLabelTitle12, .twoColFixLay .floatLeftLabelTable14, .twoColFixLay .labelTitle18 {
-  clear: left;
-  float: left;
-  font-weight: bold;
-  height: 20px;
-  position: relative;
-  text-align: right;
-  width: 130px;
-}
 .twoColFixLay .labelPageTitle {
   border-bottom: 2px solid #262262;
   clear: both;
   float: left;
   font-weight: lighter;
   height: 30px; 
-/*  _height: 50px;*/
   margin: 0 0 20px 0;
   padding: 0px 0px 10px 0px;
   width: 100%;
-}
-.twoColFixLay .floatLeftLabelTitle12 {
-  font-size: 1.2em;
-}
-.twoColFixLay .floatLeftLabelTitle14 {
-  font-size: 1.4em;
-}
-.twoColFixLay .labelTitle18 {
-  font-size: 1.8em;
-  font-weight: normal;
-  height: auto;
-  margin: 0px 0px 10px 15px;
-  width: auto;
-}
-.twoColFixLay .floatLeftLabel {
-  font-size: 1.1em;
-}
-.twoColFixLay .floatLeftData {
-  float: left;
-  font-size: 1.1em;
-  margin-left: 8px;
-  overflow: auto;
-  position: relative;
-  width: 800px;
 }
 
 /* navLink rules
