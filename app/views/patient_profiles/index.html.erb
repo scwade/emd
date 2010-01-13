@@ -24,7 +24,7 @@
       <div class="patientProfileTableWidth" id="mainScrollWindowData">
       <% row=1 %>
         <% @patient_profiles.each do |patient_profile| %>
-        <% @color = "color: red" unless patient_profile.active_patient.equal? true %>
+        <% (patient_profile.active_patient.equal? false ) ? @color = "color: red" : @color = "#262262" %>
         <div class="mainDataRow" id="<%= 'row' + row.to_s %>" style="<%= @color %>" >
           <div id="<%= 'row' + row.to_s + 'col' + (col= 0).to_s %>" class="patientProfileCol0"><%= h patient_profile.id %></div>
           <div id="<%= 'row' + row.to_s + 'col' + (col+=1).to_s %>" class="patientProfileCol1"><%= h patient_profile.first_name %></div>
