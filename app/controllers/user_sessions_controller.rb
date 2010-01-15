@@ -13,8 +13,8 @@ class UserSessionsController < ApplicationController
     @user_session.save do |result|
       if result
         flash[:notice] = "Successfully logged in."
-        ###redirect_to root_url
-        redirect_to user_path( User.find_by_username(@user_session.username).id )
+        redirect_to root_url
+        ###redirect_to user_path( User.find_by_username(@user_session.username).id )
       else
         render :action => 'new'
       end
