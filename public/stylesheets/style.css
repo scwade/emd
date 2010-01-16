@@ -37,9 +37,12 @@
 *   
 *  Notes: For all forms
 */
-.twoColFixLay .fieldWithErrors label { 
+.twoColFixLay .fieldWithErrors {
   margin: 0;
   padding: 0;
+  display: inline;
+}
+.twoColFixLay .fieldWithErrors label { 
   float: left; 
 }
 .twoColFixLay .fieldWithErrors input, .fieldWithErrors select {
@@ -158,8 +161,8 @@
   display: inline;
   margin-left: 8px;
 }
-.twoColFixLay div.formTitleInput + .twoColFixLay input {
-  font-size: 1.2em;
+.twoColFixLay div.formTitleInput input {
+  background-color: #E9EAEB;
 }
   
 /* Radio Button */

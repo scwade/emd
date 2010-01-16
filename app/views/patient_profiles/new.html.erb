@@ -9,9 +9,9 @@
 
   <% form_for @patient_profile do |f| %>
   <div class="formTitle"><%= f.label "Patient ID:" %>
-  <div class="formTitleInput"><%= f.text_field :pmd_patient_id, :size=>10, :class=>"formTitleInput", :readonly=>:readonly, :disabled=>:disabled %></div></div>
+  <div class="formTitleInput"><%= f.text_field :pmd_patient_id, :size=>10, :readonly=>:readonly %></div></div>
   <div class="formTitle1"><%= f.label "User ID:" %>
-  <div class="formTitleInput"><%= f.text_field :pmd_user_id, :size=>10, :class=>"formTitleInput", :readonly=>:readonly, :disabled=>:disabled %></div></div>
+  <div class="formTitleInput"><%= f.text_field :pmd_user_id, :size=>10, :readonly=>:readonly %></div></div>
 
   <h4 class="clearBoth">
     <br />Contact Information:
