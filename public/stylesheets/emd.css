@@ -43,6 +43,19 @@
 *    () Add equal margins to top and bottom of paragraph tag to avoid margin collapsing.
 *       p { margin: 1em 0; }
 *    () Do not underline to underline a:links until a:hover. 
+*    () Color Associations
+*       Color             Emotional Associations
+*       Red               assertive, powerful, intense
+*       Blue              consoling, fidelity, defense
+*       Yellow            concern, rebirth, clarity
+*       Green             wealth, fitness, food, nature
+*       Brown             nature, maturity, wisdom
+*       Orange            hospitality, exhilaration, vigor
+*       Pink              vital, innocent, feminine
+*       Purple            royalty, refinement, calm
+*       Black             stark, stylish, somber
+*       Gray              business-like, cool, detached
+*       White             clean, pure, straightforward
 *
 *   Layout Notes
 *    () IE doesn't support the global (*) rule, so default.css sets all block
