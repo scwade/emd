@@ -16,11 +16,19 @@
 */
 
 body {
- /* background: #ECF0F9 url("../images/background.jpg");*/ /* For sailboat */
- /* background: #000    url("../images/background.jpg");*/ /* For san francisco & sunflower */
- /* background: #ECF0F9;*/ /* no background image */
-  background: #ECF0F9;
+/* Use short hand later
+*  background: color image repeat attachment position
+*  background: #000 url("../images/background.jpg") no-repeat fixed top left;
+*/ 
+
+ /* development convenience */
+  background-color: #ECF0F9;
+  background-color: transparent;
+  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top left;
+
   color: #262262;
   font: 62.5%/120% Verdana, Tahoma, Arial, sans-serif;
   margin: 0;
@@ -83,7 +91,7 @@ body {
 *    () "clear:both" to keep objects from floating on either side
 */
 .twoColFixLay #footer {
-  background-color: #C4D1EB;
+  background: #C4D1EB;
   bottom: 0px;
   clear: both;
   color: #262262;

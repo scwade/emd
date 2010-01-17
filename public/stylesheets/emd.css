@@ -42,7 +42,7 @@
 *    () Paragraph spacing; line height x 0.75.
 *    () Add equal margins to top and bottom of paragraph tag to avoid margin collapsing.
 *       p { margin: 1em 0; }
-*    () Do not underline to underline a:links until a:hover. 
+*    () Do not underline a:links until a:hover. 
 *    () Color Associations
 *       Color             Emotional Associations
 *       Red               assertive, powerful, intense
