@@ -63,11 +63,15 @@ body {
   font: small-caps 280% Verdana, Tahoma, Arial, sans-serif;
   text-align: center;
 }
-.twoColFixLay #logo {
-  height: 10px;
+.twoColFixLay #logo h3 {
+  background: transparent url("../images/logo-header.png") no-repeat 0 0;
+  height: 40px;
   left: 10px;
+  line-height: 120px; /* Text replacement technique */
+  overflow: hidden;
   position: absolute; /* Parent = #banner */
   top: 10px;
+  width: 200px;
   z-index: 100;
 }
 
