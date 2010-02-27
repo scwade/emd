@@ -1,6 +1,6 @@
 div.tableLayout {
   clear: both;
-  padding: 10px 0px 0px 15px;
+/*  padding: 10px 0px 0px 15px; */
 }
 .mainScrollWindowHeader {
   height: 1.5em;
@@ -25,11 +25,11 @@ div.tableLayout {
 }
 #mainScrollWindowData, #mainScrollWindowData1 {
 /* Adjust max-height with resize */
-  max-height: 300px;
+  max-height: 24.8em;
 /* ----------------------------- */
   overflow: scroll;
   overflow-x: hidden;
-  background: #ECF0F9;
+  background: #ECF0F9; background: transparent;
   cursor: pointer;
 }
 #mainScrollWindowData1 {

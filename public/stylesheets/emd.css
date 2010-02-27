@@ -74,7 +74,7 @@
 @import url(default.css);
 
 /* wireframe */
-@import url(wireframe.css);
+@import url(gui/two_column_layout.css);
 
 /* styles */
 @import url(style.css);
@@ -90,5 +90,3 @@
 @import url(tables/patient_profile_table.css);
 @import url(tables/user_table.css);
 
-/* structural class names for development */
-@import url(structural.css);

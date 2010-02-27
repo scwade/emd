@@ -1,0 +1,433 @@
+/* twoColHybLay design pattern
+*  Date: 02/19/2010
+*
+*  Psuedo namespace class on body element
+*    .twoColFixLay = (two column fixed layout )
+*
+*  Best practice (body)
+*    () font-family = linked fonts, web safe fonts, core web fonts, generic fonts
+*        x linked font not used for current design
+*        - Verdana = web safe, core, generic sans-serif
+*        - Tahoma = web safe, generic sans-serif
+*        - Arial = web safe, core, generic sans-serif
+*    () Normalize font em calulations by setting font size to 10px (62.5%) 
+*       i.e. 2em = 20px
+*    () Specify background-color with image in case image doesn't render
+*/
+
+/* Begin - 02/08/10
+*
+*/
+  .clearBoth { clear: both; }
+
+	html { overflow: auto; }
+	
+	body {
+		background-color: #ECF0F9;
+		color: #262262;
+		font: 62.5% verdana, tahoma, 'times new roman', serif;
+		line-height: 130%;
+		text-align: center;
+	}
+
+/* Layout
+*
+*/
+	.twoColHybLay #wrapper, .twoColHybLay #statusBar, .twoColHybLay #menuBar, .twoColHybLay #header {
+		margin: 0 auto;
+		margin-top: 1.3em;
+		max-width: 1600px;
+		min-width: 980px; min-width: 1240px;
+	}
+
+	.twoColHybLay #wrapper {
+		margin-bottom: 8em;
+		min-height: 700px;
+		position: relative;
+		text-align: left;
+	}
+
+	.twoColHybLay #header, .twoColHybLay #footer {
+		clear: both;
+		height: 6em;
+		min-width: 980px;
+		overflow: hidden;
+		width: 100%;
+	}
+
+  .twoColHybLay #menuBar {
+    background: transparent url('../../images/menu-bar.png') no-repeat scroll center top;
+    height: 3em;
+    text-align: center;
+  }
+
+	.twoColHybLay #statusBar {
+		height: 2.4em;
+    line-height: 160%;
+    position: relative;
+		text-align: right;
+    width: 100%;
+	}
+
+	.twoColHybLay #content, .twoColHybLay #contentFilter, .twoColHybLay #contentImage {
+		height: 100%;
+		position: absolute;
+		width: 100%;
+	}
+
+	.twoColHybLay #content {
+		display: block;
+		z-index: 102;
+	}
+
+	.twoColHybLay #contentFilter {
+		z-index: 101;
+	}
+
+	.twoColHybLay #contentImage {
+		display: block;
+		z-index: 100;
+	}
+
+	.twoColHybLay #side, .twoColHybLay #sideFilter, .twoColHybLay #main, .twoColHybLay #mainFilter {
+		height: 91%;
+	}
+
+	.twoColHybLay #side, .twoColHybLay #sideFilter {
+		float: left;
+		margin: 10px;
+		padding: 20px;
+		position: absolute;
+		width: 14em;
+		width: 12em; /* Late change */
+	}
+
+	.twoColHybLay #side {
+		padding-top: 6em;
+		z-index: 111;
+	}
+
+	.twoColHybLay #sideFilter {
+		z-index: 110;
+	}
+
+  .twoColHybLay .navFilter {
+    height: 25em;
+    position: absolute;
+    width: 12em;
+    z-index: 120;
+  }
+
+  .twoColHybLay .navLinks ul {
+    display: block;
+    position: relative;
+    z-index: 121;
+  }
+	
+  .twoColHybLay #navLinks li:hover {
+		background: #ECF0F9;
+		cursor: pointer;
+	}
+
+	.twoColHybLay #navLinks li:active {
+		background: #C4D1EB;
+	}
+
+	.twoColHybLay #main, .twoColHybLay #mainFilter {
+		left: 250px;
+		left: 220px; /* Late change */
+		margin: 10px 8px 10px 0;
+		padding: 20px 0 20px 20px;
+		position: absolute;
+		right: 2px;
+		z-index: 111;
+	}
+
+	.twoColHybLay #main {
+		z-index: 111;
+	}
+
+	.twoColHybLay #mainFilter {
+		z-index: 110;
+	}
+
+	.twoColHybLay #copy, .twoColHybLay #copyFilter {
+		float: left; 
+		margin: 0 auto;
+		overflow: auto;
+	}
+
+	.twoColHybLay #copy {
+		/*border: 1px inset #758AB8;*/
+		height: 562px;
+		position: absolute; position: relative;
+		width: 98%;
+		z-index: 106;
+	}
+
+	.twoColHybLay #copy:hover {
+		background: #ECF0F9;
+	}
+
+	.twoColHybLay #copyFilter {
+		height: 562px;
+		position: absolute;
+		width: 96.5%;
+		z-index: 105;
+	}
+
+	.twoColHybLay .copyData {
+		float: left;
+    padding: 1.5em 2.5em;
+		width: 95%;
+	}
+
+	.twoColHybLay #footer {
+		background: #C4D1EB;
+		bottom: 0px;
+	}
+
+
+/* Header content
+*
+*/
+
+	.twoColHybLay #logo, .twoColHybLay #title, .twoColHybLay #clock {
+		height: 100%;
+	}
+
+	.twoColHybLay #logo { 
+		float: left;
+		text-align: left;
+		width: 21%;
+	}
+
+	.twoColHybLay #logoImage {
+		background: transparent url('../../images/logo-header.png') no-repeat scroll 1em 1em;
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+
+	.twoColHybLay #title {
+		float: left;
+		width: 58%;
+	}
+
+	.twoColHybLay #title h2 {
+    color: #262262;
+    font-variant: small-caps;
+		font-weight: normal;
+		line-height: 240%;
+    text-align: center;
+		
+	}
+
+	.twoColHybLay #clock {
+		float: right;
+		font-size: 1.1em;
+		font-weight: bold;
+		line-height: 130%;
+		text-align: left;
+		width: 21%;
+	}
+
+	.twoColHybLay #headerClock {
+		float: right;
+		margin-right: 1em;
+		margin-top: 1.5em;
+	}
+	
+/* menuBar Style rules
+*
+*/
+
+  .twoColHybLay #menuBar ul {
+    margin-left: 4em;
+  }
+
+  .twoColHybLay #menuBar li {
+    color: #C4D1EB;
+    display: block;
+    float: left;
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 200%;
+    padding: 0 1em;
+    position: relative;
+  } 
+
+  .twoColHybLay #menuBar li:hover {
+    background: #758AB8;
+    color: white;
+    cursor: pointer;
+  }
+
+  .twoColHybLay #menuBar li:active {
+    background: #C4D1EB;
+  }
+
+/* Content style rules
+*
+*/
+	.twoColHybLay #content {
+		font-size: 1.3em;
+		line-height: 130%;
+	}
+
+/* Side style rules
+*
+*/
+
+	.twoColHybLay #side h3 {
+		color: white;
+		font-size: 1.4em;
+		font-weight: normal;
+		line-height: 150%;
+		padding: 5px 0;
+    position: relative;
+    z-index: 300;
+	}
+
+	.twoColHybLay #side ul {
+		list-style-type: none;
+		line-height: 200%;
+		padding: 0;
+		text-indent: 1.4em; 
+	}
+
+	.twoColHybLay #side ul li {
+		/*border-top: 1px solid #262262;*/
+	}
+
+	.twoColHybLay #side ul li a {
+    color: #262262;
+		font-size: 1.1em;
+    text-decoration: none;
+		padding: 5px 0px;
+    position: relative;
+    z-index: 301;
+	}
+
+  .twoColHybLay #side li a:link    { color: #262262; text-decoration: none; }
+  .twoColHybLay #side li a:visited { color: #262262; text-decoration: none; }
+  .twoColHybLay #side li a:hover   { color: #FFF; text-decoration: underline; }
+  .twoColHybLay #side li a:active  { color: #262262; }
+
+/* Main content
+*
+*/	
+
+  .twoColHybLay #main p, .twoColHybLay #main input {
+    color: #262262;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 150%;
+  }
+
+	.twoColHybLay #main h1 {
+		border-bottom: 1px solid black;
+		color: white;
+		font-size: 26px;
+		font-weight: normal;
+		padding-bottom: .7em;
+		width: 98%;
+	}
+
+  .twoColHybLay #main .inputContainer {
+    float: left; 
+    margin: 0 20px 8px 0;
+  }
+
+/* MenuBar content
+*
+*/
+  .twoColHybLay #menuBar {
+    color: white;
+  }
+
+
+/* StatusBar content
+*
+*/
+
+/* Flash and Spinner box for image and notice 
+*
+*/
+  .twoColHybLay #noticeBox, .twoColHybLay #spinnerBox {
+    left: 24.5em;
+    height: 2.1em;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: 50em;
+  }
+
+  .twoColHybLay #spinnerBox {
+    display: none;
+  }
+
+  .twoColHybLay #noticeMsg, .twoColHybLay #spinnerBox:after { 
+    content: "Loading... ";
+    display: inline;
+    font-size: 1.6em;
+    margin-left: .6em;
+  }
+
+  .twoColHybLay #statusBar .flashImg { 
+    vertical-align: bottom;
+  }
+
+/* Session login/logout user
+*
+*/
+  .twoColHybLay #userSession {
+    clear: right;
+    float: right;
+    font-size: 110%;
+    font-weight: bold;
+    height: 2.4em;
+    position: relative;
+    right: 1em;
+  }
+  .twoColHybLay #userSessionName {
+    color: green;
+    display: inline;
+  }
+  .twoColHybLay #userSession a         { text-decoration: none; }
+  .twoColHybLay #userSession a:link    { color: #758AB8; text-decoration: underline; }
+  .twoColHybLay #userSession a:visited { color: #758AB8; text-decoration: underline; }
+  .twoColHybLay #userSession a:hover   { color: #262262; text-decoration: underline; }
+  .twoColHybLay #userSession a:active  { color: #262262; }
+
+
+/* Footer rules
+*
+*/
+	.twoColHybLay #footer {
+		background: #C4D1EB;
+	}
+
+	.twoColHybLay #footer div  {
+		margin: 2em auto;
+	}
+
+	.twoColHybLay #footer div p {	
+		display: inline;
+		font-size: 1.1em;
+		padding: 3px 20px;
+	}
+
+	.twoColHybLay #footer #menu ul {
+		font-size: 1.1em;
+		list-style-type: none;
+	}
+
+	.twoColHybLay #footer #menu li {  
+		display: inline;
+		padding: 0px 3px;
+	}
+
+/* End of two_column_layout.css
+*
+*/

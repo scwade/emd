@@ -6,7 +6,7 @@
 *   Table: Patient Profile
 */
 .patientProfileTableWidth {
-  width: 800px;
+  width: 900px;
 }
 .patientProfileCol0, .patientProfileCol1, .patientProfileCol2, .patientProfileCol3, .patientProfileCol4,
 .patientProfileCol5, .patientProfileCol6, .patientProfileCol7, .patientProfileCol8, .patientProfileCol9 {
@@ -27,16 +27,16 @@
   width: 110px;
 }
 .patientProfileCol3, .patientProfileCol4, .patientProfileCol5 {
-  width: 80px;
+  width: 90px;
 }
 .patientProfileCol6 {
-  width: 85px;
+  width: 120px;
 }
 .patientProfileCol7 {
   width: 60px;
 }
 .patientProfileCol8 {
-  width: 80px;
+  width: 115px;
 }
 .patientProfileCol9 {
   width: 58px;

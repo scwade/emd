@@ -7,9 +7,29 @@
   <!-- IE8 mode is 100% compatible with CSS2.1 and some of CSS3. -->
   <meta http-equiv="X-UA-Compatible" content="IE=8" />
   <title>PROficientMD</title>
-  <%= stylesheet_link_tag "emd", :media => "all" %>
+
+  <!-- persistent: :rel => stylesheet + no title -->
+	<%= stylesheet_link_tag "emd", :rel => "stylesheet", :type => "text/css", :media => "screen" %>
+	
+	<!-- preferred: :rel => stylesheet + title -->
+	<%= stylesheet_link_tag "gui/default-two_column_layout", :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "default" %>
+
+	<!-- alternate: :rel => alternate stylesheets + title -->
+	<%= stylesheet_link_tag "gui/dna-two_column_layout",        :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "DNA" %>
+	<%= stylesheet_link_tag "gui/flatmat-two_column_layout",    :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Flat Mat" %>
+	<%= stylesheet_link_tag "gui/jellybeans-two_column_layout", :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Jelly Beans" %>
+	<%= stylesheet_link_tag "gui/outerspace-two_column_layout", :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Outer Space" %>
+	<%= stylesheet_link_tag "gui/powderblue-two_column_layout", :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Powder Blue"	%>
+	<%= stylesheet_link_tag "gui/sailboat-two_column_layout",   :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Sailboat" %>
+	<%= stylesheet_link_tag "gui/space-two_column_layout",      :rel => "stylesheet", :type => "text/css", :media => "screen", :title => "Space Station" %>
+	<%= stylesheet_link_tag "gui/sphinx-two_column_layout",     :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Sphinx" %>
+	<%= stylesheet_link_tag "gui/splash-two_column_layout",     :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Splah" %>
+	<%= stylesheet_link_tag "gui/sunset-two_column_layout",     :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Sunset" %>
+	<%= stylesheet_link_tag "gui/waterfall-two_column_layout",  :rel => "alternate stylesheet", :type => "text/css", :media => "screen", :title => "Waterfall" %>
 
   <!-- Include javascript -->
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "clock.js" %>
+ 
   <%= yield :head %>
 </head>

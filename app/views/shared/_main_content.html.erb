@@ -1,5 +1,47 @@
 <!-- shared/_main_content -->
 
-<div class="opaque100" id="mainContent">
-    <%= yield :layout %>
-</div><!-- end of mainContent -->
+<div id="wrapper">
+  <div id="content">
+    <div id="side">
+
+      <div class="navFilter"></div>
+      <h3>Menu:</h3>
+      <div class="navLinks">
+					<ul>
+						<li><%= link_to 'Audit Records', audit_index_path %></li>
+						<li><%= link_to 'Conditions', conditions_path %></li>
+						<li><%= link_to 'EDI Transactions', editransactions_path %></li>
+            <li><%= link_to 'Patient Conditions', patient_conditions_path %></li>
+            <li><%= link_to 'Patient Profiles', patient_profiles_path %></li>
+            <li><%= link_to 'User Accounts', users_path %></li>
+					</ul>
+      </div><!-- end of navLinks -->
+
+      <h3>Scotts Menu:</h3>
+      <div class="navLinks">
+          <ul>
+            <li><a href="http://github.com/scwade/emd" >GitHub (scwade)</a></li>
+            <li><a href="http://emd.heroku.com/conditions">Heroku</a></li>
+            <li><a href="http://scwade.blogdns.com:3000/conditions">Scott (pub)</a></li>
+          </ul>
+      </div><!-- end of navLinks -->
+      
+		</div><!-- end of side -->
+
+		<div id="sideFilter"></div>
+		<div id="mainFilter"></div>
+		<div id="main">
+      <h1><%= yield :title -%></h1><br />
+        <div id="copy">
+          <div class="copyData">
+ 
+            <%= yield :layout %>
+
+          </div><!-- end of copyData -->
+        </div><!-- end of copy -->
+      <div id="copyFilter"></div>
+	  </div><!-- end of main -->
+	</div><!-- end of content -->
+	<div id="contentFilter"></div>
+  <div id="contentImage"></div>
+</div><!-- end of wrapper -->

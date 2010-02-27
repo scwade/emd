@@ -2,13 +2,11 @@
 <%= render :partial => "shared/header" %> 
 
 <!-- shared/main -->
-<body class="twoColFixLay">
-  <div id="wrapper">
+<body class="twoColHybLay" onload="startTime()">
     <%= render :partial => "shared/main_banner" %>
+    <%= render :partial => "shared/main_menu_bar" %>
     <%= render :partial => "shared/main_status" %>
-    <%= render :partial => "shared/main_side" %>
     <%= render :partial => "shared/main_content" %>
     <%= render :partial => "shared/main_footer" %>
-  </div><!-- end of wrapper -->
 </body>
 </html>

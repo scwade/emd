@@ -1,44 +1,45 @@
 <!-- shared/_main_status -->
 
-<div id="roundCorner" ><%= image_tag("left-rounded-corner.png") %></div>
+<div id="statusBar">
 
-<div id="status">
-<!-- spinner box -->
-  <div class="spinnerMsg" id="spinnerBox" style="display: none">
-    <%= image_tag("ajax-loader.gif", :size=>"18x18") -%>
-  </div><!-- end of spinner box -->
+    <!-- spinner box -->
+      <div id="spinnerBox">
+        <%= image_tag("ajax-loader.gif", :size=>"24x24", :class=>"flashImg") -%>
+      </div><!-- end of spinner box -->
 
-<!-- flash notices -->
-  <% unless flash.empty? -%>
-    <div id="noticeBox">
-      <% unless flash[:notice].blank? %>
-        <%= image_tag("check-mark.png", :size=>"20x20") -%>
-        <div id="noticeMsg"><%= flash[:notice] %></div>
-      <% else %>
-        <% unless flash[:yield].blank? %>
-          <%= image_tag("yield-mark.png", :size=>"20x20") -%>
-          <div id="noticeMsg"><%= flash[:yield] %></div>
-        <% else %>
-          <% unless flash[:error].blank? %>
-            <%= image_tag("error-mark.png", :size=>"20x20") -%>
-            <div id="noticeMsg"><%= flash[:error] %></div>
+    <!-- flash notices -->
+      <% unless flash.empty? -%>
+        <div id="noticeBox">
+          <% unless flash[:notice].blank? %>
+            <%= image_tag("check-mark.png", :size=>"24x24", :class=>"flashImg" ) -%>
+            <div id="noticeMsg"><%= flash[:notice] %></div>
+          <% else %>
+            <% unless flash[:yield].blank? %>
+              <%= image_tag("yield-mark.png", :size=>"24x24", :class=>"flashImg") -%>
+              <div id="noticeMsg"><%= flash[:yield] %></div>
+            <% else %>
+              <% unless flash[:error].blank? %>
+                <%= image_tag("error-mark.png", :size=>"24x24", :class=>"flashImg") -%>
+                <div id="noticeMsg"><%= flash[:error] %></div>
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      <% end %>
-    </div><!-- end of noticeBox -->
-  <% end -%>
+        </div><!-- end of noticeBox -->
+      <% end -%>
 
-  <div id="userSession">
-    <% if current_user %>
-      <%= "Welcome:" %>
-      <div id="userSessionName">
-        <%= h current_user.username %>
-      </div><!-- end of userSessionName -->
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
-      <%= link_to "Logout", logout_path %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", login_path %>
-    <% end %>
-  </div><!-- end of userSession -->
-</div><!-- end of status -->
+    <!-- user session -->
+      <div id="userSession">
+        <% if current_user %>
+          <%= "Welcome:" %>
+          <div id="userSessionName">
+            <%= h current_user.username %>
+          </div><!-- end of userSessionName -->
+          <%= link_to "Edit Profile", edit_user_path(:current) %> |
+          <%= link_to "Logout", logout_path %>
+        <% else %>
+          <%= link_to "Register", new_user_path %> |
+          <%= link_to "Login", login_path %>
+        <% end %>
+      </div><!-- end of userSession -->
+
+</div><!-- end of statusBar -->

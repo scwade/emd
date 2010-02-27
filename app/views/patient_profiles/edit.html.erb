@@ -1,75 +1,141 @@
-<!-- begin edit 'patient profile' -->
+<!-- begin new 'patient profile' -->
 <% javascript 'dynamic_states' %>
-<h3 class="labelPageTitle">Edit - Patient Profile</h3>
+<% title "Edit - Patient Profile" %>
 
-<div class="formLayout20">
-  <h4 class="clearBoth">
-    Patient ID's:
-  </h4><br />
+<div id="form">
 
   <% form_for @patient_profile do |f| %>
-  <div class="formLabel">Patient ID:</div>
-  <div class="formData"><%=h @patient_profile.pmd_patient_id %></div>
-  <div class="formLabel">User ID:</div>
-  <div class="formData"><%=h @patient_profile.pmd_user_id%></div>
 
-  <h4 class="clearBoth">
-    <br />Contact Information:
-  </h4><br />
-  <%=error_messages_for(:patient_profile) %>
+    <div class="formInput clearBoth">
+      <p>
+        <%= f.label ("patient id: ").titlecase %>
+        <%= f.text_field :pmd_patient_id, :size=> 12, :readonly => :readonly, :style=>"font-size: 11px;" %>
+      </p>
+    </div><br class="clearBoth" />
 
-  <div class="formInput">
-      <%= f.label :physician_id %><br />
-      <%= f.select(:physician_id,
-          {'Maria Wade' => 10, 'Scott Wade' => 11, 'Rolland Hoyt' => 12, 'Jacki Hoyt' => 13},
-          {:selected => @patient_profile.physician_id}, {:tabindex=>1}) %>
-  </div>
+    <div class="formInput">
+      <p>
+        <%= f.label ("user id:").titlecase %>
+        <%= f.text_field :pmd_user_id, :size=> 12, :readonly => :readonly, :style=>"font-size: 11px;" %>
+      </p>
+    </div><br class="clearBoth" />
+   
+    <h5><p> Contact Information: </p></h5>
+    <%=error_messages_for(:patient_profile) %>
 
-  <div class="formInput" ><%= f.label (:first_name).titlecase %><div><%= f.text_field :first_name, :size=>32%></div></div>
-  <div class="formInputNext"><%= f.label (:last_name).titlecase %><div><%= f.text_field :last_name, :size=>32 %></div></div>
-  <div class="formInput" ><%= f.label (:email).titlecase %><div><%= f.text_field :email, :size=> 32 %></div></div>
-  <div class="formInputNext"><%= f.label (:email_confirmation).titlecase %><div><% @v = @patient_profile.email %>
-    <%= f.text_field :email_confirmation, :size=> 32, :value => @v %></div></div>
+    <div class="formInput clearBoth">
+        <%= f.label :physician_id %><br />
+        <%= f.select(:physician_id,
+            {'Maria Wade' => 10, 'Scott Wade' => 11, 'Rolland Hoyt' => 12, 'Jacki Hoyt' => 13},
+            {:selected => @patient_profile.physician_id}, {:tabindex=>1}) %>
+    </div><br class="clearBoth" />
 
-  <div class="formInput"><%= f.label 'Home' %><div><%= f.text_field :phone_home, :size=> 10, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Mobile' %><div><%= f.text_field :phone_mobile, :size=> 10, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Work' %><div><%= f.text_field :phone_work, :size=> 10, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Fax' %><div><%= f.text_field :phone_fax, :size=> 10, :maxlength=>10 %></div></div>
-  <div class="formInputNext"><%= f.label 'Emergency' %><div><%= f.text_field :phone_emergency, :size=> 10, :maxlength=>10 %></div></div>
+    <div class="formInput">
+      <p><%= f.label (:first_name).titlecase %></p>
+      <p><%= f.text_field :first_name, :size=> 32 %></p>
+    </div>
 
-  <div class="formInput"><%= f.label (:primary_address).titlecase %><div><%= f.text_field :primary_address, :size=> 40 %></div></div>
-  <div class="formInputNext"><%= f.label (:alternate_address).titlecase + ' ( Apt#, P.O. Box )' %><div><%= f.text_field :alternate_address, :size=> 40 %></div></div>
+    <div class="formInput">
+      <p><%= f.label (:last_name).titlecase %></p>
+      <p><%= f.text_field :last_name, :size=> 32 %></p>
+    </div><br class="clearBoth" />
+      
+    <div class="formInput">
+      <p><%= f.label :email %></p>
+      <p><%= f.text_field :email, :size=> 32 %></p>
+    </div>
 
-  <div class="formInput"><%= f.label (:city).titlecase %><div><%= text_field_with_auto_complete :patient_profile, :city,
-       { :size=>32 },
-       { :min_chars=>3, :skip_style => true,
-         :method=>:get, :url=>reference_address_path(:js), :with=>"'search=' + element.value"  } %></div></div>
+    <div class="formInput">
+      <p><%= f.label (:email_confirmation).titlecase %></p>
+         <% @v = @patient_profile.email %>
+      <p><%= f.text_field :email_confirmation, :size=> 32 , :value=> @v %></p>
+    </div><br class="clearBoth" />
 
-  <div class="formInputNext"><%= f.label (:state_province).titlecase %><div><%= f.text_field :state_province, :size=> 4 %></div></div>
-  <div class="formInputNext"><%= f.label (:zip5).titlecase %><div><%= f.text_field :zip5, :size=> 7 %></div></div>
-  <div class="formInputNext"><%= f.label (:zip4).titlecase %><div><%= f.text_field :zip4, :size=> 6 %></div></div>
+    <div class="formInput">
+      <p><%= f.label :home %></p>
+      <p><%= f.text_field :phone_home, :size=> 9, :maxlength=>10 %></p>
+    </div>
 
-  <div class="formInput"><%= f.label (:ethnicity).titlecase %>
-    <% @e = ReferenceEthnicity.find(:all, :order => "description").map { |u| [u.description, u.description] } %>
-    <div><%= f.select(:ethnicity, @e, {:selected=>@patient_profile.ethnicity} ) %></div>
-  </div>
+    <div class="formInput">
+      <p><%= f.label :work %></p>
+      <p><%= f.text_field :phone_work, :size=> 9, :maxlength=>10 %></p>
+    </div>
 
-  <div class="formInput">
-    <b>Gender:</b>
-    <br /><%=f.radio_button :gender, "M", :checked => true %> Male
-    <br /><%=f.radio_button :gender, "F" %> Female
-  </div>
+    <div class="formInput">
+      <p><%= f.label :mobile %></p>
+      <p><%= f.text_field :phone_mobile, :size=> 9, :maxlength=>10 %></p>
+    </div>
 
-  <div class="formInput"><%= f.label (:date_of_birth).titlecase %><div>
-    <%= f.date_select(:date_of_birth, {:discard_minute=>true, :start_year=>1900, :end_year=>Time.now.year}) %>
-  </div></div>
+    <div class="formInput">
+      <p><%= f.label :fax %></p>
+      <p><%= f.text_field :phone_fax, :size=> 9, :maxlength=>10 %></p>
+    </div>
 
-  <div class="formButton"><%= f.submit 'Update', :confirm => 'Are you sure?' %></div>
+    <div class="formInput">
+      <p><%= f.label :emergency %></p>
+      <p><%= f.text_field :phone_emergency, :size=> 9, :maxlength=>10 %></p>
+    </div><br class="clearBoth" />
 
-  <div class="navLink">
-    <%= link_to 'Back', @patient_profile %> |
-    <%= link_to 'Index', patient_profiles_path %>
-  </div><!-- end of navLink -->
-  <% end %>
-</div><!-- end of formLayout20 -->
-<!-- end of 'patient profile' -->
+   <div class="formInput">
+      <p><%= f.label (:primary_address).titlecase %></p>
+      <p><%= f.text_field :primary_address, :size=> 40 %></p>
+    </div>
+
+    <div class="formInput">
+      <p><%= f.label  (:alternate_address).titlecase + ' ( Apt#, P.O. Box )' %></p>
+      <p><%= f.text_field :alternate_address, :size=> 40 %></p>
+    </div><br class="clearBoth" />
+
+    <div class="formInput">
+      <p><%= f.label (:city).titlecase %></p>
+      <p><%= text_field_with_auto_complete :patient_profile, :city,
+         { :size=>32 },
+         { :min_chars=>3, :skip_style => true,
+           :method=>:get, :url=>reference_address_path(:js), :with=>"'search=' + element.value"  } %>
+      </p>
+    </div>
+
+    <div class="formInput">
+      <p><%= f.label (:state_province).titlecase %></p>
+      <p><%= f.text_field :state_province, :size=> 4 %></p>
+    </div>
+
+    <div class="formInput">
+      <p><%= f.label (:zip5).titlecase %></p>
+      <p><%= f.text_field :zip5, :size=> 7 %></p>
+    </div>
+
+    <div class="formInput">
+      <p><%= f.label (:zip4).titlecase %></p>
+      <p><%= f.text_field :zip4, :size=> 6 %></p>
+    </div><br class="clearBoth" />
+
+    <div class="formInput">
+      <p><%= f.label (:ethnicity).titlecase %></p>
+      <% @e = ReferenceEthnicity.find(:all, :order => "description").map { |u| [u.description, u.description] } %>
+      <p><%= f.select(:ethnicity, @e, {:selected=>@patient_profile.ethnicity} ) %></p>
+    </div><br class="clearBoth" />
+
+    <div class="formInput">
+      <p>Gender:</p>
+      <p><%=f.radio_button :gender, "M", :checked => true %> Male</p>
+      <p><%=f.radio_button :gender, "F" %> Female</p>
+    </div><br class="clearBoth" />
+
+    <div class="formInput">
+      <p><%= f.label (:date_of_birth).titlecase %></p>
+      <%= f.date_select(:date_of_birth, {:discard_minute=>true, :start_year=>1900, :end_year=>Time.now.year}) %>
+    </div><br class="clearBoth" />
+
+    <div class="formInput">
+      <br />
+      <p><%= f.submit 'Update', :confirm => 'Are you sure?' %></p>
+    </div><br class="clearBoth" />
+
+    <p>
+      <%= link_to 'Index', patient_profiles_path %> |
+      <%= link_to 'Back', @patient_profile %>
+    </p>
+
+   <% end %>
+</div><!-- end of 'edit patient profile' -->

@@ -9,7 +9,8 @@
 *   
 *  Notes: IE position works with !important, but scrolling ul list is fragile
 */
-.twoColFixLay div.auto_complete {
+/*
+.twoColHybLay div.auto_complete {
   border: inset .23em #ECF0F9;
   left: 0px !important;
   overflow-y: auto;
@@ -17,12 +18,12 @@
   position:relative !important;
   z-index: 100;
 }
-.twoColFixLay div.auto_complete ul {
+.twoColHybLay div.auto_complete ul {
   height: 100%;
   max-height: 100px;
 }
-.twoColFixLay div.auto_complete ul li.selected { background-color: #C4D1EB;}
-.twoColFixLay div.auto_complete ul li {
+.twoColHybLay div.auto_complete ul li.selected { background-color: #C4D1EB;}
+.twoColHybLay div.auto_complete ul li {
   background-color: #FFFEF0;
   cursor: pointer;
   display: block;
@@ -32,146 +33,128 @@
   list-style-type: none;
   line-height: 1.3em;
 }
+*/
 
 /* Error rules
 *   
 *  Notes: For all forms
 */
-.twoColFixLay .fieldWithErrors {
+/*
+.twoColHybLay .fieldWithErrors {
   margin: 0;
   padding: 0;
   display: inline;
 }
-.twoColFixLay .fieldWithErrors label { 
+.twoColHybLay .fieldWithErrors label { 
   float: left; 
 }
-.twoColFixLay .fieldWithErrors input, .fieldWithErrors select {
+.twoColHybLay .fieldWithErrors input, .fieldWithErrors select {
   border: 2px solid red;
 }
-.twoColFixLay .formLayout10 p {
+.twoColHybLay .formLayout10 p {
   clear: both;
   display: block;
 }
-.twoColFixLay #errorExplanation {
+.twoColHybLay #errorExplanation {
   background-color: #E2E3E4;
   clear: both;
   float: left;
   margin: 1em 0;
 }
-.twoColFixLay #errorExplanation h2 {
+.twoColHybLay #errorExplanation h2 {
   background-color: #ED1C24;
   color: #FFFFFF;
   font-size: 150%;
   font-weight: bold;
   padding: 0 5px;
 }
-.twoColFixLay #errorExplanation p {
+.twoColHybLay #errorExplanation p {
   font-size: 120%;
   font-weight: bold;
   margin: 5px 0 5px 10px;
 }
-.twoColFixLay #errorExplanation ul li {
+.twoColHybLay #errorExplanation ul li {
   font-size: 100%;
   font-weight: bold;
   margin: 0 0 2px 30px;
 }
+*/
 
 /* Form rules
 *   
 *  Notes: For all forms
 */
-.twoColFixLay div.formLayout,   .twoColFixLay div.formLayout p, 
-.twoColFixLay div.formLayout10, .twoColFixLay div.formLayout10 p,
-.twoColFixLay div.formLayout15, .twoColFixLay div.formLayout15 p,
-.twoColFixLay div.formLayout20, .twoColFixLay div.formLayout20 p {
+/*
+.twoColHybLay div.formLayout,   .twoColHybLay div.formLayout p, 
+.twoColHybLay div.formLayout10, .twoColHybLay div.formLayout10 p,
+.twoColHybLay div.formLayout15, .twoColHybLay div.formLayout15 p,
+.twoColHybLay div.formLayout20, .twoColHybLay div.formLayout20 p {
   clear: both;
 }
-.twoColFixLay div.formLayout {
+.twoColHybLay div.formLayout {
   margin-left: 0px;
 }
-.twoColFixLay div.formLayout5 {
+.twoColHybLay div.formLayout5 {
   margin-left: 5px;
 }
-.twoColFixLay div.formLayout10 {
+.twoColHybLay div.formLayout10 {
   margin-left: 10px;
 }
-.twoColFixLay div.formLayout15 {
+.twoColHybLay div.formLayout15 {
   margin-left: 15px;
 }
-.twoColFixLay div.formLayout20 {
+.twoColHybLay div.formLayout20 {
   margin-left: 20px;
 }
-.twoColFixLay input, select {
+.twoColHybLay input, select {
   border: 1px inset #C4D1EB;
 }
-.twoColFixLay div.formInput, .twoColFixLay div.formInputNext,
-.twoColFixLay div.formInput0 {
+.twoColHybLay div.formInputx, .twoColHybLay div.formInputNext,
+.twoColHybLay div.formInput0 {
   float: left;
   margin: 5px 0 5px 10px;
   position: relative;
 }
-.twoColFixLay div.formInput {
+.twoColHybLay div.formInputx {
   clear: left;
 }
-.twoColFixLay div.formInput0 {
+.twoColHybLay div.formInput0 {
   clear: left;
   margin-left: 0px;
 }
-.twoColFixLay div.formInputNext {
+.twoColHybLay div.formInputNext {
   display: inline;
 }
-.twoColFixLay div.formButton {
+.twoColHybLay div.formButton {
   clear: both;
   float: left;
   margin: 15px 0 15px 10px;
 }
-.twoColFixLay div.formLabel, .twoColFixLay div.formLabel1, .twoColFixLay div.formData {
+*/
+.twoColHybLay div.formLabel, .twoColHybLay div.formData {
   float: left;
-  font-size: 1.1em;
   position: relative;
 }
-.twoColFixLay div.formLabel {
+.twoColHybLay div.formLabel {
   clear: left;
-  font-weight: bold;
-  height: 20px;
+  margin-right: .8em;
   text-align: right;
-  width: 130px;
+  width: 15em;
 }
-.twoColFixLay div.formLabel1 {
-  font-size: 1.2em;
+.twoColHybLay div.formData {
+  clear: right:
+  overflow: hidden;
+  min-width: 10em;
 }
-.twoColFixLay div.formData {
-  margin-left: 8px;
-  overflow: auto;
-  width: 600px;
-}
-/* Only new patient profile */
-.twoColFixLay div.formTitle, .twoColFixLay div.formTitle1 {
-  clear: left;
-  font-size: 1.1em;
-  font-weight: bold;
-}
-.twoColFixLay div.formTitle {
-  text-indent: 58px;
-}
-.twoColFixLay div.formTitle1 {
-  text-indent: 74px;
-}
-.twoColFixLay div.formTitleInput {
-  display: inline;
-  margin-left: 8px;
-}
-.twoColFixLay div.formTitleInput input {
-  background-color: #E9EAEB;
-}
+
   
 /* Radio Button */
-.twoColFixLay #patient_profile_gender_m, .twoColFixLay #patient_profile_gender_f {
+.twoColHybLay #patient_profile_gender_m, .twoColHybLay #patient_profile_gender_f {
   border: 1px solid #C4D1EB;
 }
 /* Submit Buttons */
-.twoColFixLay #patient_condition_submit, .twoColFixLay #condition_submit, .twoColFixLay #patient_profile_submit,
-.twoColFixLay #editransaction_submit, .twoColFixLay #user_submit, .twoColFixLay #user_session_submit { 
+.twoColHybLay #patient_condition_submit, .twoColHybLay #condition_submit, .twoColHybLay #patient_profile_submit,
+.twoColHybLay #editransaction_submit, .twoColHybLay #user_submit, .twoColHybLay #user_session_submit, #openId { 
   background-color: #C4D1EB;
   border: 1px outset #C4D1EB;
   color: #262262;
@@ -182,28 +165,20 @@
 *   
 *  Notes: For all views
 */
-.twoColFixLay .labelPageTitle {
-  border-bottom: 2px solid #262262;
-  clear: both;
-  float: left;
-  font-weight: lighter;
-  height: 30px; 
-  margin: 0 0 20px 0;
-  padding: 0px 0px 10px 0px;
-  width: 100%;
-}
+
 
 /* navLink rules
 *   
 *  Notes: Format for navigation links at bottom of pages
 */
-.twoColFixLay div .navLink  {
+.twoColHybLay copy p a   {
   clear: both;
   float: left;
-  font-size: 1.1em;
-  font-weight: bold;
   margin: 20px 0 0 0;
 }
-.twoColFixLay div .navLink a:hover {
-  color: #758AB8;
-}
+
+  .twoColHybLay #copy p a         { color: #758AB8; text-decoration: none; }
+  .twoColHybLay #copy p a:link    { color: #758AB8; text-decoration: underline; }
+  .twoColHybLay #copy p a:visited { color: #758AB8; text-decoration: underline; }
+  .twoColHybLay #copy p a:hover   { color: #262262; text-decoration: underline; }
+  .twoColHybLay #copy p a:active  { color: #758AB8; }

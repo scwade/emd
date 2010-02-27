@@ -1,0 +1,10 @@
+/* Submit Buttons */
+.twoColHybLay #patient_condition_submit, .twoColHybLay #condition_submit, .twoColHybLay #patient_profile_submit,
+.twoColHybLay #editransaction_submit, .twoColHybLay #user_submit, .twoColHybLay #user_session_submit, #openId { 
+  background-color: #C4D1EB;
+  border: 1px outset #C4D1EB;
+  color: #262262;
+  padding: 0px 1px;
+}
+
+

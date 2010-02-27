@@ -1,7 +1,7 @@
 <!-- begin show 'user' -->
-<h3 class="labelPageTitle">User Account</h3>
+<% title "User Account" %>
 
-<div class="formLayout10">
+<div>
   <div class="formLabel">User ID:</div>
   <div class="formData"><%= h @user.id %></div>
   <div class="formLabel ">Login Name:</div>
@@ -35,13 +35,11 @@
   <div class="formData"><%=h @user.persistence_token.to_s.slice(0,64) %></div>
   <div class="formLabel ">64-127:</div>
   <div class="formData"><%=h @user.persistence_token.to_s.slice(64,64) %></div>
-</div><!-- end of formLayout -->
-<br />
+</div><br class="clearBoth" /><!-- end of formLayout -->
 
-<div class="navLink">
+<p>
   <%= link_to 'Edit', edit_user_path(@user) %>  | 
   <%= link_to 'Index', users_path %> |
   <%= link_to 'Delete', user_path(@user.id), :confirm => 'Are you sure?', :method => :delete %>
-  </div>
-</div><!-- end of navLink -->
+</p><!-- end of navLink -->
 <!-- end of 'user' -->

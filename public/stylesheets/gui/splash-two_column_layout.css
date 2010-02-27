@@ -1,0 +1,38 @@
+/*  SPLASH TWO_COLUMN_LAYOUT - 02/08/10
+*
+*/
+
+	.twoColHybLay #contentImage {
+		background: transparent url(../../images/splash.jpg) no-repeat scroll left -200px;
+	}
+
+/*  All Filters
+*
+*/
+
+	.twoColHybLay #contentFilter {				/* default 100 off, 20 on (waterfall), 60 on (sailboat) */
+		background: #758AB8;
+		filter: alpha(opacity=0);
+		opacity: .3;
+	}
+	.twoColHybLay #copyFilter { 					/* default 90 off, 60 on (waterfall, sailboat) */
+		background: #ECF0F9;
+		filter: alpha(opacity=50);
+		opacity: .5;
+		
+	}
+	.twoColHybLay #mainFilter { 					/* default 20 both (waterfall), 40 on (sailboat) */
+		background: #C4D1EB;
+		filter: alpha(opacity=60);
+		opacity: .6;
+	}
+	.twoColHybLay #navFilter { 					/* default 90 off, 60 on (waterfall), 0 (sailboat) */
+		background: #ECF0F9;
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
+	.twoColHybLay #sideFilter {					/* default 20 both (waterfall), 40 (sailboat) */
+		background: #C4D1EB;
+		filter: alpha(opacity=60);
+		opacity: .6;
+	}

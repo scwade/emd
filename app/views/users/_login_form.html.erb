@@ -1,6 +1,6 @@
 <!-- begin '_login' -->
 
-<div class="formLayout10">
+<div>
   <% form_for(@user) do |f| %>
   <%= f.error_messages -%>
 
@@ -29,12 +29,11 @@
 
     <p>
       <%= f.submit 'Submit', :confirm => 'Are you sure?' %>
-      <%= f.submit 'Reset', :type => 'reset',  :confirm => 'Are you sure?'%>
     </p>
 
   <% end %>
   <br />
-  <h4 class="formTitle1">OpenID (Option 2)</h4>
+  <h4>OpenID (option 2)</h4>
 
   <p>
     <%= f.label :openid_identifier, "OpenID URL" %><br />
@@ -42,9 +41,9 @@
   </p>
 
   <p>
-    <%= f.submit 'Submit', :confirm => 'Are you sure?' %>
-    <%= f.submit 'Reset', :type => 'reset',  :confirm => 'Are you sure?'%>
+    <%= f.submit 'Submit', :id => "openId", :confirm => 'Are you sure?' %>
   </p>
   <% end %>
-</div><!-- end of formLayout -->
-<!-- end of '_login' -->
+</div><br class="clearBoth" />
+
+<!-- end '_login' -->
